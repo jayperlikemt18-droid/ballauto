@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ดึงตารางแข่งและราคาจาก api-football แล้วเขียน data.json ให้หน้าเว็บอ่าน"""
-import json, os, sys, urllib.request, urllib.parse
+import json, os, sys, time, urllib.error, urllib.request, urllib.parse
 from datetime import datetime, timedelta, timezone
 
 KEY = os.environ.get("API_FOOTBALL_KEY", "").strip()
@@ -13,14 +13,24 @@ LEAGUES = {  # id: (ธง, ชื่อลีก)
     140: ("🇪🇸", "ลาลีกา สเปน"), 2: ("🏆", "แชมเปียนส์ลีก"), 3: ("🏆", "ยูโรปาลีก"),
 }
 MIN_PROB = 0.56
-MAX_MATCHES = 30
+MAX_MATCHES = 25
 
 
 def api(path, **params):
     url = BASE + path + "?" + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={"x-apisports-key": KEY})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        d = json.loads(r.read().decode("utf-8"))
+    for attempt in range(4):
+        time.sleep(7)  # แพ็กเกจฟรีจำกัด 10 ครั้งต่อนาที
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                d = json.loads(r.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as e:
+            print("HTTP", e.code, path)
+            if e.code == 429 and attempt < 3:
+                time.sleep(30)
+                continue
+            raise
     if d.get("errors"):
         print("API แจ้ง:", d["errors"])
     return d.get("response", [])
