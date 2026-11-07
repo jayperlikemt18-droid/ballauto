@@ -70,11 +70,75 @@ def res_hc(diff, h):
     return sum(v) / len(v)
 
 
+def _key(n):
+    n = "".join(c for c in unicodedata.normalize("NFD", n.lower()) if unicodedata.category(c) != "Mn")
+    n = "".join(c if c.isalnum() else "" for c in n)
+    for w in ("fc", "afc", "cf", "sc", "ac", "as", "fk", "sv", "vfb", "vfl", "fsv", "1899", "1", "ssc", "us", "rc", "cd", "ud"):
+        if n.startswith(w) and len(n) > len(w) + 3:
+            n = n[len(w):]
+    return n
+
+
+ALIAS = {"manchestercity": "mancity", "manchesterunited": "manunited", "nottinghamforest": "forest",
+         "bayernmunich": "bayern", "borussiadortmund": "dortmund", "bayerleverkusen": "leverkusen",
+         "rbleipzig": "leipzig", "borussiamonchengladbach": "gladbach", "eintrachtfrankfurt": "frankfurt",
+         "parissaintgermain": "parissg", "atleticomadrid": "atletico", "athleticclub": "athletic",
+         "inter": "inter", "acmilan": "milan", "milan": "milan", "wolves": "wolves", "westham": "westham",
+         "newcastle": "newcastle", "tottenham": "tottenham", "brighton": "brighton", "leeds": "leeds",
+         "sportingcp": "sportingcp", "celticfc": "celtic", "stuttgart": "stuttgart", "werderbremen": "werderbremen",
+         "unionberlin": "unionberlin", "mainz05": "mainz", "mainz": "mainz", "hoffenheim": "hoffenheim",
+         "realsociedad": "sociedad", "celtavigo": "celta", "rayovallecano": "rayovallecano", "olympiquelyonnais": "lyon",
+         "olympiquedemarseille": "marseille", "asmonaco": "monaco", "ogcnice": "nice"}
+
+
+def load_elo():
+    day = datetime.now(timezone.utc).date().isoformat()
+    txt = None
+    for base in ("http://api.clubelo.com/", "https://api.clubelo.com/"):
+        try:
+            with urllib.request.urlopen(base + day, timeout=30) as r:
+                txt = r.read().decode("utf-8", "replace")
+            break
+        except Exception as e:
+            print("ClubElo ไม่ได้:", e)
+    elo = {}
+    if txt:
+        for line in txt.splitlines()[1:]:
+            p = line.split(",")
+            if len(p) >= 5:
+                try:
+                    elo[_key(p[1])] = float(p[4])
+                except ValueError:
+                    pass
+    print("ClubElo %d ทีม" % len(elo))
+    return elo
+
+
+def elo_of(elo, name):
+    if not elo:
+        return None
+    k = _key(name)
+    k = ALIAS.get(k, k)
+    if k in elo:
+        return elo[k]
+    cands = [x for x in elo if len(x) >= 4 and len(k) >= 4 and (x.startswith(k) or k.startswith(x))]
+    if not cands:
+        cands = [x for x in elo if len(x) >= 6 and x in k]
+    if len(cands) == 1:
+        return elo[cands[0]]
+    import difflib
+    m = difflib.get_close_matches(k, list(elo), n=1, cutoff=0.85)
+    return elo[m[0]] if m else None
+
+
 def get_pred(fid):
     try:
         d = api("/predictions", fixture=fid)
         pc = d[0]["predictions"]["percent"]
-        return {"h": int(pc["home"].strip("%")), "d": int(pc["draw"].strip("%")), "a": int(pc["away"].strip("%"))}
+        r = {"h": int(pc["home"].strip("%")), "d": int(pc["draw"].strip("%")), "a": int(pc["away"].strip("%"))}
+        if (r["h"], r["d"], r["a"]) in ((10, 45, 45), (45, 45, 10)):  # ค่าเริ่มต้นของแหล่งข้อมูลเมื่อไม่มีสถิติพอ
+            return None
+        return r
     except Exception as e:
         print("ไม่มี % ชนะ:", e)
         return None
@@ -171,6 +235,10 @@ def analyse(odds, home, away):
             except ValueError:
                 pass
     hp = {"L": best[1]} if best else None
+    w = {v["value"]: float(v["odd"]) for v in find_bet(res, 1) if v.get("value") in ("Home", "Draw", "Away")}
+    if hp is not None and len(w) == 3:
+        tot = sum(1 / o for o in w.values())
+        hp["m"] = {"h": round(100 / w["Home"] / tot), "d": round(100 / w["Draw"] / tot), "a": round(100 / w["Away"] / tot)}
     if best:
         line = best[1]
         hc = ("%s ต่อ %s" % (home, thai_line(line))) if line < 0 else (
@@ -288,6 +356,7 @@ def main():
         out.append((t, f))
     out.sort(key=lambda x: (ORDER.index(x[1]["league"]["id"]), x[0]))
     out = sorted(out[:MAX_MATCHES], key=lambda x: x[0])
+    elo_map = load_elo()
     matches = []
     for t, f in out:
         h, a = f["teams"]["home"], f["teams"]["away"]
@@ -295,14 +364,22 @@ def main():
         hc, ou, hp, hcs, ous = analyse(odds, h["name"], a["name"])
         pr = get_pred(f["fixture"]["id"])
         base_line = hp["L"] if hp else None
+        if not pr and hp:  # ไม่มีสถิติ ใช้ % ชนะที่คำนวณจากราคา 1X2 ของตลาดแทน
+            pr = hp.get("m")
         hp = None
+        eh, ea = elo_of(elo_map, h["name"]), elo_of(elo_map, a["name"])
+        e = (100 / (1 + 10 ** (-(eh + 65 - ea) / 400))) if eh and ea else None
         if pr and base_line:  # เลือกทีมจาก % โอกาสชนะ ต่อใส่ (-) รองใส่ (+)
             fav = "home" if pr["h"] >= pr["a"] else "away"
             win = max(pr["h"], pr["a"])
             giver = "home" if base_line < 0 else "away"
             L = abs(base_line)
             team = h["name"] if fav == "home" else a["name"]
-            if win >= 55 and giver == fav and L <= 1:
+            if e is not None and ((e >= 50) != (fav == "home") or max(e, 100 - e) < 55):
+                fav = None  # Elo ไม่เห็นด้วย ข้ามต่อรองคู่นี้
+            if fav is None:
+                pass
+            elif win >= 55 and giver == fav and L <= 1:
                 hp = {"lab": "%s -%s" % (team, thai_line(L)), "pct": win, "team": team, "giver": True,
                       "lt": thai_line(L), "side": fav, "h": -L}
             elif win >= 55 and giver != fav and L <= 2:
@@ -321,7 +398,7 @@ def main():
             "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": flag, "lg": lg,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
-            "hc": hc, "ou": ou, "hp": hp, "pr": pr, "hcs": hcs, "ous": ous,
+            "hc": hc, "ou": ou, "hp": hp, "pr": pr, "elo": round(e) if e is not None else None, "hcs": hcs, "ous": ous,
         })
     nt = datetime.now(TH)
     data = {"updated": "%s %02d/%02d %s น." % (DAYS[nt.weekday()], nt.day, nt.month, nt.strftime("%H:%M")),
