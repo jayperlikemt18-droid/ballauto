@@ -66,6 +66,7 @@ def analyse(odds, home, away):
             ou = {"lab": "ต่ำ 2.5", "pct": round((1 - po) * 100)}
     hc = None
     best = None
+    hcs, ous = [], []
     for v in find_bet(res, 4):
         if v["value"].startswith("Home "):
             try:
@@ -75,11 +76,19 @@ def analyse(odds, home, away):
                 continue
             if best is None or abs(odd - 2.0) < best[0]:
                 best = (abs(odd - 2.0), line)
+            if 1.5 <= odd <= 2.6:
+                hcs.append(abs(line))
+    for k, odd in vals.items():
+        if k.startswith("Over ") and 1.5 <= odd <= 2.6:
+            try:
+                ous.append(float(k.split()[1]))
+            except ValueError:
+                pass
     if best:
         line = best[1]
         hc = ("%s ต่อ %s" % (home, thai_line(line))) if line < 0 else (
             ("%s ต่อ %s" % (away, thai_line(line))) if line > 0 else "เสมอ")
-    return hc, ou
+    return hc, ou, [thai_line(x) for x in sorted(set(hcs))], ["%g" % x for x in sorted(set(ous))]
 
 
 def main():
@@ -104,13 +113,13 @@ def main():
     for t, f in out[:MAX_MATCHES]:
         h, a = f["teams"]["home"], f["teams"]["away"]
         odds = api("/odds", fixture=f["fixture"]["id"])
-        hc, ou = analyse(odds, h["name"], a["name"])
+        hc, ou, hcs, ous = analyse(odds, h["name"], a["name"])
         flag, lg = LEAGUES[f["league"]["id"]]
         matches.append({
             "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": flag, "lg": lg,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
-            "hc": hc, "ou": ou,
+            "hc": hc, "ou": ou, "hcs": hcs, "ous": ous,
         })
     nt = datetime.now(TH)
     data = {"updated": "%s %02d/%02d %s น." % (DAYS[nt.weekday()], nt.day, nt.month, nt.strftime("%H:%M")),
