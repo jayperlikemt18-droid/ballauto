@@ -130,6 +130,7 @@ function tn(n) { var k = String(n).toLowerCase().normalize("NFD").replace(/[\u03
     function cards(ms) { return ms.map(function (m) {
       return '<article class="match' + (m.ou && !m.ou.weak ? '' : ' skip') + '"><div class="top"><span class="league"><span class="flag">' + m.flag + '</span>' + esc(m.lg) +
         '</span><span class="time">' + esc(m.t) + '<small>' + esc(m.d) + '</small></span></div><div class="teams">' + team(m.h, true) + team(m.a, false) + '</div>' +
+        (m.pr ? '<p class="note" style="text-align:left">โอกาสชนะ เหย้า ' + m.pr.h + '% · เสมอ ' + m.pr.d + '% · เยือน ' + m.pr.a + '%</p>' : '') +
         '<div class="prices">' + box("ต่อรอง", m.hp ? nm(m, m.hp.lab) : (m.hc ? nm(m, m.hc) : "ไม่มีราคา"), !!m.hp) + box("สูง/ต่ำ", m.ou ? (m.ou.weak ? m.ou.line : m.ou.lab) : "ไม่มีราคา", !!(m.ou && !m.ou.weak)) + '</div>' +
         ((m.hcs && m.hcs.length > 1) || (m.ous && m.ous.length > 1) ? '<p class="note" style="text-align:left">ราคาอื่น · ต่อรอง ' + esc((m.hcs || []).join(' · ')) + ' · สูง/ต่ำ ' + esc((m.ous || []).join(' · ')) + '</p>' : '') +
         (m.ou && !m.ou.weak ? '<div class="conf"><span>โอกาสจากราคาตลาด</span><div class="bar"><i style="width:' + m.ou.pct + '%"></i></div><em>' + m.ou.pct + '%</em></div>' : '') + '</article>';

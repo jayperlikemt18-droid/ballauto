@@ -20,7 +20,7 @@ LEAGUES = {  # id: (ธง, ชื่อลีก)
 }
 ORDER = list(LEAGUES)
 MIN_PROB = 0.56
-MAX_MATCHES = 45
+MAX_MATCHES = 22  # แต่ละคู่ใช้ 2 ครั้ง (ราคา + % ชนะ) โควตาฟรีวันละ 100
 
 
 def api(path, **params):
@@ -68,6 +68,16 @@ def res_total(goals, side, x):
 def res_hc(diff, h):
     v = [_r(diff + l) for l in halves(h)]
     return sum(v) / len(v)
+
+
+def get_pred(fid):
+    try:
+        d = api("/predictions", fixture=fid)
+        pc = d[0]["predictions"]["percent"]
+        return {"h": int(pc["home"].strip("%")), "d": int(pc["draw"].strip("%")), "a": int(pc["away"].strip("%"))}
+    except Exception as e:
+        print("ไม่มี % ชนะ:", e)
+        return None
 
 
 def settle(history):
@@ -294,6 +304,10 @@ def main():
         h, a = f["teams"]["home"], f["teams"]["away"]
         odds = api("/odds", fixture=f["fixture"]["id"])
         hc, ou, hp, hcs, ous = analyse(odds, h["name"], a["name"])
+        pr = get_pred(f["fixture"]["id"])
+        if hp and pr:  # ตลาดกับสถิติต้องเห็นตรงกัน ไม่งั้นไม่เลือกต่อรอง
+            if (hp["side"] == "home" and pr["h"] < pr["a"]) or (hp["side"] == "away" and pr["a"] < pr["h"]):
+                hp = None
         flag, lg = LEAGUES[f["league"]["id"]]
         if not any(e["id"] == f["fixture"]["id"] for e in history):
             base = {"id": f["fixture"]["id"], "ts": int(t.timestamp()), "d": "%02d/%02d" % (t.day, t.month),
@@ -307,7 +321,7 @@ def main():
             "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": flag, "lg": lg,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
-            "hc": hc, "ou": ou, "hp": hp, "hcs": hcs, "ous": ous,
+            "hc": hc, "ou": ou, "hp": hp, "pr": pr, "hcs": hcs, "ous": ous,
         })
     nt = datetime.now(TH)
     data = {"updated": "%s %02d/%02d %s น." % (DAYS[nt.weekday()], nt.day, nt.month, nt.strftime("%H:%M")),
