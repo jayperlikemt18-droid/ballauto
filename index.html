@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>BALL AUTO</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Sarabun:wght@400;500;600&display=swap">
+<style>
+/* Layout: header, then one card per match. Card: country flag + league + time, two team rows with colour badges, two price boxes, confidence bar. Single dark look by choice. */
+:root {
+  --bg: #0b1220; --card: #111a2c; --tile: #1b2740; --fg: #eaf0f7; --muted: #8b99b0;
+  --line: #27344d; --go: #2fd48a; --go-soft: #0f2a22; --go-deep: #1a6b3c; --warn: #e0a95a;
+  --font-display: "Prompt", "Noto Sans Thai", system-ui, sans-serif;
+  --font-body: "Sarabun", "Noto Sans Thai", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 17px; line-height: 1.5;
+  margin: 0;
+  padding-block: 20px 36px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+h1 { font-family: var(--font-display); font-size: 2rem; line-height: 1.1; margin: 0; }
+.sub { color: var(--muted); margin: 4px 0 0; font-size: 0.92rem; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 0.85rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 10px; height: 10px; border-radius: 3px; background: var(--go); }
+.dot.o { background: var(--tile); border: 1px solid var(--line); }
+.match { background: var(--card); border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.league { display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; color: var(--fg); min-width: 0; }
+.flag { font-size: 1.4rem; line-height: 1; }
+.time { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; font-variant-numeric: tabular-nums; }
+.time small { font-weight: 500; font-size: 0.78rem; color: var(--muted); margin-left: 4px; }
+.teams { display: flex; flex-direction: column; gap: 8px; }
+.team { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; line-height: 1.3; min-width: 0; }
+.team .nm { min-width: 0; overflow-wrap: anywhere; }
+.team .home { font-family: var(--font-body); font-weight: 500; font-size: 0.75rem; color: var(--muted); background: var(--tile); padding: 1px 8px; border-radius: 99px; white-space: nowrap; }
+.badge { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.02em; border: 2px solid rgba(255,255,255,0.22); }
+.prices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.box { background: var(--tile); border: 1px solid var(--line); border-radius: 14px; padding: 12px; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.box small { color: var(--muted); font-size: 0.8rem; }
+.box b { font-family: var(--font-display); font-size: 1.3rem; line-height: 1.25; overflow-wrap: anywhere; }
+.box.pick { background: var(--go-soft); border-color: var(--go); }
+.box.pick b { color: var(--go); }
+.tick { color: var(--go); font-size: 0.8rem; font-weight: 600; }
+.conf { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--muted); }
+.bar { flex: 1; height: 8px; background: var(--tile); border-radius: 4px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--go); border-radius: 4px; }
+.conf em { font-style: normal; font-variant-numeric: tabular-nums; color: var(--fg); font-weight: 600; }
+.skip { opacity: 0.75; }
+.stepbox { background: var(--card); border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.stepbox h2 { font-family: var(--font-display); font-size: 1.1rem; margin: 0; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); }
+.row:first-of-type { border-top: 0; }
+.row b { font-family: var(--font-display); white-space: nowrap; }
+.row span { color: var(--go); font-weight: 600; text-align: right; min-width: 0; }
+.row span.off { color: var(--warn); }
+.btn { background: var(--go-deep); color: #fff; border: 0; border-radius: 16px; padding: 16px; width: 100%; font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; cursor: pointer; }
+.btn:focus-visible { outline: 2px solid var(--go); outline-offset: 2px; }
+.btn:active { filter: brightness(1.15); }
+.note { color: var(--muted); font-size: 0.85rem; text-align: center; margin: 0; }
+.warn { color: var(--warn); font-size: 0.88rem; margin: 0; }
+textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(--fg); border: 1px solid var(--line); border-radius: 12px; padding: 12px; font: inherit; font-size: 0.9rem; resize: vertical; }
+.foot { color: var(--muted); font-size: 0.82rem; text-align: center; }
+.foot a { color: var(--go); }
+.badge{position:relative;overflow:hidden}.badge img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:5px}
+</style></head><body>
+
+<main>
+  <header>
+    <h1>⚽ BALL AUTO</h1>
+    <p class="sub">ราคาบอลคืนวันเสาร์ที่ 7 พ.ย. 2026 เวลาตามไทย</p>
+  </header>
+
+  <div class="legend" aria-label="วิธีอ่าน">
+    <span><i class="dot"></i>ช่องสีเขียว คือช่องที่เลือก</span>
+    <span><i class="dot o"></i>ช่องสีเทา คือราคาอ้างอิง</span>
+  </div>
+
+  <div id="list" style="display:contents">
+    <!-- rendered by script below -->
+  </div>
+
+  <section class="stepbox" aria-label="สเต็ป">
+    <h2>สเต็ปคืนนี้</h2>
+    <div class="row"><b>⚡ สเต็ป 3</b><span>ไลป์ซิก · โรม · เปแอสเช สูง 2.5</span></div>
+    <div class="row"><b>🔥 สเต็ป 4</b><span>3 คู่ข้างบน + อาร์เซน่อล สูง 2.5</span></div>
+    <div class="row"><b>💣 สเต็ป 5 และ 7</b><span class="off">ข้อมูลไม่พอ</span></div>
+    <button class="btn" id="copy" type="button">คัดลอกข้อความ LINE</button>
+    <p class="note" id="status" role="status">กดแล้ววางใน LINE ได้เลย</p>
+    <textarea id="msg" readonly aria-label="ข้อความ LINE"></textarea>
+  </section>
+
+  <p class="warn">ตัวเลขต่อรองมาจาก goal7 และเส้นสูง/ต่ำ 2.5 มาจากเว็บอ้างอิง ราคาจริงของแต่ละเจ้าอาจต่างกัน ถ้าเจ้าตั้งสูง/ต่ำที่ 3 ขึ้นไป ให้ข้ามคู่นั้น ผิดคู่เดียวเสียหมด</p>
+  <p class="foot">ที่มา <a href="https://goal7.co">goal7</a>, <a href="https://www.kickoff.co.uk">Kickoff</a> · ข้อมูลจากสถิติ ไม่รับประกันผล</p>
+</main>
+
+<script>
+(function () {
+  var M = [
+    { t: "21:30", d: "เสาร์", flag: "🇩🇪", lg: "บุนเดสลีกา เยอรมัน",
+      h: ["ไลป์ซิก", "RBL", "#d6202b", 721], a: ["เอาก์สบวร์ก", "AUG", "#2a7a3a", 16],
+      p1: ["ต่อรอง (เว็บ)", "1/1.5", 0], p2: ["สูง/ต่ำ", "สูง 2.5", 1], pct: 76, pl: "โอกาสสูง" },
+    { t: "22:00", d: "เสาร์", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", lg: "พรีเมียร์ลีก อังกฤษ",
+      h: ["อาร์เซน่อล", "ARS", "#d31f2a", 57], a: ["ฮัลล์ ซิตี้", "HUL", "#e59a1b"],
+      p1: ["ต่อรอง (เว็บ)", "2/2.5", 0], p2: ["สูง/ต่ำ", "สูง 2.5", 1], pct: 64, pl: "โอกาสสูง (จากราคา)" },
+    { t: "00:30", d: "อาทิตย์", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", lg: "พรีเมียร์ลีก อังกฤษ", skip: "ซิตี้ชนะ 61% แต่เส้นสูง/ต่ำไม่ชัด ข้าม",
+      h: ["น็อตติ้งแฮม ฟอเรสต์", "NFO", "#c4202a", 351], a: ["แมนฯ ซิตี้", "MCI", "#5fb4e6", 65],
+      p1: ["ต่อรอง (เว็บ)", "1", 0], p2: ["ผล", "ข้าม", 0] },
+    { t: "02:45", d: "อาทิตย์", flag: "🇮🇹", lg: "เซเรีย อา อิตาลี",
+      h: ["โรม", "ROM", "#8b1d2c", 100], a: ["ซาสซูโอโล่", "SAS", "#1a8a4a", 471],
+      p1: ["ต่อรอง (เว็บ)", "1.5/2", 0], p2: ["สูง/ต่ำ", "สูง 2.5", 1], pct: 71, pl: "โอกาสสูง" },
+    { t: "03:05", d: "อาทิตย์", flag: "🇫🇷", lg: "ลีกเอิง ฝรั่งเศส",
+      h: ["เปแอสเช", "PSG", "#1c3a7a", 524], a: ["ทรัวส์", "TRO", "#1b5fb4"],
+      p1: ["ต่อรอง (เว็บ)", "2/2.5", 0], p2: ["สูง/ต่ำ", "สูง 2.5", 1], pct: 76, pl: "โอกาสสูง" }
+  ];
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function team(x, home) {
+    return '<div class="team"><span class="badge" style="background:' + x[2] + '" aria-hidden="true">' + esc(x[1]) + (x[3] ? '<img alt="" src="https://crests.football-data.org/' + x[3] + '.png" onerror="this.remove()">' : '') + '</span>' +
+      '<span class="nm">' + esc(x[0]) + '</span>' + (home ? '<span class="home">เหย้า</span>' : '') + '</div>';
+  }
+  function box(p) {
+    return '<div class="box' + (p[2] ? ' pick' : '') + '"><small>' + esc(p[0]) + '</small><b>' + esc(p[1]) + '</b>' +
+      (p[2] ? '<span class="tick">✓ เลือก</span>' : '') + '</div>';
+  }
+  var html = M.map(function (m) {
+    return '<article class="match' + (m.skip ? ' skip' : '') + '">' +
+      '<div class="top"><span class="league"><span class="flag" aria-hidden="true">' + m.flag + '</span>' + esc(m.lg) + '</span>' +
+      '<span class="time">' + esc(m.t) + '<small>' + esc(m.d) + '</small></span></div>' +
+      '<div class="teams">' + team(m.h, true) + team(m.a, false) + '</div>' +
+      '<div class="prices">' + box(m.p1) + box(m.p2) + '</div>' +
+      (m.skip ? '<p class="note">' + esc(m.skip) + '</p>' :
+        '<div class="conf"><span>' + esc(m.pl) + '</span><div class="bar"><i style="width:' + m.pct + '%"></i></div><em>' + m.pct + '%</em></div>') +
+      '</article>';
+  }).join("");
+  document.getElementById("list").innerHTML = html;
+
+  var text = [
+    "⚽️บอลวันที่ 7/11/69⚽️",
+    "",
+    "⚡ สเต็ป 3",
+    "⏰21.30 ไลป์ซิก พบ เอาก์สบวร์ก สูง 2.5",
+    "⏰02.45 โรม พบ ซาสซูโอโล่ สูง 2.5",
+    "⏰03.05 เปแอสเช พบ ทรัวส์ สูง 2.5",
+    "————————————",
+    "🔥 สเต็ป 4",
+    "⏰21.30 ไลป์ซิก พบ เอาก์สบวร์ก สูง 2.5",
+    "⏰22.00 อาร์เซน่อล พบ ฮัลล์ สูง 2.5",
+    "⏰02.45 โรม พบ ซาสซูโอโล่ สูง 2.5",
+    "⏰03.05 เปแอสเช พบ ทรัวส์ สูง 2.5",
+    "————————————",
+    "⭐ ตัวเน้นสุด",
+    "🥇 เปแอสเช พบ ทรัวส์ สูง 2.5",
+    "🥈 ไลป์ซิก พบ เอาก์สบวร์ก สูง 2.5",
+    "🥉 โรม พบ ซาสซูโอโล่ สูง 2.5",
+    "",
+    "ข้อมูลจากสถิติ ไม่รับประกันผล เล่นเฉพาะเงินที่เสียได้"
+  ].join("\n");
+  var ta = document.getElementById("msg"), st = document.getElementById("status");
+  ta.value = text;
+  document.getElementById("copy").addEventListener("click", function () {
+    function fallback() {
+      ta.focus(); ta.select();
+      st.textContent = "ก๊อปอัตโนมัติไม่ได้ แตะค้างที่กล่องข้างล่างแล้วเลือกคัดลอก";
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () {
+        st.textContent = "คัดลอกแล้ว ไปวางใน LINE ได้เลย";
+      }, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script></body></html>
