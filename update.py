@@ -20,7 +20,11 @@ LEAGUES = {  # id: (ธง, ชื่อลีก)
 }
 ORDER = list(LEAGUES)
 MIN_PROB = 0.56
-MAX_MATCHES = 22  # แต่ละคู่ใช้ 2 ครั้ง (ราคา + % ชนะ) โควตาฟรีวันละ 100
+MAX_MATCHES = 40  # แต่ละคู่ใช้ 1 ครั้ง (ราคา) โควตาฟรีวันละ 100 รัน 2 รอบ
+
+
+class Quota(Exception):
+    pass
 
 
 def api(path, **params):
@@ -40,6 +44,9 @@ def api(path, **params):
             raise
     if d.get("errors"):
         print("API แจ้ง:", d["errors"])
+        er = d["errors"]
+        if isinstance(er, dict) and any(k in er for k in ("requests", "token", "access")):
+            raise Quota(str(er))
     return d.get("response", [])
 
 
@@ -328,6 +335,13 @@ def send_telegram(text):
 
 
 def main():
+    try:
+        run()
+    except Quota as e:
+        print("โควตา/สิทธิ์ api-football มีปัญหา ไม่เขียนทับข้อมูลเดิม:", e)
+
+
+def run():
     if not KEY:
         sys.exit("ไม่มี API_FOOTBALL_KEY")
     history = []
@@ -362,7 +376,7 @@ def main():
         h, a = f["teams"]["home"], f["teams"]["away"]
         odds = api("/odds", fixture=f["fixture"]["id"])
         hc, ou, hp, hcs, ous = analyse(odds, h["name"], a["name"])
-        pr = get_pred(f["fixture"]["id"])
+        pr = get_pred(f["fixture"]["id"]) if os.environ.get("USE_PRED") == "1" else None  # ปิดไว้ประหยัดโควตา ใช้ % จากราคา 1X2 แทน
         base_line = hp["L"] if hp else None
         if not pr and hp:  # ไม่มีสถิติ ใช้ % ชนะที่คำนวณจากราคา 1X2 ของตลาดแทน
             pr = hp.get("m")
