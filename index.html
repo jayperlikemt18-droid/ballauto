@@ -69,7 +69,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
 <main>
   <header>
     <h1>⚽ BALL AUTO</h1>
-    <p class="sub">ราคาบอลคืนวันเสาร์ที่ 7 พ.ย. 2026 เวลาตามไทย</p>
+    <p class="sub" id="sub">กำลังโหลด...</p>
   </header>
 
   <div class="legend" aria-label="วิธีอ่าน">
@@ -83,91 +83,64 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
 
   <section class="stepbox" aria-label="สเต็ป">
     <h2>สเต็ปคืนนี้</h2>
-    <div class="row"><b>⚡ สเต็ป 3</b><span>ไลป์ซิก · โรม · เปแอสเช สูง 2.5</span></div>
-    <div class="row"><b>🔥 สเต็ป 4</b><span>3 คู่ข้างบน + อาร์เซน่อล สูง 2.5</span></div>
-    <div class="row"><b>💣 สเต็ป 5 และ 7</b><span class="off">ข้อมูลไม่พอ</span></div>
+    <div id="steps"></div>
     <button class="btn" id="copy" type="button">คัดลอกข้อความ LINE</button>
     <p class="note" id="status" role="status">กดแล้ววางใน LINE ได้เลย</p>
     <textarea id="msg" readonly aria-label="ข้อความ LINE"></textarea>
   </section>
 
-  <p class="warn">ตัวเลขต่อรองมาจาก goal7 และเส้นสูง/ต่ำ 2.5 มาจากเว็บอ้างอิง ราคาจริงของแต่ละเจ้าอาจต่างกัน ถ้าเจ้าตั้งสูง/ต่ำที่ 3 ขึ้นไป ให้ข้ามคู่นั้น ผิดคู่เดียวเสียหมด</p>
+  <p class="warn">ราคาและเส้นต่อรองมาจากตลาด ราคาจริงของแต่ละเจ้าอาจต่างกัน ถ้าเจ้าตั้งสูง/ต่ำที่ 3 ขึ้นไป ให้ข้ามคู่นั้น ชื่อทีมเป็นภาษาอังกฤษ</p>
   <p class="foot">ที่มา <a href="https://goal7.co">goal7</a>, <a href="https://www.kickoff.co.uk">Kickoff</a> · ข้อมูลจากสถิติ ไม่รับประกันผล</p>
 </main>
 
 <script>
 (function () {
-  var M = [
-    { t: "21:30", d: "เสาร์", flag: "🇩🇪", lg: "บุนเดสลีกา เยอรมัน",
-      h: ["ไลป์ซิก", "RBL", "#d6202b", 721], a: ["เอาก์สบวร์ก", "AUG", "#2a7a3a", 16],
-      p1: ["ต่อรอง (เว็บ)", "1/1.5", 0], p2: ["สูง/ต่ำ", "สูง 2.5", 1], pct: 76, pl: "โอกาสสูง" },
-    { t: "22:00", d: "เสาร์", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", lg: "พรีเมียร์ลีก อังกฤษ",
-      h: ["อาร์เซน่อล", "ARS", "#d31f2a", 57], a: ["ฮัลล์ ซิตี้", "HUL", "#e59a1b"],
-      p1: ["ต่อรอง (เว็บ)", "2/2.5", 0], p2: ["สูง/ต่ำ", "สูง 2.5", 1], pct: 64, pl: "โอกาสสูง (จากราคา)" },
-    { t: "00:30", d: "อาทิตย์", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", lg: "พรีเมียร์ลีก อังกฤษ", skip: "ซิตี้ชนะ 61% แต่เส้นสูง/ต่ำไม่ชัด ข้าม",
-      h: ["น็อตติ้งแฮม ฟอเรสต์", "NFO", "#c4202a", 351], a: ["แมนฯ ซิตี้", "MCI", "#5fb4e6", 65],
-      p1: ["ต่อรอง (เว็บ)", "1", 0], p2: ["ผล", "ข้าม", 0] },
-    { t: "02:45", d: "อาทิตย์", flag: "🇮🇹", lg: "เซเรีย อา อิตาลี",
-      h: ["โรม", "ROM", "#8b1d2c", 100], a: ["ซาสซูโอโล่", "SAS", "#1a8a4a", 471],
-      p1: ["ต่อรอง (เว็บ)", "1.5/2", 0], p2: ["สูง/ต่ำ", "สูง 2.5", 1], pct: 71, pl: "โอกาสสูง" },
-    { t: "03:05", d: "อาทิตย์", flag: "🇫🇷", lg: "ลีกเอิง ฝรั่งเศส",
-      h: ["เปแอสเช", "PSG", "#1c3a7a", 524], a: ["ทรัวส์", "TRO", "#1b5fb4"],
-      p1: ["ต่อรอง (เว็บ)", "2/2.5", 0], p2: ["สูง/ต่ำ", "สูง 2.5", 1], pct: 76, pl: "โอกาสสูง" }
-  ];
+  var list = document.getElementById("list"), ta = document.getElementById("msg"), st = document.getElementById("status");
+  var text = "";
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function team(x, home) {
-    return '<div class="team"><span class="badge" style="background:' + x[2] + '" aria-hidden="true">' + esc(x[1]) + (x[3] ? '<img alt="" src="https://crests.football-data.org/' + x[3] + '.png" onerror="this.remove()">' : '') + '</span>' +
-      '<span class="nm">' + esc(x[0]) + '</span>' + (home ? '<span class="home">เหย้า</span>' : '') + '</div>';
+    var ini = esc(x.n.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase());
+    return '<div class="team"><span class="badge" style="background:#34425f">' + ini +
+      '<img alt="" src="' + esc(x.l) + '" onerror="this.remove()"></span><span class="nm">' + esc(x.n) + '</span>' +
+      (home ? '<span class="home">เหย้า</span>' : '') + '</div>';
   }
-  function box(p) {
-    return '<div class="box' + (p[2] ? ' pick' : '') + '"><small>' + esc(p[0]) + '</small><b>' + esc(p[1]) + '</b>' +
-      (p[2] ? '<span class="tick">✓ เลือก</span>' : '') + '</div>';
+  function box(l, v, pick) {
+    return '<div class="box' + (pick ? ' pick' : '') + '"><small>' + l + '</small><b>' + esc(v) + '</b>' + (pick ? '<span class="tick">✓ เลือก</span>' : '') + '</div>';
   }
-  var html = M.map(function (m) {
-    return '<article class="match' + (m.skip ? ' skip' : '') + '">' +
-      '<div class="top"><span class="league"><span class="flag" aria-hidden="true">' + m.flag + '</span>' + esc(m.lg) + '</span>' +
-      '<span class="time">' + esc(m.t) + '<small>' + esc(m.d) + '</small></span></div>' +
-      '<div class="teams">' + team(m.h, true) + team(m.a, false) + '</div>' +
-      '<div class="prices">' + box(m.p1) + box(m.p2) + '</div>' +
-      (m.skip ? '<p class="note">' + esc(m.skip) + '</p>' :
-        '<div class="conf"><span>' + esc(m.pl) + '</span><div class="bar"><i style="width:' + m.pct + '%"></i></div><em>' + m.pct + '%</em></div>') +
-      '</article>';
-  }).join("");
-  document.getElementById("list").innerHTML = html;
-
-  var text = [
-    "⚽️บอลวันที่ 7/11/69⚽️",
-    "",
-    "⚡ สเต็ป 3",
-    "⏰21.30 ไลป์ซิก พบ เอาก์สบวร์ก สูง 2.5",
-    "⏰02.45 โรม พบ ซาสซูโอโล่ สูง 2.5",
-    "⏰03.05 เปแอสเช พบ ทรัวส์ สูง 2.5",
-    "————————————",
-    "🔥 สเต็ป 4",
-    "⏰21.30 ไลป์ซิก พบ เอาก์สบวร์ก สูง 2.5",
-    "⏰22.00 อาร์เซน่อล พบ ฮัลล์ สูง 2.5",
-    "⏰02.45 โรม พบ ซาสซูโอโล่ สูง 2.5",
-    "⏰03.05 เปแอสเช พบ ทรัวส์ สูง 2.5",
-    "————————————",
-    "⭐ ตัวเน้นสุด",
-    "🥇 เปแอสเช พบ ทรัวส์ สูง 2.5",
-    "🥈 ไลป์ซิก พบ เอาก์สบวร์ก สูง 2.5",
-    "🥉 โรม พบ ซาสซูโอโล่ สูง 2.5",
-    "",
-    "ข้อมูลจากสถิติ ไม่รับประกันผล เล่นเฉพาะเงินที่เสียได้"
-  ].join("\n");
-  var ta = document.getElementById("msg"), st = document.getElementById("status");
-  ta.value = text;
-  document.getElementById("copy").addEventListener("click", function () {
-    function fallback() {
-      ta.focus(); ta.select();
-      st.textContent = "ก๊อปอัตโนมัติไม่ได้ แตะค้างที่กล่องข้างล่างแล้วเลือกคัดลอก";
+  function hm(t) { return t.replace(":", "."); }
+  function line(m) { return "⏰" + hm(m.t) + " " + m.h.n + " พบ " + m.a.n + " " + m.ou.lab; }
+  function render(d) {
+    document.getElementById("sub").textContent = "อัปเดตล่าสุด " + d.updated + " เวลาตามไทย";
+    if (!d.matches.length) { list.innerHTML = '<p class="note">ตอนนี้ยังไม่มีคู่ในลีกที่ติดตาม</p>'; return; }
+    list.innerHTML = d.matches.map(function (m) {
+      return '<article class="match' + (m.ou ? '' : ' skip') + '"><div class="top"><span class="league"><span class="flag">' + m.flag + '</span>' + esc(m.lg) +
+        '</span><span class="time">' + esc(m.t) + '<small>' + esc(m.d) + '</small></span></div><div class="teams">' + team(m.h, true) + team(m.a, false) + '</div>' +
+        '<div class="prices">' + box("ต่อรอง", m.hc || "ไม่มีราคา", false) + box("สูง/ต่ำ", m.ou ? m.ou.lab : "ไม่ชัด ข้าม", !!m.ou) + '</div>' +
+        (m.ou ? '<div class="conf"><span>โอกาสจากราคาตลาด</span><div class="bar"><i style="width:' + m.ou.pct + '%"></i></div><em>' + m.ou.pct + '%</em></div>' : '') + '</article>';
+    }).join("");
+    var picks = d.matches.filter(function (m) { return m.ou; }).sort(function (a, b) { return b.ou.pct - a.ou.pct; });
+    var rows = "", out = ["⚽️บอลวันที่ " + d.date + "⚽️", ""];
+    [[3, "⚡"], [5, "🔥"], [7, "💣"]].forEach(function (s) {
+      if (picks.length < s[0]) { rows += '<div class="row"><b>' + s[1] + ' สเต็ป ' + s[0] + '</b><span class="off">คู่ไม่พอ</span></div>'; return; }
+      var c = picks.slice(0, s[0]).sort(function (a, b) { return a.ts - b.ts; });
+      rows += '<div class="row"><b>' + s[1] + ' สเต็ป ' + s[0] + '</b><span>' + c.length + ' คู่ ดูในข้อความ</span></div>';
+      out.push(s[1] + " สเต็ป " + s[0]); c.forEach(function (m) { out.push(line(m)); }); out.push("————————————");
+    });
+    if (picks.length) {
+      out.push("⭐ ตัวเน้นสุด");
+      picks.slice(0, 3).forEach(function (m, i) { out.push(["🥇", "🥈", "🥉"][i] + " " + m.h.n + " พบ " + m.a.n + " " + m.ou.lab); });
+      out.push("");
     }
-    try {
-      navigator.clipboard.writeText(text).then(function () {
-        st.textContent = "คัดลอกแล้ว ไปวางใน LINE ได้เลย";
-      }, fallback);
-    } catch (e) { fallback(); }
+    out.push("ข้อมูลจากราคาตลาด ไม่รับประกันผล เล่นเฉพาะเงินที่เสียได้");
+    text = out.join("\n"); ta.value = text;
+    document.getElementById("steps").innerHTML = rows;
+  }
+  fetch("data.json?" + Date.now()).then(function (r) { return r.json(); }).then(render).catch(function () {
+    list.innerHTML = '<p class="note">ยังไม่มีข้อมูล รอให้ระบบรันครั้งแรก</p>';
+  });
+  document.getElementById("copy").addEventListener("click", function () {
+    function fb() { ta.focus(); ta.select(); st.textContent = "แตะค้างที่กล่องข้างล่างแล้วเลือกคัดลอก"; }
+    try { navigator.clipboard.writeText(text).then(function () { st.textContent = "คัดลอกแล้ว ไปวางใน LINE ได้เลย"; }, fb); } catch (e) { fb(); }
   });
 })();
 </script></body></html>
