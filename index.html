@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>BALL AUTO</title>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>BALL AUTO</title><link rel="apple-touch-icon" href="icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="BALL AUTO"><meta name="theme-color" content="#0b1220">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Sarabun:wght@400;500;600&display=swap">
 <style>
 /* Layout: header, then one card per match. Card: country flag + league + time, two team rows with colour badges, two price boxes, confidence bar. Single dark look by choice. */
@@ -64,6 +64,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
 .foot { color: var(--muted); font-size: 0.82rem; text-align: center; }
 .foot a { color: var(--go); }
 .badge{position:relative;overflow:hidden}.badge img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:5px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}.chip{white-space:nowrap;background:var(--tile);color:var(--fg);border:1px solid var(--line);border-radius:99px;padding:8px 14px;font:inherit;font-size:.9rem;cursor:pointer}.chip.on{background:var(--go-deep);border-color:var(--go);color:#fff}
 </style></head><body>
 
 <main>
@@ -77,6 +78,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     <span><i class="dot o"></i>ช่องสีเทา คือราคาอ้างอิง</span>
   </div>
 
+  <div class="chips" id="chips"></div>
   <div id="list" style="display:contents">
     <!-- rendered by script below -->
   </div>
@@ -89,7 +91,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     <textarea id="msg" readonly aria-label="ข้อความ LINE"></textarea>
   </section>
 
-  <section class="stepbox" id="hist" hidden><h2>ผลที่แนะนำไป</h2><p class="note" id="hsum"></p><div id="hlist"></div></section>
+  <section class="stepbox" id="hist" hidden><h2>ผลที่แนะนำไป</h2><p class="note" id="hsum"></p><div id="hby"></div><div id="hlist"></div></section>
 
   <p class="warn">ราคาและเส้นต่อรองมาจากตลาด ราคาจริงของแต่ละเจ้าอาจต่างกัน ถ้าเจ้าตั้งสูง/ต่ำที่ 3 ขึ้นไป ให้ข้ามคู่นั้น</p>
   <p class="foot">ที่มา <a href="https://goal7.co">goal7</a>, <a href="https://www.kickoff.co.uk">Kickoff</a> · ข้อมูลจากสถิติ ไม่รับประกันผล</p>
@@ -99,15 +101,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
 (function () {
   var list = document.getElementById("list"), ta = document.getElementById("msg"), st = document.getElementById("status");
   var text = "";
-  var TH = {
-"arsenal":"อาร์เซน่อล","aston villa":"แอสตัน วิลล่า","bournemouth":"บอร์นมัธ","brentford":"เบรนท์ฟอร์ด","brighton":"ไบรท์ตัน","burnley":"เบิร์นลีย์","chelsea":"เชลซี","crystal palace":"คริสตัล พาเลซ","everton":"เอฟเวอร์ตัน","fulham":"ฟูแล่ม","leeds":"ลีดส์","liverpool":"ลิเวอร์พูล","manchester city":"แมนฯ ซิตี้","manchester united":"แมนฯ ยูไนเต็ด","newcastle":"นิวคาสเซิล","nottingham forest":"ฟอเรสต์","sunderland":"ซันเดอร์แลนด์","tottenham":"สเปอร์ส","west ham":"เวสต์แฮม","wolves":"วูล์ฟส์","coventry":"โคเวนทรี","ipswich":"อิปสวิช","leicester":"เลสเตอร์","hull city":"ฮัลล์ ซิตี้","southampton":"เซาธ์แฮมป์ตัน",
-"bayern munich":"บาเยิร์น","borussia dortmund":"ดอร์ทมุนด์","rb leipzig":"ไลป์ซิก","bayer leverkusen":"เลเวอร์คูเซ่น","eintracht frankfurt":"แฟรงค์เฟิร์ต","vfb stuttgart":"ชตุทการ์ท","borussia monchengladbach":"เกลนบัค","borussia mönchengladbach":"เกลนบัค","sc freiburg":"ไฟร์บวร์ก","werder bremen":"เบรเมน","vfl wolfsburg":"โวล์ฟสบวร์ก","fsv mainz 05":"ไมนซ์","mainz":"ไมนซ์","fc augsburg":"เอาก์สบวร์ก","augsburg":"เอาก์สบวร์ก","1899 hoffenheim":"ฮอฟเฟ่นไฮม์","hoffenheim":"ฮอฟเฟ่นไฮม์","union berlin":"อูนีลน์ แบร์ลิน","st. pauli":"ซังต์เพาลี","fc st. pauli":"ซังต์เพาลี","hamburger sv":"ฮัมบวร์ก","1. fc heidenheim":"ไฮเดนไฮม์","fc koln":"โคโลญ","fc köln":"โคโลญ",
-"juventus":"ยูเวนตุส","ac milan":"เอซี มิลาน","inter":"อินเตอร์ มิลาน","napoli":"นาโปลี","roma":"โรม่า","as roma":"โรม","lazio":"ลาซิโอ","atalanta":"อตาลันต้า","fiorentina":"ฟิออเรนติน่า","bologna":"โบโลญญ่า","torino":"โตริโน่","genoa":"เจนัว","udinese":"อูดิเนเซ่","sassuolo":"ซาสซูโอโล่","cagliari":"กาลยารี","hellas verona":"เวโรน่า","verona":"เวโรน่า","lecce":"เลชเช่","parma":"ปาร์ม่า","como":"โคโม่","cremonese":"เครโมเนเซ่","pisa":"ปิซ่า","venezia":"เวเนเซีย",
-"paris saint germain":"เปแอสเช","paris saint-germain":"เปแอสเช","marseille":"มาร์กเซย","lyon":"ลียง","monaco":"โมนาโก","lille":"ลีลล์","nice":"นีซ","rennes":"แรนส์","lens":"ล็องส์","strasbourg":"สตราสบูร์ก","toulouse":"ตูลูส","nantes":"น็องต์","brest":"เบรสต์","reims":"แร็งส์","angers":"อองเช่ร์","auxerre":"โอแซร์","le havre":"เลออาฟร์","metz":"เมทซ์","lorient":"ลอริยองต์","paris fc":"ปารีส เอฟซี","troyes":"ทรัวส์","estac troyes":"ทรัวส์","sv elversberg":"เอลเวอร์สแบร์ก","elversberg":"เอลเวอร์สแบร์ก",
-"real madrid":"เรอัล มาดริด","barcelona":"บาร์เซโลน่า","atletico madrid":"แอตฯ มาดริด","sevilla":"เซบีย่า","real sociedad":"โซเซียดาด","villarreal":"บีญาร์เรอัล","real betis":"เรอัล เบติส","athletic club":"บิลเบา","valencia":"บาเลนเซีย","girona":"จิโรน่า","celta vigo":"เซลต้า บีโก้","osasuna":"โอซาซูน่า","mallorca":"มายอร์ก้า","getafe":"เกตาเฟ่","rayo vallecano":"ราโย บาเยกาโน","espanyol":"เอสปันญอล","alaves":"อาลาเบส","elche":"เอลเช่","levante":"เลบันเต้","real oviedo":"โอเบียโด","oviedo":"โอเบียโด","malaga":"มาลาก้า","racing santander":"ราซิ่ง ซานตันเดร์",
-"sporting cp":"สปอร์ติ้ง ลิสบอน","benfica":"เบนฟิก้า","porto":"ปอร์โต้","ajax":"อาแจ็กซ์","psv eindhoven":"พีเอสวี","celtic":"เซลติก","galatasaray":"กาลาทาซาราย","club brugge":"คลับ บรูจส์",
-"bayern munchen":"บาเยิร์น","atletico madrid":"แอตฯ มาดริด","braga":"บราก้า","sc braga":"บราก้า","feyenoord":"เฟเยนูร์ด","az alkmaar":"เออแซด อัลค์มาร์","fc twente":"ทเวนเต้","twente":"ทเวนเต้","rangers":"เรนเจอร์ส","club brugge kv":"คลับ บรูจส์","anderlecht":"แอนเดอร์เลชท์","union st. gilloise":"ยูนียง แซงต์-จิลลัวส์","genk":"เคงค์","krc genk":"เคงค์","fenerbahce":"เฟเนร์บาห์เช่","besiktas":"เบซิกตัส","trabzonspor":"ตราบซอนสปอร์","olympiacos":"โอลิมเปียกอส","olympiacos piraeus":"โอลิมเปียกอส","paok":"พีเอโอเค","aek athens fc":"เออีเค เอเธนส์","panathinaikos":"พานาธิไนกอส","shakhtar donetsk":"ชัคตาร์ โดเนตสก์","dynamo kyiv":"ไดนาโม เคียฟ","red bull salzburg":"ซัลซ์บวร์ก","salzburg":"ซัลซ์บวร์ก","sturm graz":"สตูร์ม กราซ","rapid wien":"ราปิด เวียนนา","young boys":"ยัง บอยส์","basel":"บาเซิล","fc basel":"บาเซิล","fc copenhagen":"โคเปนเฮเกน","midtjylland":"มิดทิลลันด์","bodo/glimt":"บูดเยอ/กลิมท์","molde":"โมลด์เด","malmo ff":"มัลเมอ","slavia praha":"สลาเวีย ปราก","sparta praha":"สปาร์ตา ปราก","viktoria plzen":"วิกตอเรีย พลเซน","ferencvaros":"เฟเรนซ์วารอส","dinamo zagreb":"ไดนาโม ซาเกร็บ","crvena zvezda":"เรดสตาร์ เบลเกรด","red star belgrade":"เรดสตาร์ เบลเกรด","qarabag":"การาบัก","maccabi tel aviv":"มัคคาบี้ เทลอาวีฟ","legia warszawa":"เลเกีย วอร์ซอ","lech poznan":"เลค โพซนาน","ludogorets":"ลูโดโกเรตส์","fcsb":"เอฟซีเอสบี","pafos":"ปาฟอส","slovan bratislava":"สโลวาน บราติสลาวา","millwall":"มิลล์วอลล์","middlesbrough":"มิดเดิลสโบรช์","sheffield united":"เชฟฯ ยูไนเต็ด","west brom":"เวสต์บรอม","norwich":"นอริช","watford":"วัตฟอร์ด","swansea":"สวอนซี","qpr":"คิวพีอาร์","stoke":"สโต๊ค","blackburn":"แบล็คเบิร์น","derby":"เดอร์บี้","preston":"เพรสตัน","portsmouth":"พอร์ทสมัธ","bristol city":"บริสตอล ซิตี้","plymouth":"พลีมัธ","birmingham":"เบอร์มิงแฮม","wrexham":"เร็กซ์แฮม","charlton":"ชาร์ลตัน","oxford united":"ออกซ์ฟอร์ด","leganes":"เลกาเนส","las palmas":"ลาส พัลมาส","deportivo la coruna":"เดปอร์ติโบ","racing santander":"ราซิ่ง ซานตันเดร์","almeria":"อัลเมเรีย","granada":"กรานาด้า","sporting gijon":"สปอร์ติ้ง คิฆอน","cadiz":"กาดิซ","sampdoria":"ซามพ์โดเรีย","palermo":"ปาแลร์โม่","spezia":"สเปเซีย","monza":"มอนซ่า","empoli":"เอมโปลี","salernitana":"ซาแลร์นิตาน่า","frosinone":"โฟรซิโนเน่","bari":"บารี","st etienne":"แซงต์ เอเตียน","saint etienne":"แซงต์ เอเตียน","montpellier":"มงต์เปลลิเย่ร์","clermont":"แกลร์มงต์","bordeaux":"บอร์โดซ์","hannover 96":"ฮันโนเวอร์","hertha berlin":"แฮร์ธา เบอร์ลิน","schalke 04":"ชาลเก้","fc nurnberg":"นูเรมเบิร์ก","hamburger":"ฮัมบวร์ก","kaiserslautern":"ไกเซอร์สเลาเทิร์น","fortuna dusseldorf":"ดึสเซลดอร์ฟ","paderborn":"พาเดอร์บอร์น","darmstadt":"ดาร์มสตัดท์","magdeburg":"มักเดบวร์ก","greuther furth":"ฟือร์ท","spvgg greuther furth":"ฟือร์ท","dynamo dresden":"ไดนาโม เดรสเดน","eintracht braunschweig":"เบราน์ชไวก์","energie cottbus":"คอตต์บุส"
-};
+  var TH = {};
 function tn(n) { var k = String(n).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); return TH[k] || TH[String(n).toLowerCase()] || n; }
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
@@ -133,14 +127,25 @@ function tn(n) { var k = String(n).toLowerCase().normalize("NFD").replace(/[\u03
   function render(d) {
     document.getElementById("sub").textContent = "อัปเดตล่าสุด " + d.updated + " เวลาตามไทย";
     if (!d.matches.length) { list.innerHTML = '<p class="note">ตอนนี้ยังไม่มีคู่ในลีกที่ติดตาม</p>'; return; }
-    list.innerHTML = d.matches.map(function (m) {
+    function cards(ms) { return ms.map(function (m) {
       return '<article class="match' + (m.ou && !m.ou.weak ? '' : ' skip') + '"><div class="top"><span class="league"><span class="flag">' + m.flag + '</span>' + esc(m.lg) +
         '</span><span class="time">' + esc(m.t) + '<small>' + esc(m.d) + '</small></span></div><div class="teams">' + team(m.h, true) + team(m.a, false) + '</div>' +
         '<div class="prices">' + box("ต่อรอง", m.hp ? nm(m, m.hp.lab) : (m.hc ? nm(m, m.hc) : "ไม่มีราคา"), !!m.hp) + box("สูง/ต่ำ", m.ou ? (m.ou.weak ? m.ou.line : m.ou.lab) : "ไม่มีราคา", !!(m.ou && !m.ou.weak)) + '</div>' +
         ((m.hcs && m.hcs.length > 1) || (m.ous && m.ous.length > 1) ? '<p class="note" style="text-align:left">ราคาอื่น · ต่อรอง ' + esc((m.hcs || []).join(' · ')) + ' · สูง/ต่ำ ' + esc((m.ous || []).join(' · ')) + '</p>' : '') +
         (m.ou && !m.ou.weak ? '<div class="conf"><span>โอกาสจากราคาตลาด</span><div class="bar"><i style="width:' + m.ou.pct + '%"></i></div><em>' + m.ou.pct + '%</em></div>' : '') + '</article>';
-    }).join("");
+    }).join(""); }
     var picks = d.matches.filter(function (m) { m.pk = best(m); return !!m.pk; }).sort(function (a, b) { return b.pk.pct - a.pk.pct; });
+    var f = { lg: "", only: false }, chips = document.getElementById("chips");
+    var lgs = []; d.matches.forEach(function (m) { if (lgs.indexOf(m.lg) < 0) lgs.push(m.lg); });
+    chips.innerHTML = '<button class="chip" data-k="all">ทั้งหมด</button><button class="chip" data-k="only">เฉพาะคู่ที่เลือก</button>' +
+      lgs.map(function (x) { return '<button class="chip" data-k="' + esc(x) + '">' + esc(x) + '</button>'; }).join("");
+    function draw() {
+      var ms = d.matches.filter(function (m) { return (!f.lg || m.lg === f.lg) && (!f.only || m.pk); });
+      list.innerHTML = ms.length ? cards(ms) : '<p class="note">ไม่มีคู่ตามตัวกรอง</p>';
+      Array.prototype.forEach.call(chips.children, function (c) { c.classList.toggle("on", c.getAttribute("data-k") === (f.only ? "only" : (f.lg || "all"))); });
+    }
+    chips.onclick = function (ev) { var k = ev.target.getAttribute && ev.target.getAttribute("data-k"); if (!k) return; f.only = k === "only"; f.lg = (k === "all" || k === "only") ? "" : k; draw(); };
+    draw();
     var rows = "", out = ["⚽️บอลวันที่ " + d.date + "⚽️", ""];
     [[3, "⚡"], [5, "🔥"], [7, "💣"]].forEach(function (s) {
       if (picks.length < s[0]) { rows += '<div class="row"><b>' + s[1] + ' สเต็ป ' + s[0] + '</b><span class="off">คู่ไม่พอ</span></div>'; return; }
@@ -153,14 +158,19 @@ function tn(n) { var k = String(n).toLowerCase().normalize("NFD").replace(/[\u03
       picks.slice(0, 3).forEach(function (m, i) { out.push(["🥇", "🥈", "🥉"][i] + " " + m.pk.txt); });
       out.push("");
     }
-    out.push("ข้อมูลจากราคาตลาด ไม่รับประกันผล เล่นเฉพาะเงินที่เสียได้");
-    text = out.join("\n"); ta.value = text;
+    text = out.join("\n").replace(/\s+$/, ""); ta.value = text;
     document.getElementById("steps").innerHTML = rows;
     var H = (d.history || []).filter(function (e) { return e.res !== null && e.res !== undefined; }).slice(-60).reverse();
     if (H.length) {
       var w = 0, l = 0, z = 0;
       H.forEach(function (e) { if (e.res > 0) w++; else if (e.res < 0) l++; else z++; });
       document.getElementById("hsum").textContent = "เข้า " + w + " · ตาย " + l + " · เจ๊า " + z + " (จาก " + H.length + " ที่เช็กผลแล้ว)";
+      var ALL = (d.history || []).filter(function (e) { return e.res !== null && e.res !== undefined; });
+      function cnt(a) { var w = 0, l = 0; a.forEach(function (e) { if (e.res > 0) w++; else if (e.res < 0) l++; }); return "เข้า " + w + " ตาย " + l; }
+      var by = '<div class="row"><b>สูง/ต่ำ</b><span>' + cnt(ALL.filter(function (e) { return e.k === "ou"; })) + '</span></div><div class="row"><b>ต่อรอง</b><span>' + cnt(ALL.filter(function (e) { return e.k === "hp"; })) + '</span></div>';
+      var seen = {}; ALL.forEach(function (e) { if (e.lg) seen[e.lg] = 1; });
+      Object.keys(seen).forEach(function (g) { var a = ALL.filter(function (e) { return e.lg === g; }); if (a.length >= 3) by += '<div class="row"><b>' + esc(g) + '</b><span>' + cnt(a) + '</span></div>'; });
+      document.getElementById("hby").innerHTML = by;
       document.getElementById("hlist").innerHTML = H.map(function (e) {
         var what = e.k === "ou" ? tn(e.hn) + " พบ " + tn(e.an) + " " + (e.s === "over" ? "สูง " : "ต่ำ ") + e.lt
           : tn(e.team) + " " + (e.lt === "เสมอ" ? "เสมอ" : (e.giver ? "ต่อ " : "รอง ") + e.lt) + " (" + tn(e.hn) + " พบ " + tn(e.an) + ")";
@@ -170,7 +180,7 @@ function tn(n) { var k = String(n).toLowerCase().normalize("NFD").replace(/[\u03
       document.getElementById("hist").hidden = false;
     }
   }
-  fetch("data.json?" + Date.now()).then(function (r) { return r.json(); }).then(render).catch(function () {
+  fetch("names.json").then(function (r) { return r.json(); }).catch(function () { return {}; }).then(function (n) { TH = n; return fetch("data.json?" + Date.now()); }).then(function (r) { return r.json(); }).then(render).catch(function () {
     list.innerHTML = '<p class="note">ยังไม่มีข้อมูล รอให้ระบบรันครั้งแรก</p>';
   });
   document.getElementById("copy").addEventListener("click", function () {

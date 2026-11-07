@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ดึงตารางแข่งและราคาจาก api-football แล้วเขียน data.json ให้หน้าเว็บอ่าน"""
-import json, os, sys, time, urllib.error, urllib.request, urllib.parse
+import json, os, sys, time, unicodedata, urllib.error, urllib.request, urllib.parse
 from datetime import datetime, timedelta, timezone
 
 KEY = os.environ.get("API_FOOTBALL_KEY", "").strip()
@@ -100,10 +100,25 @@ def find_bet(bookmakers, bet_id):
     return []
 
 
+def find_totals(bookmakers):
+    v = find_bet(bookmakers, 5)
+    if v:
+        return v
+    for b in bookmakers:  # ลองบ่อนอื่น/ชื่ออื่นที่เป็นสูง/ต่ำเต็มเวลา
+        for bet in b.get("bets", []):
+            n = (bet.get("name") or "").lower()
+            if "over/under" in n and not any(w in n for w in ("half", "home", "away", "team", "corner", "card", "exact")):
+                if any(str(x.get("value", "")).startswith("Over ") for x in bet.get("values", [])):
+                    return bet["values"]
+    names = sorted({bet.get("name") for b in bookmakers for bet in b.get("bets", [])})
+    print("ไม่พบสูง/ต่ำ มีแต่:", names[:12])
+    return []
+
+
 def analyse(odds, home, away):
     res = odds[0].get("bookmakers", []) if odds else []
     ou = None
-    vals = {v["value"]: float(v["odd"]) for v in find_bet(res, 5)}
+    vals = {v["value"]: float(v["odd"]) for v in find_totals(res)}
     best_t = None
     for k, o in vals.items():
         if not k.startswith("Over "):
@@ -176,6 +191,75 @@ def analyse(odds, home, away):
     return hc, ou, hp, [thai_line(x) for x in sorted(set(hcs))], ["%g" % x for x in sorted(set(ous))]
 
 
+def load_names():
+    try:
+        with open("names.json", encoding="utf-8") as fh:
+            return json.load(fh)
+    except Exception:
+        return {}
+
+
+NAMES = load_names()
+
+
+def tn(n):
+    k = "".join(c for c in unicodedata.normalize("NFD", n.lower()) if unicodedata.category(c) != "Mn")
+    return NAMES.get(k) or NAMES.get(n.lower()) or n
+
+
+def _swap(m, t):
+    return t.replace(m["h"]["n"], tn(m["h"]["n"])).replace(m["a"]["n"], tn(m["a"]["n"]))
+
+
+def best_pick(m):
+    a = b = None
+    ou, hp = m.get("ou"), m.get("hp")
+    if ou and not ou["weak"]:
+        g = m["hc"].split(" ต่อ ")[0] if m.get("hc") and " ต่อ " in m["hc"] else m["h"]["n"]
+        a = (ou["pct"], "%s %s" % (tn(g), ou["lab"]))
+    if hp:
+        b = (hp["pct"], _swap(m, hp["lab"]))
+    if a and b:
+        return a if a[0] >= b[0] else b
+    return a or b
+
+
+def build_message(data):
+    picks = []
+    for m in data["matches"]:
+        pk = best_pick(m)
+        if pk:
+            picks.append((pk[0], m, pk[1]))
+    picks.sort(key=lambda x: -x[0])
+    out = ["⚽️บอลวันที่ %s⚽️" % data["date"], ""]
+    for n, icon in ((3, "⚡"), (5, "🔥"), (7, "💣")):
+        if len(picks) < n:
+            continue
+        out.append("%s สเต็ป %d" % (icon, n))
+        for _, m, txt in sorted(picks[:n], key=lambda x: x[1]["ts"]):
+            out.append("⏰%s %s" % (m["t"].replace(":", "."), txt))
+        out.append("————————————")
+    if picks:
+        out.append("⭐ ตัวเน้นสุด")
+        for medal, (_, _, txt) in zip("🥇🥈🥉", picks[:3]):
+            out.append("%s %s" % (medal, txt))
+        out.append("")
+    return "\n".join(out).rstrip(), len(picks)
+
+
+def send_telegram(text):
+    tok, chat = os.environ.get("TELEGRAM_TOKEN", "").strip(), os.environ.get("TELEGRAM_CHAT", "").strip()
+    if not tok or not chat:
+        print("ไม่ได้ตั้งเทเลแกรม ข้ามการส่ง")
+        return
+    body = urllib.parse.urlencode({"chat_id": chat, "text": text}).encode()
+    try:
+        urllib.request.urlopen("https://api.telegram.org/bot%s/sendMessage" % tok, data=body, timeout=30)
+        print("ส่งเทเลแกรมแล้ว")
+    except Exception as e:
+        print("ส่งเทเลแกรมไม่สำเร็จ:", e)
+
+
 def main():
     if not KEY:
         sys.exit("ไม่มี API_FOOTBALL_KEY")
@@ -213,7 +297,7 @@ def main():
         flag, lg = LEAGUES[f["league"]["id"]]
         if not any(e["id"] == f["fixture"]["id"] for e in history):
             base = {"id": f["fixture"]["id"], "ts": int(t.timestamp()), "d": "%02d/%02d" % (t.day, t.month),
-                    "hn": h["name"], "an": a["name"], "res": None}
+                    "hn": h["name"], "an": a["name"], "lg": lg, "res": None}
             if ou and not ou["weak"]:
                 history.append(dict(base, k="ou", s=ou["s"], x=ou["x"], lt=ou["line"], pct=ou["pct"]))
             if hp:
@@ -232,6 +316,10 @@ def main():
     with open("data.json", "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, indent=1)
     print("เขียน data.json แล้ว %d คู่" % len(matches))
+    if os.environ.get("SEND") == "1":
+        text, n = build_message(data)
+        if n:
+            send_telegram(text)
 
 
 if __name__ == "__main__":
