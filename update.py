@@ -170,31 +170,8 @@ def analyse(odds, home, away):
                 ous.append(float(k.split()[1]))
             except ValueError:
                 pass
-    hp = None
+    hp = {"L": best[1]} if best else None
     if best:
-        ho = ao = None
-        for v in find_bet(res, 4):
-            try:
-                if v["value"] == "Home %s" % v["value"].split()[1] and float(v["value"].split()[1]) == best[1]:
-                    ho = float(v["odd"])
-                if v["value"].startswith("Away ") and float(v["value"].split()[1]) == -best[1]:
-                    ao = float(v["odd"])
-            except (ValueError, IndexError):
-                pass
-        if ho and ao and abs(ho - ao) >= 0.04:
-            ph = (1 / ho) / ((1 / ho) + (1 / ao))
-            home_lean = ho < ao
-            pct = round((ph if home_lean else 1 - ph) * 100)
-            L = best[1]
-            team = home if home_lean else away
-            giver = (home_lean and L < 0) or ((not home_lean) and L > 0)
-            if L != 0 and pct >= 52:
-                hp = {"lab": "%s %s %s" % (team, "ต่อ" if giver else "รอง", thai_line(L)), "pct": pct,
-                      "team": team, "giver": giver, "lt": thai_line(L), "side": "home" if home_lean else "away",
-                      "h": L if home_lean else -L}
-            elif L == 0 and pct >= 52:
-                hp = {"lab": "%s เสมอ" % team, "pct": pct, "team": team, "giver": False, "lt": "เสมอ",
-                      "side": "home" if home_lean else "away", "h": 0}
         line = best[1]
         hc = ("%s ต่อ %s" % (home, thai_line(line))) if line < 0 else (
             ("%s ต่อ %s" % (away, thai_line(line))) if line > 0 else "เสมอ")
@@ -226,12 +203,24 @@ def best_pick(m):
     ou, hp = m.get("ou"), m.get("hp")
     if ou and not ou["weak"]:
         g = m["hc"].split(" ต่อ ")[0] if m.get("hc") and " ต่อ " in m["hc"] else m["h"]["n"]
-        a = (ou["pct"], "%s %s" % (tn(g), ou["lab"]))
+        a = (ou["pct"], "%s %s" % (tn(g), ou["lab"]), "ou")
     if hp:
-        b = (hp["pct"], _swap(m, hp["lab"]))
+        b = (hp["pct"], _swap(m, hp["lab"]), "hp")
     if a and b:
         return a if a[0] >= b[0] else b
     return a or b
+
+
+def select(picks, n):
+    cap = -(-n * 3 // 5)  # ชนิดเดียวกันไม่เกิน 60% ของสเต็ป
+    chosen, rest, cnt = [], [], {}
+    for p in picks:
+        if len(chosen) < n and cnt.get(p[3], 0) < cap:
+            chosen.append(p)
+            cnt[p[3]] = cnt.get(p[3], 0) + 1
+        else:
+            rest.append(p)
+    return (chosen + rest)[:n]
 
 
 def build_message(data):
@@ -239,19 +228,19 @@ def build_message(data):
     for m in data["matches"]:
         pk = best_pick(m)
         if pk:
-            picks.append((pk[0], m, pk[1]))
+            picks.append((pk[0], m, pk[1], pk[2]))
     picks.sort(key=lambda x: -x[0])
     out = ["⚽️บอลวันที่ %s⚽️" % data["date"], ""]
     for n, icon in ((3, "⚡"), (5, "🔥"), (7, "💣")):
         if len(picks) < n:
             continue
         out.append("%s สเต็ป %d" % (icon, n))
-        for _, m, txt in sorted(picks[:n], key=lambda x: x[1]["ts"]):
+        for _, m, txt, _k in sorted(select(picks, n), key=lambda x: x[1]["ts"]):
             out.append("⏰%s %s" % (m["t"].replace(":", "."), txt))
         out.append("————————————")
     if picks:
         out.append("⭐ ตัวเน้นสุด")
-        for medal, (_, _, txt) in zip("🥇🥈🥉", picks[:3]):
+        for medal, (_, _, txt, _k) in zip("🥇🥈🥉", select(picks, 3)):
             out.append("%s %s" % (medal, txt))
         out.append("")
     return "\n".join(out).rstrip(), len(picks)
@@ -305,9 +294,20 @@ def main():
         odds = api("/odds", fixture=f["fixture"]["id"])
         hc, ou, hp, hcs, ous = analyse(odds, h["name"], a["name"])
         pr = get_pred(f["fixture"]["id"])
-        if hp and pr:  # ตลาดกับสถิติต้องเห็นตรงกัน ไม่งั้นไม่เลือกต่อรอง
-            if (hp["side"] == "home" and pr["h"] < pr["a"]) or (hp["side"] == "away" and pr["a"] < pr["h"]):
-                hp = None
+        base_line = hp["L"] if hp else None
+        hp = None
+        if pr and base_line:  # เลือกทีมจาก % โอกาสชนะ ต่อใส่ (-) รองใส่ (+)
+            fav = "home" if pr["h"] >= pr["a"] else "away"
+            win = max(pr["h"], pr["a"])
+            giver = "home" if base_line < 0 else "away"
+            L = abs(base_line)
+            team = h["name"] if fav == "home" else a["name"]
+            if win >= 55 and giver == fav and L <= 1:
+                hp = {"lab": "%s -%s" % (team, thai_line(L)), "pct": win, "team": team, "giver": True,
+                      "lt": thai_line(L), "side": fav, "h": -L}
+            elif win >= 55 and giver != fav and L <= 2:
+                hp = {"lab": "%s +%s" % (team, thai_line(L)), "pct": win, "team": team, "giver": False,
+                      "lt": thai_line(L), "side": fav, "h": L}
         flag, lg = LEAGUES[f["league"]["id"]]
         if not any(e["id"] == f["fixture"]["id"] for e in history):
             base = {"id": f["fixture"]["id"], "ts": int(t.timestamp()), "d": "%02d/%02d" % (t.day, t.month),
