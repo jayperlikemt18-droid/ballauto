@@ -1,0 +1,368 @@
+{
+ "updated": "เสาร์ 07/11 10:47 น.",
+ "date": "7/11/69",
+ "matches": [
+  {
+   "t": "19:30",
+   "d": "เสาร์",
+   "ts": 1794054600,
+   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "h": {
+    "n": "Leeds",
+    "l": "https://media.api-sports.io/football/teams/63.png"
+   },
+   "a": {
+    "n": "Tottenham",
+    "l": "https://media.api-sports.io/football/teams/47.png"
+   },
+   "hc": "เสมอ",
+   "ou": null
+  },
+  {
+   "t": "20:00",
+   "d": "เสาร์",
+   "ts": 1794056400,
+   "flag": "🇪🇸",
+   "lg": "ลาลีกา สเปน",
+   "h": {
+    "n": "Malaga",
+    "l": "https://media.api-sports.io/football/teams/535.png"
+   },
+   "a": {
+    "n": "Racing Santander",
+    "l": "https://media.api-sports.io/football/teams/4665.png"
+   },
+   "hc": "Malaga ต่อ 0/0.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 57
+   }
+  },
+  {
+   "t": "21:00",
+   "d": "เสาร์",
+   "ts": 1794060000,
+   "flag": "🇮🇹",
+   "lg": "เซเรีย อา อิตาลี",
+   "h": {
+    "n": "Cagliari",
+    "l": "https://media.api-sports.io/football/teams/490.png"
+   },
+   "a": {
+    "n": "Frosinone",
+    "l": "https://media.api-sports.io/football/teams/512.png"
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 64
+   }
+  },
+  {
+   "t": "21:00",
+   "d": "เสาร์",
+   "ts": 1794060000,
+   "flag": "🇮🇹",
+   "lg": "เซเรีย อา อิตาลี",
+   "h": {
+    "n": "Torino",
+    "l": "https://media.api-sports.io/football/teams/503.png"
+   },
+   "a": {
+    "n": "Lecce",
+    "l": "https://media.api-sports.io/football/teams/867.png"
+   },
+   "hc": "Torino ต่อ 0.5/1",
+   "ou": null
+  },
+  {
+   "t": "21:30",
+   "d": "เสาร์",
+   "ts": 1794061800,
+   "flag": "🇩🇪",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "h": {
+    "n": "Borussia Dortmund",
+    "l": "https://media.api-sports.io/football/teams/165.png"
+   },
+   "a": {
+    "n": "SV Elversberg",
+    "l": "https://media.api-sports.io/football/teams/1660.png"
+   },
+   "hc": "Borussia Dortmund ต่อ 1.5/2",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 68
+   }
+  },
+  {
+   "t": "21:30",
+   "d": "เสาร์",
+   "ts": 1794061800,
+   "flag": "🇩🇪",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "h": {
+    "n": "RB Leipzig",
+    "l": "https://media.api-sports.io/football/teams/173.png"
+   },
+   "a": {
+    "n": "FC Augsburg",
+    "l": "https://media.api-sports.io/football/teams/170.png"
+   },
+   "hc": "RB Leipzig ต่อ 1.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 75
+   }
+  },
+  {
+   "t": "21:30",
+   "d": "เสาร์",
+   "ts": 1794061800,
+   "flag": "🇩🇪",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "h": {
+    "n": "FSV Mainz 05",
+    "l": "https://media.api-sports.io/football/teams/164.png"
+   },
+   "a": {
+    "n": "Bayern München",
+    "l": "https://media.api-sports.io/football/teams/157.png"
+   },
+   "hc": "Bayern München ต่อ 1.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 76
+   }
+  },
+  {
+   "t": "21:30",
+   "d": "เสาร์",
+   "ts": 1794061800,
+   "flag": "🇩🇪",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "h": {
+    "n": "SC Paderborn 07",
+    "l": "https://media.api-sports.io/football/teams/185.png"
+   },
+   "a": {
+    "n": "Eintracht Frankfurt",
+    "l": "https://media.api-sports.io/football/teams/169.png"
+   },
+   "hc": "Eintracht Frankfurt ต่อ 0/0.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 62
+   }
+  },
+  {
+   "t": "22:00",
+   "d": "เสาร์",
+   "ts": 1794063600,
+   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "h": {
+    "n": "Arsenal",
+    "l": "https://media.api-sports.io/football/teams/42.png"
+   },
+   "a": {
+    "n": "Hull City",
+    "l": "https://media.api-sports.io/football/teams/64.png"
+   },
+   "hc": "Arsenal ต่อ 2/2.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 62
+   }
+  },
+  {
+   "t": "22:00",
+   "d": "เสาร์",
+   "ts": 1794063600,
+   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "h": {
+    "n": "Fulham",
+    "l": "https://media.api-sports.io/football/teams/36.png"
+   },
+   "a": {
+    "n": "Newcastle",
+    "l": "https://media.api-sports.io/football/teams/34.png"
+   },
+   "hc": "Fulham ต่อ 0.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 57
+   }
+  },
+  {
+   "t": "22:15",
+   "d": "เสาร์",
+   "ts": 1794064500,
+   "flag": "🇪🇸",
+   "lg": "ลาลีกา สเปน",
+   "h": {
+    "n": "Espanyol",
+    "l": "https://media.api-sports.io/football/teams/540.png"
+   },
+   "a": {
+    "n": "Deportivo La Coruna",
+    "l": "https://media.api-sports.io/football/teams/544.png"
+   },
+   "hc": "Espanyol ต่อ 0/0.5",
+   "ou": null
+  },
+  {
+   "t": "00:00",
+   "d": "อาทิตย์",
+   "ts": 1794070800,
+   "flag": "🇮🇹",
+   "lg": "เซเรีย อา อิตาลี",
+   "h": {
+    "n": "Parma",
+    "l": "https://media.api-sports.io/football/teams/523.png"
+   },
+   "a": {
+    "n": "Bologna",
+    "l": "https://media.api-sports.io/football/teams/500.png"
+   },
+   "hc": "Bologna ต่อ 0.5",
+   "ou": null
+  },
+  {
+   "t": "00:30",
+   "d": "อาทิตย์",
+   "ts": 1794072600,
+   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "h": {
+    "n": "Nottingham Forest",
+    "l": "https://media.api-sports.io/football/teams/65.png"
+   },
+   "a": {
+    "n": "Manchester City",
+    "l": "https://media.api-sports.io/football/teams/50.png"
+   },
+   "hc": "Manchester City ต่อ 0.5/1",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 57
+   }
+  },
+  {
+   "t": "00:30",
+   "d": "อาทิตย์",
+   "ts": 1794072600,
+   "flag": "🇪🇸",
+   "lg": "ลาลีกา สเปน",
+   "h": {
+    "n": "Osasuna",
+    "l": "https://media.api-sports.io/football/teams/727.png"
+   },
+   "a": {
+    "n": "Athletic Club",
+    "l": "https://media.api-sports.io/football/teams/531.png"
+   },
+   "hc": "Athletic Club ต่อ 0/0.5",
+   "ou": null
+  },
+  {
+   "t": "00:30",
+   "d": "อาทิตย์",
+   "ts": 1794072600,
+   "flag": "🇩🇪",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "h": {
+    "n": "VfB Stuttgart",
+    "l": "https://media.api-sports.io/football/teams/172.png"
+   },
+   "a": {
+    "n": "Werder Bremen",
+    "l": "https://media.api-sports.io/football/teams/162.png"
+   },
+   "hc": "VfB Stuttgart ต่อ 1",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 72
+   }
+  },
+  {
+   "t": "01:00",
+   "d": "อาทิตย์",
+   "ts": 1794074400,
+   "flag": "🇫🇷",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "h": {
+    "n": "Auxerre",
+    "l": "https://media.api-sports.io/football/teams/108.png"
+   },
+   "a": {
+    "n": "Paris FC",
+    "l": "https://media.api-sports.io/football/teams/114.png"
+   },
+   "hc": "Paris FC ต่อ 0.5",
+   "ou": null
+  },
+  {
+   "t": "02:45",
+   "d": "อาทิตย์",
+   "ts": 1794080700,
+   "flag": "🇮🇹",
+   "lg": "เซเรีย อา อิตาลี",
+   "h": {
+    "n": "AS Roma",
+    "l": "https://media.api-sports.io/football/teams/497.png"
+   },
+   "a": {
+    "n": "Sassuolo",
+    "l": "https://media.api-sports.io/football/teams/488.png"
+   },
+   "hc": "AS Roma ต่อ 1.5/2",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 70
+   }
+  },
+  {
+   "t": "03:00",
+   "d": "อาทิตย์",
+   "ts": 1794081600,
+   "flag": "🇪🇸",
+   "lg": "ลาลีกา สเปน",
+   "h": {
+    "n": "Valencia",
+    "l": "https://media.api-sports.io/football/teams/532.png"
+   },
+   "a": {
+    "n": "Real Madrid",
+    "l": "https://media.api-sports.io/football/teams/541.png"
+   },
+   "hc": "Real Madrid ต่อ 1.5/2",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 66
+   }
+  },
+  {
+   "t": "03:05",
+   "d": "อาทิตย์",
+   "ts": 1794081900,
+   "flag": "🇫🇷",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "h": {
+    "n": "Paris Saint Germain",
+    "l": "https://media.api-sports.io/football/teams/85.png"
+   },
+   "a": {
+    "n": "Estac Troyes",
+    "l": "https://media.api-sports.io/football/teams/110.png"
+   },
+   "hc": "Paris Saint Germain ต่อ 2.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "pct": 75
+   }
+  }
+ ]
+}
