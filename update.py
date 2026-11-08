@@ -345,9 +345,12 @@ def run():
     if not KEY:
         sys.exit("ไม่มี API_FOOTBALL_KEY")
     history = []
+    old = []
     try:
         with open("data.json", encoding="utf-8") as fh:
-            history = json.load(fh).get("history", [])
+            _d = json.load(fh)
+            history = _d.get("history", [])
+            old = _d.get("matches", [])
     except Exception:
         pass
     try:
@@ -372,8 +375,15 @@ def run():
     out = sorted(out[:MAX_MATCHES], key=lambda x: x[0])
     elo_map = load_elo()
     matches = []
+    # ล็อกคู่เด็ดเดิมที่ยังไม่เตะ ไม่เปลี่ยนคู่ที่แจกไปแล้ว และไม่เสียโควตาดึงราคาซ้ำ
+    locked = {m["id"]: m for m in old
+              if m.get("id") and m["ts"] > now.timestamp() and (m.get("hp") or (m.get("ou") and not m["ou"].get("weak")))}
     for t, f in out:
         h, a = f["teams"]["home"], f["teams"]["away"]
+        if f["fixture"]["id"] in locked:
+            m0 = dict(locked[f["fixture"]["id"]], lock=True)
+            matches.append(m0)
+            continue
         odds = api("/odds", fixture=f["fixture"]["id"])
         hc, ou, hp, hcs, ous = analyse(odds, h["name"], a["name"])
         pr = get_pred(f["fixture"]["id"]) if os.environ.get("USE_PRED") == "1" else None  # ปิดไว้ประหยัดโควตา ใช้ % จากราคา 1X2 แทน
@@ -409,7 +419,7 @@ def run():
                 history.append(dict(base, k="hp", side=hp["side"], h=hp["h"], lt=hp["lt"], team=hp["team"],
                                     giver=hp["giver"], pct=hp["pct"]))
         matches.append({
-            "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": flag, "lg": lg,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": hc, "ou": ou, "hp": hp, "pr": pr, "elo": round(e) if e is not None else None, "hcs": hcs, "ous": ous,

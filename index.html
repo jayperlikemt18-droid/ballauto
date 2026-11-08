@@ -65,6 +65,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
 .foot a { color: var(--go); }
 .badge{position:relative;overflow:hidden}.badge img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:5px}
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}.chip{white-space:nowrap;background:var(--tile);color:var(--fg);border:1px solid var(--line);border-radius:99px;padding:8px 14px;font:inherit;font-size:.9rem;cursor:pointer}.chip.on{background:var(--go-deep);border-color:var(--go);color:#fff}
+[hidden]{display:none!important}.btn.alt{background:var(--tile);border:1px solid var(--line);margin-top:8px}.sel{display:flex;gap:8px;align-items:center;font-size:.9rem;color:var(--muted);cursor:pointer}.sel input{width:20px;height:20px;accent-color:#2fd48a}#imgbox{display:flex;flex-direction:column;gap:8px;align-items:center}#imgbox img{width:100%;border-radius:12px}.lock{font-size:.8rem;margin-left:6px}
 </style></head><body>
 
 <main>
@@ -87,6 +88,8 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     <h2>สเต็ปคืนนี้</h2>
     <div id="steps"></div>
     <button class="btn" id="copy" type="button">คัดลอกข้อความ LINE</button>
+    <button class="btn alt" id="img" type="button">บันทึกเป็นรูปการ์ด</button>
+    <div id="imgbox" hidden></div>
     <p class="note" id="status" role="status">กดแล้ววางใน LINE ได้เลย</p>
     <textarea id="msg" readonly aria-label="ข้อความ LINE"></textarea>
   </section>
@@ -100,10 +103,8 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
 <script>
 (function () {
   var list = document.getElementById("list"), ta = document.getElementById("msg"), st = document.getElementById("status");
-  var text = "";
-  var TH = {};
-function tn(n) { var k = String(n).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); return TH[k] || TH[String(n).toLowerCase()] || n; }
-
+  var text = "", TH = {}, D = null, SEL = {}, SK = "ballsel", OUT = null, F = { lg: "", only: true };
+  function tn(n) { var k = String(n).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); return TH[k] || TH[String(n).toLowerCase()] || n; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function team(x, home) {
     var ini = esc(x.n.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase());
@@ -124,69 +125,124 @@ function tn(n) { var k = String(n).toLowerCase().normalize("NFD").replace(/[\u03
     if (a && b) return a.pct >= b.pct ? a : b;
     return a || b;
   }
-  function line(m) { return "⏰" + hm(m.t) + " " + m.pk.txt; }
-  function render(d) {
-    document.getElementById("sub").textContent = "อัปเดตล่าสุด " + d.updated + " เวลาตามไทย";
-    if (!d.matches.length) { list.innerHTML = '<p class="note">ตอนนี้ยังไม่มีคู่ในลีกที่ติดตาม</p>'; return; }
-    function cards(ms) { return ms.map(function (m) {
-      return '<article class="match' + (m.ou && !m.ou.weak ? '' : ' skip') + '"><div class="top"><span class="league"><span class="flag">' + m.flag + '</span>' + esc(m.lg) +
-        '</span><span class="time">' + esc(m.t) + '<small>' + esc(m.d) + '</small></span></div><div class="teams">' + team(m.h, true) + team(m.a, false) + '</div>' +
+  function manual(m) { return m.ou ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null; }
+  function key(m) { return String(m.id || (m.ts + m.h.n)); }
+  function pkOf(m) { var s = SEL[key(m)], auto = best(m); if (s === 0) return null; if (s === 1) return auto || manual(m); return auto; }
+  function loadSel() { try { var o = JSON.parse(localStorage.getItem(SK) || "{}"); SEL = o.date === D.date ? (o.sel || {}) : {}; } catch (e) { SEL = {}; } }
+  function saveSel() { try { localStorage.setItem(SK, JSON.stringify({ date: D.date, sel: SEL })); } catch (e) {} }
+
+  function cards(ms) {
+    return ms.map(function (m) {
+      var can = !!(best(m) || manual(m));
+      return '<article class="match' + (m.pk ? '' : ' skip') + '"><div class="top"><span class="league"><span class="flag">' + m.flag + '</span>' + esc(m.lg) +
+        '</span><span class="time">' + esc(m.t) + '<small>' + esc(m.d) + '</small>' + (m.lock ? '<span class="lock" title="ล็อกแล้ว">🔒</span>' : '') + '</span></div><div class="teams">' + team(m.h, true) + team(m.a, false) + '</div>' +
         (m.pr && !(m.pr.h === 10 && m.pr.d === 45 && m.pr.a === 45) ? '<p class="note" style="text-align:left">โอกาสชนะ เหย้า ' + m.pr.h + '% · เสมอ ' + m.pr.d + '% · เยือน ' + m.pr.a + '%' + (m.elo != null ? ' · Elo เหย้า ' + m.elo + '%' : '') + '</p>' : '') +
         '<div class="prices">' + box("ต่อรอง", m.hp ? nm(m, m.hp.lab) : (m.hc ? sg(nm(m, m.hc)) : "ไม่มีราคา"), !!m.hp) + box("สูง/ต่ำ", m.ou ? (m.ou.weak ? m.ou.line : m.ou.lab) : "ไม่มีราคา", !!(m.ou && !m.ou.weak)) + '</div>' +
         ((m.hcs && m.hcs.length > 1) || (m.ous && m.ous.length > 1) ? '<p class="note" style="text-align:left">ราคาอื่น · ต่อรอง ' + esc((m.hcs || []).join(' · ')) + ' · สูง/ต่ำ ' + esc((m.ous || []).join(' · ')) + '</p>' : '') +
-        (m.ou && !m.ou.weak ? '<div class="conf"><span>โอกาสจากราคาตลาด</span><div class="bar"><i style="width:' + m.ou.pct + '%"></i></div><em>' + m.ou.pct + '%</em></div>' : '') + '</article>';
-    }).join(""); }
-    var picks = d.matches.filter(function (m) { m.pk = best(m); return !!m.pk; }).sort(function (a, b) { return b.pk.pct - a.pk.pct; });
-    var f = { lg: "", only: false }, chips = document.getElementById("chips");
-    var lgs = []; d.matches.forEach(function (m) { if (lgs.indexOf(m.lg) < 0) lgs.push(m.lg); });
-    chips.innerHTML = '<button class="chip" data-k="all">ทั้งหมด</button><button class="chip" data-k="only">เฉพาะคู่ที่เลือก</button>' +
-      lgs.map(function (x) { return '<button class="chip" data-k="' + esc(x) + '">' + esc(x) + '</button>'; }).join("");
-    function draw() {
-      var ms = d.matches.filter(function (m) { return (!f.lg || m.lg === f.lg) && (!f.only || m.pk); });
-      list.innerHTML = ms.length ? cards(ms) : '<p class="note">ไม่มีคู่ตามตัวกรอง</p>';
-      Array.prototype.forEach.call(chips.children, function (c) { c.classList.toggle("on", c.getAttribute("data-k") === (f.only ? "only" : (f.lg || "all"))); });
-    }
-    chips.onclick = function (ev) { var k = ev.target.getAttribute && ev.target.getAttribute("data-k"); if (!k) return; f.only = k === "only"; f.lg = (k === "all" || k === "only") ? "" : k; draw(); };
-    draw();
-    function sel(n) {
-      var cap = Math.ceil(n * 0.6), chosen = [], rest = [], cnt = {};
-      picks.forEach(function (m) { var k = m.pk.k; if (chosen.length < n && (cnt[k] || 0) < cap) { chosen.push(m); cnt[k] = (cnt[k] || 0) + 1; } else rest.push(m); });
-      return chosen.concat(rest).slice(0, n);
-    }
-    var rows = "", out = ["⚽️บอลวันที่ " + d.date + "⚽️", ""];
+        (m.ou && !m.ou.weak ? '<div class="conf"><span>โอกาสจากราคาตลาด</span><div class="bar"><i style="width:' + m.ou.pct + '%"></i></div><em>' + m.ou.pct + '%</em></div>' : '') +
+        '<label class="sel"><input type="checkbox" data-k="' + esc(key(m)) + '"' + (m.pk ? ' checked' : '') + (can ? '' : ' disabled') + '> เอาเข้าสเต็ป/ข้อความ</label></article>';
+    }).join("");
+  }
+  function draw() {
+    var ms = D.matches.filter(function (m) { return (!F.lg || m.lg === F.lg) && (!F.only || best(m) || SEL[key(m)] === 1); });
+    if (F.only) ms = ms.slice().sort(function (a, b) { return ((best(b) || manual(b) || { pct: 0 }).pct) - ((best(a) || manual(a) || { pct: 0 }).pct); }).slice(0, 10);
+    D.matches.forEach(function (m) { m.pk = pkOf(m); });
+    list.innerHTML = ms.length ? cards(ms) : '<p class="note">ตอนนี้ยังไม่มีคู่เด็ด ลองกด "ทุกคู่"</p>';
+    Array.prototype.forEach.call(document.getElementById("chips").children, function (c) { c.classList.toggle("on", c.getAttribute("data-k") === (F.only ? "only" : (F.lg || "all"))); });
+  }
+  function sel(picks, n) {
+    var cap = Math.ceil(n * 0.6), chosen = [], rest = [], cnt = {};
+    picks.forEach(function (m) { var k = m.pk.k; if (chosen.length < n && (cnt[k] || 0) < cap) { chosen.push(m); cnt[k] = (cnt[k] || 0) + 1; } else rest.push(m); });
+    return chosen.concat(rest).slice(0, n);
+  }
+  function recompute() {
+    D.matches.forEach(function (m) { m.pk = pkOf(m); });
+    var picks = D.matches.filter(function (m) { return !!m.pk; }).sort(function (a, b) { return b.pk.pct - a.pk.pct; });
+    var rows = "", out = ["⚽️บอลวันที่ " + D.date + "⚽️", ""];
+    OUT = { date: D.date, steps: [], top: [] };
     [[3, "⚡"], [5, "🔥"], [7, "💣"]].forEach(function (s) {
       if (picks.length < s[0]) { rows += '<div class="row"><b>' + s[1] + ' สเต็ป ' + s[0] + '</b><span class="off">คู่ไม่พอ</span></div>'; return; }
-      var c = sel(s[0]).sort(function (a, b) { return a.ts - b.ts; });
+      var c = sel(picks, s[0]).sort(function (a, b) { return a.ts - b.ts; });
       rows += '<div class="row"><b>' + s[1] + ' สเต็ป ' + s[0] + '</b><span>' + c.length + ' คู่ ดูในข้อความ</span></div>';
-      out.push(s[1] + " สเต็ป " + s[0]); c.forEach(function (m) { out.push(line(m)); }); out.push("————————————");
+      out.push(s[1] + " สเต็ป " + s[0]);
+      var ls = [];
+      c.forEach(function (m) { out.push("⏰" + hm(m.t) + " " + m.pk.txt); ls.push({ t: hm(m.t), x: m.pk.txt }); });
+      out.push("————————————");
+      OUT.steps.push({ icon: s[1], n: s[0], lines: ls });
     });
     if (picks.length) {
       out.push("⭐ ตัวเน้นสุด");
-      sel(3).forEach(function (m, i) { out.push(["🥇", "🥈", "🥉"][i] + " " + m.pk.txt); });
+      sel(picks, 3).forEach(function (m, i) { out.push(["🥇", "🥈", "🥉"][i] + " " + m.pk.txt); OUT.top.push({ m: ["🥇", "🥈", "🥉"][i], x: m.pk.txt }); });
       out.push("");
     }
     text = out.join("\n").replace(/\s+$/, ""); ta.value = text;
     document.getElementById("steps").innerHTML = rows;
-    var H = (d.history || []).filter(function (e) { return e.res !== null && e.res !== undefined; }).slice(-60).reverse();
-    if (H.length) {
-      var w = 0, l = 0, z = 0;
-      H.forEach(function (e) { if (e.res > 0) w++; else if (e.res < 0) l++; else z++; });
-      document.getElementById("hsum").textContent = "เข้า " + w + " · ตาย " + l + " · เจ๊า " + z + " (จาก " + H.length + " ที่เช็กผลแล้ว)";
-      var ALL = (d.history || []).filter(function (e) { return e.res !== null && e.res !== undefined; });
-      function cnt(a) { var w = 0, l = 0; a.forEach(function (e) { if (e.res > 0) w++; else if (e.res < 0) l++; }); return "เข้า " + w + " ตาย " + l; }
-      var by = '<div class="row"><b>สูง/ต่ำ</b><span>' + cnt(ALL.filter(function (e) { return e.k === "ou"; })) + '</span></div><div class="row"><b>ต่อรอง</b><span>' + cnt(ALL.filter(function (e) { return e.k === "hp"; })) + '</span></div>';
-      var seen = {}; ALL.forEach(function (e) { if (e.lg) seen[e.lg] = 1; });
-      Object.keys(seen).forEach(function (g) { var a = ALL.filter(function (e) { return e.lg === g; }); if (a.length >= 3) by += '<div class="row"><b>' + esc(g) + '</b><span>' + cnt(a) + '</span></div>'; });
-      document.getElementById("hby").innerHTML = by;
-      document.getElementById("hlist").innerHTML = H.map(function (e) {
-        var what = e.k === "ou" ? tn(e.hn) + " พบ " + tn(e.an) + " " + (e.s === "over" ? "สูง " : "ต่ำ ") + e.lt
-          : tn(e.team) + " " + (e.giver ? "-" : "+") + e.lt + " (" + tn(e.hn) + " พบ " + tn(e.an) + ")";
-        var ic = e.res === 1 ? "✅ เข้า" : e.res === 0.5 ? "✅ ได้ครึ่ง" : e.res === 0 ? "➖ เจ๊า" : e.res === -0.5 ? "❌ เสียครึ่ง" : "❌ ตาย";
-        return '<div class="row"><b>' + esc(e.d) + '</b><span style="color:var(--fg);font-weight:500;flex:1;text-align:left">' + esc(what) + ' · ' + e.gh + '-' + e.ga + '</span><span class="' + (e.res < 0 ? 'off' : '') + '">' + ic + '</span></div>';
-      }).join("");
-      document.getElementById("hist").hidden = false;
-    }
   }
+  function history(d) {
+    var H = (d.history || []).filter(function (e) { return e.res !== null && e.res !== undefined; }).slice(-60).reverse();
+    if (!H.length) return;
+    var w = 0, l = 0, z = 0;
+    H.forEach(function (e) { if (e.res > 0) w++; else if (e.res < 0) l++; else z++; });
+    document.getElementById("hsum").textContent = "เข้า " + w + " · ตาย " + l + " · เจ๊า " + z + " (จาก " + H.length + " ที่เช็กผลแล้ว)";
+    var ALL = (d.history || []).filter(function (e) { return e.res !== null && e.res !== undefined; });
+    function cnt(a) { var w2 = 0, l2 = 0; a.forEach(function (e) { if (e.res > 0) w2++; else if (e.res < 0) l2++; }); return "เข้า " + w2 + " ตาย " + l2; }
+    var by = '<div class="row"><b>สูง/ต่ำ</b><span>' + cnt(ALL.filter(function (e) { return e.k === "ou"; })) + '</span></div><div class="row"><b>ต่อรอง</b><span>' + cnt(ALL.filter(function (e) { return e.k === "hp"; })) + '</span></div>';
+    var seen = {}; ALL.forEach(function (e) { if (e.lg) seen[e.lg] = 1; });
+    Object.keys(seen).forEach(function (g) { var a = ALL.filter(function (e) { return e.lg === g; }); if (a.length >= 3) by += '<div class="row"><b>' + esc(g) + '</b><span>' + cnt(a) + '</span></div>'; });
+    document.getElementById("hby").innerHTML = by;
+    document.getElementById("hlist").innerHTML = H.map(function (e) {
+      var what = e.k === "ou" ? tn(e.hn) + " พบ " + tn(e.an) + " " + (e.s === "over" ? "สูง " : "ต่ำ ") + e.lt
+        : tn(e.team) + " " + (e.giver ? "-" : "+") + e.lt + " (" + tn(e.hn) + " พบ " + tn(e.an) + ")";
+      var ic = e.res === 1 ? "✅ เข้า" : e.res === 0.5 ? "✅ ได้ครึ่ง" : e.res === 0 ? "➖ เจ๊า" : e.res === -0.5 ? "❌ เสียครึ่ง" : "❌ ตาย";
+      return '<div class="row"><b>' + esc(e.d) + '</b><span style="color:var(--fg);font-weight:500;flex:1;text-align:left">' + esc(what) + ' · ' + e.gh + '-' + e.ga + '</span><span class="' + (e.res < 0 ? 'off' : '') + '">' + ic + '</span></div>';
+    }).join("");
+    document.getElementById("hist").hidden = false;
+  }
+  function render(d) {
+    D = d; loadSel();
+    document.getElementById("sub").textContent = "อัปเดตล่าสุด " + d.updated + " เวลาตามไทย";
+    var chips = document.getElementById("chips"), lgs = [];
+    d.matches.forEach(function (m) { if (lgs.indexOf(m.lg) < 0) lgs.push(m.lg); });
+    chips.innerHTML = '<button class="chip" data-k="only">คู่เด็ด</button><button class="chip" data-k="all">ทุกคู่</button>' +
+      lgs.map(function (x) { return '<button class="chip" data-k="' + esc(x) + '">' + esc(x) + '</button>'; }).join("");
+    chips.onclick = function (ev) { var k = ev.target.getAttribute && ev.target.getAttribute("data-k"); if (!k) return; F.only = k === "only"; F.lg = (k === "all" || k === "only") ? "" : k; draw(); };
+    list.onchange = function (ev) { var t = ev.target; if (!t.getAttribute || t.getAttribute("data-k") === null || t.type !== "checkbox") return; SEL[t.getAttribute("data-k")] = t.checked ? 1 : 0; saveSel(); recompute(); draw(); };
+    if (!d.matches.length) { list.innerHTML = '<p class="note">ตอนนี้ยังไม่มีคู่ในลีกที่ติดตาม</p>'; }
+    else { recompute(); draw(); }
+    history(d);
+  }
+
+  function makeImage() {
+    if (!OUT || (!OUT.steps.length && !OUT.top.length)) { st.textContent = "ยังไม่มีคู่ให้ทำรูป"; return; }
+    var W = 1080, P = 64, y = P, rows = [];
+    rows.push({ k: "h", x: "⚽ บอลวันที่ " + OUT.date });
+    OUT.steps.forEach(function (s) { rows.push({ k: "s", x: s.icon + " สเต็ป " + s.n }); s.lines.forEach(function (l) { rows.push({ k: "l", t: l.t, x: l.x }); }); });
+    if (OUT.top.length) { rows.push({ k: "s", x: "⭐ ตัวเน้นสุด" }); OUT.top.forEach(function (l) { rows.push({ k: "m", t: l.m, x: l.x }); }); }
+    var H = P * 2 + rows.reduce(function (a, r) { return a + (r.k === "h" ? 110 : r.k === "s" ? 96 : 66); }, 0);
+    var c = document.createElement("canvas"); c.width = W; c.height = H; var g = c.getContext("2d");
+    var gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, "#0b1220"); gr.addColorStop(1, "#16223a"); g.fillStyle = gr; g.fillRect(0, 0, W, H);
+    g.textBaseline = "middle";
+    rows.forEach(function (r) {
+      if (r.k === "h") { g.fillStyle = "#eaf0f7"; g.font = '700 60px Prompt, Sarabun, sans-serif'; g.fillText(r.x, P, y + 40); y += 110; }
+      else if (r.k === "s") { g.fillStyle = "#2fd48a"; g.font = '700 46px Prompt, Sarabun, sans-serif'; g.fillText(r.x, P, y + 56); y += 96; }
+      else { g.fillStyle = "#8b99b0"; g.font = '500 36px Prompt, Sarabun, sans-serif'; g.fillText(r.k === "l" ? "⏰ " + r.t : r.t, P, y + 28); g.fillStyle = "#eaf0f7"; g.font = '600 40px Prompt, Sarabun, sans-serif'; g.fillText(r.x, P + (r.k === "l" ? 210 : 90), y + 28); y += 66; }
+    });
+    var box = document.getElementById("imgbox");
+    c.toBlob(function (blob) {
+      if (!blob) { st.textContent = "สร้างรูปไม่สำเร็จ"; return; }
+      var url = URL.createObjectURL(blob), file = null;
+      try { file = new File([blob], "ballauto.png", { type: "image/png" }); } catch (e) {}
+      box.innerHTML = '<img alt="การ์ดสเต็ป" src="' + url + '"><p class="note">แตะค้างที่รูป แล้วเลือกบันทึก/แชร์</p>' + (file && navigator.canShare && navigator.canShare({ files: [file] }) ? '<button class="btn" id="shr" type="button">แชร์รูป</button>' : "");
+      box.hidden = false;
+      var b = document.getElementById("shr");
+      if (b) b.onclick = function () { navigator.share({ files: [file] }).catch(function () {}); };
+    }, "image/png");
+  }
+  document.getElementById("img").addEventListener("click", function () {
+    var go = function () { makeImage(); };
+    try { Promise.all([document.fonts.load('700 46px Prompt'), document.fonts.load('600 40px Prompt')]).then(go, go); } catch (e) { go(); }
+  });
+
   fetch("names.json").then(function (r) { return r.json(); }).catch(function () { return {}; }).then(function (n) { TH = n; return fetch("data.json?" + Date.now()); }).then(function (r) { return r.json(); }).then(render).catch(function () {
     list.innerHTML = '<p class="note">ยังไม่มีข้อมูล รอให้ระบบรันครั้งแรก</p>';
   });
