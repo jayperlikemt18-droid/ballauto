@@ -515,7 +515,7 @@ def run():
     matches = []
     # ล็อกคู่เด็ดเดิมที่ยังไม่เตะ ไม่เปลี่ยนคู่ที่แจกไปแล้ว
     locked = {m["id"]: m for m in old
-              if m.get("id") and m["ts"] > now.timestamp() and (m.get("hp") or (m.get("ou") and not m["ou"].get("weak")))}
+              if m.get("id") and m.get("v") == 2 and m["ts"] > now.timestamp() and (m.get("hp") or (m.get("ou") and not m["ou"].get("weak")))}
     snap = {k: v for k, v in old_snap.items() if v.get("ts", 0) > now.timestamp() - 86400}
     bad_kind, bad_lg = calibrate(history)
     cands = []
@@ -635,7 +635,7 @@ def run():
                 history.append(dict(base, k="hp", side=hp["side"], h=hp["h"], lt=hp["lt"], team=hp["team"],
                                     giver=hp["giver"], pct=hp["pct"]))
         matches.append({
-            "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "v": 2, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"],
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "elo": round(e) if e is not None else None,
