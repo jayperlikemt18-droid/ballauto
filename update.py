@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ดึงตารางแข่งและราคาจาก api-football แล้วเขียน data.json ให้หน้าเว็บอ่าน"""
-import json, os, sys, time, unicodedata, urllib.error, urllib.request, urllib.parse
+import json, math, os, sys, time, unicodedata, urllib.error, urllib.request, urllib.parse
 from datetime import datetime, timedelta, timezone
 
 KEY = os.environ.get("API_FOOTBALL_KEY", "").strip()
@@ -24,7 +24,8 @@ LEAGUES = {  # id: (ธง, ชื่อลีก)
 }
 ORDER = list(LEAGUES)
 MIN_PROB = 0.56
-MAX_MATCHES = 40  # แต่ละคู่ใช้ 1 ครั้ง (ราคา) โควตาฟรีวันละ 100 รัน 2 รอบ
+MAX_MATCHES = 400
+MAX_MODEL = 10  # คู่ที่เช็กสถิติย้อนหลัง คู่ละ 2 ครั้ง  # แต่ละคู่ใช้ 1 ครั้ง (ราคา) โควตาฟรีวันละ 100 รัน 2 รอบ
 
 
 class Quota(Exception):
@@ -51,7 +52,109 @@ def api(path, **params):
         er = d["errors"]
         if isinstance(er, dict) and any(k in er for k in ("requests", "token", "access")):
             raise Quota(str(er))
+    api.paging = d.get("paging") or {}
     return d.get("response", [])
+
+
+def bulk_odds(day, max_pages=20):
+    """ดึงราคาทั้งวันทีละหน้า (10 คู่/หน้า) ประหยัดโควตากว่าดึงทีละคู่"""
+    m = {}
+    page = 1
+    while page <= max_pages:
+        try:
+            r = api("/odds", date=day, page=page)
+        except Quota:
+            raise
+        except Exception as e:
+            print("odds หน้า", page, "พลาด:", e)
+            break
+        for x in r:
+            m[x["fixture"]["id"]] = x
+        total = (api.paging or {}).get("total", 1)
+        if page >= total:
+            break
+        page += 1
+    print("ราคา", day, len(m), "คู่")
+    return m
+
+
+def calibrate(history):
+    """ดูผลย้อนหลัง: ชนิด/ลีกไหนแย่ชัดเจน ตัดทิ้ง (ต้องมีผลอย่างน้อย 30 / 10 คู่)"""
+    def rate(a):
+        w = sum(1 for e in a if e["res"] > 0)
+        l = sum(1 for e in a if e["res"] < 0)
+        return (w / (w + l), w + l) if w + l else (None, 0)
+    done = [e for e in history if e.get("res") is not None]
+    bad_kind, bad_lg = set(), set()
+    for k in ("ou", "hp"):
+        r, n = rate([e for e in done if e.get("k") == k])
+        if n >= 30 and r < 0.48:
+            bad_kind.add(k)
+    for g in {e.get("lg") for e in done}:
+        r, n = rate([e for e in done if e.get("lg") == g])
+        if n >= 10 and r < 0.40:
+            bad_lg.add(g)
+    print("ตัดชนิด:", bad_kind, "ตัดลีก:", bad_lg)
+    return bad_kind, bad_lg
+
+
+def bm_ou(books, x, side):
+    out = []
+    for b in books:
+        for bet in b.get("bets", []):
+            if bet.get("id") != 5:
+                continue
+            v = {i.get("value"): i.get("odd") for i in bet.get("values", [])}
+            o, u = v.get("Over %g" % x), v.get("Under %g" % x)
+            try:
+                po = (1 / float(o)) / ((1 / float(o)) + (1 / float(u)))
+            except (TypeError, ValueError, ZeroDivisionError):
+                continue
+            out.append(round((po if side == "over" else 1 - po) * 100))
+    return out
+
+
+def bm_win(books, side):
+    out = []
+    for b in books:
+        for bet in b.get("bets", []):
+            if bet.get("id") != 1:
+                continue
+            v = {i.get("value"): i.get("odd") for i in bet.get("values", [])}
+            try:
+                tot = sum(1 / float(v[k]) for k in ("Home", "Draw", "Away"))
+                out.append(round(100 / float(v["Home" if side == "home" else "Away"]) / tot))
+            except (KeyError, TypeError, ValueError, ZeroDivisionError):
+                continue
+    return out
+
+
+def team_form(tid):
+    """ประตูได้/เสียเฉลี่ย 10 นัดหลังสุด (ต้องมีอย่างน้อย 5 นัด)"""
+    fx = api("/fixtures", team=tid, last=10)
+    gf = ga = n = 0
+    for f in fx:
+        if f["fixture"]["status"]["short"] not in ("FT", "AET", "PEN"):
+            continue
+        g = f["goals"]
+        if g["home"] is None or g["away"] is None:
+            continue
+        mine = g["home"] if f["teams"]["home"]["id"] == tid else g["away"]
+        gf += mine
+        ga += (g["home"] + g["away"]) - mine
+        n += 1
+    return (gf / n, ga / n) if n >= 5 else None
+
+
+def poisson_dist(lh, la, cap=10):
+    def pm(l):
+        p, out = math.exp(-l), []
+        for k in range(cap + 1):
+            out.append(p)
+            p = p * l / (k + 1)
+        return out
+    ph, pa = pm(max(lh, 0.05)), pm(max(la, 0.05))
+    return {(i, j): ph[i] * pa[j] for i in range(cap + 1) for j in range(cap + 1)}
 
 
 def thai_line(n):
@@ -350,11 +453,13 @@ def run():
         sys.exit("ไม่มี API_FOOTBALL_KEY")
     history = []
     old = []
+    old_snap = {}
     try:
         with open("data.json", encoding="utf-8") as fh:
             _d = json.load(fh)
             history = _d.get("history", [])
             old = _d.get("matches", [])
+            old_snap = _d.get("snap", {})
     except Exception:
         pass
     try:
@@ -369,31 +474,38 @@ def run():
     out = []
     for f in fixtures:
         lid = f["league"]["id"]
-        if lid not in LEAGUES or f["fixture"]["status"]["short"] != "NS":
+        if f["fixture"]["status"]["short"] != "NS":
             continue
         t = datetime.fromisoformat(f["fixture"]["date"]).astimezone(TH)
         if not (now <= t.astimezone(timezone.utc) <= end):
             continue
         out.append((t, f))
-    out.sort(key=lambda x: (ORDER.index(x[1]["league"]["id"]), x[0]))
-    out = sorted(out[:MAX_MATCHES], key=lambda x: x[0])
+    out = list({x[1]["fixture"]["id"]: x for x in out}.values())
+    odds_map = {}
+    for day in sorted({now.date(), end.date()}):
+        odds_map.update(bulk_odds(day.isoformat()))
+    out = [x for x in out if x[1]["fixture"]["id"] in odds_map or x[1]["fixture"]["id"] in {m.get("id") for m in old}]
+    out.sort(key=lambda x: x[0])
+    out = out[:MAX_MATCHES]
     elo_map = load_elo()
     matches = []
-    # ล็อกคู่เด็ดเดิมที่ยังไม่เตะ ไม่เปลี่ยนคู่ที่แจกไปแล้ว และไม่เสียโควตาดึงราคาซ้ำ
+    # ล็อกคู่เด็ดเดิมที่ยังไม่เตะ ไม่เปลี่ยนคู่ที่แจกไปแล้ว
     locked = {m["id"]: m for m in old
               if m.get("id") and m["ts"] > now.timestamp() and (m.get("hp") or (m.get("ou") and not m["ou"].get("weak")))}
+    snap = {k: v for k, v in old_snap.items() if v.get("ts", 0) > now.timestamp() - 86400}
+    bad_kind, bad_lg = calibrate(history)
+    cands = []
     for t, f in out:
+        fid = f["fixture"]["id"]
         h, a = f["teams"]["home"], f["teams"]["away"]
-        if f["fixture"]["id"] in locked:
-            m0 = dict(locked[f["fixture"]["id"]], lock=True)
-            matches.append(m0)
+        if fid in locked:
+            matches.append(dict(locked[fid], lock=True))
             continue
-        odds = api("/odds", fixture=f["fixture"]["id"])
+        odds = [odds_map[fid]] if fid in odds_map else []
+        books = odds[0].get("bookmakers", []) if odds else []
         hc, ou, hp, hcs, ous = analyse(odds, h["name"], a["name"])
-        pr = get_pred(f["fixture"]["id"]) if os.environ.get("USE_PRED") == "1" else None  # ปิดไว้ประหยัดโควตา ใช้ % จากราคา 1X2 แทน
         base_line = hp["L"] if hp else None
-        if not pr and hp:  # ไม่มีสถิติ ใช้ % ชนะที่คำนวณจากราคา 1X2 ของตลาดแทน
-            pr = hp.get("m")
+        pr = hp.get("m") if hp else None
         hp = None
         eh, ea = elo_of(elo_map, h["name"]), elo_of(elo_map, a["name"])
         e = (100 / (1 + 10 ** (-(eh + 65 - ea) / 400))) if eh and ea else None
@@ -404,19 +516,89 @@ def run():
             L = abs(base_line)
             team = h["name"] if fav == "home" else a["name"]
             if e is not None and ((e >= 50) != (fav == "home") or max(e, 100 - e) < 55):
-                fav = None  # Elo ไม่เห็นด้วย ข้ามต่อรองคู่นี้
+                fav = None
             if fav is None:
                 pass
-            elif win >= 55 and giver == fav and L <= 1:
+            elif win >= 60 and giver == fav and L <= 1:
                 hp = {"lab": "%s -%s" % (team, thai_line(L)), "pct": win, "team": team, "giver": True,
                       "lt": thai_line(L), "side": fav, "h": -L}
-            elif win >= 55 and giver != fav and L <= 2:
+            elif win >= 60 and giver != fav and L <= 2:
                 hp = {"lab": "%s +%s" % (team, thai_line(L)), "pct": win, "team": team, "giver": False,
                       "lt": thai_line(L), "side": fav, "h": L}
-        flag, lg = LEAGUES[f["league"]["id"]]
-        if not any(e["id"] == f["fixture"]["id"] for e in history):
+        if ou and ou["pct"] < 60:
+            ou["weak"] = True
+        lgid = f["league"]["id"]
+        flag, lg = LEAGUES.get(lgid, ("⚽", f["league"]["name"]))
+        sn = snap.setdefault(str(fid), {"ts": int(t.timestamp())})
+        # 4) ปรับตามผลย้อนหลัง
+        if ou and not ou["weak"] and ("ou" in bad_kind or lg in bad_lg):
+            ou["weak"] = True
+        if hp and ("hp" in bad_kind or lg in bad_lg):
+            hp = None
+        # 1) ตลาดเห็นตรงกันไหม (หลายเจ้ามือ)
+        if ou and not ou["weak"]:
+            ps = bm_ou(books, ou["x"], ou["s"])
+            if len(ps) >= 2 and max(ps) - min(ps) > 6:
+                ou["weak"] = True
+        if hp:
+            ps = bm_win(books, hp["side"])
+            if len(ps) >= 2 and max(ps) - min(ps) > 6:
+                hp = None
+        # 2) ราคาขยับสวนทางไหม (เทียบรอบแรกที่เห็นคู่นี้)
+        for k, cur in (("ou", ou["pct"] if ou else None), ("hp", hp["pct"] if hp else None)):
+            if cur is None:
+                continue
+            if k not in sn:
+                sn[k] = cur
+            elif cur - sn[k] <= -3:
+                if k == "ou":
+                    ou["weak"] = True
+                else:
+                    hp = None
+        if (ou and not ou["weak"]) or hp:
+            cands.append({"t": t, "f": f, "h": h, "a": a, "hc": hc, "ou": ou, "hp": hp, "pr": pr, "e": e,
+                          "hcs": hcs, "ous": ous, "flag": flag, "lg": lg,
+                          "top": max(ou["pct"] if ou and not ou["weak"] else 0, hp["pct"] if hp else 0)})
+    # 3) เช็กด้วยสถิติประตูย้อนหลัง (โมเดลปัวซอง) เฉพาะคู่ที่ผ่านด่านก่อนหน้า และเรียงโอกาสสูงสุดก่อน
+    cands.sort(key=lambda c: -c["top"])
+    cands = cands[:MAX_MODEL]
+    form = {}
+    use_model = True
+    for c in cands:
+        if not use_model:
+            break
+        try:
+            hh, aa = c["h"], c["a"]
+            for tm in (hh, aa):
+                if tm["id"] not in form:
+                    form[tm["id"]] = team_form(tm["id"])
+            fh, fa = form[hh["id"]], form[aa["id"]]
+            if not fh or not fa:
+                continue
+            lh, la = (fh[0] + fa[1]) / 2, (fa[0] + fh[1]) / 2
+            dist = poisson_dist(lh, la)
+            if c["ou"] and not c["ou"]["weak"]:
+                ev = sum(p * res_total(gh + ga, c["ou"]["s"], c["ou"]["x"]) for (gh, ga), p in dist.items())
+                if ev <= 0:
+                    c["ou"]["weak"] = True
+            if c["hp"]:
+                hpx = c["hp"]
+                ev = sum(p * res_hc((gh - ga) if hpx["side"] == "home" else (ga - gh), hpx["h"]) for (gh, ga), p in dist.items())
+                if ev <= 0:
+                    c["hp"] = None
+        except Quota:
+            print("โควตาหมดตอนดึงสถิติ ข้ามขั้นนี้")
+            use_model = False
+        except Exception as ex:
+            print("สถิติพลาด:", ex)
+    for c in cands:
+        ou, hp, t, f = c["ou"], c["hp"], c["t"], c["f"]
+        if not ((ou and not ou["weak"]) or hp):
+            continue
+        h, a, e = c["h"], c["a"], c["e"]
+        if not any(x["id"] == f["fixture"]["id"] for x in history):
             base = {"id": f["fixture"]["id"], "ts": int(t.timestamp()), "d": "%02d/%02d" % (t.day, t.month),
-                    "hn": h["name"], "an": a["name"], "lg": lg, "res": None}
+                    "hn": h["name"], "an": a["name"], "lg": c["lg"], "res": None}
             if ou and not ou["weak"]:
                 history.append(dict(base, k="ou", s=ou["s"], x=ou["x"], lt=ou["line"], pct=ou["pct"]))
             if hp:
@@ -424,14 +606,16 @@ def run():
                                     giver=hp["giver"], pct=hp["pct"]))
         matches.append({
             "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
-            "flag": flag, "lg": lg,
+            "flag": c["flag"], "lg": c["lg"],
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
-            "hc": hc, "ou": ou, "hp": hp, "pr": pr, "elo": round(e) if e is not None else None, "hcs": hcs, "ous": ous,
+            "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "elo": round(e) if e is not None else None,
+            "hcs": c["hcs"], "ous": c["ous"],
         })
+    matches.sort(key=lambda m: m["ts"])
     nt = datetime.now(TH)
     data = {"updated": "%s %02d/%02d %s น." % (DAYS[nt.weekday()], nt.day, nt.month, nt.strftime("%H:%M")),
             "date": "%d/%d/%s" % (nt.day, nt.month, str(nt.year + 543)[2:]), "matches": matches,
-            "history": sorted(history, key=lambda e: e["ts"])[-150:]}
+            "history": sorted(history, key=lambda e: e["ts"])[-150:], "snap": snap}
     with open("data.json", "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, indent=1)
     print("เขียน data.json แล้ว %d คู่" % len(matches))
