@@ -1,133 +1,7 @@
 {
- "updated": "จันทร์ 09/11 16:53 น.",
- "date": "9/11/69",
- "matches": [
-  {
-   "id": 1570011,
-   "t": "02:30",
-   "d": "อังคาร",
-   "ts": 1794252600,
-   "flag": "🇪🇸",
-   "lg": "ลาลีกา 2",
-   "h": {
-    "n": "Las Palmas",
-    "l": "https://media.api-sports.io/football/teams/534.png"
-   },
-   "a": {
-    "n": "Eldense",
-    "l": "https://media.api-sports.io/football/teams/9692.png"
-   },
-   "hc": "Las Palmas ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 54,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 45,
-    "d": 27,
-    "a": 28
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1"
-   ],
-   "ous": [
-    "2.5"
-   ]
-  },
-  {
-   "id": 1570013,
-   "t": "02:30",
-   "d": "อังคาร",
-   "ts": 1794252600,
-   "flag": "🇪🇸",
-   "lg": "ลาลีกา 2",
-   "h": {
-    "n": "Sabadell",
-    "l": "https://media.api-sports.io/football/teams/9593.png"
-   },
-   "a": {
-    "n": "Real Sociedad II",
-    "l": "https://media.api-sports.io/football/teams/9585.png"
-   },
-   "hc": "Sabadell ต่อ 0.5/1",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 55,
-    "weak": false,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 53,
-    "d": 27,
-    "a": 20
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1",
-    "1"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "id": 1646814,
-   "t": "02:30",
-   "d": "อังคาร",
-   "ts": 1794252600,
-   "flag": "🏆",
-   "lg": "เอฟเอ คัพ",
-   "h": {
-    "n": "Plymouth Parkway",
-    "l": "https://media.api-sports.io/football/teams/8899.png"
-   },
-   "a": {
-    "n": "Berkhamsted",
-    "l": "https://media.api-sports.io/football/teams/7214.png"
-   },
-   "hc": "Plymouth Parkway ต่อ 0.5",
-   "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 59,
-    "weak": false,
-    "s": "under",
-    "x": 3.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 44,
-    "d": 26,
-    "a": 30
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ",
-    "0/0.5",
-    "0.5",
-    "0.5/1"
-   ],
-   "ous": [
-    "2.5",
-    "3.5"
-   ],
-   "lock": true
-  }
- ],
+ "updated": "อังคาร 10/11 08:55 น.",
+ "date": "10/11/69",
+ "matches": [],
  "history": [
   {
    "id": 1584460,
@@ -1734,12 +1608,14 @@
    "hn": "Sabadell",
    "an": "Real Sociedad II",
    "lg": "ลาลีกา 2",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 55
+   "pct": 55,
+   "gh": 0,
+   "ga": 0
   },
   {
    "id": 1646814,
@@ -1748,12 +1624,14 @@
    "hn": "Plymouth Parkway",
    "an": "Berkhamsted",
    "lg": "เอฟเอ คัพ",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 3.5,
    "lt": "3.5",
-   "pct": 59
+   "pct": 59,
+   "gh": 1,
+   "ga": 1
   },
   {
    "id": 1570011,
@@ -1762,12 +1640,14 @@
    "hn": "Las Palmas",
    "an": "Eldense",
    "lg": "ลาลีกา 2",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 54
+   "pct": 54,
+   "gh": 2,
+   "ga": 0
   }
  ]
 }
