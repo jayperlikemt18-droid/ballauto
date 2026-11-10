@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>BALL AUTO</title><link rel="apple-touch-icon" href="icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="BALL AUTO"><meta name="theme-color" content="#0b1220">
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>@691xmdts</title><link rel="apple-touch-icon" href="icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="@691xmdts"><meta name="theme-color" content="#0b1220">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Sarabun:wght@400;500;600&display=swap">
 <style>
 /* Layout: header, then one card per match. Card: country flag + league + time, two team rows with colour badges, two price boxes, confidence bar. Single dark look by choice. */
@@ -70,7 +70,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
 
 <main>
   <header>
-    <h1>⚽ BALL AUTO</h1>
+    <h1>⚽ @691xmdts</h1>
     <p class="sub" id="sub">กำลังโหลด...</p>
   </header>
 
@@ -120,9 +120,9 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
   function sg(t) { return t.replace(" ต่อ ", " -").replace(" รอง ", " +"); }
   function nm(m, t) { return t.replace(m.h.n, tn(m.h.n)).replace(m.a.n, tn(m.a.n)); }
   function best(m) {
-    var a = m.ou && !m.ou.weak ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null;
+    var a = m.ou && !m.ou.weak && m.ou.pct >= 62 ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null;
     var b = m.hp ? { pct: m.hp.pct, txt: nm(m, m.hp.lab), k: "hp" } : null;
-    var r = a && b ? (a.pct >= b.pct ? a : b) : (a || b);
+    var r = a && b ? (a.pct >= b.pct + 3 ? a : b) : (a || b);
     return r && r.pct >= 60 ? r : null;
   }
   function manual(m) { return m.ou ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null; }
@@ -145,7 +145,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
   }
   function draw() {
     var ms = D.matches.filter(function (m) { return (!F.lg || m.lg === F.lg) && (!F.only || best(m) || SEL[key(m)] === 1); });
-    if (F.only) ms = ms.slice().sort(function (a, b) { return ((best(b) || manual(b) || { pct: 0 }).pct) - ((best(a) || manual(a) || { pct: 0 }).pct); }).slice(0, 10);
+    if (F.only) ms = ms.slice().sort(function (a, b) { return ((best(b) || manual(b) || { pct: 0 }).pct) - ((best(a) || manual(a) || { pct: 0 }).pct); }).slice(0, 7);
     D.matches.forEach(function (m) { m.pk = pkOf(m); });
     list.innerHTML = ms.length ? cards(ms) : '<p class="note">ตอนนี้ยังไม่มีคู่เด็ด ลองกด "ทุกคู่"</p>';
     Array.prototype.forEach.call(document.getElementById("chips").children, function (c) { c.classList.toggle("on", c.getAttribute("data-k") === (F.only ? "only" : (F.lg || "all"))); });
@@ -231,7 +231,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     c.toBlob(function (blob) {
       if (!blob) { st.textContent = "สร้างรูปไม่สำเร็จ"; return; }
       var url = URL.createObjectURL(blob), file = null;
-      try { file = new File([blob], "ballauto.png", { type: "image/png" }); } catch (e) {}
+      try { file = new File([blob], "691xmdts.png", { type: "image/png" }); } catch (e) {}
       box.innerHTML = '<img alt="การ์ดสเต็ป" src="' + url + '"><p class="note">แตะค้างที่รูป แล้วเลือกบันทึก/แชร์</p>' + (file && navigator.canShare && navigator.canShare({ files: [file] }) ? '<button class="btn" id="shr" type="button">แชร์รูป</button>' : "");
       box.hidden = false;
       var b = document.getElementById("shr");
