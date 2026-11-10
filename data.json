@@ -1,50 +1,7 @@
 {
- "updated": "อังคาร 10/11 12:28 น.",
+ "updated": "อังคาร 10/11 13:10 น.",
  "date": "10/11/69",
  "matches": [
-  {
-   "id": 1644336,
-   "t": "01:00",
-   "d": "พุธ",
-   "ts": 1794333600,
-   "flag": "🇪🇸",
-   "lg": "โกปา เดล เรย์",
-   "h": {
-    "n": "Anaitasuna",
-    "l": "https://media.api-sports.io/football/teams/15340.png"
-   },
-   "a": {
-    "n": "Alaves",
-    "l": "https://media.api-sports.io/football/teams/542.png"
-   },
-   "hc": "Alaves ต่อ 3.5",
-   "ou": {
-    "lab": "ต่ำ 4.5",
-    "line": "4.5",
-    "pct": 51,
-    "weak": true,
-    "s": "under",
-    "x": 4.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 2,
-    "d": 6,
-    "a": 92
-   },
-   "elo": null,
-   "hcs": [
-    "3",
-    "3/3.5",
-    "3.5",
-    "3.5/4",
-    "4",
-    "4/4.5"
-   ],
-   "ous": [
-    "4.5"
-   ]
-  },
   {
    "id": 1644365,
    "t": "01:00",
@@ -86,88 +43,8 @@
    "ous": [
     "2.5",
     "3.5"
-   ]
-  },
-  {
-   "id": 1644335,
-   "t": "02:00",
-   "d": "พุธ",
-   "ts": 1794337200,
-   "flag": "🇪🇸",
-   "lg": "โกปา เดล เรย์",
-   "h": {
-    "n": "Amorebieta",
-    "l": "https://media.api-sports.io/football/teams/9380.png"
-   },
-   "a": {
-    "n": "UD Logroñés",
-    "l": "https://media.api-sports.io/football/teams/5280.png"
-   },
-   "hc": "UD Logroñés ต่อ 0/0.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 51,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 28,
-    "d": 28,
-    "a": 45
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ",
-    "0/0.5",
-    "0.5",
-    "0.5/1"
    ],
-   "ous": [
-    "2.5"
-   ]
-  },
-  {
-   "id": 1644362,
-   "t": "02:00",
-   "d": "พุธ",
-   "ts": 1794337200,
-   "flag": "🇪🇸",
-   "lg": "โกปา เดล เรย์",
-   "h": {
-    "n": "Mijas Las Lagunas",
-    "l": "https://media.api-sports.io/football/teams/22569.png"
-   },
-   "a": {
-    "n": "Real Jaén",
-    "l": "https://media.api-sports.io/football/teams/5274.png"
-   },
-   "hc": "Real Jaén ต่อ 0/0.5",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 51,
-    "weak": true,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 26,
-    "d": 28,
-    "a": 46
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1"
-   ],
-   "ous": [
-    "2.5"
-   ]
+   "lock": true
   },
   {
    "id": 1644382,
@@ -209,6 +86,243 @@
    ],
    "ous": [
     "3.5"
+   ],
+   "lock": true
+  },
+  {
+   "id": 1595993,
+   "t": "02:45",
+   "d": "พุธ",
+   "ts": 1794339900,
+   "flag": "⚽",
+   "lg": "Non League Premier - Isthmian",
+   "h": {
+    "n": "Cray Wanderers",
+    "l": "https://media.api-sports.io/football/teams/7711.png"
+   },
+   "a": {
+    "n": "Three Bridges",
+    "l": "https://media.api-sports.io/football/teams/7676.png"
+   },
+   "hc": "Cray Wanderers ต่อ 0.5/1",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 65,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 61,
+    "d": 21,
+    "a": 18
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1",
+    "1",
+    "1/1.5"
+   ],
+   "ous": []
+  },
+  {
+   "id": 1596051,
+   "t": "02:45",
+   "d": "พุธ",
+   "ts": 1794339900,
+   "flag": "⚽",
+   "lg": "Non League Premier - Isthmian",
+   "h": {
+    "n": "Enfield Town",
+    "l": "https://media.api-sports.io/football/teams/7714.png"
+   },
+   "a": {
+    "n": "Lewes",
+    "l": "https://media.api-sports.io/football/teams/7728.png"
+   },
+   "hc": "Enfield Town ต่อ 1",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 62,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 55,
+    "d": 23,
+    "a": 22
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1",
+    "1"
+   ],
+   "ous": [
+    "2.5"
+   ]
+  },
+  {
+   "id": 1588394,
+   "t": "02:45",
+   "d": "พุธ",
+   "ts": 1794339900,
+   "flag": "⚽",
+   "lg": "National League - South",
+   "h": {
+    "n": "Hemel Hempstead Town",
+    "l": "https://media.api-sports.io/football/teams/8660.png"
+   },
+   "a": {
+    "n": "Torquay",
+    "l": "https://media.api-sports.io/football/teams/1827.png"
+   },
+   "hc": "Torquay ต่อ 0/0.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 60,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 26,
+    "d": 26,
+    "a": 47
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ",
+    "0/0.5",
+    "0.5",
+    "0.5/1",
+    "1"
+   ],
+   "ous": [
+    "2.5",
+    "3.5"
+   ]
+  },
+  {
+   "id": 1596055,
+   "t": "02:45",
+   "d": "พุธ",
+   "ts": 1794339900,
+   "flag": "⚽",
+   "lg": "Non League Premier - Isthmian",
+   "h": {
+    "n": "Whitehawk",
+    "l": "https://media.api-sports.io/football/teams/4713.png"
+   },
+   "a": {
+    "n": "Welling United",
+    "l": "https://media.api-sports.io/football/teams/8664.png"
+   },
+   "hc": "Welling United ต่อ 1/1.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 60,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 17,
+    "d": 22,
+    "a": 60
+   },
+   "elo": null,
+   "hcs": [
+    "1/1.5"
+   ],
+   "ous": [
+    "2.5"
+   ]
+  },
+  {
+   "id": 1596071,
+   "t": "02:45",
+   "d": "พุธ",
+   "ts": 1794339900,
+   "flag": "⚽",
+   "lg": "Non League Premier - Isthmian",
+   "h": {
+    "n": "Eastbourne Borough",
+    "l": "https://media.api-sports.io/football/teams/4704.png"
+   },
+   "a": {
+    "n": "Dulwich Hamlet",
+    "l": "https://media.api-sports.io/football/teams/8149.png"
+   },
+   "hc": "Eastbourne Borough ต่อ 1",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 60,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 63,
+    "d": 22,
+    "a": 15
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1",
+    "1",
+    "1/1.5"
+   ],
+   "ous": [
+    "2.5"
+   ]
+  },
+  {
+   "id": 1596499,
+   "t": "02:45",
+   "d": "พุธ",
+   "ts": 1794339900,
+   "flag": "⚽",
+   "lg": "Non League Premier - Northern",
+   "h": {
+    "n": "Bury",
+    "l": "https://media.api-sports.io/football/teams/1344.png"
+   },
+   "a": {
+    "n": "Cleethorpes Town",
+    "l": "https://media.api-sports.io/football/teams/7631.png"
+   },
+   "hc": "Bury ต่อ 0.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 60,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 46,
+    "d": 26,
+    "a": 28
+   },
+   "elo": null,
+   "hcs": [
+    "0.5"
+   ],
+   "ous": [
+    "2.5"
    ]
   },
   {
@@ -255,7 +369,8 @@
    "ous": [
     "6.5",
     "7.5"
-   ]
+   ],
+   "lock": true
   }
  ],
  "history": [
@@ -1948,6 +2063,90 @@
    "pct": 56
   },
   {
+   "id": 1595993,
+   "ts": 1794339900,
+   "d": "11/11",
+   "hn": "Cray Wanderers",
+   "an": "Three Bridges",
+   "lg": "Non League Premier - Isthmian",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 65
+  },
+  {
+   "id": 1596051,
+   "ts": 1794339900,
+   "d": "11/11",
+   "hn": "Enfield Town",
+   "an": "Lewes",
+   "lg": "Non League Premier - Isthmian",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 62
+  },
+  {
+   "id": 1588394,
+   "ts": 1794339900,
+   "d": "11/11",
+   "hn": "Hemel Hempstead Town",
+   "an": "Torquay",
+   "lg": "National League - South",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 60
+  },
+  {
+   "id": 1596055,
+   "ts": 1794339900,
+   "d": "11/11",
+   "hn": "Whitehawk",
+   "an": "Welling United",
+   "lg": "Non League Premier - Isthmian",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 60
+  },
+  {
+   "id": 1596071,
+   "ts": 1794339900,
+   "d": "11/11",
+   "hn": "Eastbourne Borough",
+   "an": "Dulwich Hamlet",
+   "lg": "Non League Premier - Isthmian",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 60
+  },
+  {
+   "id": 1596499,
+   "ts": 1794339900,
+   "d": "11/11",
+   "hn": "Bury",
+   "an": "Cleethorpes Town",
+   "lg": "Non League Premier - Northern",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 60
+  },
+  {
    "id": 1644380,
    "ts": 1794340800,
    "d": "11/11",
@@ -1961,5 +2160,156 @@
    "lt": "7.5",
    "pct": 54
   }
- ]
+ ],
+ "snap": {
+  "1644336": {
+   "ts": 1794333600
+  },
+  "1588825": {
+   "ts": 1794337200,
+   "ou": 55
+  },
+  "1588833": {
+   "ts": 1794337200,
+   "ou": 59
+  },
+  "1588840": {
+   "ts": 1794337200,
+   "ou": 60
+  },
+  "1588846": {
+   "ts": 1794337200,
+   "ou": 56
+  },
+  "1588850": {
+   "ts": 1794337200,
+   "ou": 56
+  },
+  "1588861": {
+   "ts": 1794337200,
+   "ou": 56
+  },
+  "1588866": {
+   "ts": 1794337200,
+   "ou": 51
+  },
+  "1588870": {
+   "ts": 1794337200,
+   "ou": 50
+  },
+  "1588873": {
+   "ts": 1794337200,
+   "ou": 54
+  },
+  "1588875": {
+   "ts": 1794337200,
+   "ou": 58
+  },
+  "1588887": {
+   "ts": 1794337200,
+   "ou": 51
+  },
+  "1588896": {
+   "ts": 1794337200,
+   "ou": 54
+  },
+  "1588902": {
+   "ts": 1794337200,
+   "ou": 55
+  },
+  "1644335": {
+   "ts": 1794337200
+  },
+  "1644362": {
+   "ts": 1794337200
+  },
+  "1588832": {
+   "ts": 1794339000,
+   "ou": 58
+  },
+  "1588906": {
+   "ts": 1794339000,
+   "ou": 59
+  },
+  "1588909": {
+   "ts": 1794339000,
+   "ou": 54
+  },
+  "1587842": {
+   "ts": 1794339900,
+   "ou": 57
+  },
+  "1587844": {
+   "ts": 1794339900,
+   "ou": 56
+  },
+  "1587888": {
+   "ts": 1794339900,
+   "ou": 58
+  },
+  "1588394": {
+   "ts": 1794339900,
+   "ou": 60
+  },
+  "1588396": {
+   "ts": 1794339900,
+   "ou": 50
+  },
+  "1588883": {
+   "ts": 1794339900,
+   "ou": 56
+  },
+  "1595993": {
+   "ts": 1794339900,
+   "ou": 65
+  },
+  "1596002": {
+   "ts": 1794339900,
+   "ou": 59
+  },
+  "1596051": {
+   "ts": 1794339900,
+   "ou": 62
+  },
+  "1596055": {
+   "ts": 1794339900,
+   "ou": 60
+  },
+  "1596071": {
+   "ts": 1794339900,
+   "ou": 60
+  },
+  "1596499": {
+   "ts": 1794339900,
+   "ou": 60
+  },
+  "1596505": {
+   "ts": 1794339900,
+   "ou": 59
+  },
+  "1649433": {
+   "ts": 1794355200,
+   "ou": 55
+  },
+  "1649540": {
+   "ts": 1794357000,
+   "ou": 51
+  },
+  "1600655": {
+   "ts": 1794358800,
+   "ou": 51
+  },
+  "1649463": {
+   "ts": 1794358800,
+   "ou": 58
+  },
+  "1648691": {
+   "ts": 1794360600,
+   "ou": 55
+  },
+  "1649464": {
+   "ts": 1794366000,
+   "ou": 51
+  }
+ }
 }
