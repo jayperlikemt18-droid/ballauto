@@ -1,95 +1,129 @@
 {
- "updated": "อังคาร 10/11 13:57 น.",
+ "updated": "อังคาร 10/11 14:55 น.",
  "date": "10/11/69",
  "matches": [
   {
-   "id": 1644365,
-   "t": "01:00",
+   "v": 2,
+   "id": 1588906,
+   "t": "02:30",
    "d": "พุธ",
-   "ts": 1794333600,
-   "flag": "🇪🇸",
-   "lg": "โกปา เดล เรย์",
+   "ts": 1794339000,
+   "flag": "⚽",
+   "lg": "EFL Trophy",
    "h": {
-    "n": "Pamplona",
-    "l": "https://media.api-sports.io/football/teams/9854.png"
+    "n": "Bromley",
+    "l": "https://media.api-sports.io/football/teams/1832.png"
    },
    "a": {
-    "n": "Eibar",
-    "l": "https://media.api-sports.io/football/teams/545.png"
+    "n": "Milton Keynes Dons",
+    "l": "https://media.api-sports.io/football/teams/1348.png"
    },
-   "hc": "Eibar ต่อ 1.5/2",
+   "hc": "Milton Keynes Dons ต่อ 0.5",
    "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 59,
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 61,
     "weak": false,
-    "s": "under",
-    "x": 3.5
+    "s": "over",
+    "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 6,
-    "d": 14,
-    "a": 79
+    "h": 27,
+    "d": 25,
+    "a": 48
    },
    "elo": null,
    "hcs": [
-    "1.5",
-    "1.5/2",
-    "2",
-    "2/2.5",
-    "2.5"
+    "เสมอ",
+    "0/0.5",
+    "0.5",
+    "0.5/1"
    ],
    "ous": [
     "2.5",
     "3.5"
-   ],
-   "lock": true
+   ]
   },
   {
-   "id": 1644382,
-   "t": "02:00",
+   "v": 2,
+   "id": 1595993,
+   "t": "02:45",
    "d": "พุธ",
-   "ts": 1794337200,
-   "flag": "🇪🇸",
-   "lg": "โกปา เดล เรย์",
+   "ts": 1794339900,
+   "flag": "⚽",
+   "lg": "Non League Premier - Isthmian",
    "h": {
-    "n": "Trival Valderas",
-    "l": "https://media.api-sports.io/football/teams/9718.png"
+    "n": "Cray Wanderers",
+    "l": "https://media.api-sports.io/football/teams/7711.png"
    },
    "a": {
-    "n": "Leganes",
-    "l": "https://media.api-sports.io/football/teams/537.png"
+    "n": "Three Bridges",
+    "l": "https://media.api-sports.io/football/teams/7676.png"
    },
-   "hc": "Leganes ต่อ 2/2.5",
+   "hc": "Cray Wanderers ต่อ 0.5/1",
    "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 56,
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 69,
     "weak": false,
-    "s": "under",
-    "x": 3.5
+    "s": "over",
+    "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 5,
-    "d": 13,
-    "a": 81
+    "h": 61,
+    "d": 21,
+    "a": 18
    },
    "elo": null,
    "hcs": [
-    "2",
-    "2/2.5",
-    "2.5",
-    "2.5/3",
-    "3"
+    "0.5/1",
+    "1",
+    "1/1.5"
    ],
-   "ous": [
-    "3.5"
-   ],
-   "lock": true
+   "ous": []
   },
   {
+   "v": 2,
+   "id": 1596051,
+   "t": "02:45",
+   "d": "พุธ",
+   "ts": 1794339900,
+   "flag": "⚽",
+   "lg": "Non League Premier - Isthmian",
+   "h": {
+    "n": "Enfield Town",
+    "l": "https://media.api-sports.io/football/teams/7714.png"
+   },
+   "a": {
+    "n": "Lewes",
+    "l": "https://media.api-sports.io/football/teams/7728.png"
+   },
+   "hc": "Enfield Town ต่อ 1",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 65,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 56,
+    "d": 22,
+    "a": 22
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1",
+    "1"
+   ],
+   "ous": []
+  },
+  {
+   "v": 2,
    "id": 1588394,
    "t": "02:45",
    "d": "พุธ",
@@ -104,7 +138,7 @@
     "n": "Torquay",
     "l": "https://media.api-sports.io/football/teams/1827.png"
    },
-   "hc": "Torquay ต่อ 0/0.5",
+   "hc": "Torquay ต่อ 0.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
@@ -130,89 +164,10 @@
    "ous": [
     "2.5",
     "3.5"
-   ],
-   "lock": true
+   ]
   },
   {
-   "id": 1595993,
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794339900,
-   "flag": "⚽",
-   "lg": "Non League Premier - Isthmian",
-   "h": {
-    "n": "Cray Wanderers",
-    "l": "https://media.api-sports.io/football/teams/7711.png"
-   },
-   "a": {
-    "n": "Three Bridges",
-    "l": "https://media.api-sports.io/football/teams/7676.png"
-   },
-   "hc": "Cray Wanderers ต่อ 0.5/1",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 65,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 61,
-    "d": 21,
-    "a": 18
-   },
-   "elo": null,
-   "hcs": [
-    "0.5/1",
-    "1",
-    "1/1.5"
-   ],
-   "ous": [],
-   "lock": true
-  },
-  {
-   "id": 1596051,
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794339900,
-   "flag": "⚽",
-   "lg": "Non League Premier - Isthmian",
-   "h": {
-    "n": "Enfield Town",
-    "l": "https://media.api-sports.io/football/teams/7714.png"
-   },
-   "a": {
-    "n": "Lewes",
-    "l": "https://media.api-sports.io/football/teams/7728.png"
-   },
-   "hc": "Enfield Town ต่อ 1",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 62,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 55,
-    "d": 23,
-    "a": 22
-   },
-   "elo": null,
-   "hcs": [
-    "0.5/1",
-    "1"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
+   "v": 2,
    "id": 1596055,
    "t": "02:45",
    "d": "พุธ",
@@ -248,10 +203,10 @@
    ],
    "ous": [
     "2.5"
-   ],
-   "lock": true
+   ]
   },
   {
+   "v": 2,
    "id": 1596071,
    "t": "02:45",
    "d": "พุธ",
@@ -289,25 +244,25 @@
    ],
    "ous": [
     "2.5"
-   ],
-   "lock": true
+   ]
   },
   {
-   "id": 1596499,
-   "t": "02:45",
+   "v": 2,
+   "id": 1649463,
+   "t": "08:00",
    "d": "พุธ",
-   "ts": 1794339900,
+   "ts": 1794358800,
    "flag": "⚽",
-   "lg": "Non League Premier - Northern",
+   "lg": "Liga MX Femenil",
    "h": {
-    "n": "Bury",
-    "l": "https://media.api-sports.io/football/teams/1344.png"
+    "n": "Pumas UNAM W",
+    "l": "https://media.api-sports.io/football/teams/14870.png"
    },
    "a": {
-    "n": "Cleethorpes Town",
-    "l": "https://media.api-sports.io/football/teams/7631.png"
+    "n": "Tigres UANL W",
+    "l": "https://media.api-sports.io/football/teams/14884.png"
    },
-   "hc": "Bury ต่อ 0.5",
+   "hc": "Tigres UANL W ต่อ 0.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
@@ -318,65 +273,22 @@
    },
    "hp": null,
    "pr": {
-    "h": 46,
+    "h": 23,
     "d": 26,
-    "a": 28
+    "a": 51
    },
    "elo": null,
    "hcs": [
-    "0.5"
+    "0/0.5",
+    "0.5",
+    "0.5/1",
+    "1",
+    "1/1.5"
    ],
    "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "id": 1644380,
-   "t": "03:00",
-   "d": "พุธ",
-   "ts": 1794340800,
-   "flag": "🇪🇸",
-   "lg": "โกปา เดล เรย์",
-   "h": {
-    "n": "Tavernes",
-    "l": "https://media.api-sports.io/football/teams/28415.png"
-   },
-   "a": {
-    "n": "Valencia",
-    "l": "https://media.api-sports.io/football/teams/532.png"
-   },
-   "hc": "Valencia ต่อ 6.5",
-   "ou": {
-    "lab": "ต่ำ 7.5",
-    "line": "7.5",
-    "pct": 54,
-    "weak": false,
-    "s": "under",
-    "x": 7.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 2,
-    "d": 4,
-    "a": 95
-   },
-   "elo": null,
-   "hcs": [
-    "5.5/6",
-    "6",
-    "6/6.5",
-    "6.5",
-    "6.5/7",
-    "7",
-    "7/7.5",
-    "7.5"
-   ],
-   "ous": [
-    "6.5",
-    "7.5"
-   ],
-   "lock": true
+    "2.5",
+    "3.5"
+   ]
   }
  ],
  "history": [
@@ -2069,6 +1981,20 @@
    "pct": 56
   },
   {
+   "id": 1588906,
+   "ts": 1794339000,
+   "d": "11/11",
+   "hn": "Bromley",
+   "an": "Milton Keynes Dons",
+   "lg": "EFL Trophy",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 61
+  },
+  {
    "id": 1595993,
    "ts": 1794339900,
    "d": "11/11",
@@ -2165,6 +2091,20 @@
    "x": 7.5,
    "lt": "7.5",
    "pct": 54
+  },
+  {
+   "id": 1649463,
+   "ts": 1794358800,
+   "d": "11/11",
+   "hn": "Pumas UNAM W",
+   "an": "Tigres UANL W",
+   "lg": "Liga MX Femenil",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 60
   }
  ],
  "snap": {
@@ -2316,6 +2256,15 @@
   "1649464": {
    "ts": 1794366000,
    "ou": 51
+  },
+  "1644365": {
+   "ts": 1794333600
+  },
+  "1644382": {
+   "ts": 1794337200
+  },
+  "1644380": {
+   "ts": 1794340800
   }
  }
 }
