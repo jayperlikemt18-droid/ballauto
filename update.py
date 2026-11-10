@@ -114,6 +114,30 @@ def bm_ou(books, x, side):
     return out
 
 
+def ah_ladder(books):
+    """ราคาต่อรองทุกบรรทัด: [(แต้มต่อมุมเจ้าบ้าน, โอกาสเจ้าบ้านผ่านราคา)] เฉลี่ยทุกเจ้ามือ ตัดค่าน้ำแล้ว"""
+    acc = {}
+    for b in books:
+        for bet in b.get("bets", []):
+            if bet.get("id") != 4:
+                continue
+            hm, am = {}, {}
+            for v in bet.get("values", []):
+                try:
+                    kind, x = v["value"].split()
+                    x, o = float(x), float(v["odd"])
+                except (ValueError, KeyError):
+                    continue
+                if kind == "Home":
+                    hm[x] = o
+                elif kind == "Away":
+                    am[-x] = o
+            for ln in hm:
+                if ln in am:
+                    acc.setdefault(ln, []).append((1 / hm[ln]) / ((1 / hm[ln]) + (1 / am[ln])))
+    return sorted((ln, sum(v) / len(v)) for ln, v in acc.items())
+
+
 def bm_win(books, side):
     out = []
     for b in books:
@@ -509,22 +533,28 @@ def run():
         hp = None
         eh, ea = elo_of(elo_map, h["name"]), elo_of(elo_map, a["name"])
         e = (100 / (1 + 10 ** (-(eh + 65 - ea) / 400))) if eh and ea else None
-        if pr and base_line:  # เลือกทีมจาก % โอกาสชนะ ต่อใส่ (-) รองใส่ (+)
+        if pr:  # เลือกทีมเต็งจาก % ชนะ แล้วหาราคาต่อรองที่คุ้มที่สุดจากทุกราคาที่ตลาดเปิด
             fav = "home" if pr["h"] >= pr["a"] else "away"
-            win = max(pr["h"], pr["a"])
-            giver = "home" if base_line < 0 else "away"
-            L = abs(base_line)
-            team = h["name"] if fav == "home" else a["name"]
-            if e is not None and ((e >= 50) != (fav == "home") or max(e, 100 - e) < 55):
+            if max(pr["h"], pr["a"]) < 55:
                 fav = None
-            if fav is None:
-                pass
-            elif win >= 60 and giver == fav and L <= 1:
-                hp = {"lab": "%s -%s" % (team, thai_line(L)), "pct": win, "team": team, "giver": True,
-                      "lt": thai_line(L), "side": fav, "h": -L}
-            elif win >= 60 and giver != fav and L <= 2:
-                hp = {"lab": "%s +%s" % (team, thai_line(L)), "pct": win, "team": team, "giver": False,
-                      "lt": thai_line(L), "side": fav, "h": L}
+            if fav and e is not None and ((e >= 50) != (fav == "home") or max(e, 100 - e) < 55):
+                fav = None
+            if fav:
+                team = h["name"] if fav == "home" else a["name"]
+                best_c = None
+                for line, ph in ah_ladder(books):
+                    ht = line if fav == "home" else -line   # แต้มต่อของทีมเต็ง (ลบ = ต่อ)
+                    pc = ph if fav == "home" else 1 - ph
+                    if pc < 0.60 or ht < -1 or ht > 2:
+                        continue
+                    if best_c is None or pc < best_c[0]:
+                        best_c = (pc, ht)
+                if best_c:
+                    pc, ht = best_c
+                    sgn = "-" if ht < 0 else "+"
+                    lt = thai_line(abs(ht)) if ht != 0 else "0"
+                    hp = {"lab": "%s %s%s" % (team, sgn if ht != 0 else "", lt), "pct": round(pc * 100), "team": team,
+                          "giver": ht < 0, "lt": lt, "side": fav, "h": ht}
         if ou and ou["pct"] < 60:
             ou["weak"] = True
         lgid = f["league"]["id"]
