@@ -122,8 +122,8 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
   function best(m) {
     var a = m.ou && !m.ou.weak ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null;
     var b = m.hp ? { pct: m.hp.pct, txt: nm(m, m.hp.lab), k: "hp" } : null;
-    if (a && b) return a.pct >= b.pct ? a : b;
-    return a || b;
+    var r = a && b ? (a.pct >= b.pct ? a : b) : (a || b);
+    return r && r.pct >= 60 ? r : null;
   }
   function manual(m) { return m.ou ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null; }
   function key(m) { return String(m.id || (m.ts + m.h.n)); }
