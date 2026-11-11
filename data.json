@@ -1,236 +1,66 @@
 {
- "updated": "อังคาร 10/11 16:49 น.",
- "date": "10/11/69",
+ "updated": "พุธ 11/11 08:55 น.",
+ "date": "11/11/69",
  "matches": [
   {
    "v": 2,
-   "id": 1588906,
-   "t": "02:30",
-   "d": "พุธ",
-   "ts": 1794339000,
+   "id": 1612673,
+   "t": "02:00",
+   "d": "พฤหัสบดี",
+   "ts": 1794423600,
    "flag": "⚽",
-   "lg": "EFL Trophy",
+   "lg": "WSL Cup",
    "h": {
-    "n": "Bromley",
-    "l": "https://media.api-sports.io/football/teams/1832.png"
+    "n": "Birmingham City W",
+    "l": "https://media.api-sports.io/football/teams/1845.png"
    },
    "a": {
-    "n": "Milton Keynes Dons",
-    "l": "https://media.api-sports.io/football/teams/1348.png"
+    "n": "Sunderland W",
+    "l": "https://media.api-sports.io/football/teams/1848.png"
    },
-   "hc": "Milton Keynes Dons ต่อ 0.5",
+   "hc": "Birmingham City W ต่อ 1",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 61,
+    "pct": 66,
     "weak": false,
     "s": "over",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 27,
-    "d": 25,
-    "a": 48
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ",
-    "0/0.5",
-    "0.5",
-    "0.5/1"
-   ],
-   "ous": [
-    "2.5",
-    "3.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1588394,
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794339900,
-   "flag": "⚽",
-   "lg": "National League - South",
-   "h": {
-    "n": "Hemel Hempstead Town",
-    "l": "https://media.api-sports.io/football/teams/8660.png"
-   },
-   "a": {
-    "n": "Torquay",
-    "l": "https://media.api-sports.io/football/teams/1827.png"
-   },
-   "hc": "Torquay ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 60,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 26,
-    "d": 26,
-    "a": 47
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ",
-    "0/0.5",
-    "0.5",
-    "0.5/1",
-    "1"
-   ],
-   "ous": [
-    "2.5",
-    "3.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1595993,
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794339900,
-   "flag": "⚽",
-   "lg": "Non League Premier - Isthmian",
-   "h": {
-    "n": "Cray Wanderers",
-    "l": "https://media.api-sports.io/football/teams/7711.png"
-   },
-   "a": {
-    "n": "Three Bridges",
-    "l": "https://media.api-sports.io/football/teams/7676.png"
-   },
-   "hc": "Cray Wanderers ต่อ 0.5/1",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 69,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 61,
-    "d": 21,
-    "a": 18
-   },
-   "elo": null,
-   "hcs": [
-    "0.5/1",
-    "1",
-    "1/1.5"
-   ],
-   "ous": [],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1596051,
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794339900,
-   "flag": "⚽",
-   "lg": "Non League Premier - Isthmian",
-   "h": {
-    "n": "Enfield Town",
-    "l": "https://media.api-sports.io/football/teams/7714.png"
-   },
-   "a": {
-    "n": "Lewes",
-    "l": "https://media.api-sports.io/football/teams/7728.png"
-   },
-   "hc": "Enfield Town ต่อ 1",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 65,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 56,
-    "d": 22,
-    "a": 22
+    "h": 57,
+    "d": 23,
+    "a": 20
    },
    "elo": null,
    "hcs": [
     "0.5/1",
     "1"
    ],
-   "ous": [],
-   "lock": true
+   "ous": []
   },
   {
    "v": 2,
-   "id": 1596055,
+   "id": 1596507,
    "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794339900,
+   "d": "พฤหัสบดี",
+   "ts": 1794426300,
    "flag": "⚽",
-   "lg": "Non League Premier - Isthmian",
+   "lg": "Non League Premier - Northern",
    "h": {
-    "n": "Whitehawk",
-    "l": "https://media.api-sports.io/football/teams/4713.png"
+    "n": "Avro",
+    "l": "https://media.api-sports.io/football/teams/8690.png"
    },
    "a": {
-    "n": "Welling United",
-    "l": "https://media.api-sports.io/football/teams/8664.png"
+    "n": "Whitby Town",
+    "l": "https://media.api-sports.io/football/teams/7757.png"
    },
-   "hc": "Welling United ต่อ 1/1.5",
+   "hc": "Avro ต่อ 1/1.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 60,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 17,
-    "d": 22,
-    "a": 60
-   },
-   "elo": null,
-   "hcs": [
-    "1/1.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1596071,
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794339900,
-   "flag": "⚽",
-   "lg": "Non League Premier - Isthmian",
-   "h": {
-    "n": "Eastbourne Borough",
-    "l": "https://media.api-sports.io/football/teams/4704.png"
-   },
-   "a": {
-    "n": "Dulwich Hamlet",
-    "l": "https://media.api-sports.io/football/teams/8149.png"
-   },
-   "hc": "Eastbourne Borough ต่อ 1",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 60,
+    "pct": 66,
     "weak": false,
     "s": "over",
     "x": 2.5
@@ -238,64 +68,15 @@
    "hp": null,
    "pr": {
     "h": 63,
-    "d": 22,
-    "a": 15
+    "d": 20,
+    "a": 18
    },
    "elo": null,
    "hcs": [
-    "0.5/1",
     "1",
     "1/1.5"
    ],
-   "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1649463,
-   "t": "08:00",
-   "d": "พุธ",
-   "ts": 1794358800,
-   "flag": "⚽",
-   "lg": "Liga MX Femenil",
-   "h": {
-    "n": "Pumas UNAM W",
-    "l": "https://media.api-sports.io/football/teams/14870.png"
-   },
-   "a": {
-    "n": "Tigres UANL W",
-    "l": "https://media.api-sports.io/football/teams/14884.png"
-   },
-   "hc": "Tigres UANL W ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 60,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 23,
-    "d": 26,
-    "a": 51
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1",
-    "1",
-    "1/1.5"
-   ],
-   "ous": [
-    "2.5",
-    "3.5"
-   ],
-   "lock": true
+   "ous": []
   }
  ],
  "history": [
@@ -1952,12 +1733,14 @@
    "hn": "Qatar U23",
    "an": "Singapore U23",
    "lg": "อุ่นเครื่องทีมชาติ",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 3.5,
    "lt": "3.5",
-   "pct": 59
+   "pct": 59,
+   "gh": 0,
+   "ga": 0
   },
   {
    "id": 1644365,
@@ -1966,12 +1749,14 @@
    "hn": "Pamplona",
    "an": "Eibar",
    "lg": "โกปา เดล เรย์",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 3.5,
    "lt": "3.5",
-   "pct": 59
+   "pct": 59,
+   "gh": 0,
+   "ga": 3
   },
   {
    "id": 1644382,
@@ -1980,12 +1765,14 @@
    "hn": "Trival Valderas",
    "an": "Leganes",
    "lg": "โกปา เดล เรย์",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 3.5,
    "lt": "3.5",
-   "pct": 56
+   "pct": 56,
+   "gh": 0,
+   "ga": 1
   },
   {
    "id": 1588906,
@@ -1994,12 +1781,14 @@
    "hn": "Bromley",
    "an": "Milton Keynes Dons",
    "lg": "EFL Trophy",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 61
+   "pct": 61,
+   "gh": 1,
+   "ga": 2
   },
   {
    "id": 1595993,
@@ -2008,12 +1797,14 @@
    "hn": "Cray Wanderers",
    "an": "Three Bridges",
    "lg": "Non League Premier - Isthmian",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 65
+   "pct": 65,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": 1596051,
@@ -2022,12 +1813,14 @@
    "hn": "Enfield Town",
    "an": "Lewes",
    "lg": "Non League Premier - Isthmian",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 62
+   "pct": 62,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": 1588394,
@@ -2036,12 +1829,14 @@
    "hn": "Hemel Hempstead Town",
    "an": "Torquay",
    "lg": "National League - South",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 60
+   "pct": 60,
+   "gh": 0,
+   "ga": 2
   },
   {
    "id": 1596055,
@@ -2050,12 +1845,14 @@
    "hn": "Whitehawk",
    "an": "Welling United",
    "lg": "Non League Premier - Isthmian",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 60
+   "pct": 60,
+   "gh": 2,
+   "ga": 2
   },
   {
    "id": 1596071,
@@ -2064,12 +1861,14 @@
    "hn": "Eastbourne Borough",
    "an": "Dulwich Hamlet",
    "lg": "Non League Premier - Isthmian",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 60
+   "pct": 60,
+   "gh": 4,
+   "ga": 2
   },
   {
    "id": 1596499,
@@ -2078,12 +1877,14 @@
    "hn": "Bury",
    "an": "Cleethorpes Town",
    "lg": "Non League Premier - Northern",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 60
+   "pct": 60,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": 1644380,
@@ -2092,12 +1893,14 @@
    "hn": "Tavernes",
    "an": "Valencia",
    "lg": "โกปา เดล เรย์",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 7.5,
    "lt": "7.5",
-   "pct": 54
+   "pct": 54,
+   "gh": 0,
+   "ga": 6
   },
   {
    "id": 1649463,
@@ -2112,6 +1915,34 @@
    "x": 2.5,
    "lt": "2.5",
    "pct": 60
+  },
+  {
+   "id": 1612673,
+   "ts": 1794423600,
+   "d": "12/11",
+   "hn": "Birmingham City W",
+   "an": "Sunderland W",
+   "lg": "WSL Cup",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 66
+  },
+  {
+   "id": 1596507,
+   "ts": 1794426300,
+   "d": "12/11",
+   "hn": "Avro",
+   "an": "Whitby Town",
+   "lg": "Non League Premier - Northern",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 66
   }
  ],
  "snap": {
@@ -2272,6 +2103,122 @@
   },
   "1644380": {
    "ts": 1794340800
+  },
+  "1581906": {
+   "ts": 1794389400,
+   "ou": 51
+  },
+  "1590465": {
+   "ts": 1794391200,
+   "ou": 54
+  },
+  "1590771": {
+   "ts": 1794391200,
+   "ou": 51
+  },
+  "1591071": {
+   "ts": 1794391200,
+   "ou": 55
+  },
+  "1590464": {
+   "ts": 1794394800,
+   "ou": 53
+  },
+  "1590459": {
+   "ts": 1794398400,
+   "ou": 51
+  },
+  "1609955": {
+   "ts": 1794398400,
+   "ou": 51
+  },
+  "1590770": {
+   "ts": 1794400200,
+   "ou": 58
+  },
+  "1590773": {
+   "ts": 1794400200,
+   "ou": 58
+  },
+  "1579841": {
+   "ts": 1794403800,
+   "ou": 55
+  },
+  "1581008": {
+   "ts": 1794412800,
+   "ou": 58
+  },
+  "1591077": {
+   "ts": 1794412800,
+   "ou": 54
+  },
+  "1600001": {
+   "ts": 1794412800,
+   "ou": 58
+  },
+  "1572697": {
+   "ts": 1794419100,
+   "ou": 55
+  },
+  "1572700": {
+   "ts": 1794420000,
+   "ou": 59
+  },
+  "1612165": {
+   "ts": 1794420000,
+   "ou": 51
+  },
+  "1612170": {
+   "ts": 1794420000,
+   "ou": 50
+  },
+  "1612174": {
+   "ts": 1794420000,
+   "ou": 55
+  },
+  "1612175": {
+   "ts": 1794420000,
+   "ou": 56
+  },
+  "1612176": {
+   "ts": 1794420000,
+   "ou": 56
+  },
+  "1572696": {
+   "ts": 1794421800,
+   "ou": 55
+  },
+  "1588820": {
+   "ts": 1794423600,
+   "ou": 51
+  },
+  "1588852": {
+   "ts": 1794423600,
+   "ou": 50
+  },
+  "1612673": {
+   "ts": 1794423600,
+   "ou": 66
+  },
+  "1572699": {
+   "ts": 1794425400,
+   "ou": 51
+  },
+  "1596507": {
+   "ts": 1794426300,
+   "ou": 66
+  },
+  "1600656": {
+   "ts": 1794432600,
+   "ou": 51
+  },
+  "1520976": {
+   "ts": 1794434400,
+   "ou": 58
+  },
+  "1557232": {
+   "ts": 1794441600,
+   "ou": 51
   }
  }
 }
