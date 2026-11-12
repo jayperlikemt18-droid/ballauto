@@ -56,13 +56,13 @@ def api(path, **params):
     return d.get("response", [])
 
 
-def bulk_odds(day, max_pages=20):
+def bulk_odds(day, max_pages=12, **extra):
     """ดึงราคาทั้งวันทีละหน้า (10 คู่/หน้า) ประหยัดโควตากว่าดึงทีละคู่"""
     m = {}
     page = 1
     while page <= max_pages:
         try:
-            r = api("/odds", date=day, page=page)
+            r = api("/odds", date=day, page=page, **extra)
         except Quota:
             raise
         except Exception as e:
@@ -436,7 +436,7 @@ def build_message(data):
         pk = best_pick(m)
         if pk:
             picks.append((pk[0], m, pk[1], pk[2]))
-    picks.sort(key=lambda x: -x[0])
+    picks.sort(key=lambda x: (0 if x[1].get("rk", 99) < 99 else 1, -x[0]))
     out = ["⚽️บอลวันที่ %s⚽️" % data["date"], ""]
     for n, icon in ((3, "⚡"), (5, "🔥"), (7, "💣")):
         if len(picks) < n:
@@ -527,8 +527,18 @@ def run():
         out.append((t, f))
     out = list({x[1]["fixture"]["id"]: x for x in out}.values())
     odds_map = {}
+    # ลีกดัง/ถ้วยใหญ่ที่มีแข่ง ดึงราคาแยกเฉพาะลีกก่อน กันตกหล่นตอนวันที่มีบอลเยอะ
+    groups = []
+    for t, f in out:
+        lid = f["league"]["id"]
+        key = (lid, f["league"].get("season"), t.astimezone(timezone.utc).date().isoformat())
+        if lid in LEAGUES and key[1] and key not in groups:
+            groups.append(key)
+    groups.sort(key=lambda g: ORDER.index(g[0]))
+    for lid, season, day in groups[:12]:
+        odds_map.update(bulk_odds(day, max_pages=3, league=lid, season=season))
     for day in sorted({now.date(), end.date()}):
-        odds_map.update(bulk_odds(day.isoformat()))
+        odds_map.update(bulk_odds(day.isoformat(), max_pages=10))
     out = [x for x in out if x[1]["fixture"]["id"] in odds_map or x[1]["fixture"]["id"] in {m.get("id") for m in old}]
     out.sort(key=lambda x: x[0])
     out = out[:MAX_MATCHES]
@@ -662,7 +672,7 @@ def run():
                                     giver=hp["giver"], pct=hp["pct"]))
         matches.append({
             "v": 2, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
-            "flag": c["flag"], "lg": c["lg"],
+            "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "elo": round(e) if e is not None else None,
             "hcs": c["hcs"], "ous": c["ous"],
@@ -673,7 +683,7 @@ def run():
             c["ou"]["weak"] = True
         matches.append({
             "v": 2, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
-            "flag": c["flag"], "lg": c["lg"],
+            "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": c["ou"], "hp": None, "pr": c["pr"], "elo": round(e) if e is not None else None,
             "hcs": c["hcs"], "ous": c["ous"], "nopick": True,

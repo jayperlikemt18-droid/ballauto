@@ -134,6 +134,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     return r && r.pct >= 60 ? r : null;
   }
   function manual(m) { return m.ou ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null; }
+  function big(m) { return m.rk != null && m.rk < 99 ? 0 : 1; }
   function key(m) { return String(m.id || (m.ts + m.h.n)); }
   function pkOf(m) { var s = SEL[key(m)], auto = best(m); if (s === 0) return null; if (s === 1) return auto || manual(m); return auto; }
   function loadSel() { try { var o = JSON.parse(localStorage.getItem(SK) || "{}"); SEL = o.date === D.date ? (o.sel || {}) : {}; } catch (e) { SEL = {}; } }
@@ -153,7 +154,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
   }
   function draw() {
     var ms = D.matches.filter(function (m) { return (!F.lg || m.lg === F.lg) && (!F.only || best(m) || SEL[key(m)] === 1); });
-    if (F.only) ms = ms.slice().sort(function (a, b) { return ((best(b) || manual(b) || { pct: 0 }).pct) - ((best(a) || manual(a) || { pct: 0 }).pct); }).slice(0, 7);
+    if (F.only) ms = ms.slice().sort(function (a, b) { return (big(a) - big(b)) || (((best(b) || manual(b) || { pct: 0 }).pct) - ((best(a) || manual(a) || { pct: 0 }).pct)); }).slice(0, 7);
     D.matches.forEach(function (m) { m.pk = pkOf(m); });
     list.innerHTML = ms.length ? cards(ms) : '<p class="note">ตอนนี้ยังไม่มีคู่เด็ด ลองกด "ทุกคู่"</p>';
     Array.prototype.forEach.call(document.getElementById("chips").children, function (c) { c.classList.toggle("on", c.getAttribute("data-k") === (F.only ? "only" : (F.lg || "all"))); });
@@ -165,7 +166,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
   }
   function recompute() {
     D.matches.forEach(function (m) { m.pk = pkOf(m); });
-    var picks = D.matches.filter(function (m) { return !!m.pk; }).sort(function (a, b) { return b.pk.pct - a.pk.pct; });
+    var picks = D.matches.filter(function (m) { return !!m.pk; }).sort(function (a, b) { return (big(a) - big(b)) || (b.pk.pct - a.pk.pct); });
     var rows = "", out = ["⚽️บอลวันที่ " + D.date + "⚽️", ""];
     OUT = { date: D.date, steps: [], top: [] };
     [[3, "⚡"], [5, "🔥"], [7, "💣"]].forEach(function (s) {
