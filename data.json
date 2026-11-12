@@ -1,5 +1,5 @@
 {
- "updated": "พฤหัสบดี 12/11 10:42 น.",
+ "updated": "พฤหัสบดี 12/11 11:14 น.",
  "date": "12/11/69",
  "matches": [
   {
@@ -10,6 +10,7 @@
    "ts": 1794463200,
    "flag": "⚽",
    "lg": "Friendlies",
+   "rk": 99,
    "h": {
     "n": "New Zealand",
     "l": "https://media.api-sports.io/football/teams/4673.png"
@@ -219,6 +220,7 @@
    "ts": 1794486600,
    "flag": "⚽",
    "lg": "Second League",
+   "rk": 99,
    "h": {
     "n": "Mega Sport",
     "l": "https://media.api-sports.io/football/teams/28011.png"
@@ -260,6 +262,7 @@
    "ts": 1794495600,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
     "n": "Ghana",
     "l": "https://media.api-sports.io/football/teams/1504.png"
@@ -388,6 +391,7 @@
    "ts": 1794499200,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
     "n": "Congo DR",
     "l": "https://media.api-sports.io/football/teams/1508.png"
@@ -432,6 +436,7 @@
    "ts": 1794499200,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
     "n": "Guinea",
     "l": "https://media.api-sports.io/football/teams/1509.png"
@@ -476,6 +481,7 @@
    "ts": 1794502800,
    "flag": "🌍",
    "lg": "เนชันส์ลีก",
+   "rk": 24,
    "h": {
     "n": "Türkiye",
     "l": "https://media.api-sports.io/football/teams/777.png"
@@ -520,6 +526,7 @@
    "ts": 1794502800,
    "flag": "🌍",
    "lg": "เนชันส์ลีก",
+   "rk": 24,
    "h": {
     "n": "Armenia",
     "l": "https://media.api-sports.io/football/teams/1094.png"
@@ -562,6 +569,7 @@
    "ts": 1794510000,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
     "n": "Benin",
     "l": "https://media.api-sports.io/football/teams/1516.png"
@@ -605,6 +613,7 @@
    "ts": 1794510000,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
     "n": "Cameroon",
     "l": "https://media.api-sports.io/football/teams/1530.png"
@@ -647,6 +656,7 @@
    "ts": 1794510000,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
     "n": "Ivory Coast",
     "l": "https://media.api-sports.io/football/teams/1501.png"
@@ -690,6 +700,7 @@
    "ts": 1794510000,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
     "n": "Senegal",
     "l": "https://media.api-sports.io/football/teams/13.png"
@@ -777,6 +788,7 @@
    "ts": 1794512700,
    "flag": "🌍",
    "lg": "เนชันส์ลีก",
+   "rk": 24,
    "h": {
     "n": "Italy",
     "l": "https://media.api-sports.io/football/teams/768.png"
@@ -819,6 +831,7 @@
    "ts": 1794512700,
    "flag": "🌍",
    "lg": "เนชันส์ลีก",
+   "rk": 24,
    "h": {
     "n": "Czechia",
     "l": "https://media.api-sports.io/football/teams/770.png"
@@ -863,6 +876,7 @@
    "ts": 1794512700,
    "flag": "🌍",
    "lg": "เนชันส์ลีก",
+   "rk": 24,
    "h": {
     "n": "England",
     "l": "https://media.api-sports.io/football/teams/10.png"
@@ -907,6 +921,7 @@
    "ts": 1794512700,
    "flag": "🌍",
    "lg": "เนชันส์ลีก",
+   "rk": 24,
    "h": {
     "n": "San Marino",
     "l": "https://media.api-sports.io/football/teams/1115.png"
@@ -951,6 +966,7 @@
    "ts": 1794512700,
    "flag": "🌍",
    "lg": "เนชันส์ลีก",
+   "rk": 24,
    "h": {
     "n": "Montenegro",
     "l": "https://media.api-sports.io/football/teams/1109.png"
@@ -994,6 +1010,7 @@
    "ts": 1794520800,
    "flag": "⚽",
    "lg": "Serie B",
+   "rk": 99,
    "h": {
     "n": "Ponte Preta",
     "l": "https://media.api-sports.io/football/teams/139.png"
@@ -1038,6 +1055,7 @@
    "ts": 1794520800,
    "flag": "⚽",
    "lg": "Primera A",
+   "rk": 99,
    "h": {
     "n": "Deportivo Pasto",
     "l": "https://media.api-sports.io/football/teams/1126.png"
@@ -1080,6 +1098,7 @@
    "ts": 1794520800,
    "flag": "⚽",
    "lg": "Liga Nacional",
+   "rk": 99,
    "h": {
     "n": "Aurora",
     "l": "https://media.api-sports.io/football/teams/10154.png"
@@ -1163,6 +1182,7 @@
    "ts": 1794524400,
    "flag": "⚽",
    "lg": "Serie B",
+   "rk": 99,
    "h": {
     "n": "São Bernardo",
     "l": "https://media.api-sports.io/football/teams/7865.png"
@@ -1205,6 +1225,7 @@
    "ts": 1794528000,
    "flag": "⚽",
    "lg": "Primera A",
+   "rk": 99,
    "h": {
     "n": "Llaneros",
     "l": "https://media.api-sports.io/football/teams/1464.png"
