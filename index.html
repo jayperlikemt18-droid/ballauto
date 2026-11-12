@@ -104,7 +104,15 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
 (function () {
   var list = document.getElementById("list"), ta = document.getElementById("msg"), st = document.getElementById("status");
   var text = "", TH = {}, D = null, SEL = {}, SK = "ballsel", OUT = null, F = { lg: "", only: true };
-  function tn(n) { var k = String(n).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); return TH[k] || TH[String(n).toLowerCase()] || n; }
+  function tn(n) {
+    n = String(n);
+    var k = n.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    if (TH[k] || TH[n.toLowerCase()]) return TH[k] || TH[n.toLowerCase()];
+    var m = n.match(/^(.+?)\s+(W|Women)$/i); if (m) return tn(m[1]) + " (หญิง)";
+    m = n.match(/^(.+?)\s+U-?(\d\d)$/i); if (m) return tn(m[1]) + " U" + m[2];
+    m = n.match(/^(.+?)\s+(II|B)$/); if (m) return tn(m[1]) + " ทีมสอง";
+    return n;
+  }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function team(x, home) {
     var ini = esc(x.n.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase());
@@ -134,7 +142,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
   function cards(ms) {
     return ms.map(function (m) {
       var can = !!(best(m) || manual(m));
-      return '<article class="match' + (m.pk ? '' : ' skip') + '"><div class="top"><span class="league"><span class="flag">' + m.flag + '</span>' + esc(m.lg) +
+      return '<article class="match' + (m.pk ? '' : ' skip') + '"><div class="top"><span class="league"><span class="flag">' + m.flag + '</span>' + esc(tn(m.lg)) +
         '</span><span class="time">' + esc(m.t) + '<small>' + esc(m.d) + '</small>' + (m.lock ? '<span class="lock" title="ล็อกแล้ว">🔒</span>' : '') + '</span></div><div class="teams">' + team(m.h, true) + team(m.a, false) + '</div>' +
         (m.pr && !(m.pr.h === 10 && m.pr.d === 45 && m.pr.a === 45) ? '<p class="note" style="text-align:left">โอกาสชนะ เหย้า ' + m.pr.h + '% · เสมอ ' + m.pr.d + '% · เยือน ' + m.pr.a + '%' + (m.elo != null ? ' · Elo เหย้า ' + m.elo + '%' : '') + '</p>' : '') +
         '<div class="prices">' + box("ต่อรอง", m.hp ? nm(m, m.hp.lab) : (m.hc ? sg(nm(m, m.hc)) : "ไม่มีราคา"), !!m.hp) + box("สูง/ต่ำ", m.ou ? (m.ou.weak ? m.ou.line : m.ou.lab) : "ไม่มีราคา", !!(m.ou && !m.ou.weak)) + '</div>' +
@@ -204,7 +212,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     var chips = document.getElementById("chips"), lgs = [];
     d.matches.forEach(function (m) { if (lgs.indexOf(m.lg) < 0) lgs.push(m.lg); });
     chips.innerHTML = '<button class="chip" data-k="only">คู่เด็ด</button><button class="chip" data-k="all">ทุกคู่</button>' +
-      lgs.map(function (x) { return '<button class="chip" data-k="' + esc(x) + '">' + esc(x) + '</button>'; }).join("");
+      lgs.map(function (x) { return '<button class="chip" data-k="' + esc(x) + '">' + esc(tn(x)) + '</button>'; }).join("");
     chips.onclick = function (ev) { var k = ev.target.getAttribute && ev.target.getAttribute("data-k"); if (!k) return; F.only = k === "only"; F.lg = (k === "all" || k === "only") ? "" : k; draw(); };
     list.onchange = function (ev) { var t = ev.target; if (!t.getAttribute || t.getAttribute("data-k") === null || t.type !== "checkbox") return; SEL[t.getAttribute("data-k")] = t.checked ? 1 : 0; saveSel(); recompute(); draw(); };
     if (!d.matches.length) { list.innerHTML = '<p class="note">ตอนนี้ยังไม่มีคู่ในลีกที่ติดตาม</p>'; }

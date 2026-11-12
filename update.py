@@ -407,14 +407,15 @@ def _swap(m, t):
 def best_pick(m):
     a = b = None
     ou, hp = m.get("ou"), m.get("hp")
-    if ou and not ou["weak"]:
+    if ou and not ou["weak"] and ou["pct"] >= 62:
         g = m["hc"].split(" ต่อ ")[0] if m.get("hc") and " ต่อ " in m["hc"] else m["h"]["n"]
         a = (ou["pct"], "%s %s" % (tn(g), ou["lab"]), "ou")
     if hp:
         b = (hp["pct"], _swap(m, hp["lab"]), "hp")
     if a and b:
-        return a if a[0] >= b[0] else b
-    return a or b
+        return a if a[0] >= b[0] + 3 else b
+    r = a or b
+    return r if r and r[0] >= 60 else None
 
 
 def select(picks, n):
@@ -452,6 +453,24 @@ def build_message(data):
     return "\n".join(out).rstrip(), len(picks)
 
 
+def result_message(newly, history):
+    out = ["📊 ผลที่เพิ่งออก", ""]
+    for e in sorted(newly, key=lambda x: x["ts"]):
+        if e.get("k") == "ou":
+            pick = ("สูง " if e["s"] == "over" else "ต่ำ ") + str(e["lt"])
+        else:
+            pick = "%s %s%s" % (tn(e["team"]), "-" if e.get("giver") else "+", e["lt"])
+        r = e["res"]
+        ic = "✅" if r > 0 else ("❌" if r < 0 else "➖")
+        out.append("%s %s (%s พบ %s) %s-%s" % (ic, pick, tn(e["hn"]), tn(e["an"]), e.get("gh"), e.get("ga")))
+    done = [e for e in history if e.get("res") is not None]
+    w = sum(1 for e in done if e["res"] > 0)
+    l = sum(1 for e in done if e["res"] < 0)
+    if w + l:
+        out += ["", "สะสม เข้า %d ตาย %d (%d%%)" % (w, l, round(w * 100 / (w + l)))]
+    return "\n".join(out)
+
+
 def send_telegram(text):
     tok, chat = os.environ.get("TELEGRAM_TOKEN", "").strip(), os.environ.get("TELEGRAM_CHAT", "").strip()
     if not tok or not chat:
@@ -486,10 +505,12 @@ def run():
             old_snap = _d.get("snap", {})
     except Exception:
         pass
+    before = {(e["id"], e.get("k")) for e in history if e.get("res") is not None}
     try:
         settle(history)
     except Exception as e:
         print("เช็กผลไม่ได้:", e)
+    newly = [e for e in history if e.get("res") is not None and (e["id"], e.get("k")) not in before]
     now = datetime.now(timezone.utc)
     end = now + timedelta(hours=24)
     fixtures = []
@@ -515,10 +536,11 @@ def run():
     matches = []
     # ล็อกคู่เด็ดเดิมที่ยังไม่เตะ ไม่เปลี่ยนคู่ที่แจกไปแล้ว
     locked = {m["id"]: m for m in old
-              if m.get("id") and m.get("v") == 2 and m["ts"] > now.timestamp() and (m.get("hp") or (m.get("ou") and not m["ou"].get("weak")))}
+              if m.get("id") and m.get("v") == 2 and not m.get("nopick") and m["ts"] > now.timestamp() and (m.get("hp") or (m.get("ou") and not m["ou"].get("weak")))}
     snap = {k: v for k, v in old_snap.items() if v.get("ts", 0) > now.timestamp() - 86400}
     bad_kind, bad_lg = calibrate(history)
     cands = []
+    others = []
     for t, f in out:
         fid = f["fixture"]["id"]
         h, a = f["teams"]["home"], f["teams"]["away"]
@@ -545,7 +567,7 @@ def run():
                 for line, ph in ah_ladder(books):
                     ht = line if fav == "home" else -line   # แต้มต่อของทีมเต็ง (ลบ = ต่อ)
                     pc = ph if fav == "home" else 1 - ph
-                    if pc < 0.60 or ht < -1 or ht > 2:
+                    if pc < 0.60 or ht < -6 or ht > 6:
                         continue
                     if best_c is None or pc < best_c[0]:
                         best_c = (pc, ht)
@@ -585,10 +607,13 @@ def run():
                     ou["weak"] = True
                 else:
                     hp = None
+        cc = {"t": t, "f": f, "h": h, "a": a, "hc": hc, "ou": ou, "hp": hp, "pr": pr, "e": e,
+              "hcs": hcs, "ous": ous, "flag": flag, "lg": lg,
+              "top": max(ou["pct"] if ou and not ou["weak"] else 0, hp["pct"] if hp else 0)}
         if (ou and not ou["weak"]) or hp:
-            cands.append({"t": t, "f": f, "h": h, "a": a, "hc": hc, "ou": ou, "hp": hp, "pr": pr, "e": e,
-                          "hcs": hcs, "ous": ous, "flag": flag, "lg": lg,
-                          "top": max(ou["pct"] if ou and not ou["weak"] else 0, hp["pct"] if hp else 0)})
+            cands.append(cc)
+        else:
+            others.append(cc)
     # 3) เช็กด้วยสถิติประตูย้อนหลัง (โมเดลปัวซอง) เฉพาะคู่ที่ผ่านด่านก่อนหน้า และเรียงโอกาสสูงสุดก่อน
     cands.sort(key=lambda c: -c["top"])
     cands = cands[:MAX_MODEL]
@@ -624,6 +649,7 @@ def run():
     for c in cands:
         ou, hp, t, f = c["ou"], c["hp"], c["t"], c["f"]
         if not ((ou and not ou["weak"]) or hp):
+            others.append(c)
             continue
         h, a, e = c["h"], c["a"], c["e"]
         if not any(x["id"] == f["fixture"]["id"] for x in history):
@@ -641,6 +667,17 @@ def run():
             "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "elo": round(e) if e is not None else None,
             "hcs": c["hcs"], "ous": c["ous"],
         })
+    for c in others:  # คู่ที่ไม่ผ่านเกณฑ์ ใส่ไว้ดูในแท็บ "ทุกคู่" เท่านั้น ไม่เข้าสเต็ป
+        t, f, h, a, e = c["t"], c["f"], c["h"], c["a"], c["e"]
+        if c["ou"]:
+            c["ou"]["weak"] = True
+        matches.append({
+            "v": 2, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "flag": c["flag"], "lg": c["lg"],
+            "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
+            "hc": c["hc"], "ou": c["ou"], "hp": None, "pr": c["pr"], "elo": round(e) if e is not None else None,
+            "hcs": c["hcs"], "ous": c["ous"], "nopick": True,
+        })
     matches.sort(key=lambda m: m["ts"])
     nt = datetime.now(TH)
     data = {"updated": "%s %02d/%02d %s น." % (DAYS[nt.weekday()], nt.day, nt.month, nt.strftime("%H:%M")),
@@ -649,7 +686,9 @@ def run():
     with open("data.json", "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, indent=1)
     print("เขียน data.json แล้ว %d คู่" % len(matches))
-    if os.environ.get("SEND") == "1":
+    if os.environ.get("SEND") == "1" or os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
+        if newly:
+            send_telegram(result_message(newly, data["history"]))
         text, n = build_message(data)
         if n:
             send_telegram(text)
