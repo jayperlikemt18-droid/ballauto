@@ -1,275 +1,25 @@
 {
- "updated": "พฤหัสบดี 12/11 16:52 น.",
- "date": "12/11/69",
+ "updated": "ศุกร์ 13/11 09:03 น.",
+ "date": "13/11/69",
  "matches": [
   {
    "v": 2,
-   "id": 1594895,
-   "t": "19:30",
-   "d": "พฤหัสบดี",
-   "ts": 1794486600,
-   "flag": "⚽",
-   "lg": "Second League",
-   "h": {
-    "n": "AL Nasr SC",
-    "l": "https://media.api-sports.io/football/teams/2617.png"
-   },
-   "a": {
-    "n": "Pharco",
-    "l": "https://media.api-sports.io/football/teams/15736.png"
-   },
-   "hc": "เสมอ",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 61,
-    "weak": false,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 32,
-    "d": 32,
-    "a": 35
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1594896,
-   "t": "19:30",
-   "d": "พฤหัสบดี",
-   "ts": 1794486600,
-   "flag": "⚽",
-   "lg": "Second League",
-   "h": {
-    "n": "Dayrout",
-    "l": "https://media.api-sports.io/football/teams/18022.png"
-   },
-   "a": {
-    "n": "Proxy",
-    "l": "https://media.api-sports.io/football/teams/20461.png"
-   },
-   "hc": "Proxy ต่อ 0/0.5",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 62,
-    "weak": false,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 22,
-    "d": 31,
-    "a": 47
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1594897,
-   "t": "19:30",
-   "d": "พฤหัสบดี",
-   "ts": 1794486600,
-   "flag": "⚽",
-   "lg": "Second League",
-   "h": {
-    "n": "El Entag EL Harby",
-    "l": "https://media.api-sports.io/football/teams/1034.png"
-   },
-   "a": {
-    "n": "Baladiyyat Al Mehalla",
-    "l": "https://media.api-sports.io/football/teams/18036.png"
-   },
-   "hc": "El Entag EL Harby ต่อ 0/0.5",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 62,
-    "weak": false,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 36,
-    "d": 32,
-    "a": 32
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ",
-    "0/0.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1594898,
-   "t": "19:30",
-   "d": "พฤหัสบดี",
-   "ts": 1794486600,
-   "flag": "⚽",
-   "lg": "Second League",
-   "h": {
-    "n": "Masar",
-    "l": "https://media.api-sports.io/football/teams/25468.png"
-   },
-   "a": {
-    "n": "Tersana",
-    "l": "https://media.api-sports.io/football/teams/15739.png"
-   },
-   "hc": "Masar ต่อ 0.5",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 61,
-    "weak": false,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 43,
-    "d": 31,
-    "a": 26
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1595149,
-   "t": "19:30",
-   "d": "พฤหัสบดี",
-   "ts": 1794486600,
-   "flag": "⚽",
-   "lg": "Second League",
-   "rk": 99,
-   "h": {
-    "n": "Mega Sport",
-    "l": "https://media.api-sports.io/football/teams/28011.png"
-   },
-   "a": {
-    "n": "El Seka El Hadid",
-    "l": "https://media.api-sports.io/football/teams/18031.png"
-   },
-   "hc": "El Seka El Hadid ต่อ 0/0.5",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 58,
-    "weak": true,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 26,
-    "d": 31,
-    "a": 43
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1545873,
-   "t": "22:00",
-   "d": "พฤหัสบดี",
-   "ts": 1794495600,
+   "id": 1545868,
+   "t": "20:00",
+   "d": "ศุกร์",
+   "ts": 1794574800,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
    "rk": 32,
    "h": {
-    "n": "Ghana",
-    "l": "https://media.api-sports.io/football/teams/1504.png"
+    "n": "Comoros",
+    "l": "https://media.api-sports.io/football/teams/1524.png"
    },
    "a": {
-    "n": "Somalia",
-    "l": "https://media.api-sports.io/football/teams/8050.png"
+    "n": "Congo",
+    "l": "https://media.api-sports.io/football/teams/1517.png"
    },
-   "hc": "Ghana ต่อ 2.5/3",
-   "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 58,
-    "weak": true,
-    "s": "under",
-    "x": 3.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 86,
-    "d": 11,
-    "a": 3
-   },
-   "elo": null,
-   "hcs": [
-    "2",
-    "2/2.5",
-    "2.5",
-    "2.5/3",
-    "3"
-   ],
-   "ous": [
-    "2.5",
-    "3.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1545871,
-   "t": "23:00",
-   "d": "พฤหัสบดี",
-   "ts": 1794499200,
-   "flag": "🌍",
-   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
-   "h": {
-    "n": "Equatorial Guinea",
-    "l": "https://media.api-sports.io/football/teams/1521.png"
-   },
-   "a": {
-    "n": "Zimbabwe",
-    "l": "https://media.api-sports.io/football/teams/1522.png"
-   },
-   "hc": "Equatorial Guinea ต่อ 0/0.5",
+   "hc": "Comoros ต่อ 0.5/1",
    "ou": {
     "lab": "สูง 1.5",
     "line": "1.5",
@@ -280,38 +30,39 @@
    },
    "hp": null,
    "pr": {
-    "h": 36,
-    "d": 32,
-    "a": 32
+    "h": 48,
+    "d": 31,
+    "a": 21
    },
    "elo": null,
    "hcs": [
-    "เสมอ",
     "0/0.5",
-    "0.5"
+    "0.5",
+    "0.5/1"
    ],
    "ous": [
-    "1.5"
-   ],
-   "lock": true
+    "1.5",
+    "2.5"
+   ]
   },
   {
    "v": 2,
-   "id": 1545876,
-   "t": "23:00",
-   "d": "พฤหัสบดี",
-   "ts": 1794499200,
+   "id": 1545885,
+   "t": "20:00",
+   "d": "ศุกร์",
+   "ts": 1794574800,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
-    "n": "Madagascar",
-    "l": "https://media.api-sports.io/football/teams/1490.png"
+    "n": "Zambia",
+    "l": "https://media.api-sports.io/football/teams/1507.png"
    },
    "a": {
-    "n": "Guinea-Bissau",
-    "l": "https://media.api-sports.io/football/teams/1513.png"
+    "n": "Burundi",
+    "l": "https://media.api-sports.io/football/teams/1528.png"
    },
-   "hc": "Guinea-Bissau ต่อ 0/0.5",
+   "hc": "Zambia ต่อ 1",
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
@@ -322,39 +73,213 @@
    },
    "hp": null,
    "pr": {
-    "h": 30,
-    "d": 32,
-    "a": 39
+    "h": 54,
+    "d": 28,
+    "a": 18
    },
    "elo": null,
    "hcs": [
-    "เสมอ",
-    "0/0.5",
-    "0.5"
+    "0.5",
+    "0.5/1",
+    "1",
+    "1/1.5"
    ],
    "ous": [
     "2.5"
-   ],
-   "lock": true
+   ]
   },
   {
    "v": 2,
-   "id": 1545869,
-   "t": "23:00",
-   "d": "พฤหัสบดี",
-   "ts": 1794499200,
+   "id": 1545879,
+   "t": "20:00",
+   "d": "ศุกร์",
+   "ts": 1794574800,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
    "rk": 32,
    "h": {
-    "n": "Congo DR",
-    "l": "https://media.api-sports.io/football/teams/1508.png"
+    "n": "Mozambique",
+    "l": "https://media.api-sports.io/football/teams/1512.png"
    },
    "a": {
-    "n": "Sierra Leone",
-    "l": "https://media.api-sports.io/football/teams/1499.png"
+    "n": "Ethiopia",
+    "l": "https://media.api-sports.io/football/teams/1506.png"
    },
-   "hc": "Congo DR ต่อ 1.5/2",
+   "hc": "Mozambique ต่อ 1",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 56,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 55,
+    "d": 27,
+    "a": 18
+   },
+   "elo": null,
+   "hcs": [
+    "0.5",
+    "0.5/1",
+    "1",
+    "1/1.5",
+    "1.5"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1558561,
+   "t": "22:00",
+   "d": "ศุกร์",
+   "ts": 1794582000,
+   "flag": "⚽",
+   "lg": "First League",
+   "rk": 99,
+   "h": {
+    "n": "Jezero",
+    "l": "https://media.api-sports.io/football/teams/3748.png"
+   },
+   "a": {
+    "n": "Buducnost Podgorica",
+    "l": "https://media.api-sports.io/football/teams/579.png"
+   },
+   "hc": "Buducnost Podgorica ต่อ 0/0.5",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 56,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 33,
+    "d": 30,
+    "a": 37
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1545865,
+   "t": "23:00",
+   "d": "ศุกร์",
+   "ts": 1794585600,
+   "flag": "🌍",
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
+   "h": {
+    "n": "Burkina Faso",
+    "l": "https://media.api-sports.io/football/teams/1502.png"
+   },
+   "a": {
+    "n": "Mauritania",
+    "l": "https://media.api-sports.io/football/teams/1491.png"
+   },
+   "hc": "Burkina Faso ต่อ 1",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 59,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 58,
+    "d": 27,
+    "a": 15
+   },
+   "elo": null,
+   "hcs": [
+    "0.5",
+    "0.5/1",
+    "1",
+    "1/1.5"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1545867,
+   "t": "23:00",
+   "d": "ศุกร์",
+   "ts": 1794585600,
+   "flag": "🌍",
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
+   "h": {
+    "n": "Cape Verde Islands",
+    "l": "https://media.api-sports.io/football/teams/1533.png"
+   },
+   "a": {
+    "n": "Liberia",
+    "l": "https://media.api-sports.io/football/teams/1525.png"
+   },
+   "hc": "Cape Verde Islands ต่อ 1.5/2",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 50,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 74,
+    "d": 17,
+    "a": 9
+   },
+   "elo": null,
+   "hcs": [
+    "1/1.5",
+    "1.5",
+    "1.5/2",
+    "2"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1545872,
+   "t": "23:00",
+   "d": "ศุกร์",
+   "ts": 1794585600,
+   "flag": "🌍",
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
+   "h": {
+    "n": "Gabon",
+    "l": "https://media.api-sports.io/football/teams/1503.png"
+   },
+   "a": {
+    "n": "Lesotho",
+    "l": "https://media.api-sports.io/football/teams/1518.png"
+   },
+   "hc": "Gabon ต่อ 1.5/2",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
@@ -384,43 +309,43 @@
   },
   {
    "v": 2,
-   "id": 1545874,
+   "id": 1545880,
    "t": "23:00",
-   "d": "พฤหัสบดี",
-   "ts": 1794499200,
+   "d": "ศุกร์",
+   "ts": 1794585600,
    "flag": "🌍",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
    "rk": 32,
    "h": {
-    "n": "Guinea",
-    "l": "https://media.api-sports.io/football/teams/1509.png"
+    "n": "Nigeria",
+    "l": "https://media.api-sports.io/football/teams/19.png"
    },
    "a": {
-    "n": "Eritrea",
-    "l": "https://media.api-sports.io/football/teams/1498.png"
+    "n": "Tanzania",
+    "l": "https://media.api-sports.io/football/teams/1489.png"
    },
-   "hc": "Guinea ต่อ 1.5/2",
+   "hc": "Nigeria ต่อ 2",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 55,
+    "pct": 57,
     "weak": true,
     "s": "over",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 72,
-    "d": 19,
-    "a": 9
+    "h": 78,
+    "d": 16,
+    "a": 6
    },
    "elo": null,
    "hcs": [
-    "1/1.5",
     "1.5",
     "1.5/2",
     "2",
-    "2/2.5"
+    "2/2.5",
+    "2.5"
    ],
    "ous": [
     "2.5"
@@ -429,67 +354,22 @@
   },
   {
    "v": 2,
-   "id": 1528958,
-   "t": "00:00",
+   "id": 1545882,
+   "t": "23:00",
    "d": "ศุกร์",
-   "ts": 1794502800,
+   "ts": 1794585600,
    "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
-    "n": "Türkiye",
-    "l": "https://media.api-sports.io/football/teams/777.png"
+    "n": "South Africa",
+    "l": "https://media.api-sports.io/football/teams/1531.png"
    },
    "a": {
-    "n": "Belgium",
-    "l": "https://media.api-sports.io/football/teams/1.png"
+    "n": "Kenya",
+    "l": "https://media.api-sports.io/football/teams/1511.png"
    },
-   "hc": "Belgium ต่อ 0.5",
-   "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 58,
-    "weak": true,
-    "s": "under",
-    "x": 3.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 25,
-    "d": 24,
-    "a": 51
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1",
-    "1"
-   ],
-   "ous": [
-    "2.5",
-    "3.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1528959,
-   "t": "00:00",
-   "d": "ศุกร์",
-   "ts": 1794502800,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
-   "h": {
-    "n": "Armenia",
-    "l": "https://media.api-sports.io/football/teams/1094.png"
-   },
-   "a": {
-    "n": "Cyprus",
-    "l": "https://media.api-sports.io/football/teams/1106.png"
-   },
-   "hc": "Armenia ต่อ 0/0.5",
+   "hc": "South Africa ต่อ 1.5",
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
@@ -500,450 +380,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 36,
-    "d": 30,
-    "a": 34
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ",
-    "0/0.5",
-    "0.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1545864,
-   "t": "02:00",
-   "d": "ศุกร์",
-   "ts": 1794510000,
-   "flag": "🌍",
-   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
-   "rk": 32,
-   "h": {
-    "n": "Benin",
-    "l": "https://media.api-sports.io/football/teams/1516.png"
-   },
-   "a": {
-    "n": "Central African Republic",
-    "l": "https://media.api-sports.io/football/teams/1527.png"
-   },
-   "hc": "Benin ต่อ 1",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 57,
-    "weak": true,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 55,
-    "d": 27,
-    "a": 18
-   },
-   "elo": null,
-   "hcs": [
-    "0.5",
-    "0.5/1",
-    "1",
-    "1/1.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1545866,
-   "t": "02:00",
-   "d": "ศุกร์",
-   "ts": 1794510000,
-   "flag": "🌍",
-   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
-   "rk": 32,
-   "h": {
-    "n": "Cameroon",
-    "l": "https://media.api-sports.io/football/teams/1530.png"
-   },
-   "a": {
-    "n": "Namibia",
-    "l": "https://media.api-sports.io/football/teams/1493.png"
-   },
-   "hc": "Cameroon ต่อ 1.5",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 57,
-    "weak": true,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 73,
-    "d": 21,
-    "a": 6
-   },
-   "elo": null,
-   "hcs": [
-    "1/1.5",
-    "1.5",
-    "1.5/2"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1545875,
-   "t": "02:00",
-   "d": "ศุกร์",
-   "ts": 1794510000,
-   "flag": "🌍",
-   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
-   "rk": 32,
-   "h": {
-    "n": "Ivory Coast",
-    "l": "https://media.api-sports.io/football/teams/1501.png"
-   },
-   "a": {
-    "n": "Gambia",
-    "l": "https://media.api-sports.io/football/teams/1492.png"
-   },
-   "hc": "Ivory Coast ต่อ 2",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 55,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 75,
-    "d": 18,
-    "a": 7
-   },
-   "elo": null,
-   "hcs": [
-    "1/1.5",
-    "1.5",
-    "1.5/2",
-    "2",
-    "2/2.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1545881,
-   "t": "02:00",
-   "d": "ศุกร์",
-   "ts": 1794510000,
-   "flag": "🌍",
-   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
-   "rk": 32,
-   "h": {
-    "n": "Senegal",
-    "l": "https://media.api-sports.io/football/teams/13.png"
-   },
-   "a": {
-    "n": "Sudan",
-    "l": "https://media.api-sports.io/football/teams/1510.png"
-   },
-   "hc": "Senegal ต่อ 2.5",
-   "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 58,
-    "weak": true,
-    "s": "under",
-    "x": 3.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 84,
-    "d": 12,
-    "a": 4
-   },
-   "elo": null,
-   "hcs": [
-    "1.5/2",
-    "2",
-    "2/2.5",
-    "2.5",
-    "2.5/3"
-   ],
-   "ous": [
-    "2.5",
-    "3.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1528963,
-   "t": "02:45",
-   "d": "ศุกร์",
-   "ts": 1794512700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "h": {
-    "n": "Albania",
-    "l": "https://media.api-sports.io/football/teams/778.png"
-   },
-   "a": {
-    "n": "Finland",
-    "l": "https://media.api-sports.io/football/teams/1099.png"
-   },
-   "hc": "Albania ต่อ 0.5",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 61,
-    "weak": false,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 46,
-    "d": 31,
-    "a": 23
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1528960,
-   "t": "02:45",
-   "d": "ศุกร์",
-   "ts": 1794512700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
-   "h": {
-    "n": "Italy",
-    "l": "https://media.api-sports.io/football/teams/768.png"
-   },
-   "a": {
-    "n": "France",
-    "l": "https://media.api-sports.io/football/teams/2.png"
-   },
-   "hc": "France ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 56,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 25,
-    "d": 27,
-    "a": 48
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1528961,
-   "t": "02:45",
-   "d": "ศุกร์",
-   "ts": 1794512700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
-   "h": {
-    "n": "Czech Republic",
-    "l": "https://media.api-sports.io/football/teams/770.png"
-   },
-   "a": {
-    "n": "Spain",
-    "l": "https://media.api-sports.io/football/teams/9.png"
-   },
-   "hc": "Spain ต่อ 1.5/2",
-   "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 56,
-    "weak": true,
-    "s": "under",
-    "x": 3.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 8,
-    "d": 14,
-    "a": 77
-   },
-   "elo": null,
-   "hcs": [
-    "1.5",
-    "1.5/2",
-    "2",
-    "2/2.5",
-    "2.5"
-   ],
-   "ous": [
-    "3.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1528962,
-   "t": "02:45",
-   "d": "ศุกร์",
-   "ts": 1794512700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
-   "h": {
-    "n": "England",
-    "l": "https://media.api-sports.io/football/teams/10.png"
-   },
-   "a": {
-    "n": "Croatia",
-    "l": "https://media.api-sports.io/football/teams/3.png"
-   },
-   "hc": "England ต่อ 2",
-   "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 56,
-    "weak": true,
-    "s": "under",
-    "x": 3.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 75,
-    "d": 16,
-    "a": 9
-   },
-   "elo": null,
-   "hcs": [
-    "1/1.5",
-    "1.5",
-    "1.5/2",
-    "2",
-    "2/2.5"
-   ],
-   "ous": [
-    "3.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1528964,
-   "t": "02:45",
-   "d": "ศุกร์",
-   "ts": 1794512700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
-   "h": {
-    "n": "San Marino",
-    "l": "https://media.api-sports.io/football/teams/1115.png"
-   },
-   "a": {
-    "n": "Belarus",
-    "l": "https://media.api-sports.io/football/teams/1100.png"
-   },
-   "hc": "Belarus ต่อ 2",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 57,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 6,
-    "d": 12,
-    "a": 82
-   },
-   "elo": null,
-   "hcs": [
-    "1.5",
-    "1.5/2",
-    "2",
-    "2/2.5",
-    "2.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1545613,
-   "t": "02:45",
-   "d": "ศุกร์",
-   "ts": 1794512700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
-   "h": {
-    "n": "Montenegro",
-    "l": "https://media.api-sports.io/football/teams/1109.png"
-   },
-   "a": {
-    "n": "Latvia",
-    "l": "https://media.api-sports.io/football/teams/1092.png"
-   },
-   "hc": "Montenegro ต่อ 1.5/2",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 53,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 73,
-    "d": 18,
-    "a": 9
+    "h": 72,
+    "d": 20,
+    "a": 8
    },
    "elo": null,
    "hcs": [
@@ -959,22 +398,107 @@
   },
   {
    "v": 2,
-   "id": 1520977,
-   "t": "05:00",
+   "id": 1545883,
+   "t": "23:00",
    "d": "ศุกร์",
-   "ts": 1794520800,
-   "flag": "⚽",
-   "lg": "Serie B",
-   "rk": 99,
+   "ts": 1794585600,
+   "flag": "🌍",
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
-    "n": "Ponte Preta",
-    "l": "https://media.api-sports.io/football/teams/139.png"
+    "n": "Tunisia",
+    "l": "https://media.api-sports.io/football/teams/28.png"
    },
    "a": {
-    "n": "Operario-PR",
-    "l": "https://media.api-sports.io/football/teams/1223.png"
+    "n": "Libya",
+    "l": "https://media.api-sports.io/football/teams/1526.png"
    },
-   "hc": "Operario-PR ต่อ 0.5/1",
+   "hc": "Tunisia ต่อ 1.5",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 55,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 69,
+    "d": 22,
+    "a": 9
+   },
+   "elo": null,
+   "hcs": [
+    "1",
+    "1/1.5",
+    "1.5",
+    "1.5/2"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1554219,
+   "t": "23:00",
+   "d": "ศุกร์",
+   "ts": 1794585600,
+   "flag": "⚽",
+   "lg": "Prva Liga",
+   "rk": 99,
+   "h": {
+    "n": "Dubočica",
+    "l": "https://media.api-sports.io/football/teams/12312.png"
+   },
+   "a": {
+    "n": "Naftagas",
+    "l": "https://media.api-sports.io/football/teams/19839.png"
+   },
+   "hc": "Dubočica ต่อ 0/0.5",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 43,
+    "d": 27,
+    "a": 30
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1559002,
+   "t": "23:00",
+   "d": "ศุกร์",
+   "ts": 1794585600,
+   "flag": "⚽",
+   "lg": "2. SNL",
+   "rk": 99,
+   "h": {
+    "n": "Primorje",
+    "l": "https://media.api-sports.io/football/teams/14007.png"
+   },
+   "a": {
+    "n": "Jesenice",
+    "l": "https://media.api-sports.io/football/teams/19244.png"
+   },
+   "hc": "Primorje ต่อ 0/0.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
@@ -985,9 +509,172 @@
    },
    "hp": null,
    "pr": {
-    "h": 19,
-    "d": 23,
-    "a": 58
+    "h": 43,
+    "d": 26,
+    "a": 32
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1559005,
+   "t": "23:30",
+   "d": "ศุกร์",
+   "ts": 1794587400,
+   "flag": "⚽",
+   "lg": "2. SNL",
+   "rk": 99,
+   "h": {
+    "n": "Triglav",
+    "l": "https://media.api-sports.io/football/teams/4363.png"
+   },
+   "a": {
+    "n": "Bilje",
+    "l": "https://media.api-sports.io/football/teams/4367.png"
+   },
+   "hc": "Triglav ต่อ 1.5/2",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 65,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 71,
+    "d": 18,
+    "a": 11
+   },
+   "elo": null,
+   "hcs": [
+    "1.5",
+    "1.5/2"
+   ],
+   "ous": []
+  },
+  {
+   "v": 2,
+   "id": 1559000,
+   "t": "23:30",
+   "d": "ศุกร์",
+   "ts": 1794587400,
+   "flag": "⚽",
+   "lg": "2. SNL",
+   "rk": 99,
+   "h": {
+    "n": "Dravinja",
+    "l": "https://media.api-sports.io/football/teams/16302.png"
+   },
+   "a": {
+    "n": "Krka",
+    "l": "https://media.api-sports.io/football/teams/4375.png"
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 55,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 36,
+    "d": 26,
+    "a": 37
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1528968,
+   "t": "00:00",
+   "d": "เสาร์",
+   "ts": 1794589200,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Moldova",
+    "l": "https://media.api-sports.io/football/teams/1114.png"
+   },
+   "a": {
+    "n": "Kazakhstan",
+    "l": "https://media.api-sports.io/football/teams/1095.png"
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 61,
+    "weak": false,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 35,
+    "d": 32,
+    "a": 33
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ",
+    "0/0.5",
+    "0.5"
+   ],
+   "ous": [
+    "2.5"
+   ]
+  },
+  {
+   "v": 2,
+   "id": 1561727,
+   "t": "00:00",
+   "d": "เสาร์",
+   "ts": 1794589200,
+   "flag": "⚽",
+   "lg": "II Liga - East",
+   "rk": 99,
+   "h": {
+    "n": "Znicz Pruszków",
+    "l": "https://media.api-sports.io/football/teams/6964.png"
+   },
+   "a": {
+    "n": "Sokół Kleczew",
+    "l": "https://media.api-sports.io/football/teams/16255.png"
+   },
+   "hc": "Znicz Pruszków ต่อ 1",
+   "ou": {
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 54,
+    "weak": true,
+    "s": "under",
+    "x": 3.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 58,
+    "d": 24,
+    "a": 19
    },
    "elo": null,
    "hcs": [
@@ -998,88 +685,49 @@
     "1.5"
    ],
    "ous": [
-    "2.5"
+    "3.5"
    ],
    "nopick": true
   },
   {
    "v": 2,
-   "id": 1549868,
-   "t": "05:00",
-   "d": "ศุกร์",
-   "ts": 1794520800,
-   "flag": "⚽",
-   "lg": "Primera A",
-   "rk": 99,
+   "id": 1545870,
+   "t": "02:00",
+   "d": "เสาร์",
+   "ts": 1794596400,
+   "flag": "🌍",
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
-    "n": "Deportivo Pasto",
-    "l": "https://media.api-sports.io/football/teams/1126.png"
+    "n": "Egypt",
+    "l": "https://media.api-sports.io/football/teams/32.png"
    },
    "a": {
-    "n": "Junior",
-    "l": "https://media.api-sports.io/football/teams/1135.png"
+    "n": "Malawi",
+    "l": "https://media.api-sports.io/football/teams/1495.png"
    },
-   "hc": "Junior ต่อ 1.5",
+   "hc": "Egypt ต่อ 2/2.5",
    "ou": {
-    "lab": "สูง 1.5",
-    "line": "1.5",
-    "pct": 72,
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 57,
     "weak": true,
     "s": "over",
-    "x": 1.5
+    "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 6,
-    "d": 11,
-    "a": 83
+    "h": 84,
+    "d": 12,
+    "a": 3
    },
    "elo": null,
    "hcs": [
-    "เสมอ",
-    "1/1.5",
-    "1.5",
+    "1.5/2",
+    "2",
     "2/2.5",
-    "2.5"
-   ],
-   "ous": [],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1559703,
-   "t": "05:00",
-   "d": "ศุกร์",
-   "ts": 1794520800,
-   "flag": "⚽",
-   "lg": "Liga Nacional",
-   "rk": 99,
-   "h": {
-    "n": "Aurora",
-    "l": "https://media.api-sports.io/football/teams/10154.png"
-   },
-   "a": {
-    "n": "Mixco",
-    "l": "https://media.api-sports.io/football/teams/3645.png"
-   },
-   "hc": "Aurora ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 55,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 47,
-    "d": 28,
-    "a": 25
-   },
-   "elo": null,
-   "hcs": [
-    "0.5"
+    "2.5",
+    "2.5/3"
    ],
    "ous": [
     "2.5"
@@ -1088,131 +736,485 @@
   },
   {
    "v": 2,
-   "id": 1589960,
-   "t": "06:00",
-   "d": "ศุกร์",
-   "ts": 1794524400,
-   "flag": "⚽",
-   "lg": "Super Copa",
+   "id": 1545877,
+   "t": "02:00",
+   "d": "เสาร์",
+   "ts": 1794596400,
+   "flag": "🌍",
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
    "h": {
-    "n": "Estudiantes L.P.",
-    "l": "https://media.api-sports.io/football/teams/450.png"
+    "n": "Mali",
+    "l": "https://media.api-sports.io/football/teams/1500.png"
    },
    "a": {
-    "n": "Independ. Rivadavia",
-    "l": "https://media.api-sports.io/football/teams/473.png"
+    "n": "Rwanda",
+    "l": "https://media.api-sports.io/football/teams/1514.png"
    },
-   "hc": "Estudiantes L.P. ต่อ 0/0.5",
-   "ou": {
-    "lab": "สูง 1.5",
-    "line": "1.5",
-    "pct": 62,
-    "weak": false,
-    "s": "over",
-    "x": 1.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 40,
-    "d": 32,
-    "a": 29
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ",
-    "0/0.5",
-    "0.5"
-   ],
-   "ous": [
-    "1.5",
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": 1520978,
-   "t": "06:00",
-   "d": "ศุกร์",
-   "ts": 1794524400,
-   "flag": "⚽",
-   "lg": "Serie B",
-   "rk": 99,
-   "h": {
-    "n": "São Bernardo",
-    "l": "https://media.api-sports.io/football/teams/7865.png"
-   },
-   "a": {
-    "n": "Athletic Club",
-    "l": "https://media.api-sports.io/football/teams/13975.png"
-   },
-   "hc": "São Bernardo ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 50,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 48,
-    "d": 27,
-    "a": 25
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1549870,
-   "t": "07:00",
-   "d": "ศุกร์",
-   "ts": 1794528000,
-   "flag": "⚽",
-   "lg": "Primera A",
-   "rk": 99,
-   "h": {
-    "n": "Llaneros",
-    "l": "https://media.api-sports.io/football/teams/1464.png"
-   },
-   "a": {
-    "n": "Chico",
-    "l": "https://media.api-sports.io/football/teams/1132.png"
-   },
-   "hc": "Llaneros ต่อ 0.5/1",
+   "hc": "Mali ต่อ 1.5",
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
-    "pct": 53,
+    "pct": 55,
     "weak": true,
     "s": "under",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 55,
-    "d": 27,
-    "a": 18
+    "h": 71,
+    "d": 20,
+    "a": 9
+   },
+   "elo": null,
+   "hcs": [
+    "1",
+    "1/1.5",
+    "1.5",
+    "1.5/2"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1545614,
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1794599100,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Luxembourg",
+    "l": "https://media.api-sports.io/football/teams/1102.png"
+   },
+   "a": {
+    "n": "Estonia",
+    "l": "https://media.api-sports.io/football/teams/1101.png"
+   },
+   "hc": "Luxembourg ต่อ 0/0.5",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 62,
+    "weak": false,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 41,
+    "d": 31,
+    "a": 28
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ",
+    "0/0.5",
+    "0.5"
+   ],
+   "ous": [
+    "2.5"
+   ]
+  },
+  {
+   "v": 2,
+   "id": 1528965,
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1794599100,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Serbia",
+    "l": "https://media.api-sports.io/football/teams/14.png"
+   },
+   "a": {
+    "n": "Germany",
+    "l": "https://media.api-sports.io/football/teams/25.png"
+   },
+   "hc": "Germany ต่อ 1.5",
+   "ou": {
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 54,
+    "weak": true,
+    "s": "under",
+    "x": 3.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 11,
+    "d": 16,
+    "a": 73
+   },
+   "elo": null,
+   "hcs": [
+    "1/1.5",
+    "1.5",
+    "1.5/2",
+    "2",
+    "2/2.5"
+   ],
+   "ous": [
+    "3.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1528966,
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1794599100,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Netherlands",
+    "l": "https://media.api-sports.io/football/teams/1118.png"
+   },
+   "a": {
+    "n": "Greece",
+    "l": "https://media.api-sports.io/football/teams/1117.png"
+   },
+   "hc": "Netherlands ต่อ 1",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 58,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 60,
+    "d": 23,
+    "a": 17
    },
    "elo": null,
    "hcs": [
     "0.5",
     "0.5/1",
     "1",
-    "1/1.5"
+    "1/1.5",
+    "1.5"
+   ],
+   "ous": [
+    "2.5",
+    "3.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1528967,
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1794599100,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Slovakia",
+    "l": "https://media.api-sports.io/football/teams/773.png"
+   },
+   "a": {
+    "n": "Faroe Islands",
+    "l": "https://media.api-sports.io/football/teams/1098.png"
+   },
+   "hc": "Slovakia ต่อ 1.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 53,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 69,
+    "d": 20,
+    "a": 11
+   },
+   "elo": null,
+   "hcs": [
+    "1",
+    "1/1.5",
+    "1.5",
+    "1.5/2"
    ],
    "ous": [
     "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1528969,
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1794599100,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Bulgaria",
+    "l": "https://media.api-sports.io/football/teams/1103.png"
+   },
+   "a": {
+    "n": "Iceland",
+    "l": "https://media.api-sports.io/football/teams/18.png"
+   },
+   "hc": "Iceland ต่อ 0.5",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 55,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 23,
+    "d": 28,
+    "a": 49
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5",
+    "0.5",
+    "0.5/1",
+    "1"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1528970,
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1794599100,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Liechtenstein",
+    "l": "https://media.api-sports.io/football/teams/1107.png"
+   },
+   "a": {
+    "n": "Azerbaijan",
+    "l": "https://media.api-sports.io/football/teams/1096.png"
+   },
+   "hc": "Azerbaijan ต่อ 1/1.5",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 56,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 8,
+    "d": 20,
+    "a": 73
+   },
+   "elo": null,
+   "hcs": [
+    "1/1.5",
+    "1.5",
+    "1.5/2"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1545615,
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1794599100,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Andorra",
+    "l": "https://media.api-sports.io/football/teams/1110.png"
+   },
+   "a": {
+    "n": "Gibraltar",
+    "l": "https://media.api-sports.io/football/teams/1093.png"
+   },
+   "hc": "Andorra ต่อ 0.5/1",
+   "ou": {
+    "lab": "สูง 1.5",
+    "line": "1.5",
+    "pct": 56,
+    "weak": true,
+    "s": "over",
+    "x": 1.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 54,
+    "d": 30,
+    "a": 16
+   },
+   "elo": null,
+   "hcs": [
+    "0.5",
+    "0.5/1",
+    "1"
+   ],
+   "ous": [
+    "1.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1545654,
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1794599100,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Slovenia",
+    "l": "https://media.api-sports.io/football/teams/1091.png"
+   },
+   "a": {
+    "n": "Switzerland",
+    "l": "https://media.api-sports.io/football/teams/15.png"
+   },
+   "hc": "Switzerland ต่อ 0.5",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 57,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 18,
+    "d": 28,
+    "a": 54
+   },
+   "elo": null,
+   "hcs": [
+    "0.5",
+    "0.5/1",
+    "1"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1545659,
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1794599100,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Scotland",
+    "l": "https://media.api-sports.io/football/teams/1108.png"
+   },
+   "a": {
+    "n": "FYR Macedonia",
+    "l": "https://media.api-sports.io/football/teams/1105.png"
+   },
+   "hc": "Scotland ต่อ 2",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 56,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 77,
+    "d": 15,
+    "a": 7
+   },
+   "elo": null,
+   "hcs": [
+    "1.5",
+    "1.5/2",
+    "2",
+    "2/2.5",
+    "2.5"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1545878,
+   "t": "03:00",
+   "d": "เสาร์",
+   "ts": 1794600000,
+   "flag": "🌍",
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
+   "h": {
+    "n": "Morocco",
+    "l": "https://media.api-sports.io/football/teams/31.png"
+   },
+   "a": {
+    "n": "Niger",
+    "l": "https://media.api-sports.io/football/teams/1505.png"
+   },
+   "hc": "Morocco ต่อ 2.5/3",
+   "ou": {
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 56,
+    "weak": true,
+    "s": "under",
+    "x": 3.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 88,
+    "d": 10,
+    "a": 3
+   },
+   "elo": null,
+   "hcs": [
+    "2/2.5",
+    "2.5",
+    "2.5/3",
+    "3",
+    "3/3.5"
+   ],
+   "ous": [
+    "3.5"
    ],
    "nopick": true
   }
@@ -3095,12 +3097,14 @@
    "hn": "Dayrout",
    "an": "Proxy",
    "lg": "Second League",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 62
+   "pct": 62,
+   "gh": 0,
+   "ga": 1
   },
   {
    "id": 1594897,
@@ -3109,12 +3113,14 @@
    "hn": "El Entag EL Harby",
    "an": "Baladiyyat Al Mehalla",
    "lg": "Second League",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 62
+   "pct": 62,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": 1594895,
@@ -3123,12 +3129,14 @@
    "hn": "AL Nasr SC",
    "an": "Pharco",
    "lg": "Second League",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 61
+   "pct": 61,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": 1594898,
@@ -3137,12 +3145,14 @@
    "hn": "Masar",
    "an": "Tersana",
    "lg": "Second League",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 61
+   "pct": 61,
+   "gh": 0,
+   "ga": 0
   },
   {
    "id": 1545871,
@@ -3151,12 +3161,14 @@
    "hn": "Equatorial Guinea",
    "an": "Zimbabwe",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 1.5,
    "lt": "1.5",
-   "pct": 62
+   "pct": 62,
+   "gh": 0,
+   "ga": 0
   },
   {
    "id": 1545876,
@@ -3165,12 +3177,14 @@
    "hn": "Madagascar",
    "an": "Guinea-Bissau",
    "lg": "แอฟริกัน เนชันส์ คัดเลือก",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 60
+   "pct": 60,
+   "gh": 1,
+   "ga": 1
   },
   {
    "id": 1528963,
@@ -3179,12 +3193,14 @@
    "hn": "Albania",
    "an": "Finland",
    "lg": "เนชันส์ลีก",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 61
+   "pct": 61,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": 1589960,
@@ -3199,133 +3215,79 @@
    "x": 1.5,
    "lt": "1.5",
    "pct": 62
+  },
+  {
+   "id": 1545868,
+   "ts": 1794574800,
+   "d": "13/11",
+   "hn": "Comoros",
+   "an": "Congo",
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 1.5,
+   "lt": "1.5",
+   "pct": 62
+  },
+  {
+   "id": 1545885,
+   "ts": 1794574800,
+   "d": "13/11",
+   "hn": "Zambia",
+   "an": "Burundi",
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "res": null,
+   "k": "ou",
+   "s": "under",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 60
+  },
+  {
+   "id": 1559005,
+   "ts": 1794587400,
+   "d": "13/11",
+   "hn": "Triglav",
+   "an": "Bilje",
+   "lg": "2. SNL",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 65
+  },
+  {
+   "id": 1528968,
+   "ts": 1794589200,
+   "d": "14/11",
+   "hn": "Moldova",
+   "an": "Kazakhstan",
+   "lg": "เนชันส์ลีก",
+   "res": null,
+   "k": "ou",
+   "s": "under",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 61
+  },
+  {
+   "id": 1545614,
+   "ts": 1794599100,
+   "d": "14/11",
+   "hn": "Luxembourg",
+   "an": "Estonia",
+   "lg": "เนชันส์ลีก",
+   "res": null,
+   "k": "ou",
+   "s": "under",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 62
   }
  ],
  "snap": {
-  "1590465": {
-   "ts": 1794391200,
-   "ou": 54
-  },
-  "1590771": {
-   "ts": 1794391200,
-   "ou": 51
-  },
-  "1591071": {
-   "ts": 1794391200,
-   "ou": 55
-  },
-  "1590464": {
-   "ts": 1794394800,
-   "ou": 53
-  },
-  "1590459": {
-   "ts": 1794398400,
-   "ou": 51
-  },
-  "1609955": {
-   "ts": 1794398400,
-   "ou": 51
-  },
-  "1590770": {
-   "ts": 1794400200,
-   "ou": 58
-  },
-  "1590773": {
-   "ts": 1794400200,
-   "ou": 58
-  },
-  "1579841": {
-   "ts": 1794403800,
-   "ou": 55
-  },
-  "1581008": {
-   "ts": 1794412800,
-   "ou": 58
-  },
-  "1591077": {
-   "ts": 1794412800,
-   "ou": 54
-  },
-  "1600001": {
-   "ts": 1794412800,
-   "ou": 58
-  },
-  "1572697": {
-   "ts": 1794419100,
-   "ou": 55
-  },
-  "1572700": {
-   "ts": 1794420000,
-   "ou": 59
-  },
-  "1612165": {
-   "ts": 1794420000,
-   "ou": 51
-  },
-  "1612170": {
-   "ts": 1794420000,
-   "ou": 50
-  },
-  "1612174": {
-   "ts": 1794420000,
-   "ou": 55
-  },
-  "1612175": {
-   "ts": 1794420000,
-   "ou": 56
-  },
-  "1612176": {
-   "ts": 1794420000,
-   "ou": 56
-  },
-  "1572696": {
-   "ts": 1794421800,
-   "ou": 55
-  },
-  "1588820": {
-   "ts": 1794423600,
-   "ou": 51
-  },
-  "1588852": {
-   "ts": 1794423600,
-   "ou": 50
-  },
-  "1612673": {
-   "ts": 1794423600,
-   "ou": 66
-  },
-  "1572699": {
-   "ts": 1794425400,
-   "ou": 51
-  },
-  "1596507": {
-   "ts": 1794426300,
-   "ou": 66
-  },
-  "1600656": {
-   "ts": 1794432600,
-   "ou": 51
-  },
-  "1520976": {
-   "ts": 1794434400,
-   "ou": 58
-  },
-  "1557232": {
-   "ts": 1794441600,
-   "ou": 51
-  },
-  "1598801": {
-   "ts": 1794396600,
-   "ou": 52
-  },
-  "1568584": {
-   "ts": 1794405600,
-   "ou": 52
-  },
-  "1612163": {
-   "ts": 1794420000,
-   "ou": 54
-  },
   "1586134": {
    "ts": 1794463200,
    "ou": 57
@@ -3441,6 +3403,118 @@
   "1549870": {
    "ts": 1794528000,
    "ou": 53
+  },
+  "1545868": {
+   "ts": 1794574800,
+   "ou": 62
+  },
+  "1545879": {
+   "ts": 1794574800,
+   "ou": 56
+  },
+  "1545885": {
+   "ts": 1794574800,
+   "ou": 60
+  },
+  "1558561": {
+   "ts": 1794582000,
+   "ou": 56
+  },
+  "1545865": {
+   "ts": 1794585600,
+   "ou": 59
+  },
+  "1545867": {
+   "ts": 1794585600,
+   "ou": 50
+  },
+  "1545872": {
+   "ts": 1794585600,
+   "ou": 51
+  },
+  "1545880": {
+   "ts": 1794585600,
+   "ou": 57
+  },
+  "1545882": {
+   "ts": 1794585600,
+   "ou": 54
+  },
+  "1545883": {
+   "ts": 1794585600,
+   "ou": 55
+  },
+  "1554219": {
+   "ts": 1794585600,
+   "ou": 51
+  },
+  "1559002": {
+   "ts": 1794585600,
+   "ou": 55
+  },
+  "1559000": {
+   "ts": 1794587400,
+   "ou": 55
+  },
+  "1559005": {
+   "ts": 1794587400,
+   "ou": 65
+  },
+  "1528968": {
+   "ts": 1794589200,
+   "ou": 61
+  },
+  "1561727": {
+   "ts": 1794589200,
+   "ou": 54
+  },
+  "1545870": {
+   "ts": 1794596400,
+   "ou": 57
+  },
+  "1545877": {
+   "ts": 1794596400,
+   "ou": 55
+  },
+  "1528965": {
+   "ts": 1794599100,
+   "ou": 54
+  },
+  "1528966": {
+   "ts": 1794599100,
+   "ou": 58
+  },
+  "1528967": {
+   "ts": 1794599100,
+   "ou": 53
+  },
+  "1528969": {
+   "ts": 1794599100,
+   "ou": 55
+  },
+  "1528970": {
+   "ts": 1794599100,
+   "ou": 56
+  },
+  "1545614": {
+   "ts": 1794599100,
+   "ou": 62
+  },
+  "1545615": {
+   "ts": 1794599100,
+   "ou": 56
+  },
+  "1545654": {
+   "ts": 1794599100,
+   "ou": 57
+  },
+  "1545659": {
+   "ts": 1794599100,
+   "ou": 56
+  },
+  "1545878": {
+   "ts": 1794600000,
+   "ou": 56
   }
  }
 }
