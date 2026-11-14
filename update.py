@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ดึงตารางแข่งและราคาจาก api-football แล้วเขียน data.json ให้หน้าเว็บอ่าน"""
-import json, math, os, sys, time, unicodedata, urllib.error, urllib.request, urllib.parse
+import json, math, os, re, sys, time, unicodedata, urllib.error, urllib.request, urllib.parse
 from datetime import datetime, timedelta, timezone
 
 KEY = os.environ.get("API_FOOTBALL_KEY", "").strip()
@@ -394,6 +394,85 @@ def load_names():
 
 NAMES = load_names()
 
+def _norm(n):
+    return "".join(c for c in unicodedata.normalize("NFD", n.lower()) if unicodedata.category(c) != "Mn")
+
+
+_SUF = re.compile(r"^(.+?)\s+(?:W|Women|U-?\d\d|II|B)$", re.I)
+
+
+def _base(n):
+    m = _SUF.match(n)
+    return m.group(1) if m else n
+
+
+def _gt(text):
+    url = "https://translate.googleapis.com/translate_a/single?" + urllib.parse.urlencode(
+        {"client": "gtx", "sl": "auto", "tl": "th", "dt": "t", "q": text})
+    with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=15) as r:
+        d = json.loads(r.read().decode("utf-8"))
+    return "".join(seg[0] for seg in d[0] if seg and seg[0]).strip()
+
+
+def _gemini(names):
+    """ให้ Gemini แปล/ทับศัพท์ชื่อทีมและลีกเป็นไทย คืน dict {ชื่อ: ไทย}"""
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not key or not names:
+        return {}
+    prompt = ("แปลหรือทับศัพท์ชื่อทีมฟุตบอลและชื่อลีกต่อไปนี้เป็นภาษาไทย แบบที่สื่อกีฬาไทยเขียนทั่วไป "
+              "ชื่อทีมชาติให้ใช้ชื่อประเทศ ไม่ต้องใส่ FC หรือ SC ถ้าไม่จำเป็น "
+              "ตอบเป็น JSON object เท่านั้น key คือชื่อเดิมตามที่ให้ value คือชื่อไทย\n" + json.dumps(names, ensure_ascii=False))
+    body = json.dumps({"contents": [{"parts": [{"text": prompt}]}],
+                       "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1}}).encode()
+    models = [m for m in [os.environ.get("GEMINI_MODEL", "").strip(), "gemini-flash-latest", "gemini-2.5-flash",
+                          "gemini-3-flash", "gemini-2.0-flash"] if m]
+    for model in models:
+        try:
+            req = urllib.request.Request(
+                "https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent" % model, data=body,
+                headers={"Content-Type": "application/json", "x-goog-api-key": key})
+            with urllib.request.urlopen(req, timeout=90) as r:
+                d = json.loads(r.read().decode("utf-8"))
+            txt = d["candidates"][0]["content"]["parts"][0]["text"]
+            out = json.loads(txt)
+            if isinstance(out, dict):
+                print("Gemini แปลได้", len(out), "ชื่อ ด้วย", model)
+                return {k: v for k, v in out.items() if isinstance(v, str) and re.search("[\u0e00-\u0e7f]", v)}
+        except Exception as e:
+            print("Gemini", model, "ไม่ได้:", e)
+    return {}
+
+
+def auto_names(names, cache, limit=150):
+    """ชื่อทีม/ลีกที่ยังไม่มีไทยในรายการ ให้แปลอัตโนมัติ แล้วจำไว้ใน data.json (ชื่อที่ตั้งเองมีสิทธิ์ก่อนเสมอ)"""
+    todo = []
+    for n in names:
+        b = _base(n)
+        key = _norm(b)
+        if key and key not in NAMES and key not in cache and (key, b) not in todo:
+            todo.append((key, b))
+    todo = todo[:limit]
+    if not todo:
+        return
+    got = _gemini([b for _, b in todo])
+    for key, b in todo:
+        if b in got:
+            cache[key] = got[b].strip()
+    if os.environ.get("GEMINI_API_KEY", "").strip():
+        print("แปลชื่อด้วย Gemini", sum(1 for k, _ in todo if k in cache), "จาก", len(todo))
+        return
+    for key, b in todo[:60]:  # ไม่มี key Gemini ใช้ตัวแปลสำรอง
+        try:
+            t = _gt(b)
+            if t and re.search("[\u0e00-\u0e7f]", t):
+                cache[key] = t
+        except Exception as e:
+            print("แปลชื่อไม่ได้:", b, e)
+            break
+        time.sleep(0.3)
+    print("แปลชื่ออัตโนมัติด้วยตัวสำรอง")
+
+
 
 def tn(n):
     k = "".join(c for c in unicodedata.normalize("NFD", n.lower()) if unicodedata.category(c) != "Mn")
@@ -497,12 +576,14 @@ def run():
     history = []
     old = []
     old_snap = {}
+    old_tn = {}
     try:
         with open("data.json", encoding="utf-8") as fh:
             _d = json.load(fh)
             history = _d.get("history", [])
             old = _d.get("matches", [])
             old_snap = _d.get("snap", {})
+            old_tn = _d.get("tn", {})
     except Exception:
         pass
     before = {(e["id"], e.get("k")) for e in history if e.get("res") is not None}
@@ -689,10 +770,21 @@ def run():
             "hcs": c["hcs"], "ous": c["ous"], "nopick": True,
         })
     matches.sort(key=lambda m: m["ts"])
+    names = []
+    for m in matches:
+        for x in (m["h"]["n"], m["a"]["n"], m["lg"]):
+            if x not in names:
+                names.append(x)
+    try:
+        auto_names(names, old_tn)
+    except Exception as e:
+        print("แปลชื่อพลาด:", e)
+    for k, v in old_tn.items():
+        NAMES.setdefault(k, v)
     nt = datetime.now(TH)
     data = {"updated": "%s %02d/%02d %s น." % (DAYS[nt.weekday()], nt.day, nt.month, nt.strftime("%H:%M")),
             "date": "%d/%d/%s" % (nt.day, nt.month, str(nt.year + 543)[2:]), "matches": matches,
-            "history": sorted(history, key=lambda e: e["ts"])[-150:], "snap": snap}
+            "history": sorted(history, key=lambda e: e["ts"])[-150:], "snap": snap, "tn": old_tn}
     with open("data.json", "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, indent=1)
     print("เขียน data.json แล้ว %d คู่" % len(matches))
