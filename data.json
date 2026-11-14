@@ -1,5 +1,5 @@
 {
- "updated": "เสาร์ 14/11 08:57 น.",
+ "updated": "เสาร์ 14/11 16:39 น.",
  "date": "14/11/69",
  "matches": [
   {
@@ -118,7 +118,7 @@
     "n": "CSKA Moskva W",
     "l": "https://media.api-sports.io/football/teams/14131.png"
    },
-   "hc": "CSKA Moskva W ต่อ 0/0.5",
+   "hc": "เสมอ",
    "ou": {
     "lab": "สูง 2/2.5",
     "line": "2/2.5",
@@ -129,14 +129,14 @@
    },
    "hp": null,
    "pr": {
-    "h": 25,
-    "d": 27,
-    "a": 48
+    "h": 30,
+    "d": 28,
+    "a": 42
    },
    "elo": null,
    "hcs": [
-    "0/0.5",
-    "0.5/1"
+    "เสมอ",
+    "0/0.5"
    ],
    "ous": [
     "2",
@@ -167,16 +167,16 @@
    "ou": {
     "lab": "ต่ำ 3",
     "line": "3",
-    "pct": 56,
+    "pct": 55,
     "weak": true,
     "s": "under",
     "x": 3.0
    },
    "hp": null,
    "pr": {
-    "h": 32,
-    "d": 25,
-    "a": 43
+    "h": 29,
+    "d": 24,
+    "a": 47
    },
    "elo": null,
    "hcs": [
@@ -216,13 +216,14 @@
    },
    "hp": null,
    "pr": {
-    "h": 54,
-    "d": 23,
-    "a": 23
+    "h": 63,
+    "d": 21,
+    "a": 16
    },
    "elo": null,
    "hcs": [
-    "1"
+    "1",
+    "1.5"
    ],
    "ous": [
     "2.5",
@@ -230,44 +231,6 @@
     "3.5"
    ],
    "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1501530,
-   "t": "19:00",
-   "d": "เสาร์",
-   "ts": 1794657600,
-   "flag": "⚽",
-   "lg": "Elitettan",
-   "rk": 99,
-   "h": {
-    "n": "Häcken II W",
-    "l": "https://media.api-sports.io/football/teams/20820.png"
-   },
-   "a": {
-    "n": "KIF Örebro W",
-    "l": "https://media.api-sports.io/football/teams/11078.png"
-   },
-   "hc": "KIF Örebro W ต่อ 2.5/3",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 71,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 4,
-    "d": 11,
-    "a": 85
-   },
-   "elo": null,
-   "hcs": [
-    "2.5/3"
-   ],
-   "ous": []
   },
   {
    "v": 2,
@@ -306,7 +269,47 @@
     "2",
     "2/2.5"
    ],
-   "ous": []
+   "ous": [],
+   "lock": true
+  },
+  {
+   "v": 2,
+   "id": 1501530,
+   "t": "19:00",
+   "d": "เสาร์",
+   "ts": 1794657600,
+   "flag": "⚽",
+   "lg": "Elitettan",
+   "rk": 99,
+   "h": {
+    "n": "Häcken II W",
+    "l": "https://media.api-sports.io/football/teams/20820.png"
+   },
+   "a": {
+    "n": "KIF Örebro W",
+    "l": "https://media.api-sports.io/football/teams/11078.png"
+   },
+   "hc": "KIF Örebro W ต่อ 2.5/3",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 71,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 4,
+    "d": 11,
+    "a": 85
+   },
+   "elo": null,
+   "hcs": [
+    "2.5/3"
+   ],
+   "ous": [],
+   "lock": true
   },
   {
    "v": 2,
@@ -346,7 +349,8 @@
    ],
    "ous": [
     "2.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -365,32 +369,28 @@
     "n": "Jitex W",
     "l": "https://media.api-sports.io/football/teams/16005.png"
    },
-   "hc": "Trelleborg W ต่อ 0.5/1",
+   "hc": "Trelleborg W ต่อ 0.5",
    "ou": {
-    "lab": "สูง 3",
-    "line": "3",
-    "pct": 51,
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 59,
     "weak": true,
     "s": "over",
-    "x": 3.0
+    "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 47,
-    "d": 25,
-    "a": 29
+    "h": 48,
+    "d": 26,
+    "a": 26
    },
    "elo": null,
    "hcs": [
     "0/0.5",
-    "0.5/1"
+    "0.5"
    ],
    "ous": [
-    "2.75",
-    "3",
-    "3.25",
-    "3.5",
-    "3.75"
+    "2.5"
    ],
    "nopick": true
   },
@@ -519,7 +519,8 @@
    "hcs": [
     "2"
    ],
-   "ous": []
+   "ous": [],
+   "lock": true
   },
   {
    "v": 2,
@@ -549,9 +550,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 50,
-    "d": 27,
-    "a": 23
+    "h": 52,
+    "d": 26,
+    "a": 22
    },
    "elo": null,
    "hcs": [
@@ -648,7 +649,8 @@
    ],
    "ous": [
     "2.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -723,16 +725,15 @@
    },
    "hp": null,
    "pr": {
-    "h": 28,
-    "d": 28,
-    "a": 44
+    "h": 30,
+    "d": 29,
+    "a": 40
    },
    "elo": null,
    "hcs": [
     "เสมอ",
     "0/0.5",
-    "0.5",
-    "0.5/1"
+    "0.5"
    ],
    "ous": [
     "2.5"
@@ -756,7 +757,7 @@
     "n": "Cuiaba",
     "l": "https://media.api-sports.io/football/teams/1193.png"
    },
-   "hc": "Atletico Goianiense ต่อ 1.5",
+   "hc": "Atletico Goianiense ต่อ 1/1.5",
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
@@ -811,9 +812,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 63,
+    "h": 64,
     "d": 22,
-    "a": 15
+    "a": 14
    },
    "elo": null,
    "hcs": [
@@ -898,8 +899,8 @@
    },
    "hp": null,
    "pr": {
-    "h": 39,
-    "d": 30,
+    "h": 40,
+    "d": 28,
     "a": 32
    },
    "elo": null,
@@ -930,7 +931,7 @@
     "n": "Botafogo SP",
     "l": "https://media.api-sports.io/football/teams/2618.png"
    },
-   "hc": "Juventude ต่อ 1.5",
+   "hc": "Juventude ต่อ 1/1.5",
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
@@ -941,12 +942,13 @@
    },
    "hp": null,
    "pr": {
-    "h": 69,
-    "d": 20,
-    "a": 11
+    "h": 66,
+    "d": 22,
+    "a": 12
    },
    "elo": null,
    "hcs": [
+    "0.5/1",
     "1",
     "1/1.5",
     "1.5",
@@ -974,7 +976,7 @@
     "n": "Goias",
     "l": "https://media.api-sports.io/football/teams/151.png"
    },
-   "hc": "Goias ต่อ 0.5",
+   "hc": "Goias ต่อ 0/0.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
@@ -985,9 +987,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 27,
-    "d": 27,
-    "a": 47
+    "h": 31,
+    "d": 26,
+    "a": 42
    },
    "elo": null,
    "hcs": [
@@ -1041,7 +1043,8 @@
    "ous": [
     "1.5",
     "2.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -1086,7 +1089,8 @@
    "ous": [
     "2.5",
     "3.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -1109,7 +1113,7 @@
    "ou": {
     "lab": "ต่ำ 3.5",
     "line": "3.5",
-    "pct": 59,
+    "pct": 58,
     "weak": true,
     "s": "under",
     "x": 3.5
@@ -1162,9 +1166,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 60,
+    "h": 57,
     "d": 24,
-    "a": 17
+    "a": 18
    },
    "elo": null,
    "hcs": [
@@ -1208,8 +1212,8 @@
    "hp": null,
    "pr": {
     "h": 24,
-    "d": 26,
-    "a": 50
+    "d": 25,
+    "a": 51
    },
    "elo": null,
    "hcs": [
@@ -1251,8 +1255,8 @@
    },
    "hp": null,
    "pr": {
-    "h": 47,
-    "d": 27,
+    "h": 46,
+    "d": 28,
     "a": 26
    },
    "elo": null,
@@ -1287,7 +1291,7 @@
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 59,
+    "pct": 56,
     "weak": true,
     "s": "over",
     "x": 2.5
@@ -1295,8 +1299,8 @@
    "hp": null,
    "pr": {
     "h": 15,
-    "d": 20,
-    "a": 65
+    "d": 21,
+    "a": 64
    },
    "elo": null,
    "hcs": [
@@ -1307,8 +1311,7 @@
     "1.5/2"
    ],
    "ous": [
-    "2.5",
-    "3.5"
+    "2.5"
    ],
    "nopick": true
   }
