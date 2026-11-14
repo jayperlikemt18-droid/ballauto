@@ -209,6 +209,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
   }
   function render(d) {
     D = d; loadSel();
+    if (d.tn) for (var q in d.tn) if (!TH[q]) TH[q] = d.tn[q];
     document.getElementById("sub").textContent = "อัปเดตล่าสุด " + d.updated + " เวลาตามไทย";
     var chips = document.getElementById("chips"), lgs = [];
     d.matches.forEach(function (m) { if (lgs.indexOf(m.lg) < 0) lgs.push(m.lg); });
