@@ -1,5 +1,5 @@
 {
- "updated": "อาทิตย์ 15/11 08:59 น.",
+ "updated": "อาทิตย์ 15/11 16:40 น.",
  "date": "15/11/69",
  "matches": [
   {
@@ -115,9 +115,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 30,
-    "d": 27,
-    "a": 43
+    "h": 28,
+    "d": 31,
+    "a": 40
    },
    "elo": null,
    "hcs": [
@@ -127,6 +127,46 @@
     "2.5"
    ],
    "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1495608,
+   "t": "20:00",
+   "d": "อาทิตย์",
+   "ts": 1794747600,
+   "flag": "⚽",
+   "lg": "Damallsvenskan",
+   "rk": 99,
+   "h": {
+    "n": "Häcken W",
+    "l": "https://media.api-sports.io/football/teams/16483.png"
+   },
+   "a": {
+    "n": "Piteå W",
+    "l": "https://media.api-sports.io/football/teams/10900.png"
+   },
+   "hc": "Häcken W ต่อ 1.5/2",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 71,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 82,
+    "d": 13,
+    "a": 5
+   },
+   "elo": null,
+   "hcs": [
+    "1.5/2",
+    "2/2.5"
+   ],
+   "ous": [],
+   "lock": true
   },
   {
    "v": 2,
@@ -251,45 +291,6 @@
   },
   {
    "v": 2,
-   "id": 1495608,
-   "t": "20:00",
-   "d": "อาทิตย์",
-   "ts": 1794747600,
-   "flag": "⚽",
-   "lg": "Damallsvenskan",
-   "rk": 99,
-   "h": {
-    "n": "Häcken W",
-    "l": "https://media.api-sports.io/football/teams/16483.png"
-   },
-   "a": {
-    "n": "Piteå W",
-    "l": "https://media.api-sports.io/football/teams/10900.png"
-   },
-   "hc": "Häcken W ต่อ 1.5/2",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 71,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 82,
-    "d": 13,
-    "a": 5
-   },
-   "elo": null,
-   "hcs": [
-    "1.5/2",
-    "2/2.5"
-   ],
-   "ous": []
-  },
-  {
-   "v": 2,
    "id": 1495607,
    "t": "20:00",
    "d": "อาทิตย์",
@@ -307,12 +308,12 @@
    },
    "hc": "เสมอ",
    "ou": {
-    "lab": "ต่ำ 3",
-    "line": "3",
-    "pct": 51,
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 58,
     "weak": true,
-    "s": "under",
-    "x": 3.0
+    "s": "over",
+    "x": 2.5
    },
    "hp": null,
    "pr": {
@@ -322,14 +323,10 @@
    },
    "elo": null,
    "hcs": [
-    "เสมอ",
-    "0/0.5"
+    "เสมอ"
    ],
    "ous": [
     "2.5",
-    "2.75",
-    "3",
-    "3.25",
     "3.5"
    ],
    "nopick": true
@@ -362,9 +359,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 26,
+    "h": 25,
     "d": 24,
-    "a": 50
+    "a": 52
    },
    "elo": null,
    "hcs": [
@@ -404,9 +401,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 8,
+    "h": 9,
     "d": 15,
-    "a": 77
+    "a": 76
    },
    "elo": null,
    "hcs": [
@@ -454,7 +451,7 @@
    },
    "hp": null,
    "pr": {
-    "h": 31,
+    "h": 30,
     "d": 27,
     "a": 43
    },
@@ -499,9 +496,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 30,
+    "h": 31,
     "d": 29,
-    "a": 41
+    "a": 40
    },
    "elo": null,
    "hcs": [
@@ -535,16 +532,16 @@
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
-    "pct": 56,
+    "pct": 59,
     "weak": true,
     "s": "under",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 31,
-    "d": 30,
-    "a": 39
+    "h": 30,
+    "d": 31,
+    "a": 40
    },
    "elo": null,
    "hcs": [
@@ -615,22 +612,21 @@
    },
    "hc": "FC Iberia 1999 ต่อ 0/0.5",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
+    "lab": "ต่ำ 2.5/3",
+    "line": "2.5/3",
     "pct": 51,
     "weak": true,
-    "s": "over",
-    "x": 2.5
+    "s": "under",
+    "x": 2.75
    },
    "hp": null,
    "pr": {
-    "h": 26,
+    "h": 25,
     "d": 26,
-    "a": 48
+    "a": 49
    },
    "elo": null,
    "hcs": [
-    "เสมอ",
     "0/0.5",
     "0.5/1"
    ],
@@ -638,7 +634,8 @@
     "2.25",
     "2.5",
     "2.75",
-    "3"
+    "3",
+    "3.25"
    ],
    "nopick": true
   },
@@ -663,16 +660,16 @@
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
-    "pct": 51,
+    "pct": 55,
     "weak": true,
     "s": "under",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 39,
-    "d": 30,
-    "a": 32
+    "h": 35,
+    "d": 29,
+    "a": 35
    },
    "elo": null,
    "hcs": [
@@ -765,7 +762,8 @@
    ],
    "ous": [
     "2.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -786,18 +784,18 @@
    },
    "hc": "Finland ต่อ 3.5",
    "ou": {
-    "lab": "สูง 3.5",
-    "line": "3.5",
+    "lab": "ต่ำ 4.5",
+    "line": "4.5",
     "pct": 58,
     "weak": true,
-    "s": "over",
-    "x": 3.5
+    "s": "under",
+    "x": 4.5
    },
    "hp": null,
    "pr": {
     "h": 91,
     "d": 6,
-    "a": 3
+    "a": 2
    },
    "elo": null,
    "hcs": [
@@ -842,9 +840,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 48,
-    "d": 27,
-    "a": 25
+    "h": 50,
+    "d": 26,
+    "a": 24
    },
    "elo": null,
    "hcs": [
@@ -857,6 +855,51 @@
     "2.5"
    ],
    "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1528984,
+   "t": "02:45",
+   "d": "จันทร์",
+   "ts": 1794771900,
+   "flag": "🌍",
+   "lg": "เนชันส์ลีก",
+   "rk": 24,
+   "h": {
+    "n": "Spain",
+    "l": "https://media.api-sports.io/football/teams/9.png"
+   },
+   "a": {
+    "n": "England",
+    "l": "https://media.api-sports.io/football/teams/10.png"
+   },
+   "hc": "Spain ต่อ 0.5/1",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 60,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 50,
+    "d": 25,
+    "a": 25
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5",
+    "0.5",
+    "0.5/1",
+    "1",
+    "1/1.5"
+   ],
+   "ous": [
+    "2.5",
+    "3.5"
+   ]
   },
   {
    "v": 2,
@@ -875,20 +918,20 @@
     "n": "Türkiye",
     "l": "https://media.api-sports.io/football/teams/777.png"
    },
-   "hc": "France ต่อ 2",
+   "hc": "France ต่อ 2/2.5",
    "ou": {
     "lab": "สูง 3.5",
     "line": "3.5",
-    "pct": 51,
+    "pct": 54,
     "weak": true,
     "s": "over",
     "x": 3.5
    },
    "hp": null,
    "pr": {
-    "h": 76,
-    "d": 14,
-    "a": 9
+    "h": 79,
+    "d": 13,
+    "a": 8
    },
    "elo": null,
    "hcs": [
@@ -896,7 +939,8 @@
     "1.5/2",
     "2",
     "2/2.5",
-    "2.5"
+    "2.5",
+    "2.5/3"
    ],
    "ous": [
     "3.5"
@@ -932,8 +976,8 @@
    "hp": null,
    "pr": {
     "h": 44,
-    "d": 26,
-    "a": 31
+    "d": 27,
+    "a": 30
    },
    "elo": null,
    "hcs": [
@@ -941,52 +985,6 @@
     "0/0.5",
     "0.5",
     "0.5/1"
-   ],
-   "ous": [
-    "2.5",
-    "3.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1528984,
-   "t": "02:45",
-   "d": "จันทร์",
-   "ts": 1794771900,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
-   "h": {
-    "n": "Spain",
-    "l": "https://media.api-sports.io/football/teams/9.png"
-   },
-   "a": {
-    "n": "England",
-    "l": "https://media.api-sports.io/football/teams/10.png"
-   },
-   "hc": "Spain ต่อ 0.5/1",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 59,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 53,
-    "d": 24,
-    "a": 23
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1",
-    "1",
-    "1/1.5"
    ],
    "ous": [
     "2.5",
@@ -1056,7 +1054,7 @@
     "n": "Deportivo Garcilaso",
     "l": "https://media.api-sports.io/football/teams/20960.png"
    },
-   "hc": "เสมอ",
+   "hc": "Juan Pablo II College ต่อ 0/0.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
@@ -1067,9 +1065,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 35,
-    "d": 30,
-    "a": 35
+    "h": 42,
+    "d": 29,
+    "a": 30
    },
    "elo": null,
    "hcs": [
@@ -1103,7 +1101,7 @@
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 56,
+    "pct": 54,
     "weak": true,
     "s": "over",
     "x": 2.5
@@ -1112,7 +1110,7 @@
    "pr": {
     "h": 66,
     "d": 22,
-    "a": 11
+    "a": 12
    },
    "elo": null,
    "hcs": [
@@ -1145,7 +1143,7 @@
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 54,
+    "pct": 55,
     "weak": true,
     "s": "over",
     "x": 2.5
@@ -1195,7 +1193,7 @@
    "pr": {
     "h": 36,
     "d": 27,
-    "a": 37
+    "a": 36
    },
    "elo": null,
    "hcs": [
@@ -1226,63 +1224,23 @@
    },
    "hc": "เสมอ",
    "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 54,
-    "weak": true,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 31,
-    "d": 29,
-    "a": 41
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1511725,
-   "t": "06:30",
-   "d": "จันทร์",
-   "ts": 1794785400,
-   "flag": "⚽",
-   "lg": "Primera B",
-   "rk": 99,
-   "h": {
-    "n": "Recoleta",
-    "l": "https://media.api-sports.io/football/teams/5644.png"
-   },
-   "a": {
-    "n": "Deportes Iquique",
-    "l": "https://media.api-sports.io/football/teams/2319.png"
-   },
-   "hc": "เสมอ",
-   "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 56,
+    "pct": 51,
     "weak": true,
     "s": "over",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 35,
-    "d": 27,
-    "a": 38
+    "h": 31,
+    "d": 29,
+    "a": 40
    },
    "elo": null,
    "hcs": [
-    "เสมอ"
+    "เสมอ",
+    "0/0.5"
    ],
    "ous": [
     "2.5"
@@ -1292,9 +1250,9 @@
   {
    "v": 2,
    "id": 1600664,
-   "t": "07:00",
+   "t": "06:00",
    "d": "จันทร์",
-   "ts": 1794787200,
+   "ts": 1794783600,
    "flag": "⚽",
    "lg": "Primera Division",
    "rk": 99,
@@ -1323,11 +1281,82 @@
    },
    "elo": null,
    "hcs": [
-    "1"
+    "0.5",
+    "0.5/1",
+    "1",
+    "1/1.5",
+    "1.5"
    ],
    "ous": [
     "2.5"
    ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1511725,
+   "t": "06:30",
+   "d": "จันทร์",
+   "ts": 1794785400,
+   "flag": "⚽",
+   "lg": "Primera B",
+   "rk": 99,
+   "h": {
+    "n": "Recoleta",
+    "l": "https://media.api-sports.io/football/teams/5644.png"
+   },
+   "a": {
+    "n": "Deportes Iquique",
+    "l": "https://media.api-sports.io/football/teams/2319.png"
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 55,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 35,
+    "d": 27,
+    "a": 38
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": 1581970,
+   "t": "16:00",
+   "d": "จันทร์",
+   "ts": 1794819600,
+   "flag": "⚽",
+   "lg": "Persha Liga",
+   "rk": 99,
+   "h": {
+    "n": "Inhulets",
+    "l": "https://media.api-sports.io/football/teams/3625.png"
+   },
+   "a": {
+    "n": "Probiy Horodenka",
+    "l": "https://media.api-sports.io/football/teams/24568.png"
+   },
+   "hc": null,
+   "ou": null,
+   "hp": null,
+   "pr": null,
+   "elo": null,
+   "hcs": [],
+   "ous": [],
    "nopick": true
   }
  ],
@@ -3605,6 +3634,20 @@
    "x": 2.5,
    "lt": "2.5",
    "pct": 60
+  },
+  {
+   "id": 1528984,
+   "ts": 1794771900,
+   "d": "16/11",
+   "hn": "Spain",
+   "an": "England",
+   "lg": "เนชันส์ลีก",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 60
   }
  ],
  "snap": {
@@ -3851,6 +3894,9 @@
   "1600664": {
    "ts": 1794787200,
    "ou": 55
+  },
+  "1581970": {
+   "ts": 1794819600
   }
  },
  "tn": {}
