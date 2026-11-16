@@ -1,137 +1,7 @@
 {
- "updated": "จันทร์ 16/11 09:24 น.",
+ "updated": "จันทร์ 16/11 17:35 น.",
  "date": "16/11/69",
  "matches": [
-  {
-   "v": 2,
-   "id": 1581970,
-   "t": "16:00",
-   "d": "จันทร์",
-   "ts": 1794819600,
-   "flag": "⚽",
-   "lg": "Persha Liga",
-   "rk": 99,
-   "h": {
-    "n": "Inhulets",
-    "l": "https://media.api-sports.io/football/teams/3625.png"
-   },
-   "a": {
-    "n": "Probiy Horodenka",
-    "l": "https://media.api-sports.io/football/teams/24568.png"
-   },
-   "hc": "Inhulets ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 54,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 44,
-    "d": 28,
-    "a": 28
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1581969,
-   "t": "17:00",
-   "d": "จันทร์",
-   "ts": 1794823200,
-   "flag": "⚽",
-   "lg": "Persha Liga",
-   "rk": 99,
-   "h": {
-    "n": "Chernihiv",
-    "l": "https://media.api-sports.io/football/teams/14433.png"
-   },
-   "a": {
-    "n": "Lokomotiv Kyiv",
-    "l": "https://media.api-sports.io/football/teams/21954.png"
-   },
-   "hc": "เสมอ",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 51,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 38,
-    "d": 28,
-    "a": 34
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ",
-    "0/0.5",
-    "0.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1581975,
-   "t": "17:00",
-   "d": "จันทร์",
-   "ts": 1794823200,
-   "flag": "⚽",
-   "lg": "Persha Liga",
-   "rk": 99,
-   "h": {
-    "n": "UCSA",
-    "l": "https://media.api-sports.io/football/teams/21957.png"
-   },
-   "a": {
-    "n": "Polissya II",
-    "l": "https://media.api-sports.io/football/teams/24589.png"
-   },
-   "hc": "UCSA ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 54,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 45,
-    "d": 27,
-    "a": 28
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5",
-    "0.5",
-    "0.5/1",
-    "1"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
   {
    "v": 2,
    "id": 1554220,
@@ -149,27 +19,31 @@
     "n": "FK Vozdovac",
     "l": "https://media.api-sports.io/football/teams/2658.png"
    },
-   "hc": "เสมอ",
+   "hc": "Grafičar ต่อ 0/0.5",
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
-    "pct": 51,
+    "pct": 52,
     "weak": true,
     "s": "under",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 36,
-    "d": 27,
-    "a": 37
+    "h": 37,
+    "d": 29,
+    "a": 33
    },
    "elo": null,
    "hcs": [
-    "เสมอ"
+    "เสมอ",
+    "0/0.5"
    ],
    "ous": [
-    "2.5"
+    "2.25",
+    "2.5",
+    "2.75",
+    "3"
    ],
    "nopick": true
   },
@@ -192,70 +66,33 @@
    },
    "hc": "Semendrija 1924 ต่อ 0/0.5",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 55,
+    "lab": "ต่ำ 2.5/3",
+    "line": "2.5/3",
+    "pct": 52,
     "weak": true,
-    "s": "over",
-    "x": 2.5
+    "s": "under",
+    "x": 2.75
    },
    "hp": null,
    "pr": {
-    "h": 31,
-    "d": 24,
-    "a": 45
+    "h": 26,
+    "d": 26,
+    "a": 48
    },
    "elo": null,
    "hcs": [
-    "0/0.5"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": 1545909,
-   "t": "20:00",
-   "d": "จันทร์",
-   "ts": 1794834000,
-   "flag": "🌍",
-   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
-   "rk": 32,
-   "h": {
-    "n": "Zimbabwe",
-    "l": "https://media.api-sports.io/football/teams/1522.png"
-   },
-   "a": {
-    "n": "Equatorial Guinea",
-    "l": "https://media.api-sports.io/football/teams/1521.png"
-   },
-   "hc": "Zimbabwe ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 1.5",
-    "line": "1.5",
-    "pct": 62,
-    "weak": false,
-    "s": "over",
-    "x": 1.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 44,
-    "d": 31,
-    "a": 25
-   },
-   "elo": null,
-   "hcs": [
+    "เสมอ",
     "0/0.5",
-    "0.5",
     "0.5/1"
    ],
    "ous": [
-    "1.5",
-    "2.5"
-   ]
+    "2.25",
+    "2.5",
+    "2.75",
+    "3",
+    "3.25"
+   ],
+   "nopick": true
   },
   {
    "v": 2,
@@ -299,7 +136,52 @@
    ],
    "ous": [
     "2.5"
-   ]
+   ],
+   "lock": true
+  },
+  {
+   "v": 2,
+   "id": 1545909,
+   "t": "20:00",
+   "d": "จันทร์",
+   "ts": 1794834000,
+   "flag": "🌍",
+   "lg": "แอฟริกัน เนชันส์ คัดเลือก",
+   "rk": 32,
+   "h": {
+    "n": "Zimbabwe",
+    "l": "https://media.api-sports.io/football/teams/1522.png"
+   },
+   "a": {
+    "n": "Equatorial Guinea",
+    "l": "https://media.api-sports.io/football/teams/1521.png"
+   },
+   "hc": "Zimbabwe ต่อ 0.5",
+   "ou": {
+    "lab": "สูง 1.5",
+    "line": "1.5",
+    "pct": 62,
+    "weak": false,
+    "s": "over",
+    "x": 1.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 44,
+    "d": 31,
+    "a": 25
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5",
+    "0.5",
+    "0.5/1"
+   ],
+   "ous": [
+    "1.5",
+    "2.5"
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -322,23 +204,22 @@
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
-    "pct": 54,
+    "pct": 53,
     "weak": true,
     "s": "under",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 8,
-    "d": 20,
-    "a": 73
+    "h": 7,
+    "d": 18,
+    "a": 75
    },
    "elo": null,
    "hcs": [
     "1/1.5",
     "1.5",
-    "1.5/2",
-    "2"
+    "1.5/2"
    ],
    "ous": [
     "2.5"
@@ -387,7 +268,8 @@
    "ous": [
     "2.5",
     "3.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -428,7 +310,8 @@
    ],
    "ous": [
     "2.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -447,20 +330,20 @@
     "n": "Slovakia",
     "l": "https://media.api-sports.io/football/teams/773.png"
    },
-   "hc": "Slovakia ต่อ 0/0.5",
+   "hc": "Slovakia ต่อ 0.5",
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
-    "pct": 53,
+    "pct": 51,
     "weak": true,
     "s": "under",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 26,
-    "d": 28,
-    "a": 46
+    "h": 22,
+    "d": 26,
+    "a": 52
    },
    "elo": null,
    "hcs": [
@@ -501,9 +384,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 51,
-    "d": 28,
-    "a": 21
+    "h": 54,
+    "d": 27,
+    "a": 20
    },
    "elo": null,
    "hcs": [
@@ -556,7 +439,8 @@
    ],
    "ous": [
     "2.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -586,9 +470,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 15,
-    "d": 25,
-    "a": 60
+    "h": 17,
+    "d": 23,
+    "a": 61
    },
    "elo": null,
    "hcs": [
@@ -620,7 +504,7 @@
     "n": "Guinea",
     "l": "https://media.api-sports.io/football/teams/1509.png"
    },
-   "hc": "Guinea ต่อ 1/1.5",
+   "hc": "Guinea ต่อ 1",
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
@@ -631,17 +515,16 @@
    },
    "hp": null,
    "pr": {
-    "h": 13,
-    "d": 23,
-    "a": 65
+    "h": 12,
+    "d": 25,
+    "a": 63
    },
    "elo": null,
    "hcs": [
     "0.5/1",
     "1",
     "1/1.5",
-    "1.5",
-    "1.5/2"
+    "1.5"
    ],
    "ous": [
     "2.5"
@@ -689,7 +572,8 @@
    "ous": [
     "1.5",
     "2.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -712,23 +596,24 @@
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 53,
+    "pct": 51,
     "weak": true,
     "s": "over",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 84,
-    "d": 12,
-    "a": 4
+    "h": 83,
+    "d": 13,
+    "a": 5
    },
    "elo": null,
    "hcs": [
     "1.5/2",
     "2",
     "2/2.5",
-    "2.5"
+    "2.5",
+    "2.5/3"
    ],
    "ous": [
     "2.5"
@@ -763,9 +648,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 73,
-    "d": 18,
-    "a": 9
+    "h": 76,
+    "d": 15,
+    "a": 8
    },
    "elo": null,
    "hcs": [
@@ -797,11 +682,11 @@
     "n": "Bayer Leverkusen W",
     "l": "https://media.api-sports.io/football/teams/1859.png"
    },
-   "hc": "Bayer Leverkusen W ต่อ 1",
+   "hc": "Bayer Leverkusen W ต่อ 0.5/1",
    "ou": {
     "lab": "ต่ำ 3.5",
     "line": "3.5",
-    "pct": 56,
+    "pct": 58,
     "weak": true,
     "s": "under",
     "x": 3.5
@@ -890,16 +775,16 @@
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 58,
+    "pct": 59,
     "weak": true,
     "s": "over",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 56,
+    "h": 59,
     "d": 23,
-    "a": 20
+    "a": 18
    },
    "elo": null,
    "hcs": [
@@ -957,7 +842,8 @@
    ],
    "ous": [
     "2.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -978,17 +864,17 @@
    },
    "hc": "Germany ต่อ 0.5/1",
    "ou": {
-    "lab": "ต่ำ 3.5",
+    "lab": "สูง 3.5",
     "line": "3.5",
     "pct": 51,
     "weak": true,
-    "s": "under",
+    "s": "over",
     "x": 3.5
    },
    "hp": null,
    "pr": {
-    "h": 50,
-    "d": 24,
+    "h": 52,
+    "d": 22,
     "a": 26
    },
    "elo": null,
@@ -1024,15 +910,15 @@
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 56,
+    "pct": 57,
     "weak": true,
     "s": "over",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 64,
-    "d": 21,
+    "h": 65,
+    "d": 20,
     "a": 15
    },
    "elo": null,
@@ -1069,16 +955,16 @@
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
-    "pct": 55,
+    "pct": 54,
     "weak": true,
     "s": "under",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 52,
-    "d": 28,
-    "a": 20
+    "h": 56,
+    "d": 25,
+    "a": 19
    },
    "elo": null,
    "hcs": [
@@ -1109,20 +995,20 @@
     "n": "Slovenia",
     "l": "https://media.api-sports.io/football/teams/1091.png"
    },
-   "hc": "Slovenia ต่อ 0.5/1",
+   "hc": "Slovenia ต่อ 1",
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
-    "pct": 56,
+    "pct": 57,
     "weak": true,
     "s": "under",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 15,
+    "h": 13,
     "d": 25,
-    "a": 59
+    "a": 62
    },
    "elo": null,
    "hcs": [
@@ -1166,7 +1052,7 @@
    "hp": null,
    "pr": {
     "h": 48,
-    "d": 26,
+    "d": 27,
     "a": 26
    },
    "elo": null,
@@ -1242,7 +1128,7 @@
     "n": "Atletico Grau",
     "l": "https://media.api-sports.io/football/teams/2564.png"
    },
-   "hc": "UCV Moquegua ต่อ 1/1.5",
+   "hc": "UCV Moquegua ต่อ 1",
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
@@ -1253,9 +1139,9 @@
    },
    "hp": null,
    "pr": {
-    "h": 61,
+    "h": 60,
     "d": 24,
-    "a": 15
+    "a": 16
    },
    "elo": null,
    "hcs": [
@@ -1287,28 +1173,34 @@
     "n": "Deportes Rengo",
     "l": "https://media.api-sports.io/football/teams/5636.png"
    },
-   "hc": "Santiago Morning ต่อ 0.5/1",
+   "hc": "Santiago Morning ต่อ 1",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 53,
+    "lab": "ต่ำ 2.5/3",
+    "line": "2.5/3",
+    "pct": 50,
     "weak": true,
-    "s": "over",
-    "x": 2.5
+    "s": "under",
+    "x": 2.75
    },
    "hp": null,
    "pr": {
-    "h": 54,
-    "d": 25,
+    "h": 57,
+    "d": 23,
     "a": 21
    },
    "elo": null,
    "hcs": [
     "0.5",
-    "0.5/1"
+    "0.5/1",
+    "1",
+    "1/1.5"
    ],
    "ous": [
-    "2.5"
+    "2.25",
+    "2.5",
+    "2.75",
+    "3",
+    "3.25"
    ],
    "nopick": true
   }
