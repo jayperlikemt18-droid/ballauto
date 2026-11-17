@@ -540,7 +540,7 @@ def _swap(m, t):
 def best_pick(m):
     a = b = None
     ou, hp = m.get("ou"), m.get("hp")
-    if ou and not ou["weak"] and ou["pct"] >= 62:
+    if ou and not ou["weak"] and ou["pct"] >= 60:
         g = m["hc"].split(" ต่อ ")[0] if m.get("hc") and " ต่อ " in m["hc"] else m["h"]["n"]
         a = (ou["pct"], "%s %s" % (tn(g), ou["lab"]), "ou")
     if hp:

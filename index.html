@@ -128,7 +128,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
   function sg(t) { return t.replace(" ต่อ ", " -").replace(" รอง ", " +"); }
   function nm(m, t) { return t.replace(m.h.n, tn(m.h.n)).replace(m.a.n, tn(m.a.n)); }
   function best(m) {
-    var a = m.ou && !m.ou.weak && m.ou.pct >= 62 ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null;
+    var a = m.ou && !m.ou.weak && m.ou.pct >= 60 ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null;
     var b = m.hp ? { pct: m.hp.pct, txt: nm(m, m.hp.lab), k: "hp" } : null;
     var r = a && b ? (a.pct >= b.pct + 3 ? a : b) : (a || b);
     return r && r.pct >= 60 ? r : null;
