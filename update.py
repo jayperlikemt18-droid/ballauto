@@ -758,6 +758,13 @@ def run():
             "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "elo": round(e) if e is not None else None,
             "hcs": c["hcs"], "ous": c["ous"],
         })
+    nodds = [f for t, f in out if f["fixture"]["id"] not in odds_map and f["league"]["id"] in LEAGUES]
+    for f in nodds:
+        print("ไม่มีราคา:", f["league"]["name"], f["teams"]["home"]["name"], "-", f["teams"]["away"]["name"])
+    for c in others:
+        if c["f"]["league"]["id"] in LEAGUES:
+            print("ไม่ผ่านเกณฑ์:", c["lg"], c["h"]["name"], "-", c["a"]["name"],
+                  "| สูง/ต่ำ", (c["ou"] or {}).get("pct"), "| ชนะ", c["pr"])
     for c in others:  # คู่ที่ไม่ผ่านเกณฑ์ ใส่ไว้ดูในแท็บ "ทุกคู่" เท่านั้น ไม่เข้าสเต็ป
         t, f, h, a, e = c["t"], c["f"], c["h"], c["a"], c["e"]
         if c["ou"]:
