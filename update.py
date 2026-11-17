@@ -1,81 +1,134 @@
 #!/usr/bin/env python3
-"""ดึงตารางแข่งและราคาจาก api-football แล้วเขียน data.json ให้หน้าเว็บอ่าน"""
+"""ดึงตารางแข่งและราคาจาก The Odds API แล้วเขียน data.json ให้หน้าเว็บอ่าน"""
 import json, math, os, re, sys, time, unicodedata, urllib.error, urllib.request, urllib.parse
 from datetime import datetime, timedelta, timezone
 
-KEY = os.environ.get("API_FOOTBALL_KEY", "").strip()
-BASE = "https://v3.football.api-sports.io"
+KEY = os.environ.get("ODDS_API_KEY", "").strip()
+BASE = "https://api.the-odds-api.com/v4"
+BUDGET = int(os.environ.get("ODDS_BUDGET", "16") or 16)  # เครดิตสูงสุดต่อรอบ (แพ็กฟรี 500/เดือน)
 TH = timezone(timedelta(hours=7))
 DAYS = ["จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์", "อาทิตย์"]
-LEAGUES = {  # id: (ธง, ชื่อลีก)
-    39: ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "พรีเมียร์ลีก อังกฤษ"), 78: ("🇩🇪", "บุนเดสลีกา เยอรมัน"),
-    135: ("🇮🇹", "เซเรีย อา อิตาลี"), 61: ("🇫🇷", "ลีกเอิง ฝรั่งเศส"),
-    140: ("🇪🇸", "ลาลีกา สเปน"), 2: ("🏆", "แชมเปียนส์ลีก"), 3: ("🏆", "ยูโรปาลีก"),
-    40: ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "แชมเปี้ยนชิป อังกฤษ"), 88: ("🇳🇱", "เอเรดิวิซี่ เนเธอร์แลนด์"),
-    94: ("🇵🇹", "พรีเมร่าลีกา โปรตุเกส"), 203: ("🇹🇷", "ซูเปอร์ลีก ตุรกี"),
-    144: ("🇧🇪", "โปรลีก เบลเยียม"), 179: ("🏴󠁧󠁢󠁳󠁣󠁴󠁿", "พรีเมียร์ชิพ สกอตแลนด์"),
-    79: ("🇩🇪", "บุนเดสลีกา 2"), 136: ("🇮🇹", "เซเรีย บี"), 141: ("🇪🇸", "ลาลีกา 2"), 62: ("🇫🇷", "ลีกเอิง 2"),
-    71: ("🇧🇷", "เซเรีย อา บราซิล"), 253: ("🇺🇸", "เมเจอร์ลีก ซอคเกอร์"), 98: ("🇯🇵", "เจลีก"),
-    292: ("🇰🇷", "เคลีก"), 307: ("🇸🇦", "ซาอุ โปรลีก"), 296: ("🇹🇭", "ไทยลีก"), 45: ("🏆", "เอฟเอ คัพ"),
-    5: ("🌍", "เนชันส์ลีก"), 960: ("🌍", "ยูโร คัดเลือก"),
-    32: ("🌍", "ฟุตบอลโลก คัดเลือก ยุโรป"), 34: ("🌎", "ฟุตบอลโลก คัดเลือก อเมริกาใต้"),
-    31: ("🌎", "ฟุตบอลโลก คัดเลือก คอนคาเคฟ"), 29: ("🌍", "ฟุตบอลโลก คัดเลือก แอฟริกา"),
-    143: ("🇪🇸", "โกปา เดล เรย์"),     30: ("🌏", "ฟุตบอลโลก คัดเลือก เอเชีย"), 36: ("🌍", "แอฟริกัน เนชันส์ คัดเลือก"),
+LEAGUES = {  # sport key ของ The Odds API: (ธง, ชื่อลีก)
+    "soccer_epl": ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "พรีเมียร์ลีก อังกฤษ"), "soccer_germany_bundesliga": ("🇩🇪", "บุนเดสลีกา เยอรมัน"),
+    "soccer_italy_serie_a": ("🇮🇹", "เซเรีย อา อิตาลี"), "soccer_france_ligue_one": ("🇫🇷", "ลีกเอิง ฝรั่งเศส"),
+    "soccer_spain_la_liga": ("🇪🇸", "ลาลีกา สเปน"), "soccer_uefa_champs_league": ("🏆", "แชมเปียนส์ลีก"),
+    "soccer_uefa_europa_league": ("🏆", "ยูโรปาลีก"), "soccer_uefa_europa_conference_league": ("🏆", "คอนเฟอเรนซ์ลีก"),
+    "soccer_efl_champ": ("🏴󠁧󠁢󠁥󠁮󠁧󠁿", "แชมเปี้ยนชิป อังกฤษ"), "soccer_netherlands_eredivisie": ("🇳🇱", "เอเรดิวิซี่ เนเธอร์แลนด์"),
+    "soccer_portugal_primeira_liga": ("🇵🇹", "พรีเมร่าลีกา โปรตุเกส"), "soccer_turkey_super_league": ("🇹🇷", "ซูเปอร์ลีก ตุรกี"),
+    "soccer_belgium_first_div": ("🇧🇪", "โปรลีก เบลเยียม"), "soccer_spl": ("🏴󠁧󠁢󠁳󠁣󠁴󠁿", "พรีเมียร์ชิพ สกอตแลนด์"),
+    "soccer_germany_bundesliga2": ("🇩🇪", "บุนเดสลีกา 2"), "soccer_italy_serie_b": ("🇮🇹", "เซเรีย บี"),
+    "soccer_spain_segunda_division": ("🇪🇸", "ลาลีกา 2"), "soccer_france_ligue_two": ("🇫🇷", "ลีกเอิง 2"),
+    "soccer_brazil_campeonato": ("🇧🇷", "เซเรีย อา บราซิล"), "soccer_usa_mls": ("🇺🇸", "เมเจอร์ลีก ซอคเกอร์"),
+    "soccer_japan_j_league": ("🇯🇵", "เจลีก"), "soccer_korea_kleague1": ("🇰🇷", "เคลีก"),
+    "soccer_saudi_professional_league": ("🇸🇦", "ซาอุ โปรลีก"), "soccer_fa_cup": ("🏆", "เอฟเอ คัพ"),
+    "soccer_uefa_nations_league": ("🌍", "เนชันส์ลีก"), "soccer_uefa_euro_qualification": ("🌍", "ยูโร คัดเลือก"),
+    "soccer_fifa_world_cup_qualifiers_europe": ("🌍", "ฟุตบอลโลก คัดเลือก ยุโรป"),
+    "soccer_fifa_world_cup_qualifiers_south_america": ("🌎", "ฟุตบอลโลก คัดเลือก อเมริกาใต้"),
+    "soccer_conmebol_copa_libertadores": ("🌎", "โกปา ลิเบอร์ตาโดเรส"),
 }
 ORDER = list(LEAGUES)
 MIN_PROB = 0.56
 MAX_MATCHES = 400
-MAX_MODEL = 10  # คู่ที่เช็กสถิติย้อนหลัง คู่ละ 2 ครั้ง  # แต่ละคู่ใช้ 1 ครั้ง (ราคา) โควตาฟรีวันละ 100 รัน 2 รอบ
+MAX_MODEL = 10
 
 
 class Quota(Exception):
     pass
 
 
-def api(path, **params):
+def oget(path, **params):
+    params["apiKey"] = KEY
     url = BASE + path + "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"x-apisports-key": KEY})
-    for attempt in range(4):
-        time.sleep(7)  # แพ็กเกจฟรีจำกัด 10 ครั้งต่อนาที
-        try:
-            with urllib.request.urlopen(req, timeout=30) as r:
-                d = json.loads(r.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(url, timeout=30) as r:
+            data = json.loads(r.read().decode("utf-8"))
+            hd = r.headers
+    except urllib.error.HTTPError as e:
+        print("HTTP", e.code, path, e.read().decode("utf-8", "replace")[:150])
+        if e.code in (401, 429):
+            raise Quota("HTTP %s" % e.code)
+        raise
+    try:
+        oget.spent += int(hd.get("x-requests-last") or 0)
+        oget.rem = hd.get("x-requests-remaining")
+    except ValueError:
+        pass
+    return data
+
+
+oget.spent = 0
+oget.rem = None
+
+
+def to_fixture(ev, key, title):
+    return {"fixture": {"id": ev["id"], "date": ev["commence_time"].replace("Z", "+00:00"), "status": {"short": "NS"}},
+            "league": {"id": key, "name": title, "season": None},
+            "teams": {"home": {"id": None, "name": ev["home_team"], "logo": ""},
+                      "away": {"id": None, "name": ev["away_team"], "logo": ""}}}
+
+
+def to_odds(ev):
+    """แปลงราคา The Odds API ให้อยู่ในรูปเดิมที่ analyse() ใช้ (bet 1=ชนะ, 4=ต่อรอง, 5=สูง/ต่ำ)"""
+    hn, an = ev["home_team"], ev["away_team"]
+    books = []
+    for b in ev.get("bookmakers", []):
+        bets = []
+        for mk in b.get("markets", []):
+            vals = []
+            for o in mk.get("outcomes", []):
+                nm = o.get("name")
+                side = "Home" if nm == hn else "Away" if nm == an else nm
+                try:
+                    price = str(float(o["price"]))
+                    if mk["key"] == "h2h" and side in ("Home", "Draw", "Away"):
+                        vals.append({"value": side, "odd": price})
+                    elif mk["key"] == "spreads" and side in ("Home", "Away"):
+                        vals.append({"value": "%s %g" % (side, float(o["point"])), "odd": price})
+                    elif mk["key"] == "totals" and side in ("Over", "Under"):
+                        vals.append({"value": "%s %g" % (side, float(o["point"])), "odd": price})
+                except (KeyError, TypeError, ValueError):
+                    continue
+            bid = {"h2h": 1, "spreads": 4, "totals": 5}.get(mk["key"])
+            if bid and vals:
+                bets.append({"id": bid, "name": mk["key"], "values": vals})
+        books.append({"name": b.get("title"), "bets": bets})
+    return {"fixture": {"id": ev["id"]}, "bookmakers": books}
+
+
+def fetch_all(now, end, old):
+    """ดึงลีกที่กำลังเปิดฤดูกาล เรียงตามความสำคัญ จนเครดิตถึงเพดาน"""
+    sports = oget("/sports")  # ไม่เสียเครดิต
+    soc = [s for s in sports if str(s.get("key", "")).startswith("soccer") and s.get("active")
+           and not s.get("has_outrights") and "winner" not in s["key"]]
+    for s in soc:  # ถ้วย/ทีมชาติที่ไม่รู้จัก ให้ถือเป็นรายการสำคัญ
+        if s["key"] not in LEAGUES and any(w in s["key"] for w in ("nations", "qualif", "world_cup", "euro", "champions", "libertadores")):
+            LEAGUES[s["key"]] = ("🌍", s["title"])
+            ORDER.append(s["key"])
+    soc.sort(key=lambda s: ORDER.index(s["key"]) if s["key"] in ORDER else 99)
+    print("ลีกที่เปิดอยู่", len(soc), "| ใช้เครดิตไปแล้ว", oget.spent)
+    iso = lambda d: d.strftime("%Y-%m-%dT%H:%M:%SZ")
+    out, odds_map = [], {}
+    for s in soc:
+        if oget.spent + 3 > BUDGET:
+            print("ถึงเพดานเครดิตต่อรอบ หยุดที่", s["title"])
             break
-        except urllib.error.HTTPError as e:
-            print("HTTP", e.code, path)
-            if e.code == 429 and attempt < 3:
-                time.sleep(30)
-                continue
-            raise
-    if d.get("errors"):
-        print("API แจ้ง:", d["errors"])
-        er = d["errors"]
-        if isinstance(er, dict) and any(k in er for k in ("requests", "token", "access")):
-            raise Quota(str(er))
-    api.paging = d.get("paging") or {}
-    return d.get("response", [])
-
-
-def bulk_odds(day, max_pages=12, **extra):
-    """ดึงราคาทั้งวันทีละหน้า (10 คู่/หน้า) ประหยัดโควตากว่าดึงทีละคู่"""
-    m = {}
-    page = 1
-    while page <= max_pages:
         try:
-            r = api("/odds", date=day, page=page, **extra)
+            evs = oget("/sports/%s/odds" % s["key"], regions="eu", markets="h2h,spreads,totals", oddsFormat="decimal",
+                       dateFormat="iso", commenceTimeFrom=iso(now), commenceTimeTo=iso(end))
         except Quota:
             raise
         except Exception as e:
-            print("odds หน้า", page, "พลาด:", e)
-            break
-        for x in r:
-            m[x["fixture"]["id"]] = x
-        total = (api.paging or {}).get("total", 1)
-        if page >= total:
-            break
-        page += 1
-    print("ราคา", day, len(m), "คู่")
-    return m
+            print("ลีกพลาด:", s["title"], e)
+            continue
+        print(s["title"], len(evs), "คู่ | เครดิตรวม", oget.spent, "เหลือ", oget.rem)
+        for ev in evs:
+            t = datetime.fromisoformat(ev["commence_time"].replace("Z", "+00:00")).astimezone(TH)
+            if not (now <= t.astimezone(timezone.utc) <= end):
+                continue
+            f = to_fixture(ev, s["key"], s["title"])
+            out.append((t, f))
+            odds_map[ev["id"]] = to_odds(ev)
+    return out, odds_map
 
 
 def calibrate(history):
@@ -284,15 +337,16 @@ def get_pred(fid):
 
 def settle(history):
     now = datetime.now(timezone.utc).timestamp()
-    pend = [e for e in history if e.get("res") is None and e["ts"] < now - 3 * 3600]
-    days = sorted({datetime.fromtimestamp(e["ts"], timezone.utc).date().isoformat() for e in pend})[:3]
+    pend = [e for e in history if e.get("res") is None and e.get("sp") and now - 3 * 86400 < e["ts"] < now - 3 * 3600]
     done = {}
-    for day in days:
-        for f in api("/fixtures", date=day):
-            if f["fixture"]["status"]["short"] in ("FT", "AET", "PEN"):
-                ft = f["score"]["fulltime"]
-                if ft["home"] is not None:
-                    done[f["fixture"]["id"]] = (ft["home"], ft["away"])
+    for sp in sorted({e["sp"] for e in pend})[:2]:  # คิดเครดิตลีกละ 2
+        for g in oget("/sports/%s/scores" % sp, daysFrom=3):
+            if g.get("completed") and g.get("scores"):
+                sc = {x["name"]: x["score"] for x in g["scores"]}
+                try:
+                    done[g["id"]] = (int(sc[g["home_team"]]), int(sc[g["away_team"]]))
+                except (KeyError, TypeError, ValueError):
+                    pass
     for e in pend:
         if e["id"] in done:
             gh, ga = done[e["id"]]
@@ -567,12 +621,12 @@ def main():
     try:
         run()
     except Quota as e:
-        print("โควตา/สิทธิ์ api-football มีปัญหา ไม่เขียนทับข้อมูลเดิม:", e)
+        print("เครดิต/สิทธิ์ The Odds API มีปัญหา ไม่เขียนทับข้อมูลเดิม:", e)
 
 
 def run():
     if not KEY:
-        sys.exit("ไม่มี API_FOOTBALL_KEY")
+        sys.exit("ไม่มี ODDS_API_KEY")
     history = []
     old = []
     old_snap = {}
@@ -591,35 +645,12 @@ def run():
         settle(history)
     except Exception as e:
         print("เช็กผลไม่ได้:", e)
+    history = [e for e in history if e.get("res") is not None or (e.get("sp") and e["ts"] > datetime.now(timezone.utc).timestamp() - 4 * 86400)]
     newly = [e for e in history if e.get("res") is not None and (e["id"], e.get("k")) not in before]
     now = datetime.now(timezone.utc)
     end = now + timedelta(hours=24)
-    fixtures = []
-    for day in sorted({now.date(), end.date()}):
-        fixtures += api("/fixtures", date=day.isoformat())
-    out = []
-    for f in fixtures:
-        lid = f["league"]["id"]
-        if f["fixture"]["status"]["short"] != "NS":
-            continue
-        t = datetime.fromisoformat(f["fixture"]["date"]).astimezone(TH)
-        if not (now <= t.astimezone(timezone.utc) <= end):
-            continue
-        out.append((t, f))
+    out, odds_map = fetch_all(now, end, old)
     out = list({x[1]["fixture"]["id"]: x for x in out}.values())
-    odds_map = {}
-    # ลีกดัง/ถ้วยใหญ่ที่มีแข่ง ดึงราคาแยกเฉพาะลีกก่อน กันตกหล่นตอนวันที่มีบอลเยอะ
-    groups = []
-    for t, f in out:
-        lid = f["league"]["id"]
-        key = (lid, f["league"].get("season"), t.astimezone(timezone.utc).date().isoformat())
-        if lid in LEAGUES and key[1] and key not in groups:
-            groups.append(key)
-    groups.sort(key=lambda g: ORDER.index(g[0]))
-    for lid, season, day in groups[:12]:
-        odds_map.update(bulk_odds(day, max_pages=3, league=lid, season=season))
-    for day in sorted({now.date(), end.date()}):
-        odds_map.update(bulk_odds(day.isoformat(), max_pages=10))
     out = [x for x in out if x[1]["fixture"]["id"] in odds_map or x[1]["fixture"]["id"] in {m.get("id") for m in old}]
     out.sort(key=lambda x: x[0])
     out = out[:MAX_MATCHES]
@@ -709,7 +740,7 @@ def run():
     cands.sort(key=lambda c: -c["top"])
     cands = cands[:MAX_MODEL]
     form = {}
-    use_model = True
+    use_model = False  # แหล่งนี้ไม่มีสถิติย้อนหลัง
     for c in cands:
         if not use_model:
             break
@@ -745,7 +776,7 @@ def run():
         h, a, e = c["h"], c["a"], c["e"]
         if not any(x["id"] == f["fixture"]["id"] for x in history):
             base = {"id": f["fixture"]["id"], "ts": int(t.timestamp()), "d": "%02d/%02d" % (t.day, t.month),
-                    "hn": h["name"], "an": a["name"], "lg": c["lg"], "res": None}
+                    "hn": h["name"], "an": a["name"], "lg": c["lg"], "sp": f["league"]["id"], "res": None}
             if ou and not ou["weak"]:
                 history.append(dict(base, k="ou", s=ou["s"], x=ou["x"], lt=ou["line"], pct=ou["pct"]))
             if hp:
