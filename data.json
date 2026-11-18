@@ -1,66 +1,464 @@
 {
- "updated": "อังคาร 17/11 20:20 น.",
- "date": "17/11/69",
+ "updated": "พุธ 18/11 11:47 น.",
+ "date": "18/11/69",
  "matches": [
   {
    "v": 2,
-   "id": "90db407c8de9079c354e857f9953c38c",
-   "t": "02:00",
-   "d": "พุธ",
-   "ts": 1794942000,
+   "id": "8d017c6bef33aa894ea91e1c1f3a5299",
+   "t": "00:45",
+   "d": "พฤหัสบดี",
+   "ts": 1795023900,
    "flag": "⚽",
-   "lg": "EFL Trophy",
+   "lg": "UEFA Champions League Women",
    "rk": 99,
    "h": {
-    "n": "Luton",
+    "n": "BK Hacken",
     "l": ""
    },
    "a": {
-    "n": "Peterborough United",
+    "n": "Manchester City",
     "l": ""
    },
-   "hc": "Luton ต่อ 1",
+   "hc": "Manchester City ต่อ 1.5/2",
    "ou": {
-    "lab": "ต่ำ 3.5/4",
-    "line": "3.5/4",
-    "pct": 51,
-    "weak": true,
-    "s": "under",
-    "x": 3.75
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 70,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 61,
-    "d": 19,
-    "a": 20
+    "h": 13,
+    "d": 17,
+    "a": 71
+   },
+   "elo": null,
+   "hcs": [
+    "1.5/2"
+   ],
+   "ous": []
+  },
+  {
+   "v": 2,
+   "id": "2ff809e70c96071b20b2ad3f6123fe8f",
+   "t": "00:45",
+   "d": "พฤหัสบดี",
+   "ts": 1795023900,
+   "flag": "⚽",
+   "lg": "UEFA Champions League Women",
+   "rk": 99,
+   "h": {
+    "n": "Real Madrid",
+    "l": ""
+   },
+   "a": {
+    "n": "Inter Milan",
+    "l": ""
+   },
+   "hc": "Real Madrid ต่อ 2",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 69,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 76,
+    "d": 15,
+    "a": 10
+   },
+   "elo": null,
+   "hcs": [
+    "2"
+   ],
+   "ous": []
+  },
+  {
+   "v": 2,
+   "id": "90f8b0cc39333f9495d5507b005a1d5d",
+   "t": "01:00",
+   "d": "พฤหัสบดี",
+   "ts": 1795024800,
+   "flag": "⚽",
+   "lg": "Copa del Rey",
+   "rk": 99,
+   "h": {
+    "n": "Club Portugalete",
+    "l": ""
+   },
+   "a": {
+    "n": "Real Unión",
+    "l": ""
+   },
+   "hc": "Real Unión ต่อ 0/0.5",
+   "ou": {
+    "lab": "สูง 2/2.5",
+    "line": "2/2.5",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 2.25
+   },
+   "hp": null,
+   "pr": {
+    "h": 31,
+    "d": 30,
+    "a": 39
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5"
+   ],
+   "ous": [
+    "2.25"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": "2b6edd0ce77667187ed7df286abdbee1",
+   "t": "01:00",
+   "d": "พฤหัสบดี",
+   "ts": 1795024800,
+   "flag": "⚽",
+   "lg": "Copa del Rey",
+   "rk": 99,
+   "h": {
+    "n": "Utebo FC",
+    "l": ""
+   },
+   "a": {
+    "n": "Sabadell FC",
+    "l": ""
+   },
+   "hc": "Sabadell FC ต่อ 1",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 16,
+    "d": 25,
+    "a": 59
    },
    "elo": null,
    "hcs": [
     "1"
    ],
    "ous": [
-    "3.75"
+    "2.5"
    ],
    "nopick": true
   },
   {
    "v": 2,
-   "id": "e71a4a4fea03d00873c285c5b55a9864",
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794944700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
+   "id": "17a5dc0d57afe1e516da8356bb0c3949",
+   "t": "02:00",
+   "d": "พฤหัสบดี",
+   "ts": 1795028400,
+   "flag": "⚽",
+   "lg": "Copa del Rey",
+   "rk": 99,
    "h": {
-    "n": "Israel",
+    "n": "Alcoyano",
     "l": ""
    },
    "a": {
-    "n": "Austria",
+    "n": "Mallorca",
     "l": ""
    },
-   "hc": "Austria ต่อ 1",
+   "hc": "Mallorca ต่อ 1",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 53,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 16,
+    "d": 25,
+    "a": 59
+   },
+   "elo": null,
+   "hcs": [
+    "1"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": "7931b89a423c1057c562407706d0a6ac",
+   "t": "02:00",
+   "d": "พฤหัสบดี",
+   "ts": 1795028400,
+   "flag": "⚽",
+   "lg": "Copa del Rey",
+   "rk": 99,
+   "h": {
+    "n": "Badajoz",
+    "l": ""
+   },
+   "a": {
+    "n": "Tenerife",
+    "l": ""
+   },
+   "hc": "Tenerife ต่อ 0.5/1",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 53,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 21,
+    "d": 26,
+    "a": 52
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": "fd90f9ef322e9794a9e8e47fb6897b34",
+   "t": "02:30",
+   "d": "พฤหัสบดี",
+   "ts": 1795030200,
+   "flag": "⚽",
+   "lg": "Copa del Rey",
+   "rk": 99,
+   "h": {
+    "n": "Reus FC Reddis",
+    "l": ""
+   },
+   "a": {
+    "n": "Barakaldo",
+    "l": ""
+   },
+   "hc": "Barakaldo ต่อ 0.5",
+   "ou": {
+    "lab": "ต่ำ 2/2.5",
+    "line": "2/2.5",
+    "pct": 52,
+    "weak": true,
+    "s": "under",
+    "x": 2.25
+   },
+   "hp": null,
+   "pr": {
+    "h": 25,
+    "d": 30,
+    "a": 45
+   },
+   "elo": null,
+   "hcs": [
+    "0.5"
+   ],
+   "ous": [
+    "2.25"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": "57474af31f1996ac6173a677bb6220d7",
+   "t": "02:30",
+   "d": "พฤหัสบดี",
+   "ts": 1795030200,
+   "flag": "⚽",
+   "lg": "Copa del Rey",
+   "rk": 99,
+   "h": {
+    "n": "CD Minera",
+    "l": ""
+   },
+   "a": {
+    "n": "FC Cartagena",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 2",
+    "line": "2",
+    "pct": 54,
+    "weak": true,
+    "s": "over",
+    "x": 2.0
+   },
+   "hp": null,
+   "pr": {
+    "h": 33,
+    "d": 31,
+    "a": 36
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": "122669be0e839fcda949d054af3ddc7f",
+   "t": "03:00",
+   "d": "พฤหัสบดี",
+   "ts": 1795032000,
+   "flag": "⚽",
+   "lg": "UEFA Champions League Women",
+   "rk": 99,
+   "h": {
+    "n": "Chelsea",
+    "l": ""
+   },
+   "a": {
+    "n": "Paris Saint Germain",
+    "l": ""
+   },
+   "hc": "Chelsea ต่อ 1.5/2",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 64,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 73,
+    "d": 16,
+    "a": 11
+   },
+   "elo": null,
+   "hcs": [
+    "1.5/2"
+   ],
+   "ous": []
+  },
+  {
+   "v": 2,
+   "id": "e8aea25fa4a2c167c4f565a0a3703676",
+   "t": "03:00",
+   "d": "พฤหัสบดี",
+   "ts": 1795032000,
+   "flag": "⚽",
+   "lg": "UEFA Champions League Women",
+   "rk": 99,
+   "h": {
+    "n": "Juventus",
+    "l": ""
+   },
+   "a": {
+    "n": "Leuven",
+    "l": ""
+   },
+   "hc": "Juventus ต่อ 1.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 64,
+    "weak": false,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 69,
+    "d": 18,
+    "a": 12
+   },
+   "elo": null,
+   "hcs": [
+    "1.5"
+   ],
+   "ous": []
+  },
+  {
+   "v": 2,
+   "id": "34b8d9b2a641392b592e1dc5470e7622",
+   "t": "05:30",
+   "d": "พฤหัสบดี",
+   "ts": 1795041000,
+   "flag": "🇧🇷",
+   "lg": "เซเรีย อา บราซิล",
+   "rk": 18,
+   "h": {
+    "n": "Coritiba",
+    "l": ""
+   },
+   "a": {
+    "n": "Santos",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 54,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 29,
+    "d": 27,
+    "a": 44
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": "a96fe59de916f1d378f3dcce6733dd20",
+   "t": "06:00",
+   "d": "พฤหัสบดี",
+   "ts": 1795042800,
+   "flag": "🇧🇷",
+   "lg": "เซเรีย อา บราซิล",
+   "rk": 18,
+   "h": {
+    "n": "Remo",
+    "l": ""
+   },
+   "a": {
+    "n": "Chapecoense",
+    "l": ""
+   },
+   "hc": "Remo ต่อ 1.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
@@ -71,115 +469,77 @@
    },
    "hp": null,
    "pr": {
-    "h": 23,
-    "d": 24,
-    "a": 53
+    "h": 60,
+    "d": 22,
+    "a": 18
    },
    "elo": null,
    "hcs": [
-    "1"
+    "1.5"
    ],
    "ous": [
     "2.5"
-   ],
-   "lock": true
+   ]
   },
   {
    "v": 2,
-   "id": "1a07e9080f042594bdb529ab932d680c",
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794944700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
+   "id": "4ffeab0ae6c6a76e96262104d3a1d6e7",
+   "t": "06:30",
+   "d": "พฤหัสบดี",
+   "ts": 1795044600,
+   "flag": "🇧🇷",
+   "lg": "เซเรีย อา บราซิล",
+   "rk": 18,
    "h": {
-    "n": "Hungary",
+    "n": "Flamengo",
     "l": ""
    },
    "a": {
-    "n": "Northern Ireland",
+    "n": "Atletico Paranaense",
     "l": ""
    },
-   "hc": "Hungary ต่อ 1",
+   "hc": "Flamengo ต่อ 1.5/2",
    "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 61,
-    "weak": false,
-    "s": "under",
-    "x": 2.5
+    "lab": "สูง 3",
+    "line": "3",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 3.0
    },
    "hp": null,
    "pr": {
-    "h": 49,
-    "d": 28,
-    "a": 23
+    "h": 76,
+    "d": 15,
+    "a": 9
    },
    "elo": null,
-   "hcs": [],
-   "ous": [
-    "2.5"
+   "hcs": [
+    "1.5/2"
    ],
-   "lock": true
+   "ous": [
+    "3"
+   ],
+   "nopick": true
   },
   {
    "v": 2,
-   "id": "a6c9b424fddccea76aab09880b69dd31",
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794944700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
+   "id": "8c090da10644d01073571175eb7a7426",
+   "t": "06:30",
+   "d": "พฤหัสบดี",
+   "ts": 1795044600,
+   "flag": "🇧🇷",
+   "lg": "เซเรีย อา บราซิล",
+   "rk": 18,
    "h": {
-    "n": "Republic of Ireland",
+    "n": "Cruzeiro",
     "l": ""
    },
    "a": {
-    "n": "Kosovo",
+    "n": "Palmeiras",
     "l": ""
    },
-   "hc": "Republic of Ireland ต่อ 1",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 60,
-    "weak": false,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 45,
-    "d": 29,
-    "a": 25
-   },
-   "elo": null,
-   "hcs": [],
-   "ous": [
-    "2.5"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
-   "id": "3eb1d15a190bb1be8c32a020365dc7c2",
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794944700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
-   "h": {
-    "n": "Bosnia & Herzegovina",
-    "l": ""
-   },
-   "a": {
-    "n": "Romania",
-    "l": ""
-   },
-   "hc": "Bosnia & Herzegovina ต่อ 1",
+   "hc": "เสมอ",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
@@ -190,12 +550,14 @@
    },
    "hp": null,
    "pr": {
-    "h": 44,
-    "d": 26,
-    "a": 30
+    "h": 35,
+    "d": 28,
+    "a": 37
    },
    "elo": null,
-   "hcs": [],
+   "hcs": [
+    "เสมอ"
+   ],
    "ous": [
     "2.5"
    ],
@@ -203,116 +565,34 @@
   },
   {
    "v": 2,
-   "id": "770e80269ec2ffddc826bc50330c475b",
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794944700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
+   "id": "4a0ed971930ed1355d19497b2aa72744",
+   "t": "07:30",
+   "d": "พฤหัสบดี",
+   "ts": 1795048200,
+   "flag": "🇧🇷",
+   "lg": "เซเรีย อา บราซิล",
+   "rk": 18,
    "h": {
-    "n": "Denmark",
+    "n": "Grêmio",
     "l": ""
    },
    "a": {
-    "n": "Norway",
+    "n": "Bahia",
     "l": ""
    },
    "hc": "เสมอ",
    "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 55,
-    "weak": true,
-    "s": "under",
-    "x": 3.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 37,
-    "d": 24,
-    "a": 39
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ"
-   ],
-   "ous": [
-    "3.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": "91b890f5fd20440cb272721b8a89a33d",
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794944700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
-   "h": {
-    "n": "Ukraine",
-    "l": ""
-   },
-   "a": {
-    "n": "Georgia",
-    "l": ""
-   },
-   "hc": "เสมอ",
-   "ou": {
-    "lab": "ต่ำ 2.5",
+    "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 58,
+    "pct": 56,
     "weak": true,
-    "s": "under",
+    "s": "over",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 45,
-    "d": 29,
-    "a": 26
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": "aab74efad72e8096e774c7104189ff09",
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794944700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
-   "h": {
-    "n": "Poland",
-    "l": ""
-   },
-   "a": {
-    "n": "Sweden",
-    "l": ""
-   },
-   "hc": "เสมอ",
-   "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 58,
-    "weak": true,
-    "s": "under",
-    "x": 3.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 44,
-    "d": 24,
+    "h": 41,
+    "d": 26,
     "a": 32
    },
    "elo": null,
@@ -320,48 +600,46 @@
     "เสมอ"
    ],
    "ous": [
-    "3.5"
+    "2.5"
    ],
    "nopick": true
   },
   {
    "v": 2,
-   "id": "955a201ba2266b8b6b0519e0265eb354",
-   "t": "02:45",
-   "d": "พุธ",
-   "ts": 1794944700,
-   "flag": "🌍",
-   "lg": "เนชันส์ลีก",
-   "rk": 24,
+   "id": "1c0decf6a961edaef153ea4223ec22ce",
+   "t": "07:30",
+   "d": "พฤหัสบดี",
+   "ts": 1795048200,
+   "flag": "🇧🇷",
+   "lg": "เซเรีย อา บราซิล",
+   "rk": 18,
    "h": {
-    "n": "Wales",
+    "n": "Corinthians",
     "l": ""
    },
    "a": {
-    "n": "Portugal",
+    "n": "Botafogo",
     "l": ""
    },
-   "hc": "Portugal ต่อ 1/1.5",
+   "hc": "Corinthians ต่อ 1.5",
    "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 57,
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 50,
     "weak": true,
-    "s": "under",
-    "x": 3.5
+    "s": "over",
+    "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 13,
-    "d": 17,
-    "a": 69
+    "h": 51,
+    "d": 26,
+    "a": 24
    },
    "elo": null,
-   "hcs": [
-    "1/1.5"
-   ],
+   "hcs": [],
    "ous": [
-    "3.5"
+    "2.5"
    ],
    "nopick": true
   }
@@ -2677,12 +2955,14 @@
    "an": "Northern Ireland",
    "lg": "เนชันส์ลีก",
    "sp": "soccer_uefa_nations_league",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 61
+   "pct": 61,
+   "gh": 1,
+   "ga": 1
   },
   {
    "id": "e71a4a4fea03d00873c285c5b55a9864",
@@ -2692,12 +2972,14 @@
    "an": "Austria",
    "lg": "เนชันส์ลีก",
    "sp": "soccer_uefa_nations_league",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 60
+   "pct": 60,
+   "gh": 1,
+   "ga": 1
   },
   {
    "id": "a6c9b424fddccea76aab09880b69dd31",
@@ -2707,103 +2989,92 @@
    "an": "Kosovo",
    "lg": "เนชันส์ลีก",
    "sp": "soccer_uefa_nations_league",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "under",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 60,
+   "gh": 3,
+   "ga": 0
+  },
+  {
+   "id": "8d017c6bef33aa894ea91e1c1f3a5299",
+   "ts": 1795023900,
+   "d": "19/11",
+   "hn": "BK Hacken",
+   "an": "Manchester City",
+   "lg": "UEFA Champions League Women",
+   "sp": "soccer_uefa_champs_league_women",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 70
+  },
+  {
+   "id": "2ff809e70c96071b20b2ad3f6123fe8f",
+   "ts": 1795023900,
+   "d": "19/11",
+   "hn": "Real Madrid",
+   "an": "Inter Milan",
+   "lg": "UEFA Champions League Women",
+   "sp": "soccer_uefa_champs_league_women",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 69
+  },
+  {
+   "id": "122669be0e839fcda949d054af3ddc7f",
+   "ts": 1795032000,
+   "d": "19/11",
+   "hn": "Chelsea",
+   "an": "Paris Saint Germain",
+   "lg": "UEFA Champions League Women",
+   "sp": "soccer_uefa_champs_league_women",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 64
+  },
+  {
+   "id": "e8aea25fa4a2c167c4f565a0a3703676",
+   "ts": 1795032000,
+   "d": "19/11",
+   "hn": "Juventus",
+   "an": "Leuven",
+   "lg": "UEFA Champions League Women",
+   "sp": "soccer_uefa_champs_league_women",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 64
+  },
+  {
+   "id": "a96fe59de916f1d378f3dcce6733dd20",
+   "ts": 1795042800,
+   "d": "19/11",
+   "hn": "Remo",
+   "an": "Chapecoense",
+   "lg": "เซเรีย อา บราซิล",
+   "sp": "soccer_brazil_campeonato",
+   "res": null,
+   "k": "ou",
+   "s": "over",
    "x": 2.5,
    "lt": "2.5",
    "pct": 60
   }
  ],
  "snap": {
-  "1528986": {
-   "ts": 1794841200,
-   "ou": 53
-  },
-  "1528987": {
-   "ts": 1794841200,
-   "ou": 58
-  },
-  "1545904": {
-   "ts": 1794841200,
-   "ou": 60
-  },
-  "1598726": {
-   "ts": 1794841200,
-   "ou": 60
-  },
-  "1545888": {
-   "ts": 1794844800,
-   "ou": 55
-  },
-  "1545890": {
-   "ts": 1794844800,
-   "ou": 51
-  },
-  "1561202": {
-   "ts": 1794844800,
-   "ou": 60
-  },
-  "1528988": {
-   "ts": 1794848400,
-   "ou": 62
-  },
-  "1528989": {
-   "ts": 1794848400,
-   "ou": 53
-  },
-  "1545617": {
-   "ts": 1794848400,
-   "ou": 56
-  },
-  "1593174": {
-   "ts": 1794848400,
-   "ou": 56
-  },
-  "1549556": {
-   "ts": 1794852000,
-   "ou": 50
-  },
-  "1570014": {
-   "ts": 1794857400,
-   "ou": 58
-  },
-  "1528990": {
-   "ts": 1794858300,
-   "ou": 51
-  },
-  "1528991": {
-   "ts": 1794858300,
-   "ou": 56
-  },
-  "1545618": {
-   "ts": 1794858300,
-   "ou": 61
-  },
-  "1545652": {
-   "ts": 1794858300,
-   "ou": 55
-  },
-  "1545662": {
-   "ts": 1794858300,
-   "ou": 56
-  },
-  "1608745": {
-   "ts": 1794858300,
-   "ou": 53
-  },
-  "1549558": {
-   "ts": 1794860100,
-   "ou": 55
-  },
-  "1549560": {
-   "ts": 1794860100,
-   "ou": 51
-  },
-  "1600697": {
-   "ts": 1794861000,
-   "ou": 53
-  },
   "90db407c8de9079c354e857f9953c38c": {
    "ts": 1794942000,
    "ou": 52
@@ -2839,6 +3110,70 @@
   "955a201ba2266b8b6b0519e0265eb354": {
    "ts": 1794944700,
    "ou": 57
+  },
+  "8d017c6bef33aa894ea91e1c1f3a5299": {
+   "ts": 1795023900,
+   "ou": 70
+  },
+  "2ff809e70c96071b20b2ad3f6123fe8f": {
+   "ts": 1795023900,
+   "ou": 69
+  },
+  "90f8b0cc39333f9495d5507b005a1d5d": {
+   "ts": 1795024800,
+   "ou": 51
+  },
+  "2b6edd0ce77667187ed7df286abdbee1": {
+   "ts": 1795024800,
+   "ou": 51
+  },
+  "17a5dc0d57afe1e516da8356bb0c3949": {
+   "ts": 1795028400,
+   "ou": 53
+  },
+  "7931b89a423c1057c562407706d0a6ac": {
+   "ts": 1795028400,
+   "ou": 53
+  },
+  "fd90f9ef322e9794a9e8e47fb6897b34": {
+   "ts": 1795030200,
+   "ou": 52
+  },
+  "57474af31f1996ac6173a677bb6220d7": {
+   "ts": 1795030200,
+   "ou": 54
+  },
+  "122669be0e839fcda949d054af3ddc7f": {
+   "ts": 1795032000,
+   "ou": 64
+  },
+  "e8aea25fa4a2c167c4f565a0a3703676": {
+   "ts": 1795032000,
+   "ou": 64
+  },
+  "34b8d9b2a641392b592e1dc5470e7622": {
+   "ts": 1795041000,
+   "ou": 54
+  },
+  "a96fe59de916f1d378f3dcce6733dd20": {
+   "ts": 1795042800,
+   "ou": 60
+  },
+  "4ffeab0ae6c6a76e96262104d3a1d6e7": {
+   "ts": 1795044600,
+   "ou": 51
+  },
+  "8c090da10644d01073571175eb7a7426": {
+   "ts": 1795044600,
+   "ou": 53
+  },
+  "4a0ed971930ed1355d19497b2aa72744": {
+   "ts": 1795048200,
+   "ou": 56
+  },
+  "1c0decf6a961edaef153ea4223ec22ce": {
+   "ts": 1795048200,
+   "ou": 50
   }
  },
  "tn": {
