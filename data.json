@@ -1,398 +1,76 @@
 {
- "updated": "พุธ 18/11 11:47 น.",
- "date": "18/11/69",
+ "updated": "พฤหัสบดี 19/11 09:23 น.",
+ "date": "19/11/69",
  "matches": [
   {
    "v": 2,
-   "id": "8d017c6bef33aa894ea91e1c1f3a5299",
+   "id": "46c323a078772696b526e9e4a4f2e7ff",
    "t": "00:45",
-   "d": "พฤหัสบดี",
-   "ts": 1795023900,
+   "d": "ศุกร์",
+   "ts": 1795110300,
    "flag": "⚽",
    "lg": "UEFA Champions League Women",
    "rk": 99,
    "h": {
-    "n": "BK Hacken",
+    "n": "Austria Wien",
     "l": ""
    },
    "a": {
-    "n": "Manchester City",
+    "n": "Bayern Munich",
     "l": ""
    },
-   "hc": "Manchester City ต่อ 1.5/2",
+   "hc": "Bayern Munich ต่อ 2.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 70,
+    "pct": 76,
     "weak": false,
     "s": "over",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 13,
-    "d": 17,
-    "a": 71
+    "h": 6,
+    "d": 13,
+    "a": 80
    },
    "elo": null,
    "hcs": [
-    "1.5/2"
+    "2.5"
    ],
    "ous": []
   },
   {
    "v": 2,
-   "id": "2ff809e70c96071b20b2ad3f6123fe8f",
+   "id": "f717126e06b5b6e5166255be6f486dde",
    "t": "00:45",
-   "d": "พฤหัสบดี",
-   "ts": 1795023900,
+   "d": "ศุกร์",
+   "ts": 1795110300,
    "flag": "⚽",
    "lg": "UEFA Champions League Women",
    "rk": 99,
    "h": {
-    "n": "Real Madrid",
+    "n": "Paris FC",
     "l": ""
    },
    "a": {
-    "n": "Inter Milan",
+    "n": "HB Køge",
     "l": ""
    },
-   "hc": "Real Madrid ต่อ 2",
+   "hc": "Paris FC ต่อ 1.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 69,
+    "pct": 62,
     "weak": false,
     "s": "over",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 76,
-    "d": 15,
-    "a": 10
-   },
-   "elo": null,
-   "hcs": [
-    "2"
-   ],
-   "ous": []
-  },
-  {
-   "v": 2,
-   "id": "90f8b0cc39333f9495d5507b005a1d5d",
-   "t": "01:00",
-   "d": "พฤหัสบดี",
-   "ts": 1795024800,
-   "flag": "⚽",
-   "lg": "Copa del Rey",
-   "rk": 99,
-   "h": {
-    "n": "Club Portugalete",
-    "l": ""
-   },
-   "a": {
-    "n": "Real Unión",
-    "l": ""
-   },
-   "hc": "Real Unión ต่อ 0/0.5",
-   "ou": {
-    "lab": "สูง 2/2.5",
-    "line": "2/2.5",
-    "pct": 51,
-    "weak": true,
-    "s": "over",
-    "x": 2.25
-   },
-   "hp": null,
-   "pr": {
-    "h": 31,
-    "d": 30,
-    "a": 39
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5"
-   ],
-   "ous": [
-    "2.25"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": "2b6edd0ce77667187ed7df286abdbee1",
-   "t": "01:00",
-   "d": "พฤหัสบดี",
-   "ts": 1795024800,
-   "flag": "⚽",
-   "lg": "Copa del Rey",
-   "rk": 99,
-   "h": {
-    "n": "Utebo FC",
-    "l": ""
-   },
-   "a": {
-    "n": "Sabadell FC",
-    "l": ""
-   },
-   "hc": "Sabadell FC ต่อ 1",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 51,
-    "weak": true,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 16,
-    "d": 25,
-    "a": 59
-   },
-   "elo": null,
-   "hcs": [
-    "1"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": "17a5dc0d57afe1e516da8356bb0c3949",
-   "t": "02:00",
-   "d": "พฤหัสบดี",
-   "ts": 1795028400,
-   "flag": "⚽",
-   "lg": "Copa del Rey",
-   "rk": 99,
-   "h": {
-    "n": "Alcoyano",
-    "l": ""
-   },
-   "a": {
-    "n": "Mallorca",
-    "l": ""
-   },
-   "hc": "Mallorca ต่อ 1",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 53,
-    "weak": true,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 16,
-    "d": 25,
-    "a": 59
-   },
-   "elo": null,
-   "hcs": [
-    "1"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": "7931b89a423c1057c562407706d0a6ac",
-   "t": "02:00",
-   "d": "พฤหัสบดี",
-   "ts": 1795028400,
-   "flag": "⚽",
-   "lg": "Copa del Rey",
-   "rk": 99,
-   "h": {
-    "n": "Badajoz",
-    "l": ""
-   },
-   "a": {
-    "n": "Tenerife",
-    "l": ""
-   },
-   "hc": "Tenerife ต่อ 0.5/1",
-   "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 53,
-    "weak": true,
-    "s": "under",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 21,
-    "d": 26,
-    "a": 52
-   },
-   "elo": null,
-   "hcs": [
-    "0.5/1"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": "fd90f9ef322e9794a9e8e47fb6897b34",
-   "t": "02:30",
-   "d": "พฤหัสบดี",
-   "ts": 1795030200,
-   "flag": "⚽",
-   "lg": "Copa del Rey",
-   "rk": 99,
-   "h": {
-    "n": "Reus FC Reddis",
-    "l": ""
-   },
-   "a": {
-    "n": "Barakaldo",
-    "l": ""
-   },
-   "hc": "Barakaldo ต่อ 0.5",
-   "ou": {
-    "lab": "ต่ำ 2/2.5",
-    "line": "2/2.5",
-    "pct": 52,
-    "weak": true,
-    "s": "under",
-    "x": 2.25
-   },
-   "hp": null,
-   "pr": {
-    "h": 25,
-    "d": 30,
-    "a": 45
-   },
-   "elo": null,
-   "hcs": [
-    "0.5"
-   ],
-   "ous": [
-    "2.25"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": "57474af31f1996ac6173a677bb6220d7",
-   "t": "02:30",
-   "d": "พฤหัสบดี",
-   "ts": 1795030200,
-   "flag": "⚽",
-   "lg": "Copa del Rey",
-   "rk": 99,
-   "h": {
-    "n": "CD Minera",
-    "l": ""
-   },
-   "a": {
-    "n": "FC Cartagena",
-    "l": ""
-   },
-   "hc": "เสมอ",
-   "ou": {
-    "lab": "สูง 2",
-    "line": "2",
-    "pct": 54,
-    "weak": true,
-    "s": "over",
-    "x": 2.0
-   },
-   "hp": null,
-   "pr": {
-    "h": 33,
-    "d": 31,
-    "a": 36
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ"
-   ],
-   "ous": [
-    "2"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": "122669be0e839fcda949d054af3ddc7f",
-   "t": "03:00",
-   "d": "พฤหัสบดี",
-   "ts": 1795032000,
-   "flag": "⚽",
-   "lg": "UEFA Champions League Women",
-   "rk": 99,
-   "h": {
-    "n": "Chelsea",
-    "l": ""
-   },
-   "a": {
-    "n": "Paris Saint Germain",
-    "l": ""
-   },
-   "hc": "Chelsea ต่อ 1.5/2",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 64,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 73,
-    "d": 16,
-    "a": 11
-   },
-   "elo": null,
-   "hcs": [
-    "1.5/2"
-   ],
-   "ous": []
-  },
-  {
-   "v": 2,
-   "id": "e8aea25fa4a2c167c4f565a0a3703676",
-   "t": "03:00",
-   "d": "พฤหัสบดี",
-   "ts": 1795032000,
-   "flag": "⚽",
-   "lg": "UEFA Champions League Women",
-   "rk": 99,
-   "h": {
-    "n": "Juventus",
-    "l": ""
-   },
-   "a": {
-    "n": "Leuven",
-    "l": ""
-   },
-   "hc": "Juventus ต่อ 1.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 64,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 69,
-    "d": 18,
-    "a": 12
+    "h": 58,
+    "d": 22,
+    "a": 20
    },
    "elo": null,
    "hcs": [
@@ -402,63 +80,22 @@
   },
   {
    "v": 2,
-   "id": "34b8d9b2a641392b592e1dc5470e7622",
-   "t": "05:30",
-   "d": "พฤหัสบดี",
-   "ts": 1795041000,
-   "flag": "🇧🇷",
-   "lg": "เซเรีย อา บราซิล",
-   "rk": 18,
+   "id": "a94ea221001eb7a9816e94f5a821c169",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795118400,
+   "flag": "⚽",
+   "lg": "UEFA Champions League Women",
+   "rk": 99,
    "h": {
-    "n": "Coritiba",
+    "n": "Arsenal",
     "l": ""
    },
    "a": {
-    "n": "Santos",
+    "n": "Lyon",
     "l": ""
    },
-   "hc": "เสมอ",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 54,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 29,
-    "d": 27,
-    "a": 44
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ"
-   ],
-   "ous": [
-    "2.5"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 2,
-   "id": "a96fe59de916f1d378f3dcce6733dd20",
-   "t": "06:00",
-   "d": "พฤหัสบดี",
-   "ts": 1795042800,
-   "flag": "🇧🇷",
-   "lg": "เซเรีย อา บราซิล",
-   "rk": 18,
-   "h": {
-    "n": "Remo",
-    "l": ""
-   },
-   "a": {
-    "n": "Chapecoense",
-    "l": ""
-   },
-   "hc": "Remo ต่อ 1.5",
+   "hc": "Lyon ต่อ 0.5/1",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
@@ -469,13 +106,13 @@
    },
    "hp": null,
    "pr": {
-    "h": 60,
-    "d": 22,
-    "a": 18
+    "h": 23,
+    "d": 24,
+    "a": 52
    },
    "elo": null,
    "hcs": [
-    "1.5"
+    "0.5/1"
    ],
    "ous": [
     "2.5"
@@ -483,67 +120,108 @@
   },
   {
    "v": 2,
-   "id": "4ffeab0ae6c6a76e96262104d3a1d6e7",
-   "t": "06:30",
-   "d": "พฤหัสบดี",
-   "ts": 1795044600,
-   "flag": "🇧🇷",
-   "lg": "เซเรีย อา บราซิล",
-   "rk": 18,
+   "id": "0059f14500bb56dd00fc99fb8a4bd987",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795118400,
+   "flag": "⚽",
+   "lg": "UEFA Champions League Women",
+   "rk": 99,
    "h": {
-    "n": "Flamengo",
+    "n": "Benfica",
     "l": ""
    },
    "a": {
-    "n": "Atletico Paranaense",
+    "n": "AS Roma",
     "l": ""
    },
-   "hc": "Flamengo ต่อ 1.5/2",
+   "hc": "เสมอ",
    "ou": {
-    "lab": "สูง 3",
-    "line": "3",
-    "pct": 51,
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 59,
     "weak": true,
-    "s": "over",
-    "x": 3.0
+    "s": "under",
+    "x": 3.5
    },
    "hp": null,
    "pr": {
-    "h": 76,
-    "d": 15,
-    "a": 9
+    "h": 45,
+    "d": 24,
+    "a": 31
    },
    "elo": null,
    "hcs": [
-    "1.5/2"
+    "เสมอ"
    ],
    "ous": [
-    "3"
+    "3.5"
    ],
    "nopick": true
   },
   {
    "v": 2,
-   "id": "8c090da10644d01073571175eb7a7426",
-   "t": "06:30",
-   "d": "พฤหัสบดี",
-   "ts": 1795044600,
+   "id": "fa391596e09654602dc180a0c8d43e9f",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795118400,
+   "flag": "⚽",
+   "lg": "UEFA Champions League Women",
+   "rk": 99,
+   "h": {
+    "n": "Barcelona",
+    "l": ""
+   },
+   "a": {
+    "n": "Servette FC",
+    "l": ""
+   },
+   "hc": "Barcelona ต่อ 5.5/6",
+   "ou": {
+    "lab": "สูง 6/6.5",
+    "line": "6/6.5",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 6.25
+   },
+   "hp": null,
+   "pr": {
+    "h": 95,
+    "d": 2,
+    "a": 3
+   },
+   "elo": null,
+   "hcs": [
+    "5.5/6"
+   ],
+   "ous": [
+    "6.25"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": "fa3ad7ccd23c6fe47c3062a2b69d3ddd",
+   "t": "05:30",
+   "d": "ศุกร์",
+   "ts": 1795127400,
    "flag": "🇧🇷",
    "lg": "เซเรีย อา บราซิล",
    "rk": 18,
    "h": {
-    "n": "Cruzeiro",
+    "n": "Vitoria",
     "l": ""
    },
    "a": {
-    "n": "Palmeiras",
+    "n": "Bragantino-SP",
     "l": ""
    },
    "hc": "เสมอ",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 53,
+    "pct": 52,
     "weak": true,
     "s": "over",
     "x": 2.5
@@ -565,39 +243,78 @@
   },
   {
    "v": 2,
-   "id": "4a0ed971930ed1355d19497b2aa72744",
-   "t": "07:30",
-   "d": "พฤหัสบดี",
-   "ts": 1795048200,
+   "id": "2a054ad1a9985edb5db37136cf40a382",
+   "t": "05:30",
+   "d": "ศุกร์",
+   "ts": 1795127400,
    "flag": "🇧🇷",
    "lg": "เซเรีย อา บราซิล",
    "rk": 18,
    "h": {
-    "n": "Grêmio",
+    "n": "Vasco da Gama",
     "l": ""
    },
    "a": {
-    "n": "Bahia",
+    "n": "Internacional",
     "l": ""
    },
-   "hc": "เสมอ",
+   "hc": "Vasco da Gama ต่อ 1.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 56,
+    "pct": 54,
     "weak": true,
     "s": "over",
     "x": 2.5
    },
    "hp": null,
    "pr": {
-    "h": 41,
-    "d": 26,
+    "h": 58,
+    "d": 24,
+    "a": 19
+   },
+   "elo": null,
+   "hcs": [],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 2,
+   "id": "659d55886f2f0170609b4f02bec960c5",
+   "t": "07:30",
+   "d": "ศุกร์",
+   "ts": 1795134600,
+   "flag": "🇧🇷",
+   "lg": "เซเรีย อา บราซิล",
+   "rk": 18,
+   "h": {
+    "n": "Sao Paulo",
+    "l": ""
+   },
+   "a": {
+    "n": "Fluminense",
+    "l": ""
+   },
+   "hc": "Sao Paulo ต่อ 0.5",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 55,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 39,
+    "d": 29,
     "a": 32
    },
    "elo": null,
    "hcs": [
-    "เสมอ"
+    "0.5"
    ],
    "ous": [
     "2.5"
@@ -606,40 +323,42 @@
   },
   {
    "v": 2,
-   "id": "1c0decf6a961edaef153ea4223ec22ce",
+   "id": "ec0a3056ce896bd73059bffab79fc261",
    "t": "07:30",
-   "d": "พฤหัสบดี",
-   "ts": 1795048200,
-   "flag": "🇧🇷",
-   "lg": "เซเรีย อา บราซิล",
-   "rk": 18,
+   "d": "ศุกร์",
+   "ts": 1795134600,
+   "flag": "🇺🇸",
+   "lg": "เมเจอร์ลีก ซอคเกอร์",
+   "rk": 19,
    "h": {
-    "n": "Corinthians",
+    "n": "Orlando City SC",
     "l": ""
    },
    "a": {
-    "n": "Botafogo",
+    "n": "FC Cincinnati",
     "l": ""
    },
-   "hc": "Corinthians ต่อ 1.5",
+   "hc": "เสมอ",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
+    "lab": "ต่ำ 3.5/4",
+    "line": "3.5/4",
     "pct": 50,
     "weak": true,
-    "s": "over",
-    "x": 2.5
+    "s": "under",
+    "x": 3.75
    },
    "hp": null,
    "pr": {
-    "h": 51,
-    "d": 26,
-    "a": 24
+    "h": 38,
+    "d": 24,
+    "a": 38
    },
    "elo": null,
-   "hcs": [],
+   "hcs": [
+    "เสมอ"
+   ],
    "ous": [
-    "2.5"
+    "3.75"
    ],
    "nopick": true
   }
@@ -3006,12 +2725,14 @@
    "an": "Manchester City",
    "lg": "UEFA Champions League Women",
    "sp": "soccer_uefa_champs_league_women",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 70
+   "pct": 70,
+   "gh": 0,
+   "ga": 2
   },
   {
    "id": "2ff809e70c96071b20b2ad3f6123fe8f",
@@ -3021,12 +2742,14 @@
    "an": "Inter Milan",
    "lg": "UEFA Champions League Women",
    "sp": "soccer_uefa_champs_league_women",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 69
+   "pct": 69,
+   "gh": 3,
+   "ga": 1
   },
   {
    "id": "122669be0e839fcda949d054af3ddc7f",
@@ -3036,12 +2759,14 @@
    "an": "Paris Saint Germain",
    "lg": "UEFA Champions League Women",
    "sp": "soccer_uefa_champs_league_women",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 64
+   "pct": 64,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": "e8aea25fa4a2c167c4f565a0a3703676",
@@ -3051,12 +2776,14 @@
    "an": "Leuven",
    "lg": "UEFA Champions League Women",
    "sp": "soccer_uefa_champs_league_women",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 64
+   "pct": 64,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": "a96fe59de916f1d378f3dcce6733dd20",
@@ -3066,6 +2793,53 @@
    "an": "Chapecoense",
    "lg": "เซเรีย อา บราซิล",
    "sp": "soccer_brazil_campeonato",
+   "res": -1.0,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 60,
+   "gh": 2,
+   "ga": 0
+  },
+  {
+   "id": "46c323a078772696b526e9e4a4f2e7ff",
+   "ts": 1795110300,
+   "d": "20/11",
+   "hn": "Austria Wien",
+   "an": "Bayern Munich",
+   "lg": "UEFA Champions League Women",
+   "sp": "soccer_uefa_champs_league_women",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 76
+  },
+  {
+   "id": "f717126e06b5b6e5166255be6f486dde",
+   "ts": 1795110300,
+   "d": "20/11",
+   "hn": "Paris FC",
+   "an": "HB Køge",
+   "lg": "UEFA Champions League Women",
+   "sp": "soccer_uefa_champs_league_women",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 62
+  },
+  {
+   "id": "a94ea221001eb7a9816e94f5a821c169",
+   "ts": 1795118400,
+   "d": "20/11",
+   "hn": "Arsenal",
+   "an": "Lyon",
+   "lg": "UEFA Champions League Women",
+   "sp": "soccer_uefa_champs_league_women",
    "res": null,
    "k": "ou",
    "s": "over",
@@ -3075,42 +2849,6 @@
   }
  ],
  "snap": {
-  "90db407c8de9079c354e857f9953c38c": {
-   "ts": 1794942000,
-   "ou": 52
-  },
-  "e71a4a4fea03d00873c285c5b55a9864": {
-   "ts": 1794944700,
-   "ou": 60
-  },
-  "3eb1d15a190bb1be8c32a020365dc7c2": {
-   "ts": 1794944700,
-   "ou": 54
-  },
-  "770e80269ec2ffddc826bc50330c475b": {
-   "ts": 1794944700,
-   "ou": 55
-  },
-  "91b890f5fd20440cb272721b8a89a33d": {
-   "ts": 1794944700,
-   "ou": 58
-  },
-  "1a07e9080f042594bdb529ab932d680c": {
-   "ts": 1794944700,
-   "ou": 61
-  },
-  "a6c9b424fddccea76aab09880b69dd31": {
-   "ts": 1794944700,
-   "ou": 60
-  },
-  "aab74efad72e8096e774c7104189ff09": {
-   "ts": 1794944700,
-   "ou": 58
-  },
-  "955a201ba2266b8b6b0519e0265eb354": {
-   "ts": 1794944700,
-   "ou": 57
-  },
   "8d017c6bef33aa894ea91e1c1f3a5299": {
    "ts": 1795023900,
    "ou": 70
@@ -3173,6 +2911,42 @@
   },
   "1c0decf6a961edaef153ea4223ec22ce": {
    "ts": 1795048200,
+   "ou": 50
+  },
+  "46c323a078772696b526e9e4a4f2e7ff": {
+   "ts": 1795110300,
+   "ou": 76
+  },
+  "f717126e06b5b6e5166255be6f486dde": {
+   "ts": 1795110300,
+   "ou": 62
+  },
+  "0059f14500bb56dd00fc99fb8a4bd987": {
+   "ts": 1795118400,
+   "ou": 59
+  },
+  "a94ea221001eb7a9816e94f5a821c169": {
+   "ts": 1795118400,
+   "ou": 60
+  },
+  "fa391596e09654602dc180a0c8d43e9f": {
+   "ts": 1795118400,
+   "ou": 51
+  },
+  "fa3ad7ccd23c6fe47c3062a2b69d3ddd": {
+   "ts": 1795127400,
+   "ou": 52
+  },
+  "2a054ad1a9985edb5db37136cf40a382": {
+   "ts": 1795127400,
+   "ou": 54
+  },
+  "659d55886f2f0170609b4f02bec960c5": {
+   "ts": 1795134600,
+   "ou": 55
+  },
+  "ec0a3056ce896bd73059bffab79fc261": {
+   "ts": 1795134600,
    "ou": 50
   }
  },
