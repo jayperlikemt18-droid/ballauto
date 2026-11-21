@@ -1,57 +1,8 @@
 {
- "ts": 1795273997,
- "updated": "เสาร์ 21/11 22:13 น.",
+ "ts": 1795274761,
+ "updated": "เสาร์ 21/11 22:26 น.",
  "date": "21/11/69",
  "matches": [
-  {
-   "v": 2,
-   "id": "ebe638278f4d70eaf211ad5be9795fa0",
-   "t": "22:15",
-   "d": "เสาร์",
-   "ts": 1795274100,
-   "flag": "🇪🇸",
-   "lg": "ลาลีกา สเปน",
-   "rk": 4,
-   "h": {
-    "n": "Rayo Vallecano",
-    "l": ""
-   },
-   "a": {
-    "n": "Valencia",
-    "l": ""
-   },
-   "hc": "Rayo Vallecano ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 2/2.5",
-    "line": "2/2.5",
-    "pct": 54,
-    "weak": true,
-    "s": "over",
-    "x": 2.25
-   },
-   "hp": {
-    "lab": "Valencia +1",
-    "pct": 67,
-    "team": "Valencia",
-    "giver": false,
-    "lt": "1",
-    "side": "away",
-    "h": 1.0
-   },
-   "pr": {
-    "h": 49,
-    "d": 28,
-    "a": 23
-   },
-   "elo": null,
-   "hcs": [
-    "0.5"
-   ],
-   "ous": [
-    "2.25"
-   ],
-   "lock": true
-  },
   {
    "v": 2,
    "id": "651c1847b5cdcc85e60a140edd2282c4",
