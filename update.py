@@ -712,7 +712,9 @@ def run():
     history = [e for e in history if e.get("res") is not None or (e.get("sp") and e["ts"] > datetime.now(timezone.utc).timestamp() - 4 * 86400)]
     newly = [e for e in history if e.get("res") is not None and (e["id"], e.get("k")) not in before]
     now = datetime.now(timezone.utc)
-    end = now + timedelta(hours=24)
+    # "บอลวันที่ X" = เตะตั้งแต่ 06:00 วัน X ถึง 06:00 ของวันถัดไป (เวลาไทย) คู่ที่เลยเที่ยงคืนยังนับเป็นของวัน X
+    fd = (now.astimezone(TH) - timedelta(hours=6)).date()
+    end = (datetime(fd.year, fd.month, fd.day, 6, tzinfo=TH) + timedelta(days=1)).astimezone(timezone.utc)
     out, odds_map = fetch_all(now, end, old)
     out = list({x[1]["fixture"]["id"]: x for x in out}.values())
     out = [x for x in out if x[1]["fixture"]["id"] in odds_map or x[1]["fixture"]["id"] in {m.get("id") for m in old}]
@@ -902,7 +904,7 @@ def run():
         print("โลโก้พลาด:", e)
     nt = datetime.now(TH)
     data = {"ts": int(time.time()), "updated": "%s %02d/%02d %s น." % (DAYS[nt.weekday()], nt.day, nt.month, nt.strftime("%H:%M")),
-            "date": "%d/%d/%s" % (nt.day, nt.month, str(nt.year + 543)[2:]), "matches": matches,
+            "date": "%d/%d/%s" % (fd.day, fd.month, str(fd.year + 543)[2:]), "matches": matches,
             "history": sorted(history, key=lambda e: e["ts"])[-150:], "snap": snap, "tn": old_tn, "logos": old_logos}
     with open("data.json", "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, indent=1)
