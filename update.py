@@ -137,7 +137,7 @@ def calibrate(history):
         w = sum(1 for e in a if e["res"] > 0)
         l = sum(1 for e in a if e["res"] < 0)
         return (w / (w + l), w + l) if w + l else (None, 0)
-    done = [e for e in history if e.get("res") is not None]
+    done = [e for e in history if e.get("res") is not None and e.get("sp")]  # นับเฉพาะผลจากระบบใหม่
     bad_kind, bad_lg = set(), set()
     for k in ("ou", "hp"):
         r, n = rate([e for e in done if e.get("k") == k])
@@ -512,10 +512,9 @@ def auto_names(names, cache, limit=150):
     for key, b in todo:
         if b in got:
             cache[key] = got[b].strip()
-    if os.environ.get("GEMINI_API_KEY", "").strip():
-        print("แปลชื่อด้วย Gemini", sum(1 for k, _ in todo if k in cache), "จาก", len(todo))
-        return
-    for key, b in todo[:60]:  # ไม่มี key Gemini ใช้ตัวแปลสำรอง
+    print("แปลชื่อด้วย Gemini", sum(1 for k, _ in todo if k in cache), "จาก", len(todo))
+    todo = [(k, b) for k, b in todo if k not in cache]  # ที่ Gemini แปลไม่ได้ ใช้ตัวสำรองต่อ
+    for key, b in todo[:80]:
         try:
             t = _gt(b)
             if t and re.search("[\u0e00-\u0e7f]", t):
@@ -524,7 +523,7 @@ def auto_names(names, cache, limit=150):
             print("แปลชื่อไม่ได้:", b, e)
             break
         time.sleep(0.3)
-    print("แปลชื่ออัตโนมัติด้วยตัวสำรอง")
+    print("ตัวสำรองแปลเพิ่ม; ยังไม่มีไทย", sum(1 for k, _ in todo if k not in cache), "ชื่อ")
 
 
 
@@ -617,6 +616,36 @@ def send_telegram(text):
         print("ส่งเทเลแกรมไม่สำเร็จ:", e)
 
 
+def fetch_logos(matches, cache, limit=40):
+    """หาโลโก้ทีมจาก TheSportsDB (ฟรี) ตามชื่อทีม เก็บแคชใน data.json ไม่ค้นซ้ำ"""
+    todo = []
+    for m in sorted(matches, key=lambda x: (x.get("nopick", False), x.get("rk", 99))):
+        for x in (m["h"]["n"], m["a"]["n"]):
+            if x not in cache and x not in todo:
+                todo.append(x)
+    for nm in todo[:limit]:
+        url = "https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=" + urllib.parse.quote(nm)
+        logo = ""
+        try:
+            with urllib.request.urlopen(url, timeout=20) as r:
+                d = json.loads(r.read().decode("utf-8"))
+            for t in d.get("teams") or []:
+                if t.get("strSport") == "Soccer" and t.get("strBadge"):
+                    logo = t["strBadge"] + "/small"
+                    break
+        except Exception as e:
+            print("โลโก้ไม่ได้:", nm, e)
+            if "429" in str(e):
+                break
+            continue
+        cache[nm] = logo
+        time.sleep(2.2)  # ฟรี 30 ครั้งต่อนาที
+    for m in matches:
+        for k in ("h", "a"):
+            if not m[k].get("l") and cache.get(m[k]["n"]):
+                m[k]["l"] = cache[m[k]["n"]]
+
+
 def main():
     try:
         run()
@@ -631,6 +660,7 @@ def run():
     old = []
     old_snap = {}
     old_tn = {}
+    old_logos = {}
     try:
         with open("data.json", encoding="utf-8") as fh:
             _d = json.load(fh)
@@ -638,6 +668,10 @@ def run():
             old = _d.get("matches", [])
             old_snap = _d.get("snap", {})
             old_tn = _d.get("tn", {})
+            old_logos = _d.get("logos", {})
+            if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and time.time() - _d.get("ts", 0) < 10 * 3600:
+                print("ข้อมูลยังใหม่ (อัปเดตแล้วเมื่อไม่กี่ชั่วโมงก่อน) ข้ามรอบสำรอง")
+                return
     except Exception:
         pass
     before = {(e["id"], e.get("k")) for e in history if e.get("res") is not None}
@@ -686,7 +720,13 @@ def run():
             if fav:
                 team = h["name"] if fav == "home" else a["name"]
                 best_c = None
-                for line, ph in ah_ladder(books):
+                lad = dict(ah_ladder(books))
+                # ราคาต่อรอง -0.5 คือ "ชนะ" เท่านั้น แหล่งข้อมูลมักไม่มีบรรทัดนี้ จึงเอา % ชนะมาใส่แทน
+                if fav == "home" and -0.5 not in lad:
+                    lad[-0.5] = pr["h"] / 100
+                if fav == "away" and 0.5 not in lad:
+                    lad[0.5] = 1 - pr["a"] / 100
+                for line, ph in sorted(lad.items()):
                     ht = line if fav == "home" else -line   # แต้มต่อของทีมเต็ง (ลบ = ต่อ)
                     pc = ph if fav == "home" else 1 - ph
                     if pc < 0.60 or ht < -6 or ht > 6:
@@ -819,10 +859,14 @@ def run():
         print("แปลชื่อพลาด:", e)
     for k, v in old_tn.items():
         NAMES.setdefault(k, v)
+    try:
+        fetch_logos(matches, old_logos)
+    except Exception as e:
+        print("โลโก้พลาด:", e)
     nt = datetime.now(TH)
-    data = {"updated": "%s %02d/%02d %s น." % (DAYS[nt.weekday()], nt.day, nt.month, nt.strftime("%H:%M")),
+    data = {"ts": int(time.time()), "updated": "%s %02d/%02d %s น." % (DAYS[nt.weekday()], nt.day, nt.month, nt.strftime("%H:%M")),
             "date": "%d/%d/%s" % (nt.day, nt.month, str(nt.year + 543)[2:]), "matches": matches,
-            "history": sorted(history, key=lambda e: e["ts"])[-150:], "snap": snap, "tn": old_tn}
+            "history": sorted(history, key=lambda e: e["ts"])[-150:], "snap": snap, "tn": old_tn, "logos": old_logos}
     with open("data.json", "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, indent=1)
     print("เขียน data.json แล้ว %d คู่" % len(matches))
