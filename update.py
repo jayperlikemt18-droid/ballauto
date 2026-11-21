@@ -381,6 +381,27 @@ def find_totals(bookmakers):
     return []
 
 
+def totals_ladder(books):
+    """สูง/ต่ำทุกบรรทัดที่เจ้ามือเปิด: [(เส้น, โอกาสสูง)] เฉลี่ยทุกเจ้ามือ ตัดค่าน้ำแล้ว"""
+    acc = {}
+    for b in books:
+        for bet in b.get("bets", []):
+            if bet.get("id") != 5:
+                continue
+            ov, un = {}, {}
+            for v in bet.get("values", []):
+                try:
+                    kind, x = v["value"].split()
+                    x, o = float(x), float(v["odd"])
+                except (ValueError, KeyError):
+                    continue
+                (ov if kind == "Over" else un)[x] = o
+            for x in ov:
+                if x in un:
+                    acc.setdefault(x, []).append((1 / ov[x]) / ((1 / ov[x]) + (1 / un[x])))
+    return sorted((x, sum(v) / len(v)) for x, v in acc.items())
+
+
 def analyse(odds, home, away):
     res = odds[0].get("bookmakers", []) if odds else []
     ou = None
@@ -406,6 +427,15 @@ def analyse(odds, home, away):
             ou = {"lab": "สูง " + thai_line(x), "line": thai_line(x), "pct": round(po * 100), "weak": po < 0.53, "s": "over", "x": x}
         else:
             ou = {"lab": "ต่ำ " + thai_line(x), "line": thai_line(x), "pct": round((1 - po) * 100), "weak": (1 - po) < 0.53, "s": "under", "x": x}
+    alt = None  # บรรทัดสูง/ต่ำที่โอกาสถึง 60% และคุ้มที่สุด (โอกาสต่ำสุดที่ยังผ่าน)
+    for x, po in totals_ladder(res):
+        for side, p in (("over", po), ("under", 1 - po)):
+            if p >= 0.60 and (alt is None or p < alt[0]):
+                alt = (p, x, side)
+    if alt:
+        p, x, side = alt
+        ou = {"lab": ("สูง " if side == "over" else "ต่ำ ") + thai_line(x), "line": thai_line(x),
+              "pct": round(p * 100), "weak": False, "s": side, "x": x}
     hc = None
     best = None
     hcs, ous = [], []
@@ -717,28 +747,35 @@ def run():
                 fav = None
             if fav and e is not None and ((e >= 50) != (fav == "home") or max(e, 100 - e) < 55):
                 fav = None
-            if fav:
-                team = h["name"] if fav == "home" else a["name"]
+            lad = dict(ah_ladder(books))
+            # ราคาต่อรอง -0.5 คือ "ชนะ" เท่านั้น แหล่งข้อมูลมักไม่มีบรรทัดนี้ จึงเอา % ชนะมาใส่แทน
+            if -0.5 not in lad:
+                lad[-0.5] = pr["h"] / 100
+            if 0.5 not in lad:
+                lad[0.5] = 1 - pr["a"] / 100
+
+            def pick_line(side, plus_only=False):
                 best_c = None
-                lad = dict(ah_ladder(books))
-                # ราคาต่อรอง -0.5 คือ "ชนะ" เท่านั้น แหล่งข้อมูลมักไม่มีบรรทัดนี้ จึงเอา % ชนะมาใส่แทน
-                if fav == "home" and -0.5 not in lad:
-                    lad[-0.5] = pr["h"] / 100
-                if fav == "away" and 0.5 not in lad:
-                    lad[0.5] = 1 - pr["a"] / 100
                 for line, ph in sorted(lad.items()):
-                    ht = line if fav == "home" else -line   # แต้มต่อของทีมเต็ง (ลบ = ต่อ)
-                    pc = ph if fav == "home" else 1 - ph
-                    if pc < 0.60 or ht < -6 or ht > 6:
+                    ht = line if side == "home" else -line   # แต้มต่อของทีมนั้น (ลบ = ต่อ)
+                    pc = ph if side == "home" else 1 - ph
+                    if pc < 0.60 or ht < -6 or ht > 6 or (plus_only and ht <= 0):
                         continue
                     if best_c is None or pc < best_c[0]:
-                        best_c = (pc, ht)
-                if best_c:
-                    pc, ht = best_c
-                    sgn = "-" if ht < 0 else "+"
-                    lt = thai_line(abs(ht)) if ht != 0 else "0"
-                    hp = {"lab": "%s %s%s" % (team, sgn if ht != 0 else "", lt), "pct": round(pc * 100), "team": team,
-                          "giver": ht < 0, "lt": lt, "side": fav, "h": ht}
+                        best_c = (pc, ht, side)
+                return best_c
+
+            best_c = pick_line(fav) if fav else None
+            if best_c is None:  # ไม่มีทีมเต็งที่ผ่าน: ลองฝั่งรอง (+) ของทีมอ่อน/ทั้งสองฝั่ง
+                cands_c = [x for x in (pick_line("home", True), pick_line("away", True)) if x and (not fav or x[2] != fav)]
+                best_c = min(cands_c, key=lambda x: x[0]) if cands_c else None
+            if best_c:
+                pc, ht, side = best_c
+                team = h["name"] if side == "home" else a["name"]
+                sgn = "-" if ht < 0 else "+"
+                lt = thai_line(abs(ht)) if ht != 0 else "0"
+                hp = {"lab": "%s %s%s" % (team, sgn if ht != 0 else "", lt), "pct": round(pc * 100), "team": team,
+                      "giver": ht < 0, "lt": lt, "side": side, "h": ht}
         if ou and ou["pct"] < 60:
             ou["weak"] = True
         lgid = f["league"]["id"]
