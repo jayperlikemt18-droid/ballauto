@@ -1,10 +1,10 @@
 {
- "ts": 1795362787,
- "updated": "อาทิตย์ 22/11 22:53 น.",
+ "ts": 1795363256,
+ "updated": "อาทิตย์ 22/11 23:00 น.",
  "date": "22/11/69",
  "matches": [
   {
-   "v": 2,
+   "v": 3,
    "id": "8e6ee05b6ac28dc2357f72b9f5a0643e",
    "t": "23:15",
    "d": "อาทิตย์",
@@ -24,14 +24,14 @@
    "ou": {
     "lab": "ต่ำ 2.5",
     "line": "2.5",
-    "pct": 54,
+    "pct": 55,
     "weak": true,
     "s": "under",
     "x": 2.5
    },
    "hp": {
     "lab": "Lorient +1",
-    "pct": 69,
+    "pct": 68,
     "team": "Lorient",
     "giver": false,
     "lt": "1",
@@ -39,9 +39,9 @@
     "h": 1.0
    },
    "pr": {
-    "h": 26,
+    "h": 25,
     "d": 28,
-    "a": 46
+    "a": 47
    },
    "elo": null,
    "hcs": [],
@@ -50,7 +50,47 @@
    ]
   },
   {
-   "v": 2,
+   "v": 3,
+   "id": "9a214142c9b31ad8233dccad53f75d6d",
+   "t": "23:30",
+   "d": "อาทิตย์",
+   "ts": 1795365000,
+   "flag": "🇩🇪",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "rk": 1,
+   "h": {
+    "n": "Werder Bremen",
+    "l": ""
+   },
+   "a": {
+    "n": "Hamburger SV",
+    "l": ""
+   },
+   "hc": "Werder Bremen ต่อ 1",
+   "ou": {
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 64,
+    "weak": false,
+    "s": "under",
+    "x": 3.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 61,
+    "d": 22,
+    "a": 17
+   },
+   "elo": null,
+   "hcs": [
+    "1"
+   ],
+   "ous": [
+    "2.75"
+   ]
+  },
+  {
+   "v": 3,
    "id": "4c08b213ed416e8f41e038f42a42b962",
    "t": "23:30",
    "d": "อาทิตย์",
@@ -75,78 +115,20 @@
     "s": "over",
     "x": 2.5
    },
-   "hp": {
-    "lab": "Liverpool +0.5",
-    "pct": 79,
-    "team": "Liverpool",
-    "giver": false,
-    "lt": "0.5",
-    "side": "home",
-    "h": 0.5
-   },
+   "hp": null,
    "pr": {
-    "h": 56,
+    "h": 54,
     "d": 23,
-    "a": 21
+    "a": 23
    },
    "elo": null,
    "hcs": [],
    "ous": [
     "3.5"
-   ],
-   "lock": true
+   ]
   },
   {
-   "v": 2,
-   "id": "9a214142c9b31ad8233dccad53f75d6d",
-   "t": "23:30",
-   "d": "อาทิตย์",
-   "ts": 1795365000,
-   "flag": "🇩🇪",
-   "lg": "บุนเดสลีกา เยอรมัน",
-   "rk": 1,
-   "h": {
-    "n": "Werder Bremen",
-    "l": ""
-   },
-   "a": {
-    "n": "Hamburger SV",
-    "l": ""
-   },
-   "hc": "Werder Bremen ต่อ 1",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 62,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": {
-    "lab": "Werder Bremen +0.5",
-    "pct": 81,
-    "team": "Werder Bremen",
-    "giver": false,
-    "lt": "0.5",
-    "side": "home",
-    "h": 0.5
-   },
-   "pr": {
-    "h": 60,
-    "d": 21,
-    "a": 19
-   },
-   "elo": null,
-   "hcs": [
-    "1"
-   ],
-   "ous": [
-    "3"
-   ],
-   "lock": true
-  },
-  {
-   "v": 2,
+   "v": 3,
    "id": "5faf836ce6c0fd72af5d1fe258c63bc6",
    "t": "00:00",
    "d": "จันทร์",
@@ -166,36 +148,35 @@
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 70,
-    "weak": false,
+    "pct": 67,
+    "weak": true,
     "s": "over",
     "x": 2.5
    },
    "hp": {
-    "lab": "AC Milan -0.5",
-    "pct": 61,
-    "team": "AC Milan",
-    "giver": true,
-    "lt": "0.5",
-    "side": "home",
-    "h": -0.5
+    "lab": "Frosinone +1.5",
+    "pct": 62,
+    "team": "Frosinone",
+    "giver": false,
+    "lt": "1.5",
+    "side": "away",
+    "h": 1.5
    },
    "pr": {
-    "h": 61,
+    "h": 60,
     "d": 21,
-    "a": 18
+    "a": 19
    },
    "elo": null,
    "hcs": [
     "1"
    ],
    "ous": [
-    "3.5"
-   ],
-   "lock": true
+    "3.25"
+   ]
   },
   {
-   "v": 2,
+   "v": 3,
    "id": "e22f82b10fe71d230248b88fef87e58f",
    "t": "02:45",
    "d": "จันทร์",
@@ -230,8 +211,8 @@
     "h": -0.5
    },
    "pr": {
-    "h": 18,
-    "d": 20,
+    "h": 17,
+    "d": 21,
     "a": 62
    },
    "elo": null,
@@ -240,11 +221,10 @@
    ],
    "ous": [
     "3.25"
-   ],
-   "lock": true
+   ]
   },
   {
-   "v": 2,
+   "v": 3,
    "id": "98fae24771271c96d5dd364e535405d2",
    "t": "02:45",
    "d": "จันทร์",
@@ -264,14 +244,14 @@
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 63,
+    "pct": 62,
     "weak": false,
     "s": "over",
     "x": 2.5
    },
    "hp": {
     "lab": "Marseille -0.5",
-    "pct": 64,
+    "pct": 65,
     "team": "Marseille",
     "giver": true,
     "lt": "0.5",
@@ -279,9 +259,9 @@
     "h": -0.5
    },
    "pr": {
-    "h": 64,
+    "h": 65,
     "d": 20,
-    "a": 16
+    "a": 15
    },
    "elo": null,
    "hcs": [
@@ -289,8 +269,7 @@
    ],
    "ous": [
     "3.5"
-   ],
-   "lock": true
+   ]
   }
  ],
  "history": [
@@ -2241,14 +2220,16 @@
    "an": "Valencia",
    "lg": "ลาลีกา สเปน",
    "sp": "soccer_spain_la_liga",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "away",
    "h": 1.0,
    "lt": "1",
    "team": "Valencia",
    "giver": false,
-   "pct": 67
+   "pct": 67,
+   "gh": 0,
+   "ga": 1
   },
   {
    "id": "651c1847b5cdcc85e60a140edd2282c4",
@@ -2332,14 +2313,16 @@
    "an": "Real Betis",
    "lg": "ลาลีกา สเปน",
    "sp": "soccer_spain_la_liga",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": 0.5,
    "lt": "0.5",
    "team": "Sevilla",
    "giver": false,
-   "pct": 61
+   "pct": 61,
+   "gh": 1,
+   "ga": 1
   },
   {
    "id": "71bf9fe98c3e3be39cd1d059f8d71ae8",
@@ -2461,14 +2444,16 @@
    "an": "Celta Vigo",
    "lg": "ลาลีกา สเปน",
    "sp": "soccer_spain_la_liga",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Real Madrid",
    "giver": true,
-   "pct": 82
+   "pct": 82,
+   "gh": 2,
+   "ga": 1
   },
   {
    "id": "be2fcabc408be29ca01ce92ab266f8b7",
@@ -2497,12 +2482,14 @@
    "an": "Villarreal",
    "lg": "ลาลีกา สเปน",
    "sp": "soccer_spain_la_liga",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 81
+   "pct": 81,
+   "gh": 3,
+   "ga": 2
   },
   {
    "id": "214a79b6e08dbe3f508844936158c038",
@@ -2512,14 +2499,16 @@
    "an": "Villarreal",
    "lg": "ลาลีกา สเปน",
    "sp": "soccer_spain_la_liga",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Barcelona",
    "giver": true,
-   "pct": 80
+   "pct": 80,
+   "gh": 3,
+   "ga": 2
   },
   {
    "id": "5bc13c44b33981f3185400163388267e",
@@ -2634,7 +2623,7 @@
    "lt": "1",
    "team": "Lorient",
    "giver": false,
-   "pct": 69
+   "pct": 68
   },
   {
    "id": "9a214142c9b31ad8233dccad53f75d6d",
@@ -2646,27 +2635,10 @@
    "sp": "soccer_germany_bundesliga",
    "res": null,
    "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 62
-  },
-  {
-   "id": "9a214142c9b31ad8233dccad53f75d6d",
-   "ts": 1795365000,
-   "d": "22/11",
-   "hn": "Werder Bremen",
-   "an": "Hamburger SV",
-   "lg": "บุนเดสลีกา เยอรมัน",
-   "sp": "soccer_germany_bundesliga",
-   "res": null,
-   "k": "hp",
-   "side": "home",
-   "h": 0.5,
-   "lt": "0.5",
-   "team": "Werder Bremen",
-   "giver": false,
-   "pct": 81
+   "s": "under",
+   "x": 3.5,
+   "lt": "3.5",
+   "pct": 64
   },
   {
    "id": "4c08b213ed416e8f41e038f42a42b962",
@@ -2684,53 +2656,21 @@
    "pct": 63
   },
   {
-   "id": "4c08b213ed416e8f41e038f42a42b962",
-   "ts": 1795365000,
-   "d": "22/11",
-   "hn": "Liverpool",
-   "an": "Manchester United",
-   "lg": "พรีเมียร์ลีก อังกฤษ",
-   "sp": "soccer_epl",
+   "id": "5faf836ce6c0fd72af5d1fe258c63bc6",
+   "ts": 1795366800,
+   "d": "23/11",
+   "hn": "AC Milan",
+   "an": "Frosinone",
+   "lg": "เซเรีย อา อิตาลี",
+   "sp": "soccer_italy_serie_a",
    "res": null,
    "k": "hp",
-   "side": "home",
-   "h": 0.5,
-   "lt": "0.5",
-   "team": "Liverpool",
+   "side": "away",
+   "h": 1.5,
+   "lt": "1.5",
+   "team": "Frosinone",
    "giver": false,
-   "pct": 79
-  },
-  {
-   "id": "5faf836ce6c0fd72af5d1fe258c63bc6",
-   "ts": 1795366800,
-   "d": "23/11",
-   "hn": "AC Milan",
-   "an": "Frosinone",
-   "lg": "เซเรีย อา อิตาลี",
-   "sp": "soccer_italy_serie_a",
-   "res": null,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 70
-  },
-  {
-   "id": "5faf836ce6c0fd72af5d1fe258c63bc6",
-   "ts": 1795366800,
-   "d": "23/11",
-   "hn": "AC Milan",
-   "an": "Frosinone",
-   "lg": "เซเรีย อา อิตาลี",
-   "sp": "soccer_italy_serie_a",
-   "res": null,
-   "k": "hp",
-   "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
-   "team": "AC Milan",
-   "giver": true,
-   "pct": 61
+   "pct": 62
   },
   {
    "id": "e22f82b10fe71d230248b88fef87e58f",
@@ -2777,7 +2717,7 @@
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 63
+   "pct": 62
   },
   {
    "id": "98fae24771271c96d5dd364e535405d2",
@@ -2794,7 +2734,7 @@
    "lt": "0.5",
    "team": "Marseille",
    "giver": true,
-   "pct": 64
+   "pct": 65
   }
  ],
  "snap": {
