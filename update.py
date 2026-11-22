@@ -756,18 +756,18 @@ def run():
             if 0.5 not in lad:
                 lad[0.5] = 1 - pr["a"] / 100
 
-            def pick_line(side, plus_only=False):
+            def pick_line(side, plus_only=False, minus_only=False):
                 best_c = None
                 for line, ph in sorted(lad.items()):
                     ht = line if side == "home" else -line   # แต้มต่อของทีมนั้น (ลบ = ต่อ)
                     pc = ph if side == "home" else 1 - ph
-                    if pc < 0.60 or ht < -6 or ht > 6 or (plus_only and ht <= 0):
+                    if pc < 0.60 or ht < -6 or ht > 6 or (plus_only and ht <= 0) or (minus_only and ht > 0):
                         continue
                     if best_c is None or pc < best_c[0]:
                         best_c = (pc, ht, side)
                 return best_c
 
-            best_c = pick_line(fav) if fav else None
+            best_c = pick_line(fav, minus_only=True) if fav else None  # ทีมเต็งใช้เฉพาะบรรทัดต่อ (-) ไม่ใช้ +
             if best_c is None:  # ไม่มีทีมเต็งที่ผ่าน: ลองฝั่งรอง (+) ของทีมอ่อน/ทั้งสองฝั่ง
                 cands_c = [x for x in (pick_line("home", True), pick_line("away", True)) if x and (not fav or x[2] != fav)]
                 best_c = min(cands_c, key=lambda x: x[0]) if cands_c else None
