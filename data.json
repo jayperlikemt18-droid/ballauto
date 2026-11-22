@@ -1,86 +1,84 @@
 {
- "ts": 1795314111,
- "updated": "อาทิตย์ 22/11 09:21 น.",
+ "ts": 1795362787,
+ "updated": "อาทิตย์ 22/11 22:53 น.",
  "date": "22/11/69",
  "matches": [
   {
    "v": 2,
-   "id": "be2fcabc408be29ca01ce92ab266f8b7",
-   "t": "18:30",
+   "id": "8e6ee05b6ac28dc2357f72b9f5a0643e",
+   "t": "23:15",
    "d": "อาทิตย์",
-   "ts": 1795347000,
-   "flag": "🇮🇹",
-   "lg": "เซเรีย อา อิตาลี",
-   "rk": 2,
+   "ts": 1795364100,
+   "flag": "🇫🇷",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "rk": 3,
    "h": {
-    "n": "Juventus",
+    "n": "Lorient",
     "l": ""
    },
    "a": {
-    "n": "Venezia",
+    "n": "Rennes",
     "l": ""
    },
-   "hc": "Juventus ต่อ 1.5",
+   "hc": "เสมอ",
    "ou": {
-    "lab": "ต่ำ 3",
-    "line": "3",
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
     "pct": 54,
     "weak": true,
     "s": "under",
-    "x": 3.0
+    "x": 2.5
    },
    "hp": {
-    "lab": "Juventus -0.5",
-    "pct": 71,
-    "team": "Juventus",
-    "giver": true,
-    "lt": "0.5",
+    "lab": "Lorient +1",
+    "pct": 69,
+    "team": "Lorient",
+    "giver": false,
+    "lt": "1",
     "side": "home",
-    "h": -0.5
+    "h": 1.0
    },
    "pr": {
-    "h": 71,
-    "d": 18,
-    "a": 12
+    "h": 26,
+    "d": 28,
+    "a": 46
    },
    "elo": null,
-   "hcs": [
-    "1.5"
-   ],
+   "hcs": [],
    "ous": [
-    "3"
+    "2.5"
    ]
   },
   {
    "v": 2,
-   "id": "5bc13c44b33981f3185400163388267e",
-   "t": "21:00",
+   "id": "4c08b213ed416e8f41e038f42a42b962",
+   "t": "23:30",
    "d": "อาทิตย์",
-   "ts": 1795356000,
-   "flag": "🇮🇹",
-   "lg": "เซเรีย อา อิตาลี",
-   "rk": 2,
+   "ts": 1795365000,
+   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "rk": 0,
    "h": {
-    "n": "Bologna",
+    "n": "Liverpool",
     "l": ""
    },
    "a": {
-    "n": "Udinese",
+    "n": "Manchester United",
     "l": ""
    },
-   "hc": "Bologna ต่อ 0.5/1",
+   "hc": "Liverpool ต่อ 1.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 51,
-    "weak": true,
+    "pct": 63,
+    "weak": false,
     "s": "over",
     "x": 2.5
    },
    "hp": {
-    "lab": "Bologna +0.5",
-    "pct": 81,
-    "team": "Bologna",
+    "lab": "Liverpool +0.5",
+    "pct": 79,
+    "team": "Liverpool",
     "giver": false,
     "lt": "0.5",
     "side": "home",
@@ -88,160 +86,15 @@
    },
    "pr": {
     "h": 56,
-    "d": 25,
-    "a": 19
+    "d": 23,
+    "a": 21
    },
    "elo": null,
-   "hcs": [
-    "0.5/1"
-   ],
-   "ous": [
-    "2.5"
-   ]
-  },
-  {
-   "v": 2,
-   "id": "9e5d4a91e379ddffa179b02bf9e09530",
-   "t": "21:00",
-   "d": "อาทิตย์",
-   "ts": 1795356000,
-   "flag": "🇫🇷",
-   "lg": "ลีกเอิง ฝรั่งเศส",
-   "rk": 3,
-   "h": {
-    "n": "Paris FC",
-    "l": ""
-   },
-   "a": {
-    "n": "Angers",
-    "l": ""
-   },
-   "hc": "Paris FC ต่อ 1.5",
-   "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 60,
-    "weak": false,
-    "s": "under",
-    "x": 3.5
-   },
-   "hp": {
-    "lab": "Paris FC -0.5",
-    "pct": 70,
-    "team": "Paris FC",
-    "giver": true,
-    "lt": "0.5",
-    "side": "home",
-    "h": -0.5
-   },
-   "pr": {
-    "h": 70,
-    "d": 18,
-    "a": 11
-   },
-   "elo": null,
-   "hcs": [
-    "1.5"
-   ],
+   "hcs": [],
    "ous": [
     "3.5"
-   ]
-  },
-  {
-   "v": 2,
-   "id": "230a356290e1a358e9dd2f7fa23de3b9",
-   "t": "21:00",
-   "d": "อาทิตย์",
-   "ts": 1795356000,
-   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-   "lg": "พรีเมียร์ลีก อังกฤษ",
-   "rk": 0,
-   "h": {
-    "n": "Hull City",
-    "l": ""
-   },
-   "a": {
-    "n": "Brighton and Hove Albion",
-    "l": ""
-   },
-   "hc": "Brighton and Hove Albion ต่อ 1.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 56,
-    "weak": true,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": {
-    "lab": "Brighton and Hove Albion -0.5",
-    "pct": 64,
-    "team": "Brighton and Hove Albion",
-    "giver": true,
-    "lt": "0.5",
-    "side": "away",
-    "h": -0.5
-   },
-   "pr": {
-    "h": 15,
-    "d": 21,
-    "a": 64
-   },
-   "elo": null,
-   "hcs": [
-    "1.5"
    ],
-   "ous": [
-    "2.5"
-   ]
-  },
-  {
-   "v": 2,
-   "id": "4c2262eccc903b9b1792325d09451c0a",
-   "t": "21:30",
-   "d": "อาทิตย์",
-   "ts": 1795357800,
-   "flag": "🇩🇪",
-   "lg": "บุนเดสลีกา เยอรมัน",
-   "rk": 1,
-   "h": {
-    "n": "Augsburg",
-    "l": ""
-   },
-   "a": {
-    "n": "FSV Mainz 05",
-    "l": ""
-   },
-   "hc": "เสมอ",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 67,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": {
-    "lab": "FSV Mainz 05 +0.5",
-    "pct": 64,
-    "team": "FSV Mainz 05",
-    "giver": false,
-    "lt": "0.5",
-    "side": "away",
-    "h": 0.5
-   },
-   "pr": {
-    "h": 36,
-    "d": 24,
-    "a": 40
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ"
-   ],
-   "ous": [
-    "3.25"
-   ]
+   "lock": true
   },
   {
    "v": 2,
@@ -289,53 +142,8 @@
    ],
    "ous": [
     "3"
-   ]
-  },
-  {
-   "v": 2,
-   "id": "4c08b213ed416e8f41e038f42a42b962",
-   "t": "23:30",
-   "d": "อาทิตย์",
-   "ts": 1795365000,
-   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-   "lg": "พรีเมียร์ลีก อังกฤษ",
-   "rk": 0,
-   "h": {
-    "n": "Liverpool",
-    "l": ""
-   },
-   "a": {
-    "n": "Manchester United",
-    "l": ""
-   },
-   "hc": "Liverpool ต่อ 1.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 63,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": {
-    "lab": "Liverpool +0.5",
-    "pct": 79,
-    "team": "Liverpool",
-    "giver": false,
-    "lt": "0.5",
-    "side": "home",
-    "h": 0.5
-   },
-   "pr": {
-    "h": 56,
-    "d": 23,
-    "a": 21
-   },
-   "elo": null,
-   "hcs": [],
-   "ous": [
-    "3.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -383,7 +191,8 @@
    ],
    "ous": [
     "3.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -431,7 +240,8 @@
    ],
    "ous": [
     "3.25"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 2,
@@ -479,26 +289,11 @@
    ],
    "ous": [
     "3.5"
-   ]
+   ],
+   "lock": true
   }
  ],
  "history": [
-  {
-   "id": 1584461,
-   "ts": 1794067200,
-   "d": "07/11",
-   "hn": "Galatasaray",
-   "an": "Amed",
-   "lg": "ซูเปอร์ลีก ตุรกี",
-   "res": -1.0,
-   "k": "ou",
-   "s": "under",
-   "x": 3.5,
-   "lt": "3.5",
-   "pct": 56,
-   "gh": 4,
-   "ga": 3
-  },
   {
    "id": 1584463,
    "ts": 1794067200,
@@ -2315,14 +2110,16 @@
    "an": "Cagliari",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Como",
    "giver": true,
-   "pct": 74
+   "pct": 74,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": "bf921a2780e2a25201da8a3bfece84c4",
@@ -2332,14 +2129,16 @@
    "an": "Lecce",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Lazio",
    "giver": true,
-   "pct": 66
+   "pct": 66,
+   "gh": 3,
+   "ga": 0
   },
   {
    "id": "c24cf629b4eaf0ebc4ca2c5beb73747c",
@@ -2349,14 +2148,16 @@
    "an": "SC Paderborn",
    "lg": "บุนเดสลีกา เยอรมัน",
    "sp": "soccer_germany_bundesliga",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Bayer Leverkusen",
    "giver": true,
-   "pct": 76
+   "pct": 76,
+   "gh": 4,
+   "ga": 0
   },
   {
    "id": "ca93df81e976fbe345a6175bb24e3f19",
@@ -2366,14 +2167,16 @@
    "an": "RB Leipzig",
    "lg": "บุนเดสลีกา เยอรมัน",
    "sp": "soccer_germany_bundesliga",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "away",
    "h": -0.5,
    "lt": "0.5",
    "team": "RB Leipzig",
    "giver": true,
-   "pct": 64
+   "pct": 64,
+   "gh": 1,
+   "ga": 5
   },
   {
    "id": "e67ee3a6f93bb90b8aefcf3dd204477c",
@@ -2474,14 +2277,16 @@
    "an": "AS Roma",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "away",
    "h": -0.5,
    "lt": "0.5",
    "team": "AS Roma",
    "giver": true,
-   "pct": 76
+   "pct": 76,
+   "gh": 1,
+   "ga": 5
   },
   {
    "id": "67846fc0359aeff2d0b6f3f8a2a674f4",
@@ -2491,12 +2296,14 @@
    "an": "VfB Stuttgart",
    "lg": "บุนเดสลีกา เยอรมัน",
    "sp": "soccer_germany_bundesliga",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 63
+   "pct": 63,
+   "gh": 0,
+   "ga": 0
   },
   {
    "id": "67846fc0359aeff2d0b6f3f8a2a674f4",
@@ -2506,14 +2313,16 @@
    "an": "VfB Stuttgart",
    "lg": "บุนเดสลีกา เยอรมัน",
    "sp": "soccer_germany_bundesliga",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": 1.0,
    "lt": "1",
    "team": "FC Schalke 04",
    "giver": false,
-   "pct": 60
+   "pct": 60,
+   "gh": 0,
+   "ga": 0
   },
   {
    "id": "1bb4951d418dcb641c608e085b87a1c3",
@@ -2576,14 +2385,16 @@
    "an": "Torino",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Napoli",
    "giver": true,
-   "pct": 64
+   "pct": 64,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": "13ac2151b9f6893cedb7f509e64eb070",
@@ -2667,14 +2478,16 @@
    "an": "Venezia",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Juventus",
    "giver": true,
-   "pct": 71
+   "pct": 71,
+   "gh": 4,
+   "ga": 0
   },
   {
    "id": "214a79b6e08dbe3f508844936158c038",
@@ -2805,6 +2618,23 @@
    "team": "FSV Mainz 05",
    "giver": false,
    "pct": 63
+  },
+  {
+   "id": "8e6ee05b6ac28dc2357f72b9f5a0643e",
+   "ts": 1795364100,
+   "d": "22/11",
+   "hn": "Lorient",
+   "an": "Rennes",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": 1.0,
+   "lt": "1",
+   "team": "Lorient",
+   "giver": false,
+   "pct": 69
   },
   {
    "id": "9a214142c9b31ad8233dccad53f75d6d",
@@ -2968,77 +2798,6 @@
   }
  ],
  "snap": {
-  "6ef39b0fd8839f6e93a3de32523e9807": {
-   "ts": 1795264200,
-   "ou": 54,
-   "hp": 68
-  },
-  "9881e56a732493272e688663b26cd37f": {
-   "ts": 1795266000,
-   "ou": 50
-  },
-  "9e8d72c6c27c1667be7b88416a36ca80": {
-   "ts": 1795269600,
-   "ou": 52,
-   "hp": 74
-  },
-  "bf921a2780e2a25201da8a3bfece84c4": {
-   "ts": 1795269600,
-   "ou": 53,
-   "hp": 66
-  },
-  "c24cf629b4eaf0ebc4ca2c5beb73747c": {
-   "ts": 1795271400,
-   "ou": 51,
-   "hp": 76
-  },
-  "577976c4b042018534e14db9ce579cf6": {
-   "ts": 1795271400,
-   "ou": 52,
-   "hp": 60
-  },
-  "d0128b7d64e40ca3f1ae1b288b47117a": {
-   "ts": 1795271400,
-   "ou": 52
-  },
-  "c8bcd407a7b987234c72c62ec37246ef": {
-   "ts": 1795271400,
-   "ou": 51
-  },
-  "ca93df81e976fbe345a6175bb24e3f19": {
-   "ts": 1795271400,
-   "ou": 51,
-   "hp": 64
-  },
-  "b8d6ab6ecc8bb356c6335d3f417d0ecf": {
-   "ts": 1795273200,
-   "ou": 56,
-   "hp": 72
-  },
-  "cf68da11fa604c13fc9ef3219fad0314": {
-   "ts": 1795273200,
-   "ou": 52,
-   "hp": 69
-  },
-  "ac6cf70520a83c0949b4003bde53c709": {
-   "ts": 1795273200,
-   "ou": 52,
-   "hp": 66
-  },
-  "9f38413bdad666e2d2dfcc574dd12e66": {
-   "ts": 1795273200,
-   "ou": 56,
-   "hp": 61
-  },
-  "e67ee3a6f93bb90b8aefcf3dd204477c": {
-   "ts": 1795273200,
-   "ou": 61
-  },
-  "ebe638278f4d70eaf211ad5be9795fa0": {
-   "ts": 1795274100,
-   "ou": 55,
-   "hp": 67
-  },
   "651c1847b5cdcc85e60a140edd2282c4": {
    "ts": 1795277700,
    "ou": 51,
@@ -3205,7 +2964,8 @@
   "เซเรย อา อตาล": "เซเรีย อา อิตาลี",
   "rc lens": "ล็องส์",
   "บนเดสลกา เยอรมน": "บุนเดสลีกา เยอรมัน",
-  "fc schalke 04": "เอฟซี ชาลเก้ 04"
+  "fc schalke 04": "เอฟซี ชาลเก้ 04",
+  "le mans fc": "เลอ ม็องส์"
  },
  "logos": {}
 }
