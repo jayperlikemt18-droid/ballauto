@@ -724,7 +724,10 @@ def run():
     matches = []
     # ล็อกคู่เด็ดเดิมที่ยังไม่เตะ ไม่เปลี่ยนคู่ที่แจกไปแล้ว
     locked = {m["id"]: m for m in old
-              if m.get("id") and m.get("v") == 2 and not m.get("nopick") and m["ts"] > now.timestamp() and (m.get("hp") or (m.get("ou") and not m["ou"].get("weak")))}
+              if m.get("id") and m.get("v") == 3 and not m.get("nopick") and m["ts"] > now.timestamp() and (m.get("hp") or (m.get("ou") and not m["ou"].get("weak")))}
+    # คู่ที่จะคิดใหม่ (ไม่ได้ล็อก) ให้ลบรายการที่ยังไม่มีผลของคู่นั้นในประวัติ จะได้ไม่ค้างตัวเลือกเก่า
+    redo = {x[1]["fixture"]["id"] for x in out} - set(locked)
+    history = [e for e in history if not (e.get("res") is None and e["id"] in redo)]
     snap = {k: v for k, v in old_snap.items() if v.get("ts", 0) > now.timestamp() - 86400}
     bad_kind, bad_lg = calibrate(history)
     cands = []
@@ -862,7 +865,7 @@ def run():
                 history.append(dict(base, k="hp", side=hp["side"], h=hp["h"], lt=hp["lt"], team=hp["team"],
                                     giver=hp["giver"], pct=hp["pct"]))
         matches.append({
-            "v": 2, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "v": 3, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "elo": round(e) if e is not None else None,
@@ -880,7 +883,7 @@ def run():
         if c["ou"]:
             c["ou"]["weak"] = True
         matches.append({
-            "v": 2, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "v": 3, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": c["ou"], "hp": None, "pr": c["pr"], "elo": round(e) if e is not None else None,
