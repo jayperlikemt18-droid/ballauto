@@ -1,89 +1,147 @@
 {
- "ts": 1795363256,
- "updated": "อาทิตย์ 22/11 23:00 น.",
- "date": "22/11/69",
+ "ts": 1795400819,
+ "updated": "จันทร์ 23/11 09:26 น.",
+ "date": "23/11/69",
  "matches": [
   {
    "v": 3,
-   "id": "8e6ee05b6ac28dc2357f72b9f5a0643e",
-   "t": "23:15",
-   "d": "อาทิตย์",
-   "ts": 1795364100,
-   "flag": "🇫🇷",
-   "lg": "ลีกเอิง ฝรั่งเศส",
-   "rk": 3,
+   "id": "c1958a1dcd4f8228f4d09148fd6ea216",
+   "t": "00:00",
+   "d": "อังคาร",
+   "ts": 1795453200,
+   "flag": "🇹🇷",
+   "lg": "ซูเปอร์ลีก ตุรกี",
+   "rk": 11,
    "h": {
-    "n": "Lorient",
+    "n": "Basaksehir",
     "l": ""
    },
    "a": {
-    "n": "Rennes",
+    "n": "Çorum FK",
     "l": ""
    },
-   "hc": "เสมอ",
+   "hc": "Basaksehir ต่อ 0.5",
    "ou": {
-    "lab": "ต่ำ 2.5",
-    "line": "2.5",
-    "pct": 55,
-    "weak": true,
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 60,
+    "weak": false,
     "s": "under",
-    "x": 2.5
+    "x": 3.5
    },
    "hp": {
-    "lab": "Lorient +1",
-    "pct": 68,
-    "team": "Lorient",
+    "lab": "Çorum FK +1",
+    "pct": 64,
+    "team": "Çorum FK",
+    "giver": false,
+    "lt": "1",
+    "side": "away",
+    "h": 1.0
+   },
+   "pr": {
+    "h": 49,
+    "d": 25,
+    "a": 26
+   },
+   "elo": null,
+   "hcs": [
+    "0.5"
+   ],
+   "ous": [
+    "3"
+   ]
+  },
+  {
+   "v": 3,
+   "id": "99776445d5a5f4ed008f9a6d6a1495b7",
+   "t": "02:45",
+   "d": "อังคาร",
+   "ts": 1795463100,
+   "flag": "🇮🇹",
+   "lg": "เซเรีย อา อิตาลี",
+   "rk": 2,
+   "h": {
+    "n": "Monza",
+    "l": ""
+   },
+   "a": {
+    "n": "Fiorentina",
+    "l": ""
+   },
+   "hc": "Fiorentina ต่อ 0.5",
+   "ou": {
+    "lab": "ต่ำ 3",
+    "line": "3",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 3.0
+   },
+   "hp": {
+    "lab": "Monza +1",
+    "pct": 64,
+    "team": "Monza",
     "giver": false,
     "lt": "1",
     "side": "home",
     "h": 1.0
    },
    "pr": {
-    "h": 25,
-    "d": 28,
-    "a": 47
+    "h": 26,
+    "d": 26,
+    "a": 49
    },
    "elo": null,
-   "hcs": [],
+   "hcs": [
+    "0.5"
+   ],
    "ous": [
-    "2.5"
+    "3"
    ]
   },
   {
    "v": 3,
-   "id": "9a214142c9b31ad8233dccad53f75d6d",
-   "t": "23:30",
-   "d": "อาทิตย์",
-   "ts": 1795365000,
-   "flag": "🇩🇪",
-   "lg": "บุนเดสลีกา เยอรมัน",
-   "rk": 1,
+   "id": "afae1c9d986e4ab2200dc9bd44b6b6c4",
+   "t": "03:00",
+   "d": "อังคาร",
+   "ts": 1795464000,
+   "flag": "🇪🇸",
+   "lg": "ลาลีกา สเปน",
+   "rk": 4,
    "h": {
-    "n": "Werder Bremen",
+    "n": "Levante",
     "l": ""
    },
    "a": {
-    "n": "Hamburger SV",
+    "n": "Elche CF",
     "l": ""
    },
-   "hc": "Werder Bremen ต่อ 1",
+   "hc": "Levante ต่อ 0/0.5",
    "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 64,
-    "weak": false,
-    "s": "under",
-    "x": 3.5
+    "lab": "สูง 2.5/3",
+    "line": "2.5/3",
+    "pct": 52,
+    "weak": true,
+    "s": "over",
+    "x": 2.75
    },
-   "hp": null,
+   "hp": {
+    "lab": "Elche CF +1",
+    "pct": 70,
+    "team": "Elche CF",
+    "giver": false,
+    "lt": "1",
+    "side": "away",
+    "h": 1.0
+   },
    "pr": {
-    "h": 61,
-    "d": 22,
-    "a": 17
+    "h": 45,
+    "d": 27,
+    "a": 29
    },
    "elo": null,
    "hcs": [
-    "1"
+    "0/0.5"
    ],
    "ous": [
     "2.75"
@@ -91,222 +149,54 @@
   },
   {
    "v": 3,
-   "id": "4c08b213ed416e8f41e038f42a42b962",
-   "t": "23:30",
-   "d": "อาทิตย์",
-   "ts": 1795365000,
+   "id": "aa77e2a08a1a003b0bbb62a5f8e8ae42",
+   "t": "03:00",
+   "d": "อังคาร",
+   "ts": 1795464000,
    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
    "lg": "พรีเมียร์ลีก อังกฤษ",
    "rk": 0,
    "h": {
-    "n": "Liverpool",
+    "n": "Brentford",
     "l": ""
    },
    "a": {
-    "n": "Manchester United",
+    "n": "Everton",
     "l": ""
    },
-   "hc": "Liverpool ต่อ 1.5",
+   "hc": "เสมอ",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
-    "pct": 63,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": null,
-   "pr": {
-    "h": 54,
-    "d": 23,
-    "a": 23
-   },
-   "elo": null,
-   "hcs": [],
-   "ous": [
-    "3.5"
-   ]
-  },
-  {
-   "v": 3,
-   "id": "5faf836ce6c0fd72af5d1fe258c63bc6",
-   "t": "00:00",
-   "d": "จันทร์",
-   "ts": 1795366800,
-   "flag": "🇮🇹",
-   "lg": "เซเรีย อา อิตาลี",
-   "rk": 2,
-   "h": {
-    "n": "AC Milan",
-    "l": ""
-   },
-   "a": {
-    "n": "Frosinone",
-    "l": ""
-   },
-   "hc": "AC Milan ต่อ 1",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 67,
+    "pct": 52,
     "weak": true,
     "s": "over",
     "x": 2.5
    },
    "hp": {
-    "lab": "Frosinone +1.5",
-    "pct": 62,
-    "team": "Frosinone",
-    "giver": false,
-    "lt": "1.5",
-    "side": "away",
-    "h": 1.5
-   },
-   "pr": {
-    "h": 60,
-    "d": 21,
-    "a": 19
-   },
-   "elo": null,
-   "hcs": [
-    "1"
-   ],
-   "ous": [
-    "3.25"
-   ]
-  },
-  {
-   "v": 3,
-   "id": "e22f82b10fe71d230248b88fef87e58f",
-   "t": "02:45",
-   "d": "จันทร์",
-   "ts": 1795376700,
-   "flag": "🇮🇹",
-   "lg": "เซเรีย อา อิตาลี",
-   "rk": 2,
-   "h": {
-    "n": "Atalanta BC",
-    "l": ""
-   },
-   "a": {
-    "n": "Inter Milan",
-    "l": ""
-   },
-   "hc": "Inter Milan ต่อ 1",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
+    "lab": "Brentford +0.5",
     "pct": 68,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": {
-    "lab": "Inter Milan -0.5",
-    "pct": 62,
-    "team": "Inter Milan",
-    "giver": true,
-    "lt": "0.5",
-    "side": "away",
-    "h": -0.5
-   },
-   "pr": {
-    "h": 17,
-    "d": 21,
-    "a": 62
-   },
-   "elo": null,
-   "hcs": [
-    "1"
-   ],
-   "ous": [
-    "3.25"
-   ]
-  },
-  {
-   "v": 3,
-   "id": "98fae24771271c96d5dd364e535405d2",
-   "t": "02:45",
-   "d": "จันทร์",
-   "ts": 1795376700,
-   "flag": "🇫🇷",
-   "lg": "ลีกเอิง ฝรั่งเศส",
-   "rk": 3,
-   "h": {
-    "n": "Marseille",
-    "l": ""
-   },
-   "a": {
-    "n": "Le Mans FC",
-    "l": ""
-   },
-   "hc": "Marseille ต่อ 1.5",
-   "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 62,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
-   },
-   "hp": {
-    "lab": "Marseille -0.5",
-    "pct": 65,
-    "team": "Marseille",
-    "giver": true,
+    "team": "Brentford",
+    "giver": false,
     "lt": "0.5",
     "side": "home",
-    "h": -0.5
+    "h": 0.5
    },
    "pr": {
-    "h": 65,
-    "d": 20,
-    "a": 15
+    "h": 41,
+    "d": 27,
+    "a": 32
    },
    "elo": null,
    "hcs": [
-    "1.5"
+    "เสมอ"
    ],
    "ous": [
-    "3.5"
+    "2.5"
    ]
   }
  ],
  "history": [
-  {
-   "id": 1584463,
-   "ts": 1794067200,
-   "d": "07/11",
-   "hn": "Göztepe",
-   "an": "Başakşehir",
-   "lg": "ซูเปอร์ลีก ตุรกี",
-   "res": 1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 56,
-   "gh": 1,
-   "ga": 2
-  },
-  {
-   "id": 1584463,
-   "ts": 1794067200,
-   "d": "07/11",
-   "hn": "Göztepe",
-   "an": "Başakşehir",
-   "lg": "ซูเปอร์ลีก ตุรกี",
-   "res": -1.0,
-   "k": "hp",
-   "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
-   "team": "Göztepe",
-   "giver": true,
-   "pct": 62,
-   "gh": 1,
-   "ga": 2
-  },
   {
    "id": 1550194,
    "ts": 1794070800,
@@ -2535,12 +2425,14 @@
    "an": "Angers",
    "lg": "ลีกเอิง ฝรั่งเศส",
    "sp": "soccer_france_ligue_one",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "under",
    "x": 3.5,
    "lt": "3.5",
-   "pct": 60
+   "pct": 60,
+   "gh": 4,
+   "ga": 0
   },
   {
    "id": "9e5d4a91e379ddffa179b02bf9e09530",
@@ -2550,14 +2442,16 @@
    "an": "Angers",
    "lg": "ลีกเอิง ฝรั่งเศส",
    "sp": "soccer_france_ligue_one",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Paris FC",
    "giver": true,
-   "pct": 70
+   "pct": 70,
+   "gh": 4,
+   "ga": 0
   },
   {
    "id": "230a356290e1a358e9dd2f7fa23de3b9",
@@ -2567,14 +2461,16 @@
    "an": "Brighton and Hove Albion",
    "lg": "พรีเมียร์ลีก อังกฤษ",
    "sp": "soccer_epl",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "away",
    "h": -0.5,
    "lt": "0.5",
    "team": "Brighton and Hove Albion",
    "giver": true,
-   "pct": 64
+   "pct": 64,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": "4c2262eccc903b9b1792325d09451c0a",
@@ -2616,14 +2512,16 @@
    "an": "Rennes",
    "lg": "ลีกเอิง ฝรั่งเศส",
    "sp": "soccer_france_ligue_one",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": 1.0,
    "lt": "1",
    "team": "Lorient",
    "giver": false,
-   "pct": 68
+   "pct": 68,
+   "gh": 1,
+   "ga": 1
   },
   {
    "id": "9a214142c9b31ad8233dccad53f75d6d",
@@ -2648,12 +2546,14 @@
    "an": "Manchester United",
    "lg": "พรีเมียร์ลีก อังกฤษ",
    "sp": "soccer_epl",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 63
+   "pct": 63,
+   "gh": 4,
+   "ga": 0
   },
   {
    "id": "5faf836ce6c0fd72af5d1fe258c63bc6",
@@ -2712,12 +2612,14 @@
    "an": "Le Mans FC",
    "lg": "ลีกเอิง ฝรั่งเศส",
    "sp": "soccer_france_ligue_one",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 62
+   "pct": 62,
+   "gh": 2,
+   "ga": 3
   },
   {
    "id": "98fae24771271c96d5dd364e535405d2",
@@ -2727,71 +2629,102 @@
    "an": "Le Mans FC",
    "lg": "ลีกเอิง ฝรั่งเศส",
    "sp": "soccer_france_ligue_one",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Marseille",
    "giver": true,
-   "pct": 65
+   "pct": 65,
+   "gh": 2,
+   "ga": 3
+  },
+  {
+   "id": "c1958a1dcd4f8228f4d09148fd6ea216",
+   "ts": 1795453200,
+   "d": "24/11",
+   "hn": "Basaksehir",
+   "an": "Çorum FK",
+   "lg": "ซูเปอร์ลีก ตุรกี",
+   "sp": "soccer_turkey_super_league",
+   "res": null,
+   "k": "ou",
+   "s": "under",
+   "x": 3.5,
+   "lt": "3.5",
+   "pct": 60
+  },
+  {
+   "id": "c1958a1dcd4f8228f4d09148fd6ea216",
+   "ts": 1795453200,
+   "d": "24/11",
+   "hn": "Basaksehir",
+   "an": "Çorum FK",
+   "lg": "ซูเปอร์ลีก ตุรกี",
+   "sp": "soccer_turkey_super_league",
+   "res": null,
+   "k": "hp",
+   "side": "away",
+   "h": 1.0,
+   "lt": "1",
+   "team": "Çorum FK",
+   "giver": false,
+   "pct": 64
+  },
+  {
+   "id": "99776445d5a5f4ed008f9a6d6a1495b7",
+   "ts": 1795463100,
+   "d": "24/11",
+   "hn": "Monza",
+   "an": "Fiorentina",
+   "lg": "เซเรีย อา อิตาลี",
+   "sp": "soccer_italy_serie_a",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": 1.0,
+   "lt": "1",
+   "team": "Monza",
+   "giver": false,
+   "pct": 64
+  },
+  {
+   "id": "afae1c9d986e4ab2200dc9bd44b6b6c4",
+   "ts": 1795464000,
+   "d": "24/11",
+   "hn": "Levante",
+   "an": "Elche CF",
+   "lg": "ลาลีกา สเปน",
+   "sp": "soccer_spain_la_liga",
+   "res": null,
+   "k": "hp",
+   "side": "away",
+   "h": 1.0,
+   "lt": "1",
+   "team": "Elche CF",
+   "giver": false,
+   "pct": 70
+  },
+  {
+   "id": "aa77e2a08a1a003b0bbb62a5f8e8ae42",
+   "ts": 1795464000,
+   "d": "24/11",
+   "hn": "Brentford",
+   "an": "Everton",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "sp": "soccer_epl",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": 0.5,
+   "lt": "0.5",
+   "team": "Brentford",
+   "giver": false,
+   "pct": 68
   }
  ],
  "snap": {
-  "651c1847b5cdcc85e60a140edd2282c4": {
-   "ts": 1795277700,
-   "ou": 51,
-   "hp": 65
-  },
-  "cb513fd9869c9aa6ce506bb499bcd48b": {
-   "ts": 1795280400,
-   "ou": 54,
-   "hp": 76
-  },
-  "71bf9fe98c3e3be39cd1d059f8d71ae8": {
-   "ts": 1795282200,
-   "ou": 57,
-   "hp": 61
-  },
-  "67846fc0359aeff2d0b6f3f8a2a674f4": {
-   "ts": 1795282200,
-   "ou": 52,
-   "hp": 60
-  },
-  "1bb4951d418dcb641c608e085b87a1c3": {
-   "ts": 1795282200,
-   "ou": 50,
-   "hp": 61
-  },
-  "e59809eb38340e3bca323cef070dfd34": {
-   "ts": 1795290300,
-   "ou": 51,
-   "hp": 64
-  },
-  "9130b46991ab991f808daf307f004469": {
-   "ts": 1795290300,
-   "ou": 62
-  },
-  "4d6dd3defbbe20fa24b719f9fcdbf280": {
-   "ts": 1795290300,
-   "ou": 58,
-   "hp": 70
-  },
-  "d2113ca19873218496f8b2fe6c7e7c41": {
-   "ts": 1795290300,
-   "ou": 53,
-   "hp": 70
-  },
-  "13ac2151b9f6893cedb7f509e64eb070": {
-   "ts": 1795290300,
-   "ou": 58,
-   "hp": 71
-  },
-  "90af957b2f622a5cf805e60b151c54b9": {
-   "ts": 1795291200,
-   "ou": 51,
-   "hp": 82
-  },
   "be2fcabc408be29ca01ce92ab266f8b7": {
    "ts": 1795347000,
    "ou": 54,
@@ -2856,6 +2789,26 @@
    "ts": 1795376700,
    "ou": 63,
    "hp": 64
+  },
+  "c1958a1dcd4f8228f4d09148fd6ea216": {
+   "ts": 1795453200,
+   "ou": 60,
+   "hp": 64
+  },
+  "99776445d5a5f4ed008f9a6d6a1495b7": {
+   "ts": 1795463100,
+   "ou": 51,
+   "hp": 64
+  },
+  "aa77e2a08a1a003b0bbb62a5f8e8ae42": {
+   "ts": 1795464000,
+   "ou": 52,
+   "hp": 68
+  },
+  "afae1c9d986e4ab2200dc9bd44b6b6c4": {
+   "ts": 1795464000,
+   "ou": 52,
+   "hp": 70
   }
  },
  "tn": {
