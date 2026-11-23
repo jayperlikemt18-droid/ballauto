@@ -1,6 +1,6 @@
 {
- "ts": 1795400819,
- "updated": "จันทร์ 23/11 09:26 น.",
+ "ts": 1795445227,
+ "updated": "จันทร์ 23/11 21:47 น.",
  "date": "23/11/69",
  "matches": [
   {
@@ -14,11 +14,11 @@
    "rk": 11,
    "h": {
     "n": "Basaksehir",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/895mqt1685993958.png/small"
    },
    "a": {
     "n": "Çorum FK",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/ivoq4l1679510278.png/small"
    },
    "hc": "Basaksehir ต่อ 0.5",
    "ou": {
@@ -49,7 +49,8 @@
    ],
    "ous": [
     "3"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 3,
@@ -62,11 +63,11 @@
    "rk": 2,
    "h": {
     "n": "Monza",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/bxearg1603170113.png/small"
    },
    "a": {
     "n": "Fiorentina",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/hc8nhu1656098030.png/small"
    },
    "hc": "Fiorentina ต่อ 0.5",
    "ou": {
@@ -97,55 +98,8 @@
    ],
    "ous": [
     "3"
-   ]
-  },
-  {
-   "v": 3,
-   "id": "afae1c9d986e4ab2200dc9bd44b6b6c4",
-   "t": "03:00",
-   "d": "อังคาร",
-   "ts": 1795464000,
-   "flag": "🇪🇸",
-   "lg": "ลาลีกา สเปน",
-   "rk": 4,
-   "h": {
-    "n": "Levante",
-    "l": ""
-   },
-   "a": {
-    "n": "Elche CF",
-    "l": ""
-   },
-   "hc": "Levante ต่อ 0/0.5",
-   "ou": {
-    "lab": "สูง 2.5/3",
-    "line": "2.5/3",
-    "pct": 52,
-    "weak": true,
-    "s": "over",
-    "x": 2.75
-   },
-   "hp": {
-    "lab": "Elche CF +1",
-    "pct": 70,
-    "team": "Elche CF",
-    "giver": false,
-    "lt": "1",
-    "side": "away",
-    "h": 1.0
-   },
-   "pr": {
-    "h": 45,
-    "d": 27,
-    "a": 29
-   },
-   "elo": null,
-   "hcs": [
-    "0/0.5"
    ],
-   "ous": [
-    "2.75"
-   ]
+   "lock": true
   },
   {
    "v": 3,
@@ -158,11 +112,11 @@
    "rk": 0,
    "h": {
     "n": "Brentford",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/grv1aw1546453779.png/small"
    },
    "a": {
     "n": "Everton",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/eqayrf1523184794.png/small"
    },
    "hc": "เสมอ",
    "ou": {
@@ -193,7 +147,57 @@
    ],
    "ous": [
     "2.5"
-   ]
+   ],
+   "lock": true
+  },
+  {
+   "v": 3,
+   "id": "afae1c9d986e4ab2200dc9bd44b6b6c4",
+   "t": "03:00",
+   "d": "อังคาร",
+   "ts": 1795464000,
+   "flag": "🇪🇸",
+   "lg": "ลาลีกา สเปน",
+   "rk": 4,
+   "h": {
+    "n": "Levante",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/xwtxsx1473503739.png/small"
+   },
+   "a": {
+    "n": "Elche CF",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/e4vaw51655594332.png/small"
+   },
+   "hc": "Levante ต่อ 0/0.5",
+   "ou": {
+    "lab": "สูง 2.5/3",
+    "line": "2.5/3",
+    "pct": 52,
+    "weak": true,
+    "s": "over",
+    "x": 2.75
+   },
+   "hp": {
+    "lab": "Elche CF +1",
+    "pct": 70,
+    "team": "Elche CF",
+    "giver": false,
+    "lt": "1",
+    "side": "away",
+    "h": 1.0
+   },
+   "pr": {
+    "h": 45,
+    "d": 27,
+    "a": 29
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5"
+   ],
+   "ous": [
+    "2.75"
+   ],
+   "lock": true
   }
  ],
  "history": [
@@ -2408,14 +2412,16 @@
    "an": "Udinese",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": 0.5,
    "lt": "0.5",
    "team": "Bologna",
    "giver": false,
-   "pct": 80
+   "pct": 80,
+   "gh": 1,
+   "ga": 1
   },
   {
    "id": "9e5d4a91e379ddffa179b02bf9e09530",
@@ -2480,12 +2486,14 @@
    "an": "FSV Mainz 05",
    "lg": "บุนเดสลีกา เยอรมัน",
    "sp": "soccer_germany_bundesliga",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 67
+   "pct": 67,
+   "gh": 3,
+   "ga": 1
   },
   {
    "id": "4c2262eccc903b9b1792325d09451c0a",
@@ -2495,14 +2503,16 @@
    "an": "FSV Mainz 05",
    "lg": "บุนเดสลีกา เยอรมัน",
    "sp": "soccer_germany_bundesliga",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "away",
    "h": 0.5,
    "lt": "0.5",
    "team": "FSV Mainz 05",
    "giver": false,
-   "pct": 63
+   "pct": 63,
+   "gh": 3,
+   "ga": 1
   },
   {
    "id": "8e6ee05b6ac28dc2357f72b9f5a0643e",
@@ -2531,12 +2541,14 @@
    "an": "Hamburger SV",
    "lg": "บุนเดสลีกา เยอรมัน",
    "sp": "soccer_germany_bundesliga",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "under",
    "x": 3.5,
    "lt": "3.5",
-   "pct": 64
+   "pct": 64,
+   "gh": 4,
+   "ga": 0
   },
   {
    "id": "4c08b213ed416e8f41e038f42a42b962",
@@ -2563,14 +2575,16 @@
    "an": "Frosinone",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "away",
    "h": 1.5,
    "lt": "1.5",
    "team": "Frosinone",
    "giver": false,
-   "pct": 62
+   "pct": 62,
+   "gh": 5,
+   "ga": 1
   },
   {
    "id": "e22f82b10fe71d230248b88fef87e58f",
@@ -2580,12 +2594,14 @@
    "an": "Inter Milan",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 68
+   "pct": 68,
+   "gh": 4,
+   "ga": 4
   },
   {
    "id": "e22f82b10fe71d230248b88fef87e58f",
@@ -2595,14 +2611,16 @@
    "an": "Inter Milan",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "away",
    "h": -0.5,
    "lt": "0.5",
    "team": "Inter Milan",
    "giver": true,
-   "pct": 62
+   "pct": 62,
+   "gh": 4,
+   "ga": 4
   },
   {
    "id": "98fae24771271c96d5dd364e535405d2",
@@ -2725,41 +2743,6 @@
   }
  ],
  "snap": {
-  "be2fcabc408be29ca01ce92ab266f8b7": {
-   "ts": 1795347000,
-   "ou": 54,
-   "hp": 71
-  },
-  "214a79b6e08dbe3f508844936158c038": {
-   "ts": 1795352400,
-   "ou": 81,
-   "hp": 80
-  },
-  "230a356290e1a358e9dd2f7fa23de3b9": {
-   "ts": 1795356000,
-   "ou": 56,
-   "hp": 64
-  },
-  "5bc13c44b33981f3185400163388267e": {
-   "ts": 1795356000,
-   "ou": 51,
-   "hp": 80
-  },
-  "76d4698a8417f32cb059f14a469939f3": {
-   "ts": 1795356000,
-   "ou": 51,
-   "hp": 63
-  },
-  "9e5d4a91e379ddffa179b02bf9e09530": {
-   "ts": 1795356000,
-   "ou": 60,
-   "hp": 70
-  },
-  "4c2262eccc903b9b1792325d09451c0a": {
-   "ts": 1795357800,
-   "ou": 67,
-   "hp": 63
-  },
   "8e6ee05b6ac28dc2357f72b9f5a0643e": {
    "ts": 1795364100,
    "ou": 52,
@@ -2858,7 +2841,19 @@
   "rc lens": "ล็องส์",
   "บนเดสลกา เยอรมน": "บุนเดสลีกา เยอรมัน",
   "fc schalke 04": "เอฟซี ชาลเก้ 04",
-  "le mans fc": "เลอ ม็องส์"
+  "le mans fc": "เลอ ม็องส์",
+  "corum fk": "คอร์รุม เอฟเค",
+  "ซเปอรลก ตรก": "ซูเปอร์ลีก ตุรกี",
+  "elche cf": "เอลเช่ ซีเอฟ"
  },
- "logos": {}
+ "logos": {
+  "Brentford": "https://r2.thesportsdb.com/images/media/team/badge/grv1aw1546453779.png/small",
+  "Everton": "https://r2.thesportsdb.com/images/media/team/badge/eqayrf1523184794.png/small",
+  "Monza": "https://r2.thesportsdb.com/images/media/team/badge/bxearg1603170113.png/small",
+  "Fiorentina": "https://r2.thesportsdb.com/images/media/team/badge/hc8nhu1656098030.png/small",
+  "Levante": "https://r2.thesportsdb.com/images/media/team/badge/xwtxsx1473503739.png/small",
+  "Elche CF": "https://r2.thesportsdb.com/images/media/team/badge/e4vaw51655594332.png/small",
+  "Basaksehir": "https://r2.thesportsdb.com/images/media/team/badge/895mqt1685993958.png/small",
+  "Çorum FK": "https://r2.thesportsdb.com/images/media/team/badge/ivoq4l1679510278.png/small"
+ }
 }
