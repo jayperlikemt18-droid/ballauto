@@ -498,33 +498,84 @@ def _gt(text):
     return "".join(seg[0] for seg in d[0] if seg and seg[0]).strip()
 
 
+def _gemini_models(key):
+    """ถามรายชื่อโมเดลที่คีย์นี้ใช้ได้จริง (ชื่อรุ่นเปลี่ยนบ่อย) ไม่เดาชื่อเอง"""
+    pref = [m for m in [os.environ.get("GEMINI_MODEL", "").strip()] if m]
+    try:
+        req = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+                                     headers={"x-goog-api-key": key})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            d = json.loads(r.read().decode("utf-8"))
+        ms = []
+        for m in d.get("models", []):
+            nm = str(m.get("name", "")).replace("models/", "")
+            if "flash" in nm and "generateContent" in (m.get("supportedGenerationMethods") or []) \
+                    and not any(w in nm for w in ("image", "tts", "live", "audio", "embedding", "robotics", "computer", "native")):
+                ms.append(nm)
+        ms.sort(key=lambda x: ("lite" not in x, x))  # รุ่นเล็กเร็วก่อน
+        print("โมเดล Gemini ที่ใช้ได้:", ms[:6])
+        pref += ms[:4]
+    except Exception as e:
+        print("ดูรายชื่อโมเดล Gemini ไม่ได้:", e)
+    pref += ["gemini-flash-latest", "gemini-flash-lite-latest"]
+    out = []
+    for m in pref:
+        if m not in out:
+            out.append(m)
+    return out
+
+
+def _gemini_call(model, key, prompt, think0):
+    cfg = {"responseMimeType": "application/json", "temperature": 0.1}
+    if think0:
+        cfg["thinkingConfig"] = {"thinkingBudget": 0}  # ปิดโหมดคิดนาน ให้ตอบเร็ว
+    body = json.dumps({"contents": [{"parts": [{"text": prompt}]}], "generationConfig": cfg}).encode()
+    req = urllib.request.Request(
+        "https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent" % model, data=body,
+        headers={"Content-Type": "application/json", "x-goog-api-key": key})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        d = json.loads(r.read().decode("utf-8"))
+    return json.loads(d["candidates"][0]["content"]["parts"][0]["text"])
+
+
 def _gemini(names):
-    """ให้ Gemini แปล/ทับศัพท์ชื่อทีมและลีกเป็นไทย คืน dict {ชื่อ: ไทย}"""
+    """ให้ Gemini แปล/ทับศัพท์ชื่อทีมและลีกเป็นไทย ทีละ 40 ชื่อ คืน dict {ชื่อ: ไทย}"""
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key or not names:
         return {}
-    prompt = ("แปลหรือทับศัพท์ชื่อทีมฟุตบอลและชื่อลีกต่อไปนี้เป็นภาษาไทย แบบที่สื่อกีฬาไทยเขียนทั่วไป "
-              "ชื่อทีมชาติให้ใช้ชื่อประเทศ ไม่ต้องใส่ FC หรือ SC ถ้าไม่จำเป็น "
-              "ตอบเป็น JSON object เท่านั้น key คือชื่อเดิมตามที่ให้ value คือชื่อไทย\n" + json.dumps(names, ensure_ascii=False))
-    body = json.dumps({"contents": [{"parts": [{"text": prompt}]}],
-                       "generationConfig": {"responseMimeType": "application/json", "temperature": 0.1}}).encode()
-    models = [m for m in [os.environ.get("GEMINI_MODEL", "").strip(), "gemini-flash-latest", "gemini-2.5-flash",
-                          "gemini-3-flash", "gemini-2.0-flash"] if m]
-    for model in models:
-        try:
-            req = urllib.request.Request(
-                "https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent" % model, data=body,
-                headers={"Content-Type": "application/json", "x-goog-api-key": key})
-            with urllib.request.urlopen(req, timeout=90) as r:
-                d = json.loads(r.read().decode("utf-8"))
-            txt = d["candidates"][0]["content"]["parts"][0]["text"]
-            out = json.loads(txt)
-            if isinstance(out, dict):
-                print("Gemini แปลได้", len(out), "ชื่อ ด้วย", model)
-                return {k: v for k, v in out.items() if isinstance(v, str) and re.search("[\u0e00-\u0e7f]", v)}
-        except Exception as e:
-            print("Gemini", model, "ไม่ได้:", e)
-    return {}
+    models = _gemini_models(key)
+    res = {}
+    t0 = time.time()
+    for i in range(0, len(names), 40):
+        if time.time() - t0 > 150:
+            print("Gemini ใช้เวลานานเกินไป หยุดก่อน")
+            break
+        chunk = names[i:i + 40]
+        prompt = ("แปลหรือทับศัพท์ชื่อทีมฟุตบอลและชื่อลีกต่อไปนี้เป็นภาษาไทย แบบที่สื่อกีฬาไทยเขียนทั่วไป "
+                  "ชื่อทีมชาติให้ใช้ชื่อประเทศ ไม่ต้องใส่ FC หรือ SC ถ้าไม่จำเป็น "
+                  "ตอบเป็น JSON object เท่านั้น key คือชื่อเดิมตามที่ให้ value คือชื่อไทย\n" + json.dumps(chunk, ensure_ascii=False))
+        done = False
+        for model in list(models):
+            for think0 in (True, False):
+                try:
+                    out = _gemini_call(model, key, prompt, think0)
+                    if isinstance(out, dict):
+                        res.update({k: v for k, v in out.items() if isinstance(v, str) and re.search("[\u0e00-\u0e7f]", v)})
+                        models.remove(model)
+                        models.insert(0, model)  # โมเดลที่ใช้ได้ ใช้ต่อในชุดถัดไป
+                        print("Gemini แปลได้ด้วย", model)
+                        done = True
+                        break
+                except urllib.error.HTTPError as e:
+                    print("Gemini", model, "ไม่ได้:", e)
+                    if e.code != 400:
+                        break  # 400 อาจเป็นเพราะรุ่นนี้ไม่รับ thinkingBudget ลองอีกครั้งแบบไม่ใส่
+                except Exception as e:
+                    print("Gemini", model, "ไม่ได้:", e)
+                    break
+            if done:
+                break
+    return res
 
 
 def auto_names(names, cache, limit=150):
@@ -551,8 +602,11 @@ def auto_names(names, cache, limit=150):
                 cache[key] = t
         except Exception as e:
             print("แปลชื่อไม่ได้:", b, e)
+            if "429" in str(e):
+                time.sleep(10)
+                continue
             break
-        time.sleep(0.3)
+        time.sleep(1.5)
     print("ตัวสำรองแปลเพิ่ม; ยังไม่มีไทย", sum(1 for k, _ in todo if k not in cache), "ชื่อ")
 
 
@@ -654,10 +708,10 @@ def fetch_logos(matches, cache, limit=40):
             if x not in cache and x not in todo:
                 todo.append(x)
     for nm in todo[:limit]:
-        url = "https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=" + urllib.parse.quote(nm)
+        url = "https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=" + urllib.parse.quote(nm)
         logo = ""
         try:
-            with urllib.request.urlopen(url, timeout=20) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=20) as r:
                 d = json.loads(r.read().decode("utf-8"))
             for t in d.get("teams") or []:
                 if t.get("strSport") == "Soccer" and t.get("strBadge"):
