@@ -159,12 +159,12 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
       return '<article class="match' + (m.pk ? '' : ' skip') + '"><div class="top"><span class="league"><span class="flag">' + m.flag + '</span>' + esc(tn(m.lg)) +
         '</span><span class="time">' + esc(m.t) + '<small>' + esc(m.d) + '</small>' + (m.lock ? '<span class="lock" title="ล็อกแล้ว">🔒</span>' : '') + '</span></div><div class="teams">' + team(m.h, true) + team(m.a, false) + '</div>' +
         (m.pr && !(m.pr.h === 10 && m.pr.d === 45 && m.pr.a === 45) ? '<p class="note" style="text-align:left">โอกาสชนะ เหย้า ' + m.pr.h + '% · เสมอ ' + m.pr.d + '% · เยือน ' + m.pr.a + '%' + (m.elo != null ? ' · Elo เหย้า ' + m.elo + '%' : '') + '</p>' : '') +
-        '<div class="prices">' + box("ต่อรอง", m.hp ? nm(m, m.hp.lab) : (m.hc ? sg(nm(m, m.hc)) : "ไม่มีราคา"), !!m.hp) + box("สูง/ต่ำ", m.ou ? (m.ou.weak ? m.ou.line : m.ou.lab) : "ไม่มีราคา", !!(m.ou && !m.ou.weak)) + '</div>' +
+        '<div class="prices">' + box(m.hp ? "ต่อรอง น่าไป" : "ต่อรอง เอนไป", m.hp ? nm(m, m.hp.lab) : (m.lean ? nm(m, m.lean.lab) + " (" + m.lean.pct + "%)" : (m.hc ? sg(nm(m, m.hc)) : "ไม่มีราคา")), !!m.hp) + box(m.ou && !m.ou.weak ? "สูง/ต่ำ น่าไป" : "สูง/ต่ำ เอนไป", m.ou ? m.ou.lab + (m.ou.weak ? " (" + m.ou.pct + "%)" : "") : "ไม่มีราคา", !!(m.ou && !m.ou.weak)) + '</div>' +
         (m.lean || (m.ou && m.ou.weak) ? '<p class="note" style="text-align:left">เอนไปทาง (ราคาตลาดจริง ประมาณ 50/50 เอนได้นิดเดียว) · ' +
           (m.lean ? 'ต่อรอง <b>' + esc(nm(m, m.lean.lab)) + '</b> ' + m.lean.pct + '%' : '') +
           (m.ou ? ' · สูง/ต่ำ <b>' + esc(m.ou.lab) + '</b> ' + m.ou.pct + '%' : '') + '</p>' : '') +
         ((m.hcs && m.hcs.length > 1) || (m.ous && m.ous.length > 1) ? '<p class="note" style="text-align:left">ราคาอื่น · ต่อรอง ' + esc((m.hcs || []).join(' · ')) + ' · สูง/ต่ำ ' + esc((m.ous || []).join(' · ')) + '</p>' : '') +
-        (m.hp ? '<div class="conf"><span>โอกาสชนะ ทีมเต็ง</span><div class="bar"><i style="width:' + m.hp.pct + '%"></i></div><em>' + m.hp.pct + '%</em></div>' + (m.hp.cp != null ? '<p class="note" style="text-align:left">ราคาต่อรองจริงของตลาด ผ่านราคาประมาณ ' + m.hp.cp + '%</p>' : '') : '') +
+        (m.hp ? '<div class="conf"><span>โอกาสผ่านราคา</span><div class="bar"><i style="width:' + (m.hp.cp != null ? m.hp.cp : m.hp.pct) + '%"></i></div><em>' + (m.hp.cp != null ? m.hp.cp : m.hp.pct) + '%</em></div><p class="note" style="text-align:left">ทีมเต็งชนะ ' + m.hp.pct + '% · ราคาต่อรองจริงของตลาด</p>' : '') +
         (m.ou && !m.ou.weak ? '<div class="conf"><span>โอกาส สูง/ต่ำ (ราคาตลาด)</span><div class="bar"><i style="width:' + m.ou.pct + '%"></i></div><em>' + m.ou.pct + '%</em></div>' : '') +
         '<label class="sel"><input type="checkbox" data-k="' + esc(key(m)) + '"' + (m.pk ? ' checked' : '') + (can ? '' : ' disabled') + '> เอาเข้าสเต็ป/ข้อความ</label></article>';
     }).join("");
