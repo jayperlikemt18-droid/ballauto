@@ -137,10 +137,13 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
   function sg(t) { return t.replace(" ต่อ ", " -").replace(" รอง ", " +"); }
   function nm(m, t) { return t.replace(m.h.n, tn(m.h.n)).replace(m.a.n, tn(m.a.n)); }
   function best(m) {
-    var a = m.ou && !m.ou.weak && m.ou.pct >= 55 ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null;
-    var b = m.hp ? { pct: m.hp.pct, txt: nm(m, m.hp.lab), k: "hp" } : null;
-    var r = a && b ? (a.pct >= b.pct + 3 ? a : b) : (a || b);
-    return r && r.pct >= (r.k === "ou" ? 55 : 60) ? r : null;
+    // เทียบกันที่ "โอกาสผ่านราคาจริง" เหมือนกันทั้งต่อรองและสูง/ต่ำ
+    var a = m.ou && m.ou.pct >= 52 ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null;
+    var b = m.hp ? { pct: m.hp.cp != null ? m.hp.cp : m.hp.pct, txt: nm(m, m.hp.lab), k: "hp" } : null;
+    var c = !m.hp && m.lean && m.lean.pct >= 52 ? { pct: m.lean.pct, txt: nm(m, m.lean.lab), k: m.lean.h > 0 ? "up" : "hp" } : null;
+    var r = null;
+    [a, b, c].forEach(function (x) { if (x && (!r || x.pct > r.pct)) r = x; });
+    return r;
   }
   function manual(m) {
     var a = m.ou ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null;
@@ -177,7 +180,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     Array.prototype.forEach.call(document.getElementById("chips").children, function (c) { c.classList.toggle("on", c.getAttribute("data-k") === (F.only ? "only" : (F.lg || "all"))); });
   }
   function sel(picks, n) {
-    var cap = Math.ceil(n * 0.6), chosen = [], rest = [], cnt = {};
+    var cap = Math.ceil(n * 0.5), chosen = [], rest = [], cnt = {};
     picks.forEach(function (m) { var k = m.pk.k; if (chosen.length < n && (cnt[k] || 0) < cap) { chosen.push(m); cnt[k] = (cnt[k] || 0) + 1; } else rest.push(m); });
     return chosen.concat(rest).slice(0, n);
   }
