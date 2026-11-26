@@ -339,7 +339,10 @@ def settle(history):
     now = datetime.now(timezone.utc).timestamp()
     pend = [e for e in history if e.get("res") is None and e.get("sp") and now - 3 * 86400 < e["ts"] < now - 3 * 3600]
     done = {}
-    for sp in sorted({e["sp"] for e in pend})[:2]:  # คิดเครดิตลีกละ 2
+    cnt = {}
+    for e in pend:
+        cnt[e["sp"]] = cnt.get(e["sp"], 0) + 1
+    for sp in sorted(cnt, key=lambda k: -cnt[k])[:3]:  # คิดเครดิตลีกละ 2
         for g in oget("/sports/%s/scores" % sp, daysFrom=3):
             if g.get("completed") and g.get("scores"):
                 sc = {x["name"]: x["score"] for x in g["scores"]}
@@ -424,18 +427,16 @@ def analyse(odds, home, away):
         _, x, o, u = best_t
         po = (1 / o) / ((1 / o) + (1 / u))
         if po >= 0.5:
-            ou = {"lab": "สูง " + thai_line(x), "line": thai_line(x), "pct": round(po * 100), "weak": po < 0.53, "s": "over", "x": x}
+            ou = {"lab": "สูง " + thai_line(x), "line": thai_line(x), "pct": round(po * 100), "weak": po < 0.55, "s": "over", "x": x}
         else:
-            ou = {"lab": "ต่ำ " + thai_line(x), "line": thai_line(x), "pct": round((1 - po) * 100), "weak": (1 - po) < 0.53, "s": "under", "x": x}
-    alt = None  # บรรทัดสูง/ต่ำที่โอกาสถึง 60% และคุ้มที่สุด (โอกาสต่ำสุดที่ยังผ่าน)
-    for x, po in totals_ladder(res):
-        for side, p in (("over", po), ("under", 1 - po)):
-            if p >= 0.60 and (alt is None or p < alt[0]):
-                alt = (p, x, side)
-    if alt:
-        p, x, side = alt
+            ou = {"lab": "ต่ำ " + thai_line(x), "line": thai_line(x), "pct": round((1 - po) * 100), "weak": (1 - po) < 0.55, "s": "under", "x": x}
+    lt_ = totals_ladder(res)  # บรรทัดจริงของตลาด = บรรทัดที่เจ้ามือตั้งให้ใกล้ 50/50 ที่สุด
+    if lt_:
+        x, po = min(lt_, key=lambda t: abs(t[1] - 0.5))
+        side = "over" if po >= 0.5 else "under"
+        p = po if side == "over" else 1 - po
         ou = {"lab": ("สูง " if side == "over" else "ต่ำ ") + thai_line(x), "line": thai_line(x),
-              "pct": round(p * 100), "weak": False, "s": side, "x": x}
+              "pct": round(p * 100), "weak": p < 0.55, "s": side, "x": x}
     hc = None
     best = None
     hcs, ous = [], []
@@ -623,7 +624,7 @@ def _swap(m, t):
 def best_pick(m):
     a = b = None
     ou, hp = m.get("ou"), m.get("hp")
-    if ou and not ou["weak"] and ou["pct"] >= 60:
+    if ou and not ou["weak"] and ou["pct"] >= 55:
         g = m["hc"].split(" ต่อ ")[0] if m.get("hc") and " ต่อ " in m["hc"] else m["h"]["n"]
         a = (ou["pct"], "%s %s" % (tn(g), ou["lab"]), "ou")
     if hp:
@@ -631,7 +632,7 @@ def best_pick(m):
     if a and b:
         return a if a[0] >= b[0] + 3 else b
     r = a or b
-    return r if r and r[0] >= 60 else None
+    return r if r and r[0] >= (55 if r[2] == "ou" else 60) else None
 
 
 def select(picks, n):
@@ -654,19 +655,51 @@ def build_message(data):
             picks.append((pk[0], m, pk[1], pk[2]))
     picks.sort(key=lambda x: (0 if x[1].get("rk", 99) < 99 else 1, -x[0]))
     out = ["⚽️บอลวันที่ %s⚽️" % data["date"], ""]
+    st = {"date": data["date"], "steps": [], "star": []}
     for n, icon in ((3, "⚡"), (5, "🔥"), (7, "💣")):
         if len(picks) < n:
             continue
         out.append("%s สเต็ป %d" % (icon, n))
+        lines = []
         for _, m, txt, _k in sorted(select(picks, n), key=lambda x: x[1]["ts"]):
             out.append("⏰%s %s" % (m["t"].replace(":", "."), txt))
+            lines.append({"t": m["t"].replace(":", "."), "x": txt, "id": m["id"], "k": _k})
+        st["steps"].append({"n": n, "icon": icon, "lines": lines})
         out.append("————————————")
     if picks:
         out.append("⭐ ตัวเน้นสุด")
-        for medal, (_, _, txt, _k) in zip("🥇🥈🥉", select(picks, 3)):
+        for medal, (_, m, txt, _k) in zip("🥇🥈🥉", select(picks, 3)):
             out.append("%s %s" % (medal, txt))
+            st["star"].append({"medal": medal, "x": txt, "id": m["id"], "k": _k})
         out.append("")
+    build_message.struct = st
     return "\n".join(out).rstrip(), len(picks)
+
+
+def summary_message(sent, history):
+    """สรุปผลของข้อความที่แจกไป หน้าตาเหมือนเดิม แต่ใส่ ✅❌➖ ต่อท้ายแต่ละคู่ (⏳ = ยังไม่มีผล)"""
+    res = {(e["id"], e.get("k")): e.get("res") for e in history}
+    pend = [0]
+
+    def mk(l):
+        r = res.get((l["id"], l["k"]))
+        if r is None:
+            pend[0] += 1
+            return "⏳"
+        return "✅" if r > 0 else ("❌" if r < 0 else "➖")
+    out = ["⚽️สรุปผลบอลวันที่ %s⚽️" % sent["date"], ""]
+    for st in sent.get("steps", []):
+        marks = [mk(l) for l in st["lines"]]
+        verdict = "❌" if "❌" in marks else ("⏳" if "⏳" in marks else "✅")
+        out.append("%s สเต็ป %d %s" % (st["icon"], st["n"], verdict))
+        for l, m in zip(st["lines"], marks):
+            out.append("%s ⏰%s %s" % (m, l["t"], l["x"]))
+        out.append("————————————")
+    if sent.get("star"):
+        out.append("⭐ ตัวเน้นสุด")
+        for x in sent["star"]:
+            out.append("%s %s %s" % (x["medal"], mk(x), x["x"]))
+    return "\n".join(out).rstrip(), pend[0]
 
 
 def result_message(newly, history):
@@ -691,13 +724,15 @@ def send_telegram(text):
     tok, chat = os.environ.get("TELEGRAM_TOKEN", "").strip(), os.environ.get("TELEGRAM_CHAT", "").strip()
     if not tok or not chat:
         print("ไม่ได้ตั้งเทเลแกรม ข้ามการส่ง")
-        return
+        return False
     body = urllib.parse.urlencode({"chat_id": chat, "text": text}).encode()
     try:
         urllib.request.urlopen("https://api.telegram.org/bot%s/sendMessage" % tok, data=body, timeout=30)
         print("ส่งเทเลแกรมแล้ว")
+        return True
     except Exception as e:
         print("ส่งเทเลแกรมไม่สำเร็จ:", e)
+        return False
 
 
 def fetch_logos(matches, cache, limit=40):
@@ -745,6 +780,7 @@ def run():
     old_snap = {}
     old_tn = {}
     old_logos = {}
+    old_sent, old_prev, old_ssent = None, None, None
     try:
         with open("data.json", encoding="utf-8") as fh:
             _d = json.load(fh)
@@ -753,6 +789,7 @@ def run():
             old_snap = _d.get("snap", {})
             old_tn = _d.get("tn", {})
             old_logos = _d.get("logos", {})
+            old_sent, old_prev, old_ssent = _d.get("sent"), _d.get("prev"), _d.get("summary_sent")
             if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and time.time() - _d.get("ts", 0) < 10 * 3600:
                 print("ข้อมูลยังใหม่ (อัปเดตแล้วเมื่อไม่กี่ชั่วโมงก่อน) ข้ามรอบสำรอง")
                 return
@@ -778,7 +815,7 @@ def run():
     matches = []
     # ล็อกคู่เด็ดเดิมที่ยังไม่เตะ ไม่เปลี่ยนคู่ที่แจกไปแล้ว
     locked = {m["id"]: m for m in old
-              if m.get("id") and m.get("v") == 3 and not m.get("nopick") and m["ts"] > now.timestamp() and (m.get("hp") or (m.get("ou") and not m["ou"].get("weak")))}
+              if m.get("id") and m.get("v") == 4 and not m.get("nopick") and m["ts"] > now.timestamp() and (m.get("hp") or (m.get("ou") and not m["ou"].get("weak")))}
     # คู่ที่จะคิดใหม่ (ไม่ได้ล็อก) ให้ลบรายการที่ยังไม่มีผลของคู่นั้นในประวัติ จะได้ไม่ค้างตัวเลือกเก่า
     redo = {x[1]["fixture"]["id"] for x in out} - set(locked)
     history = [e for e in history if not (e.get("res") is None and e["id"] in redo)]
@@ -800,42 +837,27 @@ def run():
         hp = None
         eh, ea = elo_of(elo_map, h["name"]), elo_of(elo_map, a["name"])
         e = (100 / (1 + 10 ** (-(eh + 65 - ea) / 400))) if eh and ea else None
-        if pr:  # เลือกทีมเต็งจาก % ชนะ แล้วหาราคาต่อรองที่คุ้มที่สุดจากทุกราคาที่ตลาดเปิด
+        if pr:  # ทีมเต็งจาก % ชนะ (ต้องชนะ 60%+ และ Elo เห็นตรงกัน) แล้วใช้บรรทัดต่อรองจริงของตลาด
             fav = "home" if pr["h"] >= pr["a"] else "away"
-            if max(pr["h"], pr["a"]) < 55:
+            if max(pr["h"], pr["a"]) < 60:
                 fav = None
             if fav and e is not None and ((e >= 50) != (fav == "home") or max(e, 100 - e) < 55):
                 fav = None
-            lad = dict(ah_ladder(books))
-            # ราคาต่อรอง -0.5 คือ "ชนะ" เท่านั้น แหล่งข้อมูลมักไม่มีบรรทัดนี้ จึงเอา % ชนะมาใส่แทน
-            if -0.5 not in lad:
-                lad[-0.5] = pr["h"] / 100
-            if 0.5 not in lad:
-                lad[0.5] = 1 - pr["a"] / 100
-
-            def pick_line(side, plus_only=False, minus_only=False):
-                best_c = None
-                for line, ph in sorted(lad.items()):
-                    ht = line if side == "home" else -line   # แต้มต่อของทีมนั้น (ลบ = ต่อ)
-                    pc = ph if side == "home" else 1 - ph
-                    if pc < 0.60 or ht < -6 or ht > 6 or (plus_only and ht <= 0) or (minus_only and ht > 0):
-                        continue
-                    if best_c is None or pc < best_c[0]:
-                        best_c = (pc, ht, side)
-                return best_c
-
-            best_c = pick_line(fav, minus_only=True) if fav else None  # ทีมเต็งใช้เฉพาะบรรทัดต่อ (-) ไม่ใช้ +
-            if best_c is None:  # ไม่มีทีมเต็งที่ผ่าน: ลองฝั่งรอง (+) ของทีมอ่อน/ทั้งสองฝั่ง
-                cands_c = [x for x in (pick_line("home", True), pick_line("away", True)) if x and (not fav or x[2] != fav)]
-                best_c = min(cands_c, key=lambda x: x[0]) if cands_c else None
-            if best_c:
-                pc, ht, side = best_c
-                team = h["name"] if side == "home" else a["name"]
-                sgn = "-" if ht < 0 else "+"
-                lt = thai_line(abs(ht)) if ht != 0 else "0"
-                hp = {"lab": "%s %s%s" % (team, sgn if ht != 0 else "", lt), "pct": round(pc * 100), "team": team,
-                      "giver": ht < 0, "lt": lt, "side": side, "h": ht}
-        if ou and ou["pct"] < 60:
+            if fav:
+                cand = []
+                for line, ph in ah_ladder(books):
+                    ht = line if fav == "home" else -line   # แต้มต่อของทีมเต็ง (ลบ = ต่อ)
+                    pc = ph if fav == "home" else 1 - ph    # โอกาสผ่านราคาของทีมเต็งที่บรรทัดนี้
+                    if -6 <= ht <= 6:
+                        cand.append((abs(pc - 0.5), ht, pc))
+                if cand:
+                    _, ht, pc = min(cand)
+                    team = h["name"] if fav == "home" else a["name"]
+                    sgn = "-" if ht < 0 else "+"
+                    lt = thai_line(abs(ht)) if ht != 0 else "0"
+                    hp = {"lab": "%s %s%s" % (team, sgn if ht != 0 else "", lt), "pct": pr["h"] if fav == "home" else pr["a"],
+                          "cp": round(pc * 100), "team": team, "giver": ht < 0, "lt": lt, "side": fav, "h": ht}
+        if ou and ou["pct"] < 55:
             ou["weak"] = True
         lgid = f["league"]["id"]
         flag, lg = LEAGUES.get(lgid, ("⚽", f["league"]["name"]))
@@ -919,7 +941,7 @@ def run():
                 history.append(dict(base, k="hp", side=hp["side"], h=hp["h"], lt=hp["lt"], team=hp["team"],
                                     giver=hp["giver"], pct=hp["pct"]))
         matches.append({
-            "v": 3, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "v": 4, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "elo": round(e) if e is not None else None,
@@ -937,7 +959,7 @@ def run():
         if c["ou"]:
             c["ou"]["weak"] = True
         matches.append({
-            "v": 3, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "v": 4, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": c["ou"], "hp": None, "pr": c["pr"], "elo": round(e) if e is not None else None,
@@ -963,13 +985,25 @@ def run():
     data = {"ts": int(time.time()), "updated": "%s %02d/%02d %s น." % (DAYS[nt.weekday()], nt.day, nt.month, nt.strftime("%H:%M")),
             "date": "%d/%d/%s" % (fd.day, fd.month, str(fd.year + 543)[2:]), "matches": matches,
             "history": sorted(history, key=lambda e: e["ts"])[-150:], "snap": snap, "tn": old_tn, "logos": old_logos}
+    text, n = build_message(data)
+    sent_now = build_message.struct if n else (old_sent if old_sent and old_sent.get("date") == data["date"] else None)
+    prev = old_prev
+    if old_sent and old_sent.get("date") != data["date"]:
+        prev = old_sent  # วันบอลเปลี่ยนแล้ว ชุดที่แจกเมื่อวานกลายเป็นชุดที่ต้องสรุปผล
+    summ, pend = (summary_message(prev, data["history"]) if prev else (None, 0))
+    data["sent"], data["prev"] = sent_now, prev
+    data["summary"] = {"date": prev["date"], "text": summ, "pending": pend} if summ else None
+    data["summary_sent"] = old_ssent
+    do_send = os.environ.get("SEND") == "1" or os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+    if do_send and summ and pend == 0 and old_ssent != prev["date"]:
+        if send_telegram(summ):
+            data["summary_sent"] = prev["date"]
     with open("data.json", "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, indent=1)
     print("เขียน data.json แล้ว %d คู่" % len(matches))
     if os.environ.get("SEND") == "1" or os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
         if newly:
             send_telegram(result_message(newly, data["history"]))
-        text, n = build_message(data)
         if n:
             send_telegram(text)
 
