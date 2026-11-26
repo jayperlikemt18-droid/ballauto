@@ -223,7 +223,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     var H = ALL.slice(-15).reverse(), last = "";
     document.getElementById("hlist").innerHTML = H.map(function (e) {
       var pick = e.k === "ou" ? (e.s === "over" ? "สูง " : "ต่ำ ") + e.lt : tn(e.team) + " " + (e.giver ? "-" : "+") + e.lt;
-      var ic = e.res > 0 ? "✅" : e.res < 0 ? "❌" : "➖";
+      var ic = e.res > 0 ? "✅" : e.res < 0 ? "❌" : "➗";
       var head = e.d !== last ? '<div style="color:var(--muted);font-size:.85rem;padding:10px 0 2px">' + esc(e.d) + '</div>' : "";
       last = e.d;
       return head + '<div style="display:flex;gap:10px;align-items:center;padding:6px 0"><span style="font-size:1.3rem">' + ic + '</span><div style="min-width:0"><div style="font-weight:600">' + esc(pick) + '</div><div style="color:var(--muted);font-size:.85rem">' + esc(tn(e.hn)) + ' พบ ' + esc(tn(e.an)) + ' · ' + e.gh + '-' + e.ga + '</div></div></div>';

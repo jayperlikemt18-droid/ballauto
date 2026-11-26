@@ -697,7 +697,7 @@ def build_message(data):
 
 
 def summary_message(sent, history):
-    """สรุปผลของข้อความที่แจกไป หน้าตาเหมือนเดิม แต่ใส่ ✅❌➖ ต่อท้ายแต่ละคู่ (⏳ = ยังไม่มีผล)"""
+    """สรุปผลของข้อความที่แจกไป หน้าตาเหมือนเดิม แต่ใส่ ✅❌➗ ต่อท้ายแต่ละคู่ (⏳ = ยังไม่มีผล)"""
     res = {(e["id"], e.get("k")): e.get("res") for e in history}
     pend = [0]
 
@@ -706,7 +706,7 @@ def summary_message(sent, history):
         if r is None:
             pend[0] += 1
             return "⏳"
-        return "✅" if r > 0 else ("❌" if r < 0 else "➖")
+        return "✅" if r > 0 else ("❌" if r < 0 else "➗")
     out = ["⚽️สรุปผลบอลวันที่ %s⚽️" % sent["date"], ""]
     for st in sent.get("steps", []):
         marks = [mk(l) for l in st["lines"]]
@@ -730,7 +730,7 @@ def result_message(newly, history):
         else:
             pick = "%s %s%s" % (tn(e["team"]), "-" if e.get("giver") else "+", e["lt"])
         r = e["res"]
-        ic = "✅" if r > 0 else ("❌" if r < 0 else "➖")
+        ic = "✅" if r > 0 else ("❌" if r < 0 else "➗")
         out.append("%s %s (%s พบ %s) %s-%s" % (ic, pick, tn(e["hn"]), tn(e["an"]), e.get("gh"), e.get("ga")))
     done = [e for e in history if e.get("res") is not None]
     w = sum(1 for e in done if e["res"] > 0)
