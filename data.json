@@ -1,10 +1,51 @@
 {
- "ts": 1795660032,
- "updated": "พฤหัสบดี 26/11 09:27 น.",
+ "ts": 1795664346,
+ "updated": "พฤหัสบดี 26/11 10:39 น.",
  "date": "26/11/69",
  "matches": [
   {
-   "v": 3,
+   "v": 4,
+   "id": "b11e430b1d8052d0c718bcee69145f7a",
+   "t": "22:30",
+   "d": "พฤหัสบดี",
+   "ts": 1795707000,
+   "flag": "🏆",
+   "lg": "คอนเฟอเรนซ์ลีก",
+   "rk": 7,
+   "h": {
+    "n": "FC Kairat",
+    "l": ""
+   },
+   "a": {
+    "n": "Mjällby AIF",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 50,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 44,
+    "d": 28,
+    "a": 29
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
    "id": "bbab118a8c6ca33b6b0e7b5ed36fecd8",
    "t": "00:45",
    "d": "ศุกร์",
@@ -14,29 +55,30 @@
    "rk": 7,
    "h": {
     "n": "Brighton and Hove Albion",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/ywypts1448810904.png/small"
    },
    "a": {
     "n": "Universitatea Craiova",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/1jdz2y1579793710.png/small"
    },
    "hc": "Brighton and Hove Albion ต่อ 2.5",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 69,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 3.5
    },
    "hp": {
-    "lab": "Brighton and Hove Albion -0.5",
+    "lab": "Brighton and Hove Albion -2.5",
     "pct": 86,
+    "cp": 47,
     "team": "Brighton and Hove Albion",
     "giver": true,
-    "lt": "0.5",
+    "lt": "2.5",
     "side": "home",
-    "h": -0.5
+    "h": -2.5
    },
    "pr": {
     "h": 86,
@@ -50,7 +92,7 @@
    "ous": []
   },
   {
-   "v": 3,
+   "v": 4,
    "id": "5902b4703e9ddc1f573091e14107834c",
    "t": "00:45",
    "d": "ศุกร์",
@@ -68,21 +110,22 @@
    },
    "hc": "Salzburg ต่อ 2/2.5",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 73,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
+    "lab": "ต่ำ 3.5/4",
+    "line": "3.5/4",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 3.75
    },
    "hp": {
-    "lab": "Salzburg -0.5",
+    "lab": "Salzburg -2/2.5",
     "pct": 83,
+    "cp": 51,
     "team": "Salzburg",
     "giver": true,
-    "lt": "0.5",
+    "lt": "2/2.5",
     "side": "home",
-    "h": -0.5
+    "h": -2.25
    },
    "pr": {
     "h": 83,
@@ -98,7 +141,7 @@
    ]
   },
   {
-   "v": 3,
+   "v": 4,
    "id": "8a0dc963ce319d55751d4d07c5152600",
    "t": "00:45",
    "d": "ศุกร์",
@@ -108,29 +151,30 @@
    "rk": 7,
    "h": {
     "n": "Ajax",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/zg9tii1755495289.png/small"
    },
    "a": {
     "n": "FC Thun",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/sovjgl1699462359.png/small"
    },
    "hc": "Ajax ต่อ 2.5",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 77,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
+    "lab": "ต่ำ 4",
+    "line": "4",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 4.0
    },
    "hp": {
-    "lab": "Ajax -1.5",
-    "pct": 64,
+    "lab": "Ajax -2/2.5",
+    "pct": 82,
+    "cp": 50,
     "team": "Ajax",
     "giver": true,
-    "lt": "1.5",
+    "lt": "2/2.5",
     "side": "home",
-    "h": -1.5
+    "h": -2.25
    },
    "pr": {
     "h": 82,
@@ -144,7 +188,7 @@
    "ous": []
   },
   {
-   "v": 3,
+   "v": 4,
    "id": "a18687d4f17a96a7732fb0c8673ea037",
    "t": "00:45",
    "d": "ศุกร์",
@@ -162,21 +206,22 @@
    },
    "hc": "Besiktas JK ต่อ 1.5/2",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 69,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 3.5
    },
    "hp": {
-    "lab": "Besiktas JK -0.5",
+    "lab": "Besiktas JK -1.5/2",
     "pct": 76,
+    "cp": 51,
     "team": "Besiktas JK",
     "giver": true,
-    "lt": "0.5",
+    "lt": "1.5/2",
     "side": "home",
-    "h": -0.5
+    "h": -1.75
    },
    "pr": {
     "h": 76,
@@ -192,7 +237,343 @@
    ]
   },
   {
-   "v": 3,
+   "v": 4,
+   "id": "707c513bfa43b45b7813126e09ad08d8",
+   "t": "00:45",
+   "d": "ศุกร์",
+   "ts": 1795715100,
+   "flag": "🏆",
+   "lg": "ยูโรปาลีก",
+   "rk": 6,
+   "h": {
+    "n": "Marseille",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/c6bazh1779212287.png/small"
+   },
+   "a": {
+    "n": "PFC Levski Sofia",
+    "l": ""
+   },
+   "hc": "Marseille ต่อ 1.5",
+   "ou": {
+    "lab": "ต่ำ 3",
+    "line": "3",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 3.0
+   },
+   "hp": {
+    "lab": "Marseille -1.5",
+    "pct": 72,
+    "cp": 49,
+    "team": "Marseille",
+    "giver": true,
+    "lt": "1.5",
+    "side": "home",
+    "h": -1.5
+   },
+   "pr": {
+    "h": 72,
+    "d": 17,
+    "a": 11
+   },
+   "elo": null,
+   "hcs": [
+    "1.5"
+   ],
+   "ous": [
+    "3"
+   ]
+  },
+  {
+   "v": 4,
+   "id": "31ebd41354699af625fa3372932206f0",
+   "t": "00:45",
+   "d": "ศุกร์",
+   "ts": 1795715100,
+   "flag": "🏆",
+   "lg": "ยูโรปาลีก",
+   "rk": 6,
+   "h": {
+    "n": "Olympiakos Piraeus",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/xckasq1721291508.png/small"
+   },
+   "a": {
+    "n": "AC Milan",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 52,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 34,
+    "d": 27,
+    "a": 39
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "cdf4b848361b0374c2027326bd54d8eb",
+   "t": "00:45",
+   "d": "ศุกร์",
+   "ts": 1795715100,
+   "flag": "🏆",
+   "lg": "ยูโรปาลีก",
+   "rk": 6,
+   "h": {
+    "n": "Dinamo Zagreb",
+    "l": ""
+   },
+   "a": {
+    "n": "Bayer Leverkusen",
+    "l": ""
+   },
+   "hc": "Bayer Leverkusen ต่อ 0.5/1",
+   "ou": {
+    "lab": "ต่ำ 3/3.5",
+    "line": "3/3.5",
+    "pct": 52,
+    "weak": true,
+    "s": "under",
+    "x": 3.25
+   },
+   "hp": null,
+   "pr": {
+    "h": 21,
+    "d": 22,
+    "a": 57
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1"
+   ],
+   "ous": [
+    "3.25"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "7da3be4f6fe50a39ecdf3a8dc12966c8",
+   "t": "00:45",
+   "d": "ศุกร์",
+   "ts": 1795715100,
+   "flag": "🏆",
+   "lg": "ยูโรปาลีก",
+   "rk": 6,
+   "h": {
+    "n": "Celta Vigo",
+    "l": ""
+   },
+   "a": {
+    "n": "Bournemouth",
+    "l": ""
+   },
+   "hc": "Bournemouth ต่อ 0/0.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 50,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 27,
+    "d": 27,
+    "a": 46
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "e1bfce2837ee873eec90dbefe31844ac",
+   "t": "00:45",
+   "d": "ศุกร์",
+   "ts": 1795715100,
+   "flag": "🏆",
+   "lg": "คอนเฟอเรนซ์ลีก",
+   "rk": 7,
+   "h": {
+    "n": "SK Brann",
+    "l": ""
+   },
+   "a": {
+    "n": "AGF Aarhus",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 3",
+    "line": "3",
+    "pct": 53,
+    "weak": true,
+    "s": "over",
+    "x": 3.0
+   },
+   "hp": null,
+   "pr": {
+    "h": 44,
+    "d": 25,
+    "a": 31
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "3.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "4f5b1a808bafc37b7c0041e947c2e536",
+   "t": "00:45",
+   "d": "ศุกร์",
+   "ts": 1795715100,
+   "flag": "🏆",
+   "lg": "คอนเฟอเรนซ์ลีก",
+   "rk": 7,
+   "h": {
+    "n": "FK Jablonec",
+    "l": ""
+   },
+   "a": {
+    "n": "FC Lugano",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "ต่ำ 2.5/3",
+    "line": "2.5/3",
+    "pct": 52,
+    "weak": true,
+    "s": "under",
+    "x": 2.75
+   },
+   "hp": null,
+   "pr": {
+    "h": 29,
+    "d": 26,
+    "a": 44
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "48a49061ae356d2a8b3b3976ec21508d",
+   "t": "00:45",
+   "d": "ศุกร์",
+   "ts": 1795715100,
+   "flag": "🏆",
+   "lg": "คอนเฟอเรนซ์ลีก",
+   "rk": 7,
+   "h": {
+    "n": "Pafos FC",
+    "l": ""
+   },
+   "a": {
+    "n": "FC Midtjylland",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "ต่ำ 3",
+    "line": "3",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 3.0
+   },
+   "hp": null,
+   "pr": {
+    "h": 31,
+    "d": 27,
+    "a": 42
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "679c499344805de09a59a2a2535cd0c8",
+   "t": "00:45",
+   "d": "ศุกร์",
+   "ts": 1795715100,
+   "flag": "🏆",
+   "lg": "คอนเฟอเรนซ์ลีก",
+   "rk": 7,
+   "h": {
+    "n": "FK Kauno Žalgiris",
+    "l": ""
+   },
+   "a": {
+    "n": "Riga FC",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "ต่ำ 2.5",
+    "line": "2.5",
+    "pct": 50,
+    "weak": true,
+    "s": "under",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 28,
+    "d": 28,
+    "a": 44
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
    "id": "d6377d30379e5d3053c1076646d83f78",
    "t": "03:00",
    "d": "ศุกร์",
@@ -210,21 +591,22 @@
    },
    "hc": "Juventus ต่อ 2/2.5",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 68,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 53,
+    "weak": true,
+    "s": "under",
+    "x": 3.5
    },
    "hp": {
-    "lab": "Juventus -0.5",
+    "lab": "Juventus -2",
     "pct": 82,
+    "cp": 53,
     "team": "Juventus",
     "giver": true,
-    "lt": "0.5",
+    "lt": "2",
     "side": "home",
-    "h": -0.5
+    "h": -2.0
    },
    "pr": {
     "h": 82,
@@ -240,7 +622,7 @@
    ]
   },
   {
-   "v": 3,
+   "v": 4,
    "id": "1abbe02767589722b5de92e94e96429d",
    "t": "03:00",
    "d": "ศุกร์",
@@ -250,29 +632,30 @@
    "rk": 7,
    "h": {
     "n": "SC Braga",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/hoq1s31795505850.png/small"
    },
    "a": {
     "n": "KuPS Kuopio",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/qmrrop1717396470.png/small"
    },
    "hc": "SC Braga ต่อ 2.5",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 69,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
+    "lab": "ต่ำ 3/3.5",
+    "line": "3/3.5",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 3.25
    },
    "hp": {
-    "lab": "SC Braga -0.5",
+    "lab": "SC Braga -2/2.5",
     "pct": 81,
+    "cp": 50,
     "team": "SC Braga",
     "giver": true,
-    "lt": "0.5",
+    "lt": "2/2.5",
     "side": "home",
-    "h": -0.5
+    "h": -2.25
    },
    "pr": {
     "h": 81,
@@ -288,7 +671,7 @@
    ]
   },
   {
-   "v": 3,
+   "v": 4,
    "id": "a24c89b65c5a30fb9473735049589e64",
    "t": "03:00",
    "d": "ศุกร์",
@@ -306,24 +689,25 @@
    },
    "hc": "Lyon ต่อ 2",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 69,
-    "weak": false,
-    "s": "over",
-    "x": 2.5
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 3.5
    },
    "hp": {
-    "lab": "Lyon -0.5",
-    "pct": 79,
+    "lab": "Lyon -2",
+    "pct": 80,
+    "cp": 49,
     "team": "Lyon",
     "giver": true,
-    "lt": "0.5",
+    "lt": "2",
     "side": "home",
-    "h": -0.5
+    "h": -2.0
    },
    "pr": {
-    "h": 79,
+    "h": 80,
     "d": 13,
     "a": 8
    },
@@ -336,7 +720,7 @@
    ]
   },
   {
-   "v": 3,
+   "v": 4,
    "id": "413409b43875d1bdb627a9e7fb6bc3fd",
    "t": "03:00",
    "d": "ศุกร์",
@@ -354,24 +738,25 @@
    },
    "hc": "Sunderland ต่อ 1.5/2",
    "ou": {
-    "lab": "ต่ำ 3.5",
-    "line": "3.5",
-    "pct": 60,
-    "weak": false,
-    "s": "under",
-    "x": 3.5
+    "lab": "สูง 3",
+    "line": "3",
+    "pct": 50,
+    "weak": true,
+    "s": "over",
+    "x": 3.0
    },
    "hp": {
-    "lab": "Sunderland -0.5",
-    "pct": 76,
+    "lab": "Sunderland -1.5/2",
+    "pct": 77,
+    "cp": 50,
     "team": "Sunderland",
     "giver": true,
-    "lt": "0.5",
+    "lt": "1.5/2",
     "side": "home",
-    "h": -0.5
+    "h": -1.75
    },
    "pr": {
-    "h": 76,
+    "h": 77,
     "d": 15,
     "a": 8
    },
@@ -384,7 +769,7 @@
    ]
   },
   {
-   "v": 3,
+   "v": 4,
    "id": "4f10f55b47b83f7f4f2a8cd745a9e67f",
    "t": "03:00",
    "d": "ศุกร์",
@@ -394,29 +779,30 @@
    "rk": 7,
    "h": {
     "n": "Inter Club d'Escaldes",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/tbxkcc1789008725.png/small"
    },
    "a": {
     "n": "FC Copenhagen",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/styqtr1473535513.png/small"
    },
    "hc": "FC Copenhagen ต่อ 1.5",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 62,
-    "weak": false,
+    "lab": "สูง 3",
+    "line": "3",
+    "pct": 50,
+    "weak": true,
     "s": "over",
-    "x": 2.5
+    "x": 3.0
    },
    "hp": {
-    "lab": "FC Copenhagen -0.5",
+    "lab": "FC Copenhagen -1.5/2",
     "pct": 76,
+    "cp": 52,
     "team": "FC Copenhagen",
     "giver": true,
-    "lt": "0.5",
+    "lt": "1.5/2",
     "side": "away",
-    "h": -0.5
+    "h": -1.75
    },
    "pr": {
     "h": 8,
@@ -432,8 +818,8 @@
    ]
   },
   {
-   "v": 3,
-   "id": "df4947bbe49057782feacca38c03e790",
+   "v": 4,
+   "id": "189401357a4b5e5920ca9ec1207a6566",
    "t": "03:00",
    "d": "ศุกร์",
    "ts": 1795723200,
@@ -441,43 +827,401 @@
    "lg": "ยูโรปาลีก",
    "rk": 6,
    "h": {
-    "n": "TSG Hoffenheim",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/9hwvb21621593919.png/small"
+    "n": "Sparta Prague",
+    "l": ""
    },
    "a": {
-    "n": "SK Sturm Graz",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png/small"
+    "n": "AZ Alkmaar",
+    "l": ""
    },
-   "hc": "TSG Hoffenheim ต่อ 1.5",
+   "hc": "AZ Alkmaar ต่อ 0/0.5",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 69,
-    "weak": false,
+    "lab": "สูง 2.5/3",
+    "line": "2.5/3",
+    "pct": 52,
+    "weak": true,
     "s": "over",
-    "x": 2.5
+    "x": 2.75
    },
-   "hp": {
-    "lab": "TSG Hoffenheim -0.5",
-    "pct": 72,
-    "team": "TSG Hoffenheim",
-    "giver": true,
-    "lt": "0.5",
-    "side": "home",
-    "h": -0.5
-   },
+   "hp": null,
    "pr": {
-    "h": 72,
-    "d": 16,
-    "a": 12
+    "h": 33,
+    "d": 26,
+    "a": 42
    },
    "elo": null,
    "hcs": [
-    "1.5"
+    "0/0.5"
    ],
    "ous": [
+    "2.75"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "de10dd2e5917108a9478c07275ba8cdb",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795723200,
+   "flag": "🏆",
+   "lg": "ยูโรปาลีก",
+   "rk": 6,
+   "h": {
+    "n": "OFI Crete",
+    "l": ""
+   },
+   "a": {
+    "n": "Anderlecht",
+    "l": ""
+   },
+   "hc": "Anderlecht ต่อ 0.5/1",
+   "ou": {
+    "lab": "สูง 2.5/3",
+    "line": "2.5/3",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 2.75
+   },
+   "hp": null,
+   "pr": {
+    "h": 21,
+    "d": 25,
+    "a": 54
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1"
+   ],
+   "ous": [
+    "2.75"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "e2036567ee9394a55f022358781dce15",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795723200,
+   "flag": "🏆",
+   "lg": "ยูโรปาลีก",
+   "rk": 6,
+   "h": {
+    "n": "Torreense",
+    "l": ""
+   },
+   "a": {
+    "n": "Celtic",
+    "l": ""
+   },
+   "hc": "Celtic ต่อ 0.5/1",
+   "ou": {
+    "lab": "สูง 3",
+    "line": "3",
+    "pct": 50,
+    "weak": true,
+    "s": "over",
+    "x": 3.0
+   },
+   "hp": null,
+   "pr": {
+    "h": 19,
+    "d": 22,
+    "a": 58
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1"
+   ],
+   "ous": [
+    "3"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "3fe17778f32b5fd0f218f9be6b0681cc",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795723200,
+   "flag": "🏆",
+   "lg": "ยูโรปาลีก",
+   "rk": 6,
+   "h": {
+    "n": "Crystal Palace",
+    "l": ""
+   },
+   "a": {
+    "n": "Real Sociedad",
+    "l": ""
+   },
+   "hc": "Crystal Palace ต่อ 0.5",
+   "ou": {
+    "lab": "สูง 3",
+    "line": "3",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 3.0
+   },
+   "hp": null,
+   "pr": {
+    "h": 47,
+    "d": 24,
+    "a": 29
+   },
+   "elo": null,
+   "hcs": [
+    "0.5"
+   ],
+   "ous": [
+    "3"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "e836bc70afa19b0db28fb320a97662e4",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795723200,
+   "flag": "🏆",
+   "lg": "ยูโรปาลีก",
+   "rk": 6,
+   "h": {
+    "n": "NEC Nijmegen",
+    "l": ""
+   },
+   "a": {
+    "n": "Rennes",
+    "l": ""
+   },
+   "hc": "Rennes ต่อ 0/0.5",
+   "ou": {
+    "lab": "ต่ำ 3/3.5",
+    "line": "3/3.5",
+    "pct": 52,
+    "weak": true,
+    "s": "under",
+    "x": 3.25
+   },
+   "hp": null,
+   "pr": {
+    "h": 30,
+    "d": 24,
+    "a": 46
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5"
+   ],
+   "ous": [
+    "3.25"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "92db66d09fdcf10ff8561cb7ec09732e",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795723200,
+   "flag": "🏆",
+   "lg": "คอนเฟอเรนซ์ลีก",
+   "rk": 7,
+   "h": {
+    "n": "FC Nordsjaelland",
+    "l": ""
+   },
+   "a": {
+    "n": "Panathinaikos FC",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 2.5/3",
+    "line": "2.5/3",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 2.75
+   },
+   "hp": null,
+   "pr": {
+    "h": 36,
+    "d": 27,
+    "a": 37
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "dd5f6def5ea1aa9e0a0f45e3605ac64e",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795723200,
+   "flag": "🏆",
+   "lg": "คอนเฟอเรนซ์ลีก",
+   "rk": 7,
+   "h": {
+    "n": "SC Freiburg",
+    "l": ""
+   },
+   "a": {
+    "n": "FC Twente Enschede",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "ต่ำ 3",
+    "line": "3",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 3.0
+   },
+   "hp": null,
+   "pr": {
+    "h": 48,
+    "d": 24,
+    "a": 29
+   },
+   "elo": null,
+   "hcs": [],
+   "ous": [
     "3.5"
-   ]
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "3c6175802b9110c0abdb30f491965093",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795723200,
+   "flag": "🏆",
+   "lg": "คอนเฟอเรนซ์ลีก",
+   "rk": 7,
+   "h": {
+    "n": "Gent",
+    "l": ""
+   },
+   "a": {
+    "n": "Red Star Belgrade",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 53,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 44,
+    "d": 27,
+    "a": 29
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "9f2cd85ad777bea9550b987dc409b280",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795723200,
+   "flag": "🏆",
+   "lg": "คอนเฟอเรนซ์ลีก",
+   "rk": 7,
+   "h": {
+    "n": "Hajduk Split",
+    "l": ""
+   },
+   "a": {
+    "n": "Sint Truiden",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "ต่ำ 2.5/3",
+    "line": "2.5/3",
+    "pct": 51,
+    "weak": true,
+    "s": "under",
+    "x": 2.75
+   },
+   "hp": null,
+   "pr": {
+    "h": 43,
+    "d": 27,
+    "a": 30
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 4,
+   "id": "491426b0dae5aecf2b92525815131cb2",
+   "t": "03:00",
+   "d": "ศุกร์",
+   "ts": 1795723200,
+   "flag": "🏆",
+   "lg": "คอนเฟอเรนซ์ลีก",
+   "rk": 7,
+   "h": {
+    "n": "PFC CSKA Sofia",
+    "l": ""
+   },
+   "a": {
+    "n": "Trabzonspor",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 3",
+    "line": "3",
+    "pct": 50,
+    "weak": true,
+    "s": "over",
+    "x": 3.0
+   },
+   "hp": null,
+   "pr": {
+    "h": 22,
+    "d": 24,
+    "a": 54
+   },
+   "elo": null,
+   "hcs": [],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
   }
  ],
  "history": [
@@ -2034,12 +2778,14 @@
    "an": "Çorum FK",
    "lg": "ซูเปอร์ลีก ตุรกี",
    "sp": "soccer_turkey_super_league",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "under",
    "x": 3.5,
    "lt": "3.5",
-   "pct": 60
+   "pct": 60,
+   "gh": 4,
+   "ga": 2
   },
   {
    "id": "c1958a1dcd4f8228f4d09148fd6ea216",
@@ -2049,14 +2795,16 @@
    "an": "Çorum FK",
    "lg": "ซูเปอร์ลีก ตุรกี",
    "sp": "soccer_turkey_super_league",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "away",
    "h": 1.0,
    "lt": "1",
    "team": "Çorum FK",
    "giver": false,
-   "pct": 64
+   "pct": 64,
+   "gh": 4,
+   "ga": 2
   },
   {
    "id": "99776445d5a5f4ed008f9a6d6a1495b7",
@@ -2123,12 +2871,14 @@
    "an": "LASK",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 75
+   "pct": 75,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": "50b80f3ebd38bf63663b11ae0afc575b",
@@ -2138,14 +2888,16 @@
    "an": "LASK",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Bodø/Glimt",
    "giver": true,
-   "pct": 64
+   "pct": 64,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": "e422af92d1fc06c0a330838c1c2f2e08",
@@ -2155,12 +2907,14 @@
    "an": "Aston Villa",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 69
+   "pct": 69,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": "e422af92d1fc06c0a330838c1c2f2e08",
@@ -2170,14 +2924,16 @@
    "an": "Aston Villa",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "away",
    "h": 0.5,
    "lt": "0.5",
    "team": "Aston Villa",
    "giver": false,
-   "pct": 66
+   "pct": 66,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": "3fb5e4a792cf34a0459efcb79a11a785",
@@ -2187,12 +2943,14 @@
    "an": "PSV Eindhoven",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 82
+   "pct": 82,
+   "gh": 5,
+   "ga": 1
   },
   {
    "id": "3fb5e4a792cf34a0459efcb79a11a785",
@@ -2202,14 +2960,16 @@
    "an": "PSV Eindhoven",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Real Madrid",
    "giver": true,
-   "pct": 83
+   "pct": 83,
+   "gh": 5,
+   "ga": 1
   },
   {
    "id": "ba719e378ac366262013bdb51a06aa6f",
@@ -2219,12 +2979,14 @@
    "an": "AEK Athens",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 72
+   "pct": 72,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": "ba719e378ac366262013bdb51a06aa6f",
@@ -2234,14 +2996,16 @@
    "an": "AEK Athens",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Como",
    "giver": true,
-   "pct": 78
+   "pct": 78,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": "8e93849b4c1ccbf1c207836d5c470150",
@@ -2251,12 +3015,14 @@
    "an": "Real Betis",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 71
+   "pct": 71,
+   "gh": 0,
+   "ga": 2
   },
   {
    "id": "8e93849b4c1ccbf1c207836d5c470150",
@@ -2266,14 +3032,16 @@
    "an": "Real Betis",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "away",
    "h": -0.5,
    "lt": "0.5",
    "team": "Real Betis",
    "giver": true,
-   "pct": 76
+   "pct": 76,
+   "gh": 0,
+   "ga": 2
   },
   {
    "id": "b9f00a4d399ec661e733857c9d5fb2dc",
@@ -2283,12 +3051,14 @@
    "an": "Napoli",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 72
+   "pct": 72,
+   "gh": 2,
+   "ga": 2
   },
   {
    "id": "b9f00a4d399ec661e733857c9d5fb2dc",
@@ -2298,14 +3068,16 @@
    "an": "Napoli",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Manchester City",
    "giver": true,
-   "pct": 74
+   "pct": 74,
+   "gh": 2,
+   "ga": 2
   },
   {
    "id": "aea973c122c91837c15e066c757c747f",
@@ -2315,12 +3087,14 @@
    "an": "RC Lens",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 74
+   "pct": 74,
+   "gh": 3,
+   "ga": 1
   },
   {
    "id": "aea973c122c91837c15e066c757c747f",
@@ -2330,14 +3104,16 @@
    "an": "RC Lens",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "RB Leipzig",
    "giver": true,
-   "pct": 68
+   "pct": 68,
+   "gh": 3,
+   "ga": 1
   },
   {
    "id": "018856cb75135463eb1972d978339023",
@@ -2383,14 +3159,16 @@
    "an": "Borussia Dortmund",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Arsenal",
    "giver": true,
-   "pct": 68
+   "pct": 68,
+   "gh": 1,
+   "ga": 1
   },
   {
    "id": "9a2ebad454db4ab3d53b89e96c79847a",
@@ -2400,12 +3178,14 @@
    "an": "Porto",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "under",
    "x": 3.5,
    "lt": "3.5",
-   "pct": 61
+   "pct": 61,
+   "gh": 0,
+   "ga": 1
   },
   {
    "id": "9a2ebad454db4ab3d53b89e96c79847a",
@@ -2415,14 +3195,16 @@
    "an": "Porto",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "away",
    "h": 0.5,
    "lt": "0.5",
    "team": "Porto",
    "giver": false,
-   "pct": 68
+   "pct": 68,
+   "gh": 0,
+   "ga": 1
   },
   {
    "id": "e6fa007f93e0cef004be920f96ee95ba",
@@ -2432,12 +3214,14 @@
    "an": "Barcelona",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 86
+   "pct": 86,
+   "gh": 1,
+   "ga": 4
   },
   {
    "id": "e6fa007f93e0cef004be920f96ee95ba",
@@ -2447,14 +3231,16 @@
    "an": "Barcelona",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "away",
    "h": -0.5,
    "lt": "0.5",
    "team": "Barcelona",
    "giver": true,
-   "pct": 85
+   "pct": 85,
+   "gh": 1,
+   "ga": 4
   },
   {
    "id": "a7c87fac9e9cbcfc02ad0e0b29ca89e2",
@@ -2464,12 +3250,14 @@
    "an": "Villarreal",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 64
+   "pct": 64,
+   "gh": 0,
+   "ga": 1
   },
   {
    "id": "a7c87fac9e9cbcfc02ad0e0b29ca89e2",
@@ -2479,14 +3267,16 @@
    "an": "Villarreal",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 0.0,
    "k": "hp",
    "side": "home",
    "h": 1.0,
    "lt": "1",
    "team": "Slavia Praha",
    "giver": false,
-   "pct": 69
+   "pct": 69,
+   "gh": 0,
+   "ga": 1
   },
   {
    "id": "8cf80807dee1ee73aefb295b560dc78e",
@@ -2496,14 +3286,16 @@
    "an": "Modena",
    "lg": "เซเรีย บี",
    "sp": "soccer_italy_serie_b",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": 0.5,
    "lt": "0.5",
    "team": "Pisa",
    "giver": false,
-   "pct": 69
+   "pct": 69,
+   "gh": 1,
+   "ga": 1
   },
   {
    "id": "b1af6789fe6db7aab18a2945ce56f035",
@@ -2513,12 +3305,14 @@
    "an": "Viking FK",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 76
+   "pct": 76,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": "b1af6789fe6db7aab18a2945ce56f035",
@@ -2528,14 +3322,16 @@
    "an": "Viking FK",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Atlético Madrid",
    "giver": true,
-   "pct": 86
+   "pct": 86,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": "e7e64568f6af00d395a3fdfc27de8ae3",
@@ -2545,12 +3341,14 @@
    "an": "VfB Stuttgart",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 76
+   "pct": 76,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": "e7e64568f6af00d395a3fdfc27de8ae3",
@@ -2560,14 +3358,16 @@
    "an": "VfB Stuttgart",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": -1.0,
    "lt": "1",
    "team": "Inter Milan",
    "giver": true,
-   "pct": 60
+   "pct": 60,
+   "gh": 2,
+   "ga": 0
   },
   {
    "id": "99459b90f3e732106e09585bf94b36b4",
@@ -2577,12 +3377,14 @@
    "an": "Liverpool",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 74
+   "pct": 74,
+   "gh": 0,
+   "ga": 3
   },
   {
    "id": "99459b90f3e732106e09585bf94b36b4",
@@ -2592,14 +3394,16 @@
    "an": "Liverpool",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "home",
    "h": 1.5,
    "lt": "1.5",
    "team": "Club Brugge",
    "giver": false,
-   "pct": 62
+   "pct": 62,
+   "gh": 0,
+   "ga": 3
   },
   {
    "id": "14007bc0605bce3bd164b132254ba24c",
@@ -2609,12 +3413,14 @@
    "an": "AS Roma",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 73
+   "pct": 73,
+   "gh": 2,
+   "ga": 2
   },
   {
    "id": "14007bc0605bce3bd164b132254ba24c",
@@ -2624,14 +3430,16 @@
    "an": "AS Roma",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "home",
    "h": -0.5,
    "lt": "0.5",
    "team": "Paris Saint Germain",
    "giver": true,
-   "pct": 66
+   "pct": 66,
+   "gh": 2,
+   "ga": 2
   },
   {
    "id": "77dfddf6dea97d5ecb5e2463b29fe67e",
@@ -2660,14 +3468,16 @@
    "an": "Fenerbahce",
    "lg": "แชมเปียนส์ลีก",
    "sp": "soccer_uefa_champs_league",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "away",
    "h": 0.5,
    "lt": "0.5",
    "team": "Fenerbahce",
    "giver": false,
-   "pct": 68
+   "pct": 68,
+   "gh": 0,
+   "ga": 1
   },
   {
    "id": "786625491d1c7b42ec2eb6bb5f903f4f",
@@ -2697,25 +3507,10 @@
    "lg": "คอนเฟอเรนซ์ลีก",
    "sp": "soccer_uefa_europa_conference_league",
    "res": null,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 69
-  },
-  {
-   "id": "bbab118a8c6ca33b6b0e7b5ed36fecd8",
-   "ts": 1795715100,
-   "d": "27/11",
-   "hn": "Brighton and Hove Albion",
-   "an": "Universitatea Craiova",
-   "lg": "คอนเฟอเรนซ์ลีก",
-   "sp": "soccer_uefa_europa_conference_league",
-   "res": null,
    "k": "hp",
    "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
+   "h": -2.5,
+   "lt": "2.5",
    "team": "Brighton and Hove Albion",
    "giver": true,
    "pct": 86
@@ -2729,25 +3524,10 @@
    "lg": "ยูโรปาลีก",
    "sp": "soccer_uefa_europa_league",
    "res": null,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 73
-  },
-  {
-   "id": "5902b4703e9ddc1f573091e14107834c",
-   "ts": 1795715100,
-   "d": "27/11",
-   "hn": "Salzburg",
-   "an": "FC Ararat-Armenia",
-   "lg": "ยูโรปาลีก",
-   "sp": "soccer_uefa_europa_league",
-   "res": null,
    "k": "hp",
    "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
+   "h": -2.25,
+   "lt": "2/2.5",
    "team": "Salzburg",
    "giver": true,
    "pct": 83
@@ -2761,43 +3541,13 @@
    "lg": "คอนเฟอเรนซ์ลีก",
    "sp": "soccer_uefa_europa_conference_league",
    "res": null,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 77
-  },
-  {
-   "id": "8a0dc963ce319d55751d4d07c5152600",
-   "ts": 1795715100,
-   "d": "27/11",
-   "hn": "Ajax",
-   "an": "FC Thun",
-   "lg": "คอนเฟอเรนซ์ลีก",
-   "sp": "soccer_uefa_europa_conference_league",
-   "res": null,
    "k": "hp",
    "side": "home",
-   "h": -1.5,
-   "lt": "1.5",
+   "h": -2.25,
+   "lt": "2/2.5",
    "team": "Ajax",
    "giver": true,
-   "pct": 64
-  },
-  {
-   "id": "a18687d4f17a96a7732fb0c8673ea037",
-   "ts": 1795715100,
-   "d": "27/11",
-   "hn": "Besiktas JK",
-   "an": "Hapoel Be'er Sheva",
-   "lg": "ยูโรปาลีก",
-   "sp": "soccer_uefa_europa_league",
-   "res": null,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 69
+   "pct": 82
   },
   {
    "id": "a18687d4f17a96a7732fb0c8673ea037",
@@ -2810,26 +3560,28 @@
    "res": null,
    "k": "hp",
    "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
+   "h": -1.75,
+   "lt": "1.5/2",
    "team": "Besiktas JK",
    "giver": true,
    "pct": 76
   },
   {
-   "id": "d6377d30379e5d3053c1076646d83f78",
-   "ts": 1795723200,
+   "id": "707c513bfa43b45b7813126e09ad08d8",
+   "ts": 1795715100,
    "d": "27/11",
-   "hn": "Juventus",
-   "an": "Omonoia FC",
+   "hn": "Marseille",
+   "an": "PFC Levski Sofia",
    "lg": "ยูโรปาลีก",
    "sp": "soccer_uefa_europa_league",
    "res": null,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 68
+   "k": "hp",
+   "side": "home",
+   "h": -1.5,
+   "lt": "1.5",
+   "team": "Marseille",
+   "giver": true,
+   "pct": 72
   },
   {
    "id": "d6377d30379e5d3053c1076646d83f78",
@@ -2842,8 +3594,8 @@
    "res": null,
    "k": "hp",
    "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
+   "h": -2.0,
+   "lt": "2",
    "team": "Juventus",
    "giver": true,
    "pct": 82
@@ -2857,25 +3609,10 @@
    "lg": "คอนเฟอเรนซ์ลีก",
    "sp": "soccer_uefa_europa_conference_league",
    "res": null,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 69
-  },
-  {
-   "id": "1abbe02767589722b5de92e94e96429d",
-   "ts": 1795723200,
-   "d": "27/11",
-   "hn": "SC Braga",
-   "an": "KuPS Kuopio",
-   "lg": "คอนเฟอเรนซ์ลีก",
-   "sp": "soccer_uefa_europa_conference_league",
-   "res": null,
    "k": "hp",
    "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
+   "h": -2.25,
+   "lt": "2/2.5",
    "team": "SC Braga",
    "giver": true,
    "pct": 81
@@ -2889,43 +3626,13 @@
    "lg": "ยูโรปาลีก",
    "sp": "soccer_uefa_europa_league",
    "res": null,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 69
-  },
-  {
-   "id": "a24c89b65c5a30fb9473735049589e64",
-   "ts": 1795723200,
-   "d": "27/11",
-   "hn": "Lyon",
-   "an": "Lillestrom",
-   "lg": "ยูโรปาลีก",
-   "sp": "soccer_uefa_europa_league",
-   "res": null,
    "k": "hp",
    "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
+   "h": -2.0,
+   "lt": "2",
    "team": "Lyon",
    "giver": true,
-   "pct": 79
-  },
-  {
-   "id": "413409b43875d1bdb627a9e7fb6bc3fd",
-   "ts": 1795723200,
-   "d": "27/11",
-   "hn": "Sunderland",
-   "an": "Jagiellonia Białystok",
-   "lg": "ยูโรปาลีก",
-   "sp": "soccer_uefa_europa_league",
-   "res": null,
-   "k": "ou",
-   "s": "under",
-   "x": 3.5,
-   "lt": "3.5",
-   "pct": 60
+   "pct": 80
   },
   {
    "id": "413409b43875d1bdb627a9e7fb6bc3fd",
@@ -2938,26 +3645,11 @@
    "res": null,
    "k": "hp",
    "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
+   "h": -1.75,
+   "lt": "1.5/2",
    "team": "Sunderland",
    "giver": true,
-   "pct": 76
-  },
-  {
-   "id": "4f10f55b47b83f7f4f2a8cd745a9e67f",
-   "ts": 1795723200,
-   "d": "27/11",
-   "hn": "Inter Club d'Escaldes",
-   "an": "FC Copenhagen",
-   "lg": "คอนเฟอเรนซ์ลีก",
-   "sp": "soccer_uefa_europa_conference_league",
-   "res": null,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 62
+   "pct": 77
   },
   {
    "id": "4f10f55b47b83f7f4f2a8cd745a9e67f",
@@ -2970,43 +3662,11 @@
    "res": null,
    "k": "hp",
    "side": "away",
-   "h": -0.5,
-   "lt": "0.5",
+   "h": -1.75,
+   "lt": "1.5/2",
    "team": "FC Copenhagen",
    "giver": true,
    "pct": 76
-  },
-  {
-   "id": "df4947bbe49057782feacca38c03e790",
-   "ts": 1795723200,
-   "d": "27/11",
-   "hn": "TSG Hoffenheim",
-   "an": "SK Sturm Graz",
-   "lg": "ยูโรปาลีก",
-   "sp": "soccer_uefa_europa_league",
-   "res": null,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 69
-  },
-  {
-   "id": "df4947bbe49057782feacca38c03e790",
-   "ts": 1795723200,
-   "d": "27/11",
-   "hn": "TSG Hoffenheim",
-   "an": "SK Sturm Graz",
-   "lg": "ยูโรปาลีก",
-   "sp": "soccer_uefa_europa_league",
-   "res": null,
-   "k": "hp",
-   "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
-   "team": "TSG Hoffenheim",
-   "giver": true,
-   "pct": 72
   }
  ],
  "snap": {
@@ -3363,7 +4023,23 @@
   "kups kuopio": "คูพีเอส",
   "jagiellonia białystok": "ยากีลโลเนีย เบียลีสต็อก",
   "inter club d'escaldes": "อินเตอร์ คลับ ดีเอสคัลเดส",
-  "sk sturm graz": "สตวร์ม กราซ"
+  "sk sturm graz": "สตวร์ม กราซ",
+  "fc kairat": "ไครัต",
+  "pfc levski sofia": "เลฟสกี้ โซเฟีย",
+  "olympiakos piraeus": "โอลิมเปียกอส",
+  "sk brann": "บรานน์",
+  "agf aarhus": "อาร์ฮุส",
+  "fk jablonec": "ยาโบลเนค",
+  "fc lugano": "ลูกาโน",
+  "pafos fc": "ปาฟอส",
+  "fk kauno zalgiris": "เกาโน ซัลกิริส",
+  "riga fc": "ริกา",
+  "ofi crete": "โอเอฟไอ ครีต",
+  "torreense": "ตอร์เรนเซ่",
+  "panathinaikos fc": "พานาธิไนกอส",
+  "fc twente enschede": "ทเวนต์",
+  "sint truiden": "แซงต์ ทรุยด็อง",
+  "pfc cska sofia": "ซีเอสเคเอ โซเฟีย"
  },
  "logos": {
   "Brentford": "https://r2.thesportsdb.com/images/media/team/badge/grv1aw1546453779.png/small",
@@ -3406,6 +4082,153 @@
   "Sunderland": "https://r2.thesportsdb.com/images/media/team/badge/tprtus1448813498.png/small",
   "Jagiellonia Białystok": "https://r2.thesportsdb.com/images/media/team/badge/ucze1y1601404699.png/small",
   "TSG Hoffenheim": "https://r2.thesportsdb.com/images/media/team/badge/9hwvb21621593919.png/small",
-  "SK Sturm Graz": "https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png/small"
- }
+  "SK Sturm Graz": "https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png/small",
+  "Marseille": "https://r2.thesportsdb.com/images/media/team/badge/c6bazh1779212287.png/small",
+  "PFC Levski Sofia": "",
+  "Brighton and Hove Albion": "https://r2.thesportsdb.com/images/media/team/badge/ywypts1448810904.png/small",
+  "Universitatea Craiova": "https://r2.thesportsdb.com/images/media/team/badge/1jdz2y1579793710.png/small",
+  "Ajax": "https://r2.thesportsdb.com/images/media/team/badge/zg9tii1755495289.png/small",
+  "FC Thun": "https://r2.thesportsdb.com/images/media/team/badge/sovjgl1699462359.png/small",
+  "SC Braga": "https://r2.thesportsdb.com/images/media/team/badge/hoq1s31795505850.png/small",
+  "KuPS Kuopio": "https://r2.thesportsdb.com/images/media/team/badge/qmrrop1717396470.png/small",
+  "Inter Club d'Escaldes": "https://r2.thesportsdb.com/images/media/team/badge/tbxkcc1789008725.png/small",
+  "FC Copenhagen": "https://r2.thesportsdb.com/images/media/team/badge/styqtr1473535513.png/small",
+  "Olympiakos Piraeus": "https://r2.thesportsdb.com/images/media/team/badge/xckasq1721291508.png/small"
+ },
+ "sent": {
+  "date": "26/11/69",
+  "steps": [
+   {
+    "n": 3,
+    "icon": "⚡",
+    "lines": [
+     {
+      "t": "00.45",
+      "x": "ไบรท์ตัน -2.5",
+      "id": "bbab118a8c6ca33b6b0e7b5ed36fecd8",
+      "k": "hp"
+     },
+     {
+      "t": "00.45",
+      "x": "ซัลซ์บวร์ก -2/2.5",
+      "id": "5902b4703e9ddc1f573091e14107834c",
+      "k": "hp"
+     },
+     {
+      "t": "00.45",
+      "x": "อาแจ็กซ์ -2/2.5",
+      "id": "8a0dc963ce319d55751d4d07c5152600",
+      "k": "hp"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "icon": "🔥",
+    "lines": [
+     {
+      "t": "00.45",
+      "x": "ไบรท์ตัน -2.5",
+      "id": "bbab118a8c6ca33b6b0e7b5ed36fecd8",
+      "k": "hp"
+     },
+     {
+      "t": "00.45",
+      "x": "ซัลซ์บวร์ก -2/2.5",
+      "id": "5902b4703e9ddc1f573091e14107834c",
+      "k": "hp"
+     },
+     {
+      "t": "00.45",
+      "x": "อาแจ็กซ์ -2/2.5",
+      "id": "8a0dc963ce319d55751d4d07c5152600",
+      "k": "hp"
+     },
+     {
+      "t": "03.00",
+      "x": "ยูเวนตุส -2",
+      "id": "d6377d30379e5d3053c1076646d83f78",
+      "k": "hp"
+     },
+     {
+      "t": "03.00",
+      "x": "บราก้า -2/2.5",
+      "id": "1abbe02767589722b5de92e94e96429d",
+      "k": "hp"
+     }
+    ]
+   },
+   {
+    "n": 7,
+    "icon": "💣",
+    "lines": [
+     {
+      "t": "00.45",
+      "x": "ไบรท์ตัน -2.5",
+      "id": "bbab118a8c6ca33b6b0e7b5ed36fecd8",
+      "k": "hp"
+     },
+     {
+      "t": "00.45",
+      "x": "ซัลซ์บวร์ก -2/2.5",
+      "id": "5902b4703e9ddc1f573091e14107834c",
+      "k": "hp"
+     },
+     {
+      "t": "00.45",
+      "x": "อาแจ็กซ์ -2/2.5",
+      "id": "8a0dc963ce319d55751d4d07c5152600",
+      "k": "hp"
+     },
+     {
+      "t": "03.00",
+      "x": "ยูเวนตุส -2",
+      "id": "d6377d30379e5d3053c1076646d83f78",
+      "k": "hp"
+     },
+     {
+      "t": "03.00",
+      "x": "บราก้า -2/2.5",
+      "id": "1abbe02767589722b5de92e94e96429d",
+      "k": "hp"
+     },
+     {
+      "t": "03.00",
+      "x": "ลียง -2",
+      "id": "a24c89b65c5a30fb9473735049589e64",
+      "k": "hp"
+     },
+     {
+      "t": "03.00",
+      "x": "ซันเดอร์แลนด์ -1.5/2",
+      "id": "413409b43875d1bdb627a9e7fb6bc3fd",
+      "k": "hp"
+     }
+    ]
+   }
+  ],
+  "star": [
+   {
+    "medal": "🥇",
+    "x": "ไบรท์ตัน -2.5",
+    "id": "bbab118a8c6ca33b6b0e7b5ed36fecd8",
+    "k": "hp"
+   },
+   {
+    "medal": "🥈",
+    "x": "ซัลซ์บวร์ก -2/2.5",
+    "id": "5902b4703e9ddc1f573091e14107834c",
+    "k": "hp"
+   },
+   {
+    "medal": "🥉",
+    "x": "อาแจ็กซ์ -2/2.5",
+    "id": "8a0dc963ce319d55751d4d07c5152600",
+    "k": "hp"
+   }
+  ]
+ },
+ "prev": null,
+ "summary": null,
+ "summary_sent": null
 }
