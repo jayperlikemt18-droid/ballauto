@@ -405,6 +405,22 @@ def totals_ladder(books):
     return sorted((x, sum(v) / len(v)) for x, v in acc.items())
 
 
+def hc_lean(books, h, a):
+    """ฝั่งที่น่าจะผ่านที่บรรทัดต่อรองจริงของตลาด (อาจเป็นทีมรอง +) พร้อม % ผ่านราคา"""
+    lad = ah_ladder(books)
+    if not lad:
+        return None
+    ln, ph = min(lad, key=lambda t: abs(t[1] - 0.5))
+    if ph >= 0.5:
+        side, ht, pc, team = "home", ln, ph, h
+    else:
+        side, ht, pc, team = "away", -ln, 1 - ph, a
+    lt = thai_line(ht) if ht != 0 else "0"
+    sgn = "-" if ht < 0 else ("+" if ht > 0 else "")
+    return {"lab": "%s %s%s" % (team, sgn, lt), "pct": round(pc * 100), "side": side, "h": ht, "team": team,
+            "line": thai_line(ln) if ln != 0 else "0", "giver": ht < 0}
+
+
 def analyse(odds, home, away):
     res = odds[0].get("bookmakers", []) if odds else []
     ou = None
@@ -827,7 +843,13 @@ def run():
         fid = f["fixture"]["id"]
         h, a = f["teams"]["home"], f["teams"]["away"]
         if fid in locked:
-            matches.append(dict(locked[fid], lock=True))
+            lm = dict(locked[fid], lock=True)
+            try:
+                if fid in odds_map and not lm.get("lean"):
+                    lm["lean"] = hc_lean(odds_map[fid].get("bookmakers", []), h["name"], a["name"])
+            except Exception:
+                pass
+            matches.append(lm)
             continue
         odds = [odds_map[fid]] if fid in odds_map else []
         books = odds[0].get("bookmakers", []) if odds else []
@@ -859,6 +881,10 @@ def run():
                           "cp": round(pc * 100), "team": team, "giver": ht < 0, "lt": lt, "side": fav, "h": ht}
         if ou and ou["pct"] < 55:
             ou["weak"] = True
+        try:
+            lean = hc_lean(books, h["name"], a["name"])
+        except Exception:
+            lean = None
         lgid = f["league"]["id"]
         flag, lg = LEAGUES.get(lgid, ("⚽", f["league"]["name"]))
         sn = snap.setdefault(str(fid), {"ts": int(t.timestamp())})
@@ -887,7 +913,7 @@ def run():
                     ou["weak"] = True
                 else:
                     hp = None
-        cc = {"t": t, "f": f, "h": h, "a": a, "hc": hc, "ou": ou, "hp": hp, "pr": pr, "e": e,
+        cc = {"t": t, "f": f, "h": h, "a": a, "hc": hc, "ou": ou, "hp": hp, "pr": pr, "e": e, "lean": lean,
               "hcs": hcs, "ous": ous, "flag": flag, "lg": lg,
               "top": max(ou["pct"] if ou and not ou["weak"] else 0, hp["pct"] if hp else 0)}
         if (ou and not ou["weak"]) or hp:
@@ -944,7 +970,7 @@ def run():
             "v": 4, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
-            "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "elo": round(e) if e is not None else None,
+            "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "lean": c.get("lean"), "elo": round(e) if e is not None else None,
             "hcs": c["hcs"], "ous": c["ous"],
         })
     nodds = [f for t, f in out if f["fixture"]["id"] not in odds_map and f["league"]["id"] in LEAGUES]
@@ -962,7 +988,7 @@ def run():
             "v": 4, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
-            "hc": c["hc"], "ou": c["ou"], "hp": None, "pr": c["pr"], "elo": round(e) if e is not None else None,
+            "hc": c["hc"], "ou": c["ou"], "hp": None, "pr": c["pr"], "lean": c.get("lean"), "elo": round(e) if e is not None else None,
             "hcs": c["hcs"], "ous": c["ous"], "nopick": True,
         })
     matches.sort(key=lambda m: m["ts"])
