@@ -638,21 +638,25 @@ def _swap(m, t):
 
 
 def best_pick(m):
-    a = b = None
-    ou, hp = m.get("ou"), m.get("hp")
-    if ou and not ou["weak"] and ou["pct"] >= 55:
+    """ตรงกับหน้าเว็บ: เทียบที่โอกาสผ่านราคาจริง ต่อรอง(-) / รอง(+) / สูง-ต่ำ"""
+    cs = []
+    ou, hp, ln = m.get("ou"), m.get("hp"), m.get("lean")
+    if ou and ou["pct"] >= 52:
         g = m["hc"].split(" ต่อ ")[0] if m.get("hc") and " ต่อ " in m["hc"] else m["h"]["n"]
-        a = (ou["pct"], "%s %s" % (tn(g), ou["lab"]), "ou")
+        cs.append((ou["pct"], "%s %s" % (tn(g), ou["lab"]), "ou"))
     if hp:
-        b = (hp["pct"], _swap(m, hp["lab"]), "hp")
-    if a and b:
-        return a if a[0] >= b[0] + 3 else b
-    r = a or b
-    return r if r and r[0] >= (55 if r[2] == "ou" else 60) else None
+        cs.append((hp["cp"] if hp.get("cp") is not None else hp["pct"], _swap(m, hp["lab"]), "hp"))
+    elif ln and ln["pct"] >= 52:
+        cs.append((ln["pct"], _swap(m, ln["lab"]), "up" if ln["h"] > 0 else "hp"))
+    r = None
+    for c in cs:
+        if r is None or c[0] > r[0]:
+            r = c
+    return r
 
 
 def select(picks, n):
-    cap = -(-n * 3 // 5)  # ชนิดเดียวกันไม่เกิน 60% ของสเต็ป
+    cap = -(-n // 2)  # ชนิดเดียวกันไม่เกินครึ่งของสเต็ป
     chosen, rest, cnt = [], [], {}
     for p in picks:
         if len(chosen) < n and cnt.get(p[3], 0) < cap:
@@ -707,14 +711,14 @@ def summary_message(sent, history):
     for st in sent.get("steps", []):
         marks = [mk(l) for l in st["lines"]]
         verdict = "❌" if "❌" in marks else ("⏳" if "⏳" in marks else "✅")
-        out.append("%s สเต็ป %d %s" % (st["icon"], st["n"], verdict))
+        out.append("%s สเต็ป %d" % (st["icon"], st["n"]))
         for l, m in zip(st["lines"], marks):
-            out.append("%s ⏰%s %s" % (m, l["t"], l["x"]))
+            out.append("⏰%s %s%s" % (l["t"], l["x"], m))
         out.append("————————————")
     if sent.get("star"):
         out.append("⭐ ตัวเน้นสุด")
         for x in sent["star"]:
-            out.append("%s %s %s" % (x["medal"], mk(x), x["x"]))
+            out.append("%s %s%s" % (x["medal"], x["x"], mk(x)))
     return "\n".join(out).rstrip(), pend[0]
 
 
@@ -959,16 +963,8 @@ def run():
             others.append(c)
             continue
         h, a, e = c["h"], c["a"], c["e"]
-        if not any(x["id"] == f["fixture"]["id"] for x in history):
-            base = {"id": f["fixture"]["id"], "ts": int(t.timestamp()), "d": "%02d/%02d" % (t.day, t.month),
-                    "hn": h["name"], "an": a["name"], "lg": c["lg"], "sp": f["league"]["id"], "res": None}
-            if ou and not ou["weak"]:
-                history.append(dict(base, k="ou", s=ou["s"], x=ou["x"], lt=ou["line"], pct=ou["pct"]))
-            if hp:
-                history.append(dict(base, k="hp", side=hp["side"], h=hp["h"], lt=hp["lt"], team=hp["team"],
-                                    giver=hp["giver"], pct=hp["pct"]))
         matches.append({
-            "v": 5, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "v": 5, "sp": f["league"]["id"], "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "lean": c.get("lean"), "elo": round(e) if e is not None else None,
@@ -986,12 +982,26 @@ def run():
         if c["ou"]:
             c["ou"]["weak"] = True
         matches.append({
-            "v": 5, "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "v": 5, "sp": f["league"]["id"], "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": c["ou"], "hp": None, "pr": c["pr"], "lean": c.get("lean"), "elo": round(e) if e is not None else None,
             "hcs": c["hcs"], "ous": c["ous"], "nopick": True,
         })
+    # บันทึกทุกตัวเลือกของคู่ใหม่ลงประวัติ เพื่อเช็กผลแล้วทำสรุป ✅❌ ได้ทุกแบบ (ต่อ/รอง/สูง/ต่ำ)
+    for m in matches:
+        if m.get("lock") or not m.get("sp") or any(x["id"] == m["id"] for x in history):
+            continue
+        base = {"id": m["id"], "ts": m["ts"], "d": datetime.fromtimestamp(m["ts"], TH).strftime("%d/%m"),
+                "hn": m["h"]["n"], "an": m["a"]["n"], "lg": m["lg"], "sp": m["sp"], "res": None}
+        ou, hp, ln = m.get("ou"), m.get("hp"), m.get("lean")
+        if ou and ou["pct"] >= 52:
+            history.append(dict(base, k="ou", s=ou["s"], x=ou["x"], lt=ou["line"], pct=ou["pct"]))
+        src = hp or ln
+        if src:
+            k = "hp" if hp or src["h"] <= 0 else "up"
+            history.append(dict(base, k=k, side=src["side"], h=src["h"], team=src["team"], giver=src["h"] < 0,
+                                lt=thai_line(abs(src["h"])) if src["h"] != 0 else "0", pct=src.get("pct")))
     matches.sort(key=lambda m: m["ts"])
     names = []
     for m in matches:
