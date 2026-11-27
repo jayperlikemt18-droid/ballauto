@@ -221,10 +221,11 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     if (lr) by += '<details style="margin-top:6px"><summary style="cursor:pointer;color:var(--muted);padding:8px 0">แยกตามลีก</summary>' + lr + '</details>';
     document.getElementById("hby").innerHTML = by;
     var H = ALL.slice(-15).reverse(), last = "";
-    if (d.sums && d.sums.length) {
-      document.getElementById("hlist").innerHTML = d.sums.map(function (x, i) {
+    if (d.sums && d.sums.some(function (x) { return /[✅❌➗]/.test(x.text); })) {
+      var SM = d.sums.filter(function (x) { return /[✅❌➗]/.test(x.text); });
+      document.getElementById("hlist").innerHTML = SM.map(function (x, i) {
         return '<div style="margin-top:14px"><div style="color:var(--muted);font-size:.85rem;padding-bottom:4px">บอลวันที่ ' + esc(x.date) + (x.pending ? ' · ยังรอผล ' + x.pending + ' คู่ (⏳)' : '') +
-          '</div><button class="btn sumcp" type="button" data-i="' + i + '">คัดลอกสรุป วันที่ ' + esc(x.date) + '</button><textarea id="sx' + i + '" readonly aria-label="สรุปผล" style="margin-top:6px">' + esc(x.text) + '</textarea></div>';
+          '</div><button class="btn sumcp" type="button" data-i="' + i + '">คัดลอกสรุป วันที่ ' + esc(x.date) + '</button><textarea id="sx' + i + '" readonly aria-label="สรุปผล" style="margin-top:6px;height:' + (x.text.split('\n').length * 1.9 + 2) + 'em">' + esc(x.text) + '</textarea></div>';
       }).join("");
       document.getElementById("hist").hidden = false;
       return;
@@ -252,7 +253,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     else { recompute(); draw(); }
     history(d);
     var sb = document.getElementById("sumbox");
-    if (d.summary && d.summary.text) { sb.hidden = false; document.getElementById("sumtxt").value = d.summary.text; } else { sb.hidden = true; }
+    if (!(d.sums && d.sums.length) && d.summary && d.summary.text) { sb.hidden = false; document.getElementById("sumtxt").value = d.summary.text; } else { sb.hidden = true; }
   }
 
   function makeImage() {
@@ -286,7 +287,15 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     try { Promise.all([document.fonts.load('700 46px Prompt'), document.fonts.load('600 40px Prompt')]).then(go, go); } catch (e) { go(); }
   });
 
-  fetch("names.json").then(function (r) { return r.json(); }).catch(function () { return {}; }).then(function (n) { TH = n; return fetch("data.json?" + Date.now()); }).then(function (r) { return r.json(); }).then(render).catch(function () {
+  fetch("names.json").then(function (r) { return r.json(); }).catch(function () { return {}; }).then(function (n) { TH = n; return fetch("data.json?" + Date.now()); }).then(function (r) { return r.json(); }).then(function (d) {
+    return fetch("manual.json?" + Date.now()).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (mn) {
+      d.sums = (d.sums || []).map(function (x) { return mn[x.date] ? { date: x.date, text: mn[x.date], pending: 0 } : x; });
+      Object.keys(mn).forEach(function (k) { if (!d.sums.some(function (x) { return x.date === k; })) d.sums.push({ date: k, text: mn[k], pending: 0 }); });
+      d.sums.sort(function (a, b) { return 0; });
+      if (d.summary && mn[d.summary.date]) d.summary = null;
+      return d;
+    });
+  }).then(render).catch(function () {
     list.innerHTML = '<p class="note">ยังไม่มีข้อมูล รอให้ระบบรันครั้งแรก</p>';
   });
   document.getElementById("hlist").addEventListener("click", function (ev) {
