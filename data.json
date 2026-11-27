@@ -1,6 +1,6 @@
 {
- "ts": 1795747029,
- "updated": "ศุกร์ 27/11 09:37 น.",
+ "ts": 1795747613,
+ "updated": "ศุกร์ 27/11 09:46 น.",
  "date": "27/11/69",
  "matches": [
   {
@@ -206,41 +206,60 @@
     "2.75"
    ],
    "nopick": true
+  },
+  {
+   "v": 5,
+   "sp": "soccer_spain_la_liga",
+   "id": "80c92a163a81b69fef76530221e2edd0",
+   "t": "03:00",
+   "d": "เสาร์",
+   "ts": 1795809600,
+   "flag": "🇪🇸",
+   "lg": "ลาลีกา สเปน",
+   "rk": 4,
+   "h": {
+    "n": "Levante",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/xwtxsx1473503739.png/small"
+   },
+   "a": {
+    "n": "Real Racing Club de Santander",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/97kkiq1536575158.png/small"
+   },
+   "hc": "Levante ต่อ 0.5",
+   "ou": {
+    "lab": "สูง 3/3.5",
+    "line": "3/3.5",
+    "pct": 53,
+    "weak": true,
+    "s": "over",
+    "x": 3.25
+   },
+   "hp": null,
+   "pr": {
+    "h": 47,
+    "d": 24,
+    "a": 29
+   },
+   "lean": {
+    "lab": "Real Racing Club de Santander +0.5",
+    "pct": 52,
+    "side": "away",
+    "h": 0.5,
+    "team": "Real Racing Club de Santander",
+    "line": "0.5",
+    "giver": false
+   },
+   "elo": null,
+   "hcs": [
+    "0.5"
+   ],
+   "ous": [
+    "3.25"
+   ],
+   "nopick": true
   }
  ],
  "history": [
-  {
-   "id": 1528978,
-   "ts": 1794685500,
-   "d": "15/11",
-   "hn": "Sweden",
-   "an": "Bosnia & Herzegovina",
-   "lg": "เนชันส์ลีก",
-   "res": 1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 60,
-   "gh": 3,
-   "ga": 2
-  },
-  {
-   "id": 1495609,
-   "ts": 1794747600,
-   "d": "15/11",
-   "hn": "Hammarby W",
-   "an": "Kristianstad W",
-   "lg": "Damallsvenskan",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 66,
-   "gh": 1,
-   "ga": 0
-  },
   {
    "id": 1495611,
    "ts": 1794747600,
@@ -2912,6 +2931,38 @@
    "giver": false,
    "lt": "0",
    "pct": 53
+  },
+  {
+   "id": "80c92a163a81b69fef76530221e2edd0",
+   "ts": 1795809600,
+   "d": "28/11",
+   "hn": "Levante",
+   "an": "Real Racing Club de Santander",
+   "lg": "ลาลีกา สเปน",
+   "sp": "soccer_spain_la_liga",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 3.25,
+   "lt": "3/3.5",
+   "pct": 53
+  },
+  {
+   "id": "80c92a163a81b69fef76530221e2edd0",
+   "ts": 1795809600,
+   "d": "28/11",
+   "hn": "Levante",
+   "an": "Real Racing Club de Santander",
+   "lg": "ลาลีกา สเปน",
+   "sp": "soccer_spain_la_liga",
+   "res": null,
+   "k": "up",
+   "side": "away",
+   "h": 0.5,
+   "team": "Real Racing Club de Santander",
+   "giver": false,
+   "lt": "0.5",
+   "pct": 52
   }
  ],
  "snap": {
@@ -3132,6 +3183,10 @@
   "02ff879cf54f6d1fec2664efee0431db": {
    "ts": 1795808700,
    "ou": 51
+  },
+  "80c92a163a81b69fef76530221e2edd0": {
+   "ts": 1795809600,
+   "ou": 53
   }
  },
  "tn": {
@@ -3238,7 +3293,8 @@
   "nk celje": "เอ็นเค เซลเย",
   "fk borac banja luka": "โบรค บันยาลูก้า",
   "league 1": "ลีกวัน",
-  "remo": "เรโม"
+  "remo": "เรโม",
+  "real racing club de santander": "ราซิง ซานตานเดร์"
  },
  "logos": {
   "Brentford": "https://r2.thesportsdb.com/images/media/team/badge/grv1aw1546453779.png/small",
@@ -3347,7 +3403,8 @@
   "Venezia": "https://r2.thesportsdb.com/images/media/team/badge/vbiget1781026964.png/small",
   "Bologna": "https://r2.thesportsdb.com/images/media/team/badge/2qi1u31655592366.png/small",
   "Brest": "https://r2.thesportsdb.com/images/media/team/badge/z69be41598797026.png/small",
-  "Paris FC": "https://r2.thesportsdb.com/images/media/team/badge/yuvtsy1447594254.png/small"
+  "Paris FC": "https://r2.thesportsdb.com/images/media/team/badge/yuvtsy1447594254.png/small",
+  "Real Racing Club de Santander": "https://r2.thesportsdb.com/images/media/team/badge/97kkiq1536575158.png/small"
  },
  "sent": {
   "date": "27/11/69",
