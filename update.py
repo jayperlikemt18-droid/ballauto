@@ -1024,7 +1024,12 @@ def run():
             "date": "%d/%d/%s" % (fd.day, fd.month, str(fd.year + 543)[2:]), "matches": matches,
             "history": sorted(history, key=lambda e: e["ts"])[-150:], "snap": snap, "tn": old_tn, "logos": old_logos}
     text, n = build_message(data)
-    sent_now = build_message.struct if n else (old_sent if old_sent and old_sent.get("date") == data["date"] else None)
+    sent_now = build_message.struct if n else None
+    # ชุดที่แจกของวันนี้ ถูกตรึงตั้งแต่ครั้งแรกที่มีสเต็ป ไม่เปลี่ยนตามรอบถัดไป เพื่อให้สรุปผลตรงกับที่แจกจริง
+    if old_sent and old_sent.get("date") == data["date"] and old_sent.get("steps"):
+        sent_now = old_sent
+    elif sent_now is None and old_sent and old_sent.get("date") == data["date"]:
+        sent_now = old_sent
     prev = old_prev
     if old_sent and old_sent.get("date") != data["date"]:
         prev = old_sent  # วันบอลเปลี่ยนแล้ว ชุดที่แจกเมื่อวานกลายเป็นชุดที่ต้องสรุปผล
