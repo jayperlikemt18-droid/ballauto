@@ -1,6 +1,6 @@
 {
- "ts": 1795746519,
- "updated": "ศุกร์ 27/11 09:28 น.",
+ "ts": 1795747029,
+ "updated": "ศุกร์ 27/11 09:37 น.",
  "date": "27/11/69",
  "matches": [
   {
@@ -107,6 +107,57 @@
   },
   {
    "v": 5,
+   "sp": "soccer_france_ligue_one",
+   "id": "02ff879cf54f6d1fec2664efee0431db",
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1795808700,
+   "flag": "🇫🇷",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "rk": 3,
+   "h": {
+    "n": "Brest",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/z69be41598797026.png/small"
+   },
+   "a": {
+    "n": "Paris FC",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/yuvtsy1447594254.png/small"
+   },
+   "hc": "Paris FC ต่อ 0/0.5",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 27,
+    "d": 28,
+    "a": 44
+   },
+   "lean": {
+    "lab": "Paris FC -0/0.5",
+    "pct": 52,
+    "side": "away",
+    "h": -0.25,
+    "team": "Paris FC",
+    "line": "0/0.5",
+    "giver": true
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5"
+   ],
+   "ous": [
+    "2.5"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 5,
    "sp": "soccer_epl",
    "id": "40d95e660c301c2d8a5a7a6317017b65",
    "t": "03:00",
@@ -158,22 +209,6 @@
   }
  ],
  "history": [
-  {
-   "id": 1528975,
-   "ts": 1794685500,
-   "d": "15/11",
-   "hn": "Northern Ireland",
-   "an": "Ukraine",
-   "lg": "เนชันส์ลีก",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 1.5,
-   "lt": "1.5",
-   "pct": 62,
-   "gh": 1,
-   "ga": 0
-  },
   {
    "id": 1528978,
    "ts": 1794685500,
@@ -1963,14 +1998,16 @@
    "an": "Diriyah Club",
    "lg": "Saudi Pro League",
    "sp": "soccer_saudi_arabia_pro_league",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "away",
    "h": -0.5,
    "team": "Diriyah Club",
    "giver": true,
    "lt": "0.5",
-   "pct": 51
+   "pct": 51,
+   "gh": 2,
+   "ga": 2
   },
   {
    "id": "bbab118a8c6ca33b6b0e7b5ed36fecd8",
@@ -2828,6 +2865,23 @@
    "pct": 50
   },
   {
+   "id": "02ff879cf54f6d1fec2664efee0431db",
+   "ts": 1795808700,
+   "d": "28/11",
+   "hn": "Brest",
+   "an": "Paris FC",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "hp",
+   "side": "away",
+   "h": -0.25,
+   "team": "Paris FC",
+   "giver": true,
+   "lt": "0/0.5",
+   "pct": 52
+  },
+  {
    "id": "40d95e660c301c2d8a5a7a6317017b65",
    "ts": 1795809600,
    "d": "28/11",
@@ -3074,6 +3128,10 @@
   "40d95e660c301c2d8a5a7a6317017b65": {
    "ts": 1795809600,
    "ou": 52
+  },
+  "02ff879cf54f6d1fec2664efee0431db": {
+   "ts": 1795808700,
+   "ou": 51
   }
  },
  "tn": {
@@ -3287,7 +3345,9 @@
   "Werder Bremen": "https://r2.thesportsdb.com/images/media/team/badge/tkvqan1716960454.png/small",
   "Borussia Monchengladbach": "https://r2.thesportsdb.com/images/media/team/badge/sysurw1473453380.png/small",
   "Venezia": "https://r2.thesportsdb.com/images/media/team/badge/vbiget1781026964.png/small",
-  "Bologna": "https://r2.thesportsdb.com/images/media/team/badge/2qi1u31655592366.png/small"
+  "Bologna": "https://r2.thesportsdb.com/images/media/team/badge/2qi1u31655592366.png/small",
+  "Brest": "https://r2.thesportsdb.com/images/media/team/badge/z69be41598797026.png/small",
+  "Paris FC": "https://r2.thesportsdb.com/images/media/team/badge/yuvtsy1447594254.png/small"
  },
  "sent": {
   "date": "27/11/69",
