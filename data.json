@@ -1,6 +1,6 @@
 {
- "ts": 1795747613,
- "updated": "ศุกร์ 27/11 09:46 น.",
+ "ts": 1795749356,
+ "updated": "ศุกร์ 27/11 10:15 น.",
  "date": "27/11/69",
  "matches": [
   {
@@ -38,7 +38,7 @@
    },
    "lean": {
     "lab": "Werder Bremen -0.5/1",
-    "pct": 51,
+    "pct": 52,
     "side": "home",
     "h": -0.75,
     "team": "Werder Bremen",
@@ -2849,7 +2849,7 @@
    "team": "Werder Bremen",
    "giver": true,
    "lt": "0.5/1",
-   "pct": 51
+   "pct": 52
   },
   {
    "id": "e9a663f13e7503c0ac20a54804338b60",
