@@ -800,7 +800,7 @@ def run():
     old_snap = {}
     old_tn = {}
     old_logos = {}
-    old_sent, old_prev, old_ssent = None, None, None
+    old_sent, old_prev, old_ssent, old_days = None, None, None, []
     try:
         with open("data.json", encoding="utf-8") as fh:
             _d = json.load(fh)
@@ -810,6 +810,7 @@ def run():
             old_tn = _d.get("tn", {})
             old_logos = _d.get("logos", {})
             old_sent, old_prev, old_ssent = _d.get("sent"), _d.get("prev"), _d.get("summary_sent")
+            old_days = _d.get("days", [])
             if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and time.time() - _d.get("ts", 0) < 10 * 3600:
                 print("ข้อมูลยังใหม่ (อัปเดตแล้วเมื่อไม่กี่ชั่วโมงก่อน) ข้ามรอบสำรอง")
                 return
@@ -1029,6 +1030,17 @@ def run():
         prev = old_sent  # วันบอลเปลี่ยนแล้ว ชุดที่แจกเมื่อวานกลายเป็นชุดที่ต้องสรุปผล
     summ, pend = (summary_message(prev, data["history"]) if prev else (None, 0))
     data["sent"], data["prev"] = sent_now, prev
+    # เก็บชุดที่แจกของแต่ละวันไว้ 7 วัน (ไม่ถูกเขียนทับเมื่อกติกาเปลี่ยน) แล้วทำสรุป ✅❌➗ ทุกวันให้คัดลอกไป LINE
+    days = [d_ for d_ in old_days if d_.get("date")]
+    for sx in (old_prev, old_sent, sent_now):
+        if sx and sx.get("date"):
+            days = [d_ for d_ in days if d_["date"] != sx["date"]] + [sx]
+    days = days[-7:]
+    data["days"] = days
+    data["sums"] = []
+    for sx in reversed(days):
+        tx, pd_ = summary_message(sx, data["history"])
+        data["sums"].append({"date": sx["date"], "text": tx, "pending": pd_})
     data["summary"] = {"date": prev["date"], "text": summ, "pending": pend} if summ else None
     data["summary_sent"] = old_ssent
     do_send = os.environ.get("SEND") == "1" or os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"

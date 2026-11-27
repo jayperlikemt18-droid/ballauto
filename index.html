@@ -221,6 +221,14 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     if (lr) by += '<details style="margin-top:6px"><summary style="cursor:pointer;color:var(--muted);padding:8px 0">แยกตามลีก</summary>' + lr + '</details>';
     document.getElementById("hby").innerHTML = by;
     var H = ALL.slice(-15).reverse(), last = "";
+    if (d.sums && d.sums.length) {
+      document.getElementById("hlist").innerHTML = d.sums.map(function (x, i) {
+        return '<div style="margin-top:14px"><div style="color:var(--muted);font-size:.85rem;padding-bottom:4px">บอลวันที่ ' + esc(x.date) + (x.pending ? ' · ยังรอผล ' + x.pending + ' คู่ (⏳)' : '') +
+          '</div><button class="btn sumcp" type="button" data-i="' + i + '">คัดลอกสรุป วันที่ ' + esc(x.date) + '</button><textarea id="sx' + i + '" readonly aria-label="สรุปผล" style="margin-top:6px">' + esc(x.text) + '</textarea></div>';
+      }).join("");
+      document.getElementById("hist").hidden = false;
+      return;
+    }
     document.getElementById("hlist").innerHTML = H.map(function (e) {
       var pick = e.k === "ou" ? (e.s === "over" ? "สูง " : "ต่ำ ") + e.lt : tn(e.team) + " " + (e.giver ? "-" : "+") + e.lt;
       var ic = e.res > 0 ? "✅" : e.res < 0 ? "❌" : "➗";
@@ -280,6 +288,12 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
 
   fetch("names.json").then(function (r) { return r.json(); }).catch(function () { return {}; }).then(function (n) { TH = n; return fetch("data.json?" + Date.now()); }).then(function (r) { return r.json(); }).then(render).catch(function () {
     list.innerHTML = '<p class="note">ยังไม่มีข้อมูล รอให้ระบบรันครั้งแรก</p>';
+  });
+  document.getElementById("hlist").addEventListener("click", function (ev) {
+    var i = ev.target.getAttribute && ev.target.getAttribute("data-i"); if (i === null || !ev.target.classList.contains("sumcp")) return;
+    var t3 = document.getElementById("sx" + i);
+    function fb3() { t3.focus(); t3.select(); ev.target.textContent = "แตะค้างที่กล่องข้างล่างแล้วเลือกคัดลอก"; }
+    try { navigator.clipboard.writeText(t3.value).then(function () { ev.target.textContent = "คัดลอกแล้ว ไปวางใน LINE ได้เลย"; }, fb3); } catch (e) { fb3(); }
   });
   document.getElementById("cps").addEventListener("click", function () {
     var t2 = document.getElementById("sumtxt"), s2 = document.getElementById("sst");
