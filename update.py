@@ -965,7 +965,7 @@ def run():
             continue
         h, a, e = c["h"], c["a"], c["e"]
         matches.append({
-            "v": 5, "sp": f["league"]["id"], "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "v": 5, "sp": f["league"]["id"], "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[(t - timedelta(hours=6)).weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": ou, "hp": hp, "pr": c["pr"], "lean": c.get("lean"), "elo": round(e) if e is not None else None,
@@ -983,7 +983,7 @@ def run():
         if c["ou"]:
             c["ou"]["weak"] = True
         matches.append({
-            "v": 5, "sp": f["league"]["id"], "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[t.weekday()], "ts": int(t.timestamp()),
+            "v": 5, "sp": f["league"]["id"], "id": f["fixture"]["id"], "t": t.strftime("%H:%M"), "d": DAYS[(t - timedelta(hours=6)).weekday()], "ts": int(t.timestamp()),
             "flag": c["flag"], "lg": c["lg"], "rk": ORDER.index(f["league"]["id"]) if f["league"]["id"] in LEAGUES else 99,
             "h": {"n": h["name"], "l": h["logo"]}, "a": {"n": a["name"], "l": a["logo"]},
             "hc": c["hc"], "ou": c["ou"], "hp": None, "pr": c["pr"], "lean": c.get("lean"), "elo": round(e) if e is not None else None,
