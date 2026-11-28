@@ -996,7 +996,7 @@ def run():
         base = {"id": m["id"], "ts": m["ts"], "d": datetime.fromtimestamp(m["ts"], TH).strftime("%d/%m"),
                 "hn": m["h"]["n"], "an": m["a"]["n"], "lg": m["lg"], "sp": m["sp"], "res": None}
         ou, hp, ln = m.get("ou"), m.get("hp"), m.get("lean")
-        if ou and ou["pct"] >= 52:
+        if ou:
             history.append(dict(base, k="ou", s=ou["s"], x=ou["x"], lt=ou["line"], pct=ou["pct"]))
         src = hp or ln
         if src:

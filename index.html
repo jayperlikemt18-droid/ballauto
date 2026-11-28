@@ -147,7 +147,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
   }
   function manual(m) {
     var a = m.ou ? { pct: m.ou.pct, txt: fav(m) + " " + m.ou.lab, k: "ou" } : null;
-    var b = m.lean ? { pct: m.lean.pct, txt: nm(m, m.lean.lab), k: "hp" } : null;
+    var b = m.lean ? { pct: m.lean.pct, txt: nm(m, m.lean.lab), k: m.lean.h > 0 ? "up" : "hp" } : null;
     return a && b ? (a.pct >= b.pct ? a : b) : (a || b);
   }
   function big(m) { return m.rk != null && m.rk < 99 ? 0 : 1; }
@@ -195,17 +195,42 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
       rows += '<div class="row"><b>' + s[1] + ' สเต็ป ' + s[0] + '</b><span>' + c.length + ' คู่ ดูในข้อความ</span></div>';
       out.push(s[1] + " สเต็ป " + s[0]);
       var ls = [];
-      c.forEach(function (m) { out.push("⏰" + hm(m.t) + " " + m.pk.txt); ls.push({ t: hm(m.t), x: m.pk.txt }); });
+      c.forEach(function (m) { out.push("⏰" + hm(m.t) + " " + m.pk.txt); ls.push({ t: hm(m.t), x: m.pk.txt, id: m.id, k: m.pk.k }); });
       out.push("————————————");
       OUT.steps.push({ icon: s[1], n: s[0], lines: ls });
     });
     if (picks.length) {
       out.push("⭐ ตัวเน้นสุด");
-      sel(picks, 3).forEach(function (m, i) { out.push(["🥇", "🥈", "🥉"][i] + " " + m.pk.txt); OUT.top.push({ m: ["🥇", "🥈", "🥉"][i], x: m.pk.txt }); });
+      sel(picks, 3).forEach(function (m, i) { out.push(["🥇", "🥈", "🥉"][i] + " " + m.pk.txt); OUT.top.push({ m: ["🥇", "🥈", "🥉"][i], x: m.pk.txt, id: m.id, k: m.pk.k }); });
       out.push("");
     }
     text = out.join("\n").replace(/\s+$/, ""); ta.value = text;
     document.getElementById("steps").innerHTML = rows;
+  }
+  var SS = "ballsent";
+  function dnum(s) { var p = String(s).split("/"); return (+p[2]) * 10000 + (+p[1]) * 100 + (+p[0]); }
+  function fdToday() { var n = new Date(Date.now() + 7 * 3600e3 - 6 * 3600e3); return n.getUTCDate() + "/" + (n.getUTCMonth() + 1) + "/" + String((n.getUTCFullYear() + 543) % 100); }
+  function loadSent() { try { return JSON.parse(localStorage.getItem(SS) || "{}"); } catch (e) { return {}; } }
+  function saveSent() {
+    if (!OUT || !OUT.steps.length) return;
+    try { var o = loadSent(); o[OUT.date] = OUT; var ks = Object.keys(o).sort(function (a, b) { return dnum(a) - dnum(b); }); while (ks.length > 7) delete o[ks.shift()]; localStorage.setItem(SS, JSON.stringify(o)); } catch (e) {}
+  }
+  function sumFrom(o, hist) {
+    var R = {}; (hist || []).forEach(function (e) { R[e.id + "|" + e.k] = e.res; });
+    var pend = 0;
+    function mk(l) { var r = R[l.id + "|" + l.k]; if (r === undefined || r === null) { pend++; return "⏳"; } return r > 0 ? "✅" : r < 0 ? "❌" : "➗"; }
+    var out = ["⚽️สรุปผลบอลวันที่ " + o.date + "⚽️", ""];
+    o.steps.forEach(function (s) { out.push(s.icon + " สเต็ป " + s.n); s.lines.forEach(function (l) { out.push("⏰" + l.t + " " + l.x + mk(l)); }); out.push("————————————"); });
+    if (o.top && o.top.length) { out.push("⭐ ตัวเน้นสุด"); o.top.forEach(function (l) { out.push(l.m + " " + l.x + mk(l)); }); }
+    return { date: o.date, text: out.join("\n"), pending: pend };
+  }
+  function yesterday(d) {
+    var today = dnum(fdToday()), cand = {};
+    (d.sums || []).forEach(function (x) { cand[x.date] = { date: x.date, text: x.text, pending: x.pending || 0 }; });
+    var L = loadSent(); Object.keys(L).forEach(function (k) { if (L[k].steps && L[k].steps.length) cand[k] = sumFrom(L[k], d.history); });
+    (d.manual || []).forEach(function (x) { cand[x.date] = { date: x.date, text: x.text, pending: 0 }; });
+    var ks = Object.keys(cand).filter(function (k) { return dnum(k) < today; }).sort(function (a, b) { return dnum(b) - dnum(a); });
+    return ks.length ? cand[ks[0]] : null;
   }
   function history(d) {
     var ALL = (d.history || []).filter(function (e) { return e.res !== null && e.res !== undefined; });
@@ -221,12 +246,10 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     if (lr) by += '<details style="margin-top:6px"><summary style="cursor:pointer;color:var(--muted);padding:8px 0">แยกตามลีก</summary>' + lr + '</details>';
     document.getElementById("hby").innerHTML = by;
     var H = ALL.slice(-15).reverse(), last = "";
-    if (d.sums && d.sums.some(function (x) { return /[✅❌➗]/.test(x.text); })) {
-      var SM = d.sums.filter(function (x) { return /[✅❌➗]/.test(x.text); });
-      document.getElementById("hlist").innerHTML = SM.map(function (x, i) {
-        return '<div style="margin-top:14px"><div style="color:var(--muted);font-size:.85rem;padding-bottom:4px">บอลวันที่ ' + esc(x.date) + (x.pending ? ' · ยังรอผล ' + x.pending + ' คู่ (⏳)' : '') +
-          '</div><button class="btn sumcp" type="button" data-i="' + i + '">คัดลอกสรุป วันที่ ' + esc(x.date) + '</button><textarea id="sx' + i + '" readonly aria-label="สรุปผล" style="margin-top:6px;height:' + (x.text.split('\n').length * 1.9 + 2) + 'em">' + esc(x.text) + '</textarea></div>';
-      }).join("");
+    var Y = yesterday(d);
+    if (Y) {
+      document.getElementById("hlist").innerHTML = '<div style="margin-top:14px"><div style="color:var(--muted);font-size:.85rem;padding-bottom:4px">สรุปผลบอลเมื่อวาน · วันที่ ' + esc(Y.date) + (Y.pending ? ' · ยังรอผล ' + Y.pending + ' คู่ (⏳)' : '') +
+        '</div><button class="btn sumcp" type="button" data-i="0">คัดลอกสรุปผล LINE</button><textarea id="sx0" readonly aria-label="สรุปผล" style="margin-top:6px;height:' + (Y.text.split("\n").length * 1.9 + 2) + 'em">' + esc(Y.text) + '</textarea></div>';
       document.getElementById("hist").hidden = false;
       return;
     }
@@ -289,10 +312,8 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
 
   fetch("names.json").then(function (r) { return r.json(); }).catch(function () { return {}; }).then(function (n) { TH = n; return fetch("data.json?" + Date.now()); }).then(function (r) { return r.json(); }).then(function (d) {
     return fetch("manual.json?" + Date.now()).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (mn) {
-      d.sums = (d.sums || []).map(function (x) { return mn[x.date] ? { date: x.date, text: mn[x.date], pending: 0 } : x; });
-      Object.keys(mn).forEach(function (k) { if (!d.sums.some(function (x) { return x.date === k; })) d.sums.push({ date: k, text: mn[k], pending: 0 }); });
-      d.sums.sort(function (a, b) { return 0; });
-      if (d.summary && mn[d.summary.date]) d.summary = null;
+      d.manual = Object.keys(mn).map(function (k) { return { date: k, text: mn[k] }; });
+      d.summary = null;
       return d;
     });
   }).then(render).catch(function () {
@@ -310,6 +331,7 @@ textarea { width: 100%; min-height: 200px; background: var(--tile); color: var(-
     try { navigator.clipboard.writeText(t2.value).then(function () { s2.textContent = "คัดลอกแล้ว ไปวางใน LINE ได้เลย"; }, fb2); } catch (e) { fb2(); }
   });
   document.getElementById("copy").addEventListener("click", function () {
+    saveSent();
     function fb() { ta.focus(); ta.select(); st.textContent = "แตะค้างที่กล่องข้างล่างแล้วเลือกคัดลอก"; }
     try { navigator.clipboard.writeText(text).then(function () { st.textContent = "คัดลอกแล้ว ไปวางใน LINE ได้เลย"; }, fb); } catch (e) { fb(); }
   });
