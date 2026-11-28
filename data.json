@@ -1,6 +1,6 @@
 {
- "ts": 1795832679,
- "updated": "เสาร์ 28/11 09:24 น.",
+ "ts": 1795835663,
+ "updated": "เสาร์ 28/11 10:14 น.",
  "date": "28/11/69",
  "matches": [
   {
@@ -60,7 +60,8 @@
    ],
    "ous": [
     "3.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 5,
@@ -119,7 +120,8 @@
    ],
    "ous": [
     "3.5"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 5,
@@ -178,7 +180,8 @@
    ],
    "ous": [
     "3"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 5,
@@ -192,11 +195,11 @@
    "rk": 1,
    "h": {
     "n": "1. FC Köln",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/2j1sc91566049407.png/small"
    },
    "a": {
     "n": "Elversberg",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/z079go1677573926.png/small"
    },
    "hc": "1. FC Köln ต่อ 0.5",
    "ou": {
@@ -211,7 +214,7 @@
    "pr": {
     "h": 47,
     "d": 25,
-    "a": 27
+    "a": 28
    },
    "lean": {
     "lab": "Elversberg +0.5",
@@ -243,7 +246,7 @@
    "rk": 1,
    "h": {
     "n": "SC Paderborn",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/kddvva1566048058.png/small"
    },
    "a": {
     "n": "FC Schalke 04",
@@ -339,7 +342,8 @@
    ],
    "ous": [
     "2.75"
-   ]
+   ],
+   "lock": true
   },
   {
    "v": 5,
@@ -394,6 +398,57 @@
   },
   {
    "v": 5,
+   "sp": "soccer_france_ligue_one",
+   "id": "24b99950496c624f7124922fc1bda8bd",
+   "t": "23:15",
+   "d": "เสาร์",
+   "ts": 1795882500,
+   "flag": "🇫🇷",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "rk": 3,
+   "h": {
+    "n": "Angers",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/ix6q4w1678808069.png/small"
+   },
+   "a": {
+    "n": "RC Lens",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/3pxoum1598797195.png/small"
+   },
+   "hc": "RC Lens ต่อ 0.5/1",
+   "ou": {
+    "lab": "สูง 2.5/3",
+    "line": "2.5/3",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 2.75
+   },
+   "hp": null,
+   "pr": {
+    "h": 20,
+    "d": 23,
+    "a": 57
+   },
+   "lean": {
+    "lab": "RC Lens -0.5/1",
+    "pct": 52,
+    "side": "away",
+    "h": -0.75,
+    "team": "RC Lens",
+    "line": "0.5/1",
+    "giver": true
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1"
+   ],
+   "ous": [
+    "2.75"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 5,
    "sp": "soccer_italy_serie_a",
    "id": "aec86b479e922f437ba228b9a9d74da1",
    "t": "00:00",
@@ -404,11 +459,11 @@
    "rk": 2,
    "h": {
     "n": "Torino",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/xxprty1448806802.png/small"
    },
    "a": {
     "n": "Lazio",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/rwqyvs1448806608.png/small"
    },
    "hc": "Lazio ต่อ 0/0.5",
    "ou": {
@@ -455,7 +510,7 @@
    "rk": 0,
    "h": {
     "n": "Ipswich Town",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/mdj1ey1634670785.png/small"
    },
    "a": {
     "n": "Aston Villa",
@@ -510,7 +565,7 @@
    },
    "a": {
     "n": "Eintracht Frankfurt",
-    "l": ""
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/rurwpy1473453269.png/small"
    },
    "hc": "VfB Stuttgart ต่อ 0.5/1",
    "ou": {
@@ -602,270 +657,223 @@
    ],
    "ous": [
     "3"
+   ],
+   "lock": true
+  },
+  {
+   "v": 5,
+   "sp": "soccer_france_ligue_one",
+   "id": "12002f6f804a122db48271ff05be03c0",
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1795895100,
+   "flag": "🇫🇷",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "rk": 3,
+   "h": {
+    "n": "Paris Saint Germain",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/rwqrrq1473504808.png/small"
+   },
+   "a": {
+    "n": "Lorient",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/sxsttw1473504748.png/small"
+   },
+   "hc": "Paris Saint Germain ต่อ 2",
+   "ou": {
+    "lab": "สูง 3/3.5",
+    "line": "3/3.5",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 3.25
+   },
+   "hp": {
+    "lab": "Paris Saint Germain -1.5",
+    "pct": 81,
+    "cp": 58,
+    "team": "Paris Saint Germain",
+    "giver": true,
+    "lt": "1.5",
+    "side": "home",
+    "h": -1.5
+   },
+   "pr": {
+    "h": 81,
+    "d": 12,
+    "a": 7
+   },
+   "lean": {
+    "lab": "Lorient +2",
+    "pct": 52,
+    "side": "away",
+    "h": 2.0,
+    "team": "Lorient",
+    "line": "2",
+    "giver": false
+   },
+   "elo": null,
+   "hcs": [
+    "2"
+   ],
+   "ous": [
+    "3.25"
    ]
+  },
+  {
+   "v": 5,
+   "sp": "soccer_france_ligue_one",
+   "id": "f96c1137c9d3f7e2e691275a2988fa1d",
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1795895100,
+   "flag": "🇫🇷",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "rk": 3,
+   "h": {
+    "n": "Le Havre",
+    "l": ""
+   },
+   "a": {
+    "n": "Strasbourg",
+    "l": ""
+   },
+   "hc": "Strasbourg ต่อ 0/0.5",
+   "ou": {
+    "lab": "ต่ำ 2.5/3",
+    "line": "2.5/3",
+    "pct": 50,
+    "weak": true,
+    "s": "under",
+    "x": 2.75
+   },
+   "hp": null,
+   "pr": {
+    "h": 29,
+    "d": 27,
+    "a": 43
+   },
+   "lean": {
+    "lab": "Strasbourg -0/0.5",
+    "pct": 51,
+    "side": "away",
+    "h": -0.25,
+    "team": "Strasbourg",
+    "line": "0/0.5",
+    "giver": true
+   },
+   "elo": null,
+   "hcs": [
+    "0/0.5"
+   ],
+   "ous": [
+    "2.75"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 5,
+   "sp": "soccer_france_ligue_one",
+   "id": "aaa86a483888836242da663a46957894",
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1795895100,
+   "flag": "🇫🇷",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "rk": 3,
+   "h": {
+    "n": "Le Mans FC",
+    "l": ""
+   },
+   "a": {
+    "n": "Lille",
+    "l": ""
+   },
+   "hc": "Lille ต่อ 0.5",
+   "ou": {
+    "lab": "สูง 2/2.5",
+    "line": "2/2.5",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 2.25
+   },
+   "hp": null,
+   "pr": {
+    "h": 25,
+    "d": 29,
+    "a": 46
+   },
+   "lean": {
+    "lab": "Le Mans FC +0.5",
+    "pct": 54,
+    "side": "home",
+    "h": 0.5,
+    "team": "Le Mans FC",
+    "line": "0.5",
+    "giver": false
+   },
+   "elo": null,
+   "hcs": [
+    "0.5"
+   ],
+   "ous": [
+    "2.25"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 5,
+   "sp": "soccer_france_ligue_one",
+   "id": "e9a1243fbfbc6f58d0e0522eb07ea9a1",
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1795895100,
+   "flag": "🇫🇷",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "rk": 3,
+   "h": {
+    "n": "Nice",
+    "l": ""
+   },
+   "a": {
+    "n": "Troyes",
+    "l": ""
+   },
+   "hc": "Nice ต่อ 0.5/1",
+   "ou": {
+    "lab": "ต่ำ 2.5/3",
+    "line": "2.5/3",
+    "pct": 50,
+    "weak": true,
+    "s": "under",
+    "x": 2.75
+   },
+   "hp": null,
+   "pr": {
+    "h": 57,
+    "d": 25,
+    "a": 19
+   },
+   "lean": {
+    "lab": "Nice -0.5/1",
+    "pct": 51,
+    "side": "home",
+    "h": -0.75,
+    "team": "Nice",
+    "line": "0.5/1",
+    "giver": true
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1"
+   ],
+   "ous": [
+    "2.75"
+   ],
+   "nopick": true
   }
  ],
  "history": [
-  {
-   "id": "a94ea221001eb7a9816e94f5a821c169",
-   "ts": 1795118400,
-   "d": "20/11",
-   "hn": "Arsenal",
-   "an": "Lyon",
-   "lg": "UEFA Champions League Women",
-   "sp": "soccer_uefa_champs_league_women",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 60,
-   "gh": 0,
-   "ga": 2
-  },
-  {
-   "id": "6ef39b0fd8839f6e93a3de32523e9807",
-   "ts": 1795264200,
-   "d": "21/11",
-   "hn": "Manchester City",
-   "an": "Fulham",
-   "lg": "พรีเมียร์ลีก อังกฤษ",
-   "sp": "soccer_epl",
-   "res": -1.0,
-   "k": "hp",
-   "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
-   "team": "Manchester City",
-   "giver": true,
-   "pct": 68,
-   "gh": 1,
-   "ga": 1
-  },
-  {
-   "id": "9e8d72c6c27c1667be7b88416a36ca80",
-   "ts": 1795269600,
-   "d": "21/11",
-   "hn": "Como",
-   "an": "Cagliari",
-   "lg": "เซเรีย อา อิตาลี",
-   "sp": "soccer_italy_serie_a",
-   "res": 1.0,
-   "k": "hp",
-   "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
-   "team": "Como",
-   "giver": true,
-   "pct": 74,
-   "gh": 2,
-   "ga": 0
-  },
-  {
-   "id": "bf921a2780e2a25201da8a3bfece84c4",
-   "ts": 1795269600,
-   "d": "21/11",
-   "hn": "Lazio",
-   "an": "Lecce",
-   "lg": "เซเรีย อา อิตาลี",
-   "sp": "soccer_italy_serie_a",
-   "res": 1.0,
-   "k": "hp",
-   "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
-   "team": "Lazio",
-   "giver": true,
-   "pct": 66,
-   "gh": 3,
-   "ga": 0
-  },
-  {
-   "id": "c24cf629b4eaf0ebc4ca2c5beb73747c",
-   "ts": 1795271400,
-   "d": "21/11",
-   "hn": "Bayer Leverkusen",
-   "an": "SC Paderborn",
-   "lg": "บุนเดสลีกา เยอรมัน",
-   "sp": "soccer_germany_bundesliga",
-   "res": 1.0,
-   "k": "hp",
-   "side": "home",
-   "h": -0.5,
-   "lt": "0.5",
-   "team": "Bayer Leverkusen",
-   "giver": true,
-   "pct": 76,
-   "gh": 4,
-   "ga": 0
-  },
-  {
-   "id": "ca93df81e976fbe345a6175bb24e3f19",
-   "ts": 1795271400,
-   "d": "21/11",
-   "hn": "Union Berlin",
-   "an": "RB Leipzig",
-   "lg": "บุนเดสลีกา เยอรมัน",
-   "sp": "soccer_germany_bundesliga",
-   "res": 1.0,
-   "k": "hp",
-   "side": "away",
-   "h": -0.5,
-   "lt": "0.5",
-   "team": "RB Leipzig",
-   "giver": true,
-   "pct": 64,
-   "gh": 1,
-   "ga": 5
-  },
-  {
-   "id": "e67ee3a6f93bb90b8aefcf3dd204477c",
-   "ts": 1795273200,
-   "d": "21/11",
-   "hn": "Tottenham Hotspur",
-   "an": "Ipswich Town",
-   "lg": "พรีเมียร์ลีก อังกฤษ",
-   "sp": "soccer_epl",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 61,
-   "gh": 2,
-   "ga": 0
-  },
-  {
-   "id": "b8d6ab6ecc8bb356c6335d3f417d0ecf",
-   "ts": 1795273200,
-   "d": "21/11",
-   "hn": "Aston Villa",
-   "an": "Sunderland",
-   "lg": "พรีเมียร์ลีก อังกฤษ",
-   "sp": "soccer_epl",
-   "res": 0.0,
-   "k": "hp",
-   "side": "home",
-   "h": 0.0,
-   "lt": "0",
-   "team": "Aston Villa",
-   "giver": false,
-   "pct": 72,
-   "gh": 0,
-   "ga": 0
-  },
-  {
-   "id": "cf68da11fa604c13fc9ef3219fad0314",
-   "ts": 1795273200,
-   "d": "21/11",
-   "hn": "Bournemouth",
-   "an": "Nottingham Forest",
-   "lg": "พรีเมียร์ลีก อังกฤษ",
-   "sp": "soccer_epl",
-   "res": -1.0,
-   "k": "hp",
-   "side": "away",
-   "h": 1.0,
-   "lt": "1",
-   "team": "Nottingham Forest",
-   "giver": false,
-   "pct": 69,
-   "gh": 2,
-   "ga": 0
-  },
-  {
-   "id": "ebe638278f4d70eaf211ad5be9795fa0",
-   "ts": 1795274100,
-   "d": "21/11",
-   "hn": "Rayo Vallecano",
-   "an": "Valencia",
-   "lg": "ลาลีกา สเปน",
-   "sp": "soccer_spain_la_liga",
-   "res": 1.0,
-   "k": "hp",
-   "side": "away",
-   "h": 1.0,
-   "lt": "1",
-   "team": "Valencia",
-   "giver": false,
-   "pct": 67,
-   "gh": 0,
-   "ga": 1
-  },
-  {
-   "id": "651c1847b5cdcc85e60a140edd2282c4",
-   "ts": 1795277700,
-   "d": "21/11",
-   "hn": "Nice",
-   "an": "Paris Saint Germain",
-   "lg": "ลีกเอิง ฝรั่งเศส",
-   "sp": "soccer_france_ligue_one",
-   "res": 1.0,
-   "k": "hp",
-   "side": "away",
-   "h": -0.5,
-   "lt": "0.5",
-   "team": "Paris Saint Germain",
-   "giver": true,
-   "pct": 65,
-   "gh": 2,
-   "ga": 3
-  },
-  {
-   "id": "cb513fd9869c9aa6ce506bb499bcd48b",
-   "ts": 1795280400,
-   "d": "22/11",
-   "hn": "Parma",
-   "an": "AS Roma",
-   "lg": "เซเรีย อา อิตาลี",
-   "sp": "soccer_italy_serie_a",
-   "res": 1.0,
-   "k": "hp",
-   "side": "away",
-   "h": -0.5,
-   "lt": "0.5",
-   "team": "AS Roma",
-   "giver": true,
-   "pct": 76,
-   "gh": 1,
-   "ga": 5
-  },
-  {
-   "id": "67846fc0359aeff2d0b6f3f8a2a674f4",
-   "ts": 1795282200,
-   "d": "22/11",
-   "hn": "FC Schalke 04",
-   "an": "VfB Stuttgart",
-   "lg": "บุนเดสลีกา เยอรมัน",
-   "sp": "soccer_germany_bundesliga",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 63,
-   "gh": 0,
-   "ga": 0
-  },
-  {
-   "id": "67846fc0359aeff2d0b6f3f8a2a674f4",
-   "ts": 1795282200,
-   "d": "22/11",
-   "hn": "FC Schalke 04",
-   "an": "VfB Stuttgart",
-   "lg": "บุนเดสลีกา เยอรมัน",
-   "sp": "soccer_germany_bundesliga",
-   "res": 1.0,
-   "k": "hp",
-   "side": "home",
-   "h": 1.0,
-   "lt": "1",
-   "team": "FC Schalke 04",
-   "giver": false,
-   "pct": 60,
-   "gh": 0,
-   "ga": 0
-  },
   {
    "id": "1bb4951d418dcb641c608e085b87a1c3",
    "ts": 1795282200,
@@ -2979,14 +2987,16 @@
    "an": "Paris FC",
    "lg": "ลีกเอิง ฝรั่งเศส",
    "sp": "soccer_france_ligue_one",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "away",
    "h": -0.25,
    "team": "Paris FC",
    "giver": true,
    "lt": "0/0.5",
-   "pct": 52
+   "pct": 52,
+   "gh": 1,
+   "ga": 0
   },
   {
    "id": "40d95e660c301c2d8a5a7a6317017b65",
@@ -3032,12 +3042,14 @@
    "an": "Real Racing Club de Santander",
    "lg": "ลาลีกา สเปน",
    "sp": "soccer_spain_la_liga",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 3.25,
    "lt": "3/3.5",
-   "pct": 53
+   "pct": 53,
+   "gh": 1,
+   "ga": 3
   },
   {
    "id": "80c92a163a81b69fef76530221e2edd0",
@@ -3047,14 +3059,16 @@
    "an": "Real Racing Club de Santander",
    "lg": "ลาลีกา สเปน",
    "sp": "soccer_spain_la_liga",
-   "res": null,
+   "res": 1.0,
    "k": "up",
    "side": "away",
    "h": 0.5,
    "team": "Real Racing Club de Santander",
    "giver": false,
    "lt": "0.5",
-   "pct": 52
+   "pct": 52,
+   "gh": 1,
+   "ga": 3
   },
   {
    "id": "af3432ca724da03d38f0ff4e62045e4c",
@@ -3227,12 +3241,74 @@
    "lg": "พรีเมียร์ลีก อังกฤษ",
    "sp": "soccer_epl",
    "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 3.0,
+   "lt": "3",
+   "pct": 51
+  },
+  {
+   "id": "ab87184803a63f7b679f1d12b01c3271",
+   "ts": 1795878000,
+   "d": "28/11",
+   "hn": "Manchester United",
+   "an": "Brentford",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "sp": "soccer_epl",
+   "res": null,
    "k": "up",
    "side": "away",
    "h": 0.25,
    "team": "Brentford",
    "giver": false,
    "lt": "0/0.5",
+   "pct": 51
+  },
+  {
+   "id": "24b99950496c624f7124922fc1bda8bd",
+   "ts": 1795882500,
+   "d": "28/11",
+   "hn": "Angers",
+   "an": "RC Lens",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.75,
+   "lt": "2.5/3",
+   "pct": 51
+  },
+  {
+   "id": "24b99950496c624f7124922fc1bda8bd",
+   "ts": 1795882500,
+   "d": "28/11",
+   "hn": "Angers",
+   "an": "RC Lens",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "hp",
+   "side": "away",
+   "h": -0.75,
+   "team": "RC Lens",
+   "giver": true,
+   "lt": "0.5/1",
+   "pct": 52
+  },
+  {
+   "id": "aec86b479e922f437ba228b9a9d74da1",
+   "ts": 1795885200,
+   "d": "29/11",
+   "hn": "Torino",
+   "an": "Lazio",
+   "lg": "เซเรีย อา อิตาลี",
+   "sp": "soccer_italy_serie_a",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
    "pct": 51
   },
   {
@@ -3261,6 +3337,21 @@
    "lg": "พรีเมียร์ลีก อังกฤษ",
    "sp": "soccer_epl",
    "res": null,
+   "k": "ou",
+   "s": "under",
+   "x": 3.0,
+   "lt": "3",
+   "pct": 50
+  },
+  {
+   "id": "9d23f6ad21946dd258869ebc22236cf0",
+   "ts": 1795887000,
+   "d": "29/11",
+   "hn": "Ipswich Town",
+   "an": "Aston Villa",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "sp": "soccer_epl",
+   "res": null,
    "k": "up",
    "side": "home",
    "h": 0.5,
@@ -3268,6 +3359,21 @@
    "giver": false,
    "lt": "0.5",
    "pct": 52
+  },
+  {
+   "id": "5d838190a8f5932d7fcfbcc26bacdd9c",
+   "ts": 1795887000,
+   "d": "29/11",
+   "hn": "VfB Stuttgart",
+   "an": "Eintracht Frankfurt",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "sp": "soccer_germany_bundesliga",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 3.75,
+   "lt": "3.5/4",
+   "pct": 51
   },
   {
    "id": "5d838190a8f5932d7fcfbcc26bacdd9c",
@@ -3317,6 +3423,134 @@
    "giver": true,
    "lt": "1.5",
    "pct": 74
+  },
+  {
+   "id": "12002f6f804a122db48271ff05be03c0",
+   "ts": 1795895100,
+   "d": "29/11",
+   "hn": "Paris Saint Germain",
+   "an": "Lorient",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 3.25,
+   "lt": "3/3.5",
+   "pct": 51
+  },
+  {
+   "id": "12002f6f804a122db48271ff05be03c0",
+   "ts": 1795895100,
+   "d": "29/11",
+   "hn": "Paris Saint Germain",
+   "an": "Lorient",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": -1.5,
+   "team": "Paris Saint Germain",
+   "giver": true,
+   "lt": "1.5",
+   "pct": 81
+  },
+  {
+   "id": "f96c1137c9d3f7e2e691275a2988fa1d",
+   "ts": 1795895100,
+   "d": "29/11",
+   "hn": "Le Havre",
+   "an": "Strasbourg",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "ou",
+   "s": "under",
+   "x": 2.75,
+   "lt": "2.5/3",
+   "pct": 50
+  },
+  {
+   "id": "f96c1137c9d3f7e2e691275a2988fa1d",
+   "ts": 1795895100,
+   "d": "29/11",
+   "hn": "Le Havre",
+   "an": "Strasbourg",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "hp",
+   "side": "away",
+   "h": -0.25,
+   "team": "Strasbourg",
+   "giver": true,
+   "lt": "0/0.5",
+   "pct": 51
+  },
+  {
+   "id": "aaa86a483888836242da663a46957894",
+   "ts": 1795895100,
+   "d": "29/11",
+   "hn": "Le Mans FC",
+   "an": "Lille",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.25,
+   "lt": "2/2.5",
+   "pct": 51
+  },
+  {
+   "id": "aaa86a483888836242da663a46957894",
+   "ts": 1795895100,
+   "d": "29/11",
+   "hn": "Le Mans FC",
+   "an": "Lille",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "up",
+   "side": "home",
+   "h": 0.5,
+   "team": "Le Mans FC",
+   "giver": false,
+   "lt": "0.5",
+   "pct": 54
+  },
+  {
+   "id": "e9a1243fbfbc6f58d0e0522eb07ea9a1",
+   "ts": 1795895100,
+   "d": "29/11",
+   "hn": "Nice",
+   "an": "Troyes",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "ou",
+   "s": "under",
+   "x": 2.75,
+   "lt": "2.5/3",
+   "pct": 50
+  },
+  {
+   "id": "e9a1243fbfbc6f58d0e0522eb07ea9a1",
+   "ts": 1795895100,
+   "d": "29/11",
+   "hn": "Nice",
+   "an": "Troyes",
+   "lg": "ลีกเอิง ฝรั่งเศส",
+   "sp": "soccer_france_ligue_one",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": -0.75,
+   "team": "Nice",
+   "giver": true,
+   "lt": "0.5/1",
+   "pct": 51
   }
  ],
  "snap": {
@@ -3388,6 +3622,27 @@
    "ts": 1795895100,
    "ou": 52,
    "hp": 74
+  },
+  "24b99950496c624f7124922fc1bda8bd": {
+   "ts": 1795882500,
+   "ou": 51
+  },
+  "f96c1137c9d3f7e2e691275a2988fa1d": {
+   "ts": 1795895100,
+   "ou": 50
+  },
+  "aaa86a483888836242da663a46957894": {
+   "ts": 1795895100,
+   "ou": 51
+  },
+  "12002f6f804a122db48271ff05be03c0": {
+   "ts": 1795895100,
+   "ou": 51,
+   "hp": 81
+  },
+  "e9a1243fbfbc6f58d0e0522eb07ea9a1": {
+   "ts": 1795895100,
+   "ou": 50
   }
  },
  "tn": {
@@ -3617,7 +3872,18 @@
   "Frosinone": "https://r2.thesportsdb.com/images/media/team/badge/a7xa151603170120.png/small",
   "Parma": "https://r2.thesportsdb.com/images/media/team/badge/6yiaxs1627406063.png/small",
   "Genoa": "https://r2.thesportsdb.com/images/media/team/badge/52s8dn1655553600.png/small",
-  "Manchester United": "https://r2.thesportsdb.com/images/media/team/badge/xzqdr11517660252.png/small"
+  "Manchester United": "https://r2.thesportsdb.com/images/media/team/badge/xzqdr11517660252.png/small",
+  "Lorient": "https://r2.thesportsdb.com/images/media/team/badge/sxsttw1473504748.png/small",
+  "Ipswich Town": "https://r2.thesportsdb.com/images/media/team/badge/mdj1ey1634670785.png/small",
+  "1. FC Köln": "https://r2.thesportsdb.com/images/media/team/badge/2j1sc91566049407.png/small",
+  "Elversberg": "https://r2.thesportsdb.com/images/media/team/badge/z079go1677573926.png/small",
+  "SC Paderborn": "https://r2.thesportsdb.com/images/media/team/badge/kddvva1566048058.png/small",
+  "FC Schalke 04": "",
+  "Eintracht Frankfurt": "https://r2.thesportsdb.com/images/media/team/badge/rurwpy1473453269.png/small",
+  "Torino": "https://r2.thesportsdb.com/images/media/team/badge/xxprty1448806802.png/small",
+  "Lazio": "https://r2.thesportsdb.com/images/media/team/badge/rwqyvs1448806608.png/small",
+  "Angers": "https://r2.thesportsdb.com/images/media/team/badge/ix6q4w1678808069.png/small",
+  "RC Lens": "https://r2.thesportsdb.com/images/media/team/badge/3pxoum1598797195.png/small"
  },
  "sent": {
   "date": "28/11/69",
