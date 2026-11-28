@@ -1,98 +1,385 @@
 {
- "ts": 1795752477,
- "updated": "ศุกร์ 27/11 11:07 น.",
- "date": "27/11/69",
+ "ts": 1795832679,
+ "updated": "เสาร์ 28/11 09:24 น.",
+ "date": "28/11/69",
  "matches": [
   {
    "v": 5,
+   "sp": "soccer_italy_serie_a",
+   "id": "af3432ca724da03d38f0ff4e62045e4c",
+   "t": "21:00",
+   "d": "เสาร์",
+   "ts": 1795874400,
+   "flag": "🇮🇹",
+   "lg": "เซเรีย อา อิตาลี",
+   "rk": 2,
+   "h": {
+    "n": "Frosinone",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/a7xa151603170120.png/small"
+   },
+   "a": {
+    "n": "Parma",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/6yiaxs1627406063.png/small"
+   },
+   "hc": "Frosinone ต่อ 1/1.5",
+   "ou": {
+    "lab": "ต่ำ 3.5",
+    "line": "3.5",
+    "pct": 52,
+    "weak": true,
+    "s": "under",
+    "x": 3.5
+   },
+   "hp": {
+    "lab": "Frosinone -1",
+    "pct": 64,
+    "cp": 55,
+    "team": "Frosinone",
+    "giver": true,
+    "lt": "1",
+    "side": "home",
+    "h": -1.0
+   },
+   "pr": {
+    "h": 64,
+    "d": 19,
+    "a": 17
+   },
+   "lean": {
+    "lab": "Parma +1/1.5",
+    "pct": 51,
+    "side": "away",
+    "h": 1.25,
+    "team": "Parma",
+    "line": "1/1.5",
+    "giver": false
+   },
+   "elo": null,
+   "hcs": [
+    "1/1.5"
+   ],
+   "ous": [
+    "3.5"
+   ]
+  },
+  {
+   "v": 5,
    "sp": "soccer_germany_bundesliga",
-   "id": "698f4a7967ead89e10205a68ceb4bda4",
-   "t": "02:30",
-   "d": "ศุกร์",
-   "ts": 1795807800,
+   "id": "3b025a029f51fbeb9580a178d0612f50",
+   "t": "21:30",
+   "d": "เสาร์",
+   "ts": 1795876200,
    "flag": "🇩🇪",
    "lg": "บุนเดสลีกา เยอรมัน",
    "rk": 1,
    "h": {
-    "n": "Werder Bremen",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/tkvqan1716960454.png/small"
+    "n": "Hamburger SV",
+    "l": ""
    },
    "a": {
-    "n": "Borussia Monchengladbach",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/sysurw1473453380.png/small"
+    "n": "Bayern Munich",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/01ogkh1716960412.png/small"
    },
-   "hc": "Werder Bremen ต่อ 0.5/1",
+   "hc": "Bayern Munich ต่อ 1.5/2",
+   "ou": {
+    "lab": "สูง 3.5",
+    "line": "3.5",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 3.5
+   },
+   "hp": {
+    "lab": "Bayern Munich -1.5",
+    "pct": 75,
+    "cp": 54,
+    "team": "Bayern Munich",
+    "giver": true,
+    "lt": "1.5",
+    "side": "away",
+    "h": -1.5
+   },
+   "pr": {
+    "h": 11,
+    "d": 14,
+    "a": 75
+   },
+   "lean": {
+    "lab": "Hamburger SV +1.5/2",
+    "pct": 52,
+    "side": "home",
+    "h": 1.75,
+    "team": "Hamburger SV",
+    "line": "1.5/2",
+    "giver": false
+   },
+   "elo": null,
+   "hcs": [
+    "1.5/2"
+   ],
+   "ous": [
+    "3.5"
+   ]
+  },
+  {
+   "v": 5,
+   "sp": "soccer_germany_bundesliga",
+   "id": "365e1a00908ab1cd5a51a53ede2b86b2",
+   "t": "21:30",
+   "d": "เสาร์",
+   "ts": 1795876200,
+   "flag": "🇩🇪",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "rk": 1,
+   "h": {
+    "n": "FSV Mainz 05",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/fhm9v51552134916.png/small"
+   },
+   "a": {
+    "n": "Union Berlin",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/q0o5001599679795.png/small"
+   },
+   "hc": "FSV Mainz 05 ต่อ 1/1.5",
    "ou": {
     "lab": "สูง 3",
     "line": "3",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 3.0
+   },
+   "hp": {
+    "lab": "FSV Mainz 05 -1",
+    "pct": 65,
+    "cp": 55,
+    "team": "FSV Mainz 05",
+    "giver": true,
+    "lt": "1",
+    "side": "home",
+    "h": -1.0
+   },
+   "pr": {
+    "h": 65,
+    "d": 20,
+    "a": 15
+   },
+   "lean": {
+    "lab": "Union Berlin +1/1.5",
+    "pct": 52,
+    "side": "away",
+    "h": 1.25,
+    "team": "Union Berlin",
+    "line": "1/1.5",
+    "giver": false
+   },
+   "elo": null,
+   "hcs": [
+    "1/1.5"
+   ],
+   "ous": [
+    "3"
+   ]
+  },
+  {
+   "v": 5,
+   "sp": "soccer_germany_bundesliga",
+   "id": "2c30e2ebaf6c30aaa4e3fb56cffa6a29",
+   "t": "21:30",
+   "d": "เสาร์",
+   "ts": 1795876200,
+   "flag": "🇩🇪",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "rk": 1,
+   "h": {
+    "n": "1. FC Köln",
+    "l": ""
+   },
+   "a": {
+    "n": "Elversberg",
+    "l": ""
+   },
+   "hc": "1. FC Köln ต่อ 0.5",
+   "ou": {
+    "lab": "ต่ำ 3",
+    "line": "3",
+    "pct": 52,
+    "weak": true,
+    "s": "under",
+    "x": 3.0
+   },
+   "hp": null,
+   "pr": {
+    "h": 47,
+    "d": 25,
+    "a": 27
+   },
+   "lean": {
+    "lab": "Elversberg +0.5",
+    "pct": 52,
+    "side": "away",
+    "h": 0.5,
+    "team": "Elversberg",
+    "line": "0.5",
+    "giver": false
+   },
+   "elo": null,
+   "hcs": [
+    "0.5"
+   ],
+   "ous": [
+    "3"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 5,
+   "sp": "soccer_germany_bundesliga",
+   "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+   "t": "21:30",
+   "d": "เสาร์",
+   "ts": 1795876200,
+   "flag": "🇩🇪",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "rk": 1,
+   "h": {
+    "n": "SC Paderborn",
+    "l": ""
+   },
+   "a": {
+    "n": "FC Schalke 04",
+    "l": ""
+   },
+   "hc": "เสมอ",
+   "ou": {
+    "lab": "สูง 2.5",
+    "line": "2.5",
     "pct": 53,
+    "weak": true,
+    "s": "over",
+    "x": 2.5
+   },
+   "hp": null,
+   "pr": {
+    "h": 37,
+    "d": 28,
+    "a": 35
+   },
+   "lean": {
+    "lab": "SC Paderborn 0",
+    "pct": 52,
+    "side": "home",
+    "h": 0.0,
+    "team": "SC Paderborn",
+    "line": "0",
+    "giver": false
+   },
+   "elo": null,
+   "hcs": [
+    "เสมอ"
+   ],
+   "ous": [
+    "2.75"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 5,
+   "sp": "soccer_epl",
+   "id": "0bc17a3c7d8153e72b94688960cc603a",
+   "t": "22:00",
+   "d": "เสาร์",
+   "ts": 1795878000,
+   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "rk": 0,
+   "h": {
+    "n": "Leeds United",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/jcgrml1756649030.png/small"
+   },
+   "a": {
+    "n": "Coventry City",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/uxyqys1424033798.png/small"
+   },
+   "hc": "Leeds United ต่อ 1/1.5",
+   "ou": {
+    "lab": "สูง 2.5/3",
+    "line": "2.5/3",
+    "pct": 52,
+    "weak": true,
+    "s": "over",
+    "x": 2.75
+   },
+   "hp": {
+    "lab": "Leeds United -1",
+    "pct": 64,
+    "cp": 53,
+    "team": "Leeds United",
+    "giver": true,
+    "lt": "1",
+    "side": "home",
+    "h": -1.0
+   },
+   "pr": {
+    "h": 64,
+    "d": 21,
+    "a": 15
+   },
+   "lean": {
+    "lab": "Leeds United -1",
+    "pct": 53,
+    "side": "home",
+    "h": -1.0,
+    "team": "Leeds United",
+    "line": "1",
+    "giver": true
+   },
+   "elo": null,
+   "hcs": [
+    "1/1.5"
+   ],
+   "ous": [
+    "2.75"
+   ]
+  },
+  {
+   "v": 5,
+   "sp": "soccer_epl",
+   "id": "ab87184803a63f7b679f1d12b01c3271",
+   "t": "22:00",
+   "d": "เสาร์",
+   "ts": 1795878000,
+   "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "rk": 0,
+   "h": {
+    "n": "Manchester United",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/xzqdr11517660252.png/small"
+   },
+   "a": {
+    "n": "Brentford",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/grv1aw1546453779.png/small"
+   },
+   "hc": "Manchester United ต่อ 0/0.5",
+   "ou": {
+    "lab": "สูง 3",
+    "line": "3",
+    "pct": 51,
     "weak": true,
     "s": "over",
     "x": 3.0
    },
    "hp": null,
    "pr": {
-    "h": 57,
-    "d": 22,
-    "a": 22
+    "h": 42,
+    "d": 25,
+    "a": 32
    },
    "lean": {
-    "lab": "Werder Bremen -0.5/1",
-    "pct": 52,
-    "side": "home",
-    "h": -0.75,
-    "team": "Werder Bremen",
-    "line": "0.5/1",
-    "giver": true
-   },
-   "elo": null,
-   "hcs": [
-    "0.5/1"
-   ],
-   "ous": [
-    "3.25"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 5,
-   "sp": "soccer_italy_serie_a",
-   "id": "e9a663f13e7503c0ac20a54804338b60",
-   "t": "02:45",
-   "d": "ศุกร์",
-   "ts": 1795808700,
-   "flag": "🇮🇹",
-   "lg": "เซเรีย อา อิตาลี",
-   "rk": 2,
-   "h": {
-    "n": "Venezia",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/vbiget1781026964.png/small"
-   },
-   "a": {
-    "n": "Bologna",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/2qi1u31655592366.png/small"
-   },
-   "hc": "Bologna ต่อ 0/0.5",
-   "ou": {
-    "lab": "สูง 2/2.5",
-    "line": "2/2.5",
-    "pct": 52,
-    "weak": true,
-    "s": "over",
-    "x": 2.25
-   },
-   "hp": null,
-   "pr": {
-    "h": 28,
-    "d": 30,
-    "a": 42
-   },
-   "lean": {
-    "lab": "Venezia +0/0.5",
-    "pct": 50,
-    "side": "home",
+    "lab": "Brentford +0/0.5",
+    "pct": 51,
+    "side": "away",
     "h": 0.25,
-    "team": "Venezia",
+    "team": "Brentford",
     "line": "0/0.5",
     "giver": false
    },
@@ -101,29 +388,29 @@
     "0/0.5"
    ],
    "ous": [
-    "2.25"
+    "3"
    ],
    "nopick": true
   },
   {
    "v": 5,
-   "sp": "soccer_france_ligue_one",
-   "id": "02ff879cf54f6d1fec2664efee0431db",
-   "t": "02:45",
-   "d": "ศุกร์",
-   "ts": 1795808700,
-   "flag": "🇫🇷",
-   "lg": "ลีกเอิง ฝรั่งเศส",
-   "rk": 3,
+   "sp": "soccer_italy_serie_a",
+   "id": "aec86b479e922f437ba228b9a9d74da1",
+   "t": "00:00",
+   "d": "เสาร์",
+   "ts": 1795885200,
+   "flag": "🇮🇹",
+   "lg": "เซเรีย อา อิตาลี",
+   "rk": 2,
    "h": {
-    "n": "Brest",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/z69be41598797026.png/small"
+    "n": "Torino",
+    "l": ""
    },
    "a": {
-    "n": "Paris FC",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/yuvtsy1447594254.png/small"
+    "n": "Lazio",
+    "l": ""
    },
-   "hc": "Paris FC ต่อ 0/0.5",
+   "hc": "Lazio ต่อ 0/0.5",
    "ou": {
     "lab": "สูง 2.5",
     "line": "2.5",
@@ -134,16 +421,16 @@
    },
    "hp": null,
    "pr": {
-    "h": 27,
+    "h": 28,
     "d": 28,
     "a": 44
    },
    "lean": {
-    "lab": "Paris FC -0/0.5",
-    "pct": 52,
+    "lab": "Lazio -0/0.5",
+    "pct": 51,
     "side": "away",
     "h": -0.25,
-    "team": "Paris FC",
+    "team": "Lazio",
     "line": "0/0.5",
     "giver": true
    },
@@ -159,93 +446,42 @@
   {
    "v": 5,
    "sp": "soccer_epl",
-   "id": "40d95e660c301c2d8a5a7a6317017b65",
-   "t": "03:00",
-   "d": "ศุกร์",
-   "ts": 1795809600,
+   "id": "9d23f6ad21946dd258869ebc22236cf0",
+   "t": "00:30",
+   "d": "เสาร์",
+   "ts": 1795887000,
    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
    "lg": "พรีเมียร์ลีก อังกฤษ",
    "rk": 0,
    "h": {
-    "n": "Nottingham Forest",
+    "n": "Ipswich Town",
     "l": ""
    },
    "a": {
-    "n": "Chelsea",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/pbf4ul1782638263.png/small"
+    "n": "Aston Villa",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/uwzw561787679026.png/small"
    },
-   "hc": "เสมอ",
+   "hc": "Aston Villa ต่อ 0.5",
    "ou": {
-    "lab": "สูง 2.5",
-    "line": "2.5",
-    "pct": 52,
+    "lab": "ต่ำ 3",
+    "line": "3",
+    "pct": 50,
     "weak": true,
-    "s": "over",
-    "x": 2.5
+    "s": "under",
+    "x": 3.0
    },
    "hp": null,
    "pr": {
-    "h": 38,
-    "d": 29,
-    "a": 33
+    "h": 27,
+    "d": 25,
+    "a": 48
    },
    "lean": {
-    "lab": "Nottingham Forest 0",
-    "pct": 53,
+    "lab": "Ipswich Town +0.5",
+    "pct": 52,
     "side": "home",
-    "h": 0.0,
-    "team": "Nottingham Forest",
-    "line": "0",
-    "giver": false
-   },
-   "elo": null,
-   "hcs": [
-    "เสมอ"
-   ],
-   "ous": [
-    "2.75"
-   ],
-   "nopick": true
-  },
-  {
-   "v": 5,
-   "sp": "soccer_spain_la_liga",
-   "id": "80c92a163a81b69fef76530221e2edd0",
-   "t": "03:00",
-   "d": "ศุกร์",
-   "ts": 1795809600,
-   "flag": "🇪🇸",
-   "lg": "ลาลีกา สเปน",
-   "rk": 4,
-   "h": {
-    "n": "Levante",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/xwtxsx1473503739.png/small"
-   },
-   "a": {
-    "n": "Real Racing Club de Santander",
-    "l": "https://r2.thesportsdb.com/images/media/team/badge/97kkiq1536575158.png/small"
-   },
-   "hc": "Levante ต่อ 0.5",
-   "ou": {
-    "lab": "สูง 3/3.5",
-    "line": "3/3.5",
-    "pct": 53,
-    "weak": true,
-    "s": "over",
-    "x": 3.25
-   },
-   "hp": null,
-   "pr": {
-    "h": 47,
-    "d": 24,
-    "a": 29
-   },
-   "lean": {
-    "lab": "Real Racing Club de Santander +0.5",
-    "pct": 52,
-    "side": "away",
     "h": 0.5,
-    "team": "Real Racing Club de Santander",
+    "team": "Ipswich Town",
     "line": "0.5",
     "giver": false
    },
@@ -254,278 +490,122 @@
     "0.5"
    ],
    "ous": [
-    "3.25"
+    "3"
    ],
    "nopick": true
+  },
+  {
+   "v": 5,
+   "sp": "soccer_germany_bundesliga",
+   "id": "5d838190a8f5932d7fcfbcc26bacdd9c",
+   "t": "00:30",
+   "d": "เสาร์",
+   "ts": 1795887000,
+   "flag": "🇩🇪",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "rk": 1,
+   "h": {
+    "n": "VfB Stuttgart",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/yppyux1473454085.png/small"
+   },
+   "a": {
+    "n": "Eintracht Frankfurt",
+    "l": ""
+   },
+   "hc": "VfB Stuttgart ต่อ 0.5/1",
+   "ou": {
+    "lab": "สูง 3.5/4",
+    "line": "3.5/4",
+    "pct": 51,
+    "weak": true,
+    "s": "over",
+    "x": 3.75
+   },
+   "hp": null,
+   "pr": {
+    "h": 53,
+    "d": 21,
+    "a": 27
+   },
+   "lean": {
+    "lab": "VfB Stuttgart -0.5",
+    "pct": 52,
+    "side": "home",
+    "h": -0.5,
+    "team": "VfB Stuttgart",
+    "line": "0.5",
+    "giver": true
+   },
+   "elo": null,
+   "hcs": [
+    "0.5/1"
+   ],
+   "ous": [
+    "3.75"
+   ],
+   "nopick": true
+  },
+  {
+   "v": 5,
+   "sp": "soccer_italy_serie_a",
+   "id": "f128c19fa7af43e30dbe3c373e7bc27e",
+   "t": "02:45",
+   "d": "เสาร์",
+   "ts": 1795895100,
+   "flag": "🇮🇹",
+   "lg": "เซเรีย อา อิตาลี",
+   "rk": 2,
+   "h": {
+    "n": "Inter Milan",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/ryhu6d1617113103.png/small"
+   },
+   "a": {
+    "n": "Genoa",
+    "l": "https://r2.thesportsdb.com/images/media/team/badge/52s8dn1655553600.png/small"
+   },
+   "hc": "Inter Milan ต่อ 1.5",
+   "ou": {
+    "lab": "สูง 3",
+    "line": "3",
+    "pct": 52,
+    "weak": true,
+    "s": "over",
+    "x": 3.0
+   },
+   "hp": {
+    "lab": "Inter Milan -1.5",
+    "pct": 74,
+    "cp": 51,
+    "team": "Inter Milan",
+    "giver": true,
+    "lt": "1.5",
+    "side": "home",
+    "h": -1.5
+   },
+   "pr": {
+    "h": 74,
+    "d": 16,
+    "a": 10
+   },
+   "lean": {
+    "lab": "Inter Milan -1.5",
+    "pct": 51,
+    "side": "home",
+    "h": -1.5,
+    "team": "Inter Milan",
+    "line": "1.5",
+    "giver": true
+   },
+   "elo": null,
+   "hcs": [
+    "1.5"
+   ],
+   "ous": [
+    "3"
+   ]
   }
  ],
  "history": [
-  {
-   "id": 1495611,
-   "ts": 1794747600,
-   "d": "15/11",
-   "hn": "Malmö FF W",
-   "an": "Vittsjö W",
-   "lg": "Damallsvenskan",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 65,
-   "gh": 1,
-   "ga": 1
-  },
-  {
-   "id": 1495612,
-   "ts": 1794747600,
-   "d": "15/11",
-   "hn": "Norrköping W",
-   "an": "AIK W",
-   "lg": "Damallsvenskan",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 60,
-   "gh": 1,
-   "ga": 1
-  },
-  {
-   "id": 1495608,
-   "ts": 1794747600,
-   "d": "15/11",
-   "hn": "Häcken W",
-   "an": "Piteå W",
-   "lg": "Damallsvenskan",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 71,
-   "gh": 2,
-   "ga": 0
-  },
-  {
-   "id": 1554223,
-   "ts": 1794754800,
-   "d": "15/11",
-   "hn": "TSC Backa Topola",
-   "an": "Jedinstvo Ub",
-   "lg": "Prva Liga",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 65,
-   "gh": 2,
-   "ga": 0
-  },
-  {
-   "id": 1528980,
-   "ts": 1794762000,
-   "d": "16/11",
-   "hn": "Belarus",
-   "an": "Albania",
-   "lg": "เนชันส์ลีก",
-   "res": 1.0,
-   "k": "ou",
-   "s": "under",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 60,
-   "gh": 0,
-   "ga": 2
-  },
-  {
-   "id": 1528984,
-   "ts": 1794771900,
-   "d": "16/11",
-   "hn": "Spain",
-   "an": "England",
-   "lg": "เนชันส์ลีก",
-   "res": 1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 60,
-   "gh": 2,
-   "ga": 3
-  },
-  {
-   "id": "1a07e9080f042594bdb529ab932d680c",
-   "ts": 1794944700,
-   "d": "18/11",
-   "hn": "Hungary",
-   "an": "Northern Ireland",
-   "lg": "เนชันส์ลีก",
-   "sp": "soccer_uefa_nations_league",
-   "res": 1.0,
-   "k": "ou",
-   "s": "under",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 61,
-   "gh": 1,
-   "ga": 1
-  },
-  {
-   "id": "e71a4a4fea03d00873c285c5b55a9864",
-   "ts": 1794944700,
-   "d": "18/11",
-   "hn": "Israel",
-   "an": "Austria",
-   "lg": "เนชันส์ลีก",
-   "sp": "soccer_uefa_nations_league",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 60,
-   "gh": 1,
-   "ga": 1
-  },
-  {
-   "id": "a6c9b424fddccea76aab09880b69dd31",
-   "ts": 1794944700,
-   "d": "18/11",
-   "hn": "Republic of Ireland",
-   "an": "Kosovo",
-   "lg": "เนชันส์ลีก",
-   "sp": "soccer_uefa_nations_league",
-   "res": -1.0,
-   "k": "ou",
-   "s": "under",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 60,
-   "gh": 3,
-   "ga": 0
-  },
-  {
-   "id": "8d017c6bef33aa894ea91e1c1f3a5299",
-   "ts": 1795023900,
-   "d": "19/11",
-   "hn": "BK Hacken",
-   "an": "Manchester City",
-   "lg": "UEFA Champions League Women",
-   "sp": "soccer_uefa_champs_league_women",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 70,
-   "gh": 0,
-   "ga": 2
-  },
-  {
-   "id": "2ff809e70c96071b20b2ad3f6123fe8f",
-   "ts": 1795023900,
-   "d": "19/11",
-   "hn": "Real Madrid",
-   "an": "Inter Milan",
-   "lg": "UEFA Champions League Women",
-   "sp": "soccer_uefa_champs_league_women",
-   "res": 1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 69,
-   "gh": 3,
-   "ga": 1
-  },
-  {
-   "id": "122669be0e839fcda949d054af3ddc7f",
-   "ts": 1795032000,
-   "d": "19/11",
-   "hn": "Chelsea",
-   "an": "Paris Saint Germain",
-   "lg": "UEFA Champions League Women",
-   "sp": "soccer_uefa_champs_league_women",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 64,
-   "gh": 1,
-   "ga": 0
-  },
-  {
-   "id": "e8aea25fa4a2c167c4f565a0a3703676",
-   "ts": 1795032000,
-   "d": "19/11",
-   "hn": "Juventus",
-   "an": "Leuven",
-   "lg": "UEFA Champions League Women",
-   "sp": "soccer_uefa_champs_league_women",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 64,
-   "gh": 2,
-   "ga": 0
-  },
-  {
-   "id": "a96fe59de916f1d378f3dcce6733dd20",
-   "ts": 1795042800,
-   "d": "19/11",
-   "hn": "Remo",
-   "an": "Chapecoense",
-   "lg": "เซเรีย อา บราซิล",
-   "sp": "soccer_brazil_campeonato",
-   "res": -1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 60,
-   "gh": 2,
-   "ga": 0
-  },
-  {
-   "id": "46c323a078772696b526e9e4a4f2e7ff",
-   "ts": 1795110300,
-   "d": "20/11",
-   "hn": "Austria Wien",
-   "an": "Bayern Munich",
-   "lg": "UEFA Champions League Women",
-   "sp": "soccer_uefa_champs_league_women",
-   "res": 1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 76,
-   "gh": 0,
-   "ga": 4
-  },
-  {
-   "id": "f717126e06b5b6e5166255be6f486dde",
-   "ts": 1795110300,
-   "d": "20/11",
-   "hn": "Paris FC",
-   "an": "HB Køge",
-   "lg": "UEFA Champions League Women",
-   "sp": "soccer_uefa_champs_league_women",
-   "res": 1.0,
-   "k": "ou",
-   "s": "over",
-   "x": 2.5,
-   "lt": "2.5",
-   "pct": 62,
-   "gh": 2,
-   "ga": 1
-  },
   {
    "id": "a94ea221001eb7a9816e94f5a821c169",
    "ts": 1795118400,
@@ -2827,12 +2907,14 @@
    "an": "Borussia Monchengladbach",
    "lg": "บุนเดสลีกา เยอรมัน",
    "sp": "soccer_germany_bundesliga",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 3.0,
    "lt": "3",
-   "pct": 53
+   "pct": 53,
+   "gh": 3,
+   "ga": 3
   },
   {
    "id": "698f4a7967ead89e10205a68ceb4bda4",
@@ -2842,14 +2924,16 @@
    "an": "Borussia Monchengladbach",
    "lg": "บุนเดสลีกา เยอรมัน",
    "sp": "soccer_germany_bundesliga",
-   "res": null,
+   "res": -1.0,
    "k": "hp",
    "side": "home",
    "h": -0.75,
    "team": "Werder Bremen",
    "giver": true,
    "lt": "0.5/1",
-   "pct": 52
+   "pct": 52,
+   "gh": 3,
+   "ga": 3
   },
   {
    "id": "e9a663f13e7503c0ac20a54804338b60",
@@ -2859,12 +2943,14 @@
    "an": "Bologna",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": -1.0,
    "k": "ou",
    "s": "over",
    "x": 2.25,
    "lt": "2/2.5",
-   "pct": 52
+   "pct": 52,
+   "gh": 0,
+   "ga": 0
   },
   {
    "id": "e9a663f13e7503c0ac20a54804338b60",
@@ -2874,14 +2960,16 @@
    "an": "Bologna",
    "lg": "เซเรีย อา อิตาลี",
    "sp": "soccer_italy_serie_a",
-   "res": null,
+   "res": 0.5,
    "k": "up",
    "side": "home",
    "h": 0.25,
    "team": "Venezia",
    "giver": false,
    "lt": "0/0.5",
-   "pct": 50
+   "pct": 50,
+   "gh": 0,
+   "ga": 0
   },
   {
    "id": "02ff879cf54f6d1fec2664efee0431db",
@@ -2908,12 +2996,14 @@
    "an": "Chelsea",
    "lg": "พรีเมียร์ลีก อังกฤษ",
    "sp": "soccer_epl",
-   "res": null,
+   "res": 1.0,
    "k": "ou",
    "s": "over",
    "x": 2.5,
    "lt": "2.5",
-   "pct": 52
+   "pct": 52,
+   "gh": 3,
+   "ga": 2
   },
   {
    "id": "40d95e660c301c2d8a5a7a6317017b65",
@@ -2923,14 +3013,16 @@
    "an": "Chelsea",
    "lg": "พรีเมียร์ลีก อังกฤษ",
    "sp": "soccer_epl",
-   "res": null,
+   "res": 1.0,
    "k": "hp",
    "side": "home",
    "h": 0.0,
    "team": "Nottingham Forest",
    "giver": false,
    "lt": "0",
-   "pct": 53
+   "pct": 53,
+   "gh": 3,
+   "ga": 2
   },
   {
    "id": "80c92a163a81b69fef76530221e2edd0",
@@ -2963,211 +3055,271 @@
    "giver": false,
    "lt": "0.5",
    "pct": 52
+  },
+  {
+   "id": "af3432ca724da03d38f0ff4e62045e4c",
+   "ts": 1795874400,
+   "d": "28/11",
+   "hn": "Frosinone",
+   "an": "Parma",
+   "lg": "เซเรีย อา อิตาลี",
+   "sp": "soccer_italy_serie_a",
+   "res": null,
+   "k": "ou",
+   "s": "under",
+   "x": 3.5,
+   "lt": "3.5",
+   "pct": 52
+  },
+  {
+   "id": "af3432ca724da03d38f0ff4e62045e4c",
+   "ts": 1795874400,
+   "d": "28/11",
+   "hn": "Frosinone",
+   "an": "Parma",
+   "lg": "เซเรีย อา อิตาลี",
+   "sp": "soccer_italy_serie_a",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": -1.0,
+   "team": "Frosinone",
+   "giver": true,
+   "lt": "1",
+   "pct": 64
+  },
+  {
+   "id": "3b025a029f51fbeb9580a178d0612f50",
+   "ts": 1795876200,
+   "d": "28/11",
+   "hn": "Hamburger SV",
+   "an": "Bayern Munich",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "sp": "soccer_germany_bundesliga",
+   "res": null,
+   "k": "hp",
+   "side": "away",
+   "h": -1.5,
+   "team": "Bayern Munich",
+   "giver": true,
+   "lt": "1.5",
+   "pct": 75
+  },
+  {
+   "id": "365e1a00908ab1cd5a51a53ede2b86b2",
+   "ts": 1795876200,
+   "d": "28/11",
+   "hn": "FSV Mainz 05",
+   "an": "Union Berlin",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "sp": "soccer_germany_bundesliga",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": -1.0,
+   "team": "FSV Mainz 05",
+   "giver": true,
+   "lt": "1",
+   "pct": 65
+  },
+  {
+   "id": "2c30e2ebaf6c30aaa4e3fb56cffa6a29",
+   "ts": 1795876200,
+   "d": "28/11",
+   "hn": "1. FC Köln",
+   "an": "Elversberg",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "sp": "soccer_germany_bundesliga",
+   "res": null,
+   "k": "ou",
+   "s": "under",
+   "x": 3.0,
+   "lt": "3",
+   "pct": 52
+  },
+  {
+   "id": "2c30e2ebaf6c30aaa4e3fb56cffa6a29",
+   "ts": 1795876200,
+   "d": "28/11",
+   "hn": "1. FC Köln",
+   "an": "Elversberg",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "sp": "soccer_germany_bundesliga",
+   "res": null,
+   "k": "up",
+   "side": "away",
+   "h": 0.5,
+   "team": "Elversberg",
+   "giver": false,
+   "lt": "0.5",
+   "pct": 52
+  },
+  {
+   "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+   "ts": 1795876200,
+   "d": "28/11",
+   "hn": "SC Paderborn",
+   "an": "FC Schalke 04",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "sp": "soccer_germany_bundesliga",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.5,
+   "lt": "2.5",
+   "pct": 53
+  },
+  {
+   "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+   "ts": 1795876200,
+   "d": "28/11",
+   "hn": "SC Paderborn",
+   "an": "FC Schalke 04",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "sp": "soccer_germany_bundesliga",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": 0.0,
+   "team": "SC Paderborn",
+   "giver": false,
+   "lt": "0",
+   "pct": 52
+  },
+  {
+   "id": "0bc17a3c7d8153e72b94688960cc603a",
+   "ts": 1795878000,
+   "d": "28/11",
+   "hn": "Leeds United",
+   "an": "Coventry City",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "sp": "soccer_epl",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 2.75,
+   "lt": "2.5/3",
+   "pct": 52
+  },
+  {
+   "id": "0bc17a3c7d8153e72b94688960cc603a",
+   "ts": 1795878000,
+   "d": "28/11",
+   "hn": "Leeds United",
+   "an": "Coventry City",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "sp": "soccer_epl",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": -1.0,
+   "team": "Leeds United",
+   "giver": true,
+   "lt": "1",
+   "pct": 64
+  },
+  {
+   "id": "ab87184803a63f7b679f1d12b01c3271",
+   "ts": 1795878000,
+   "d": "28/11",
+   "hn": "Manchester United",
+   "an": "Brentford",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "sp": "soccer_epl",
+   "res": null,
+   "k": "up",
+   "side": "away",
+   "h": 0.25,
+   "team": "Brentford",
+   "giver": false,
+   "lt": "0/0.5",
+   "pct": 51
+  },
+  {
+   "id": "aec86b479e922f437ba228b9a9d74da1",
+   "ts": 1795885200,
+   "d": "29/11",
+   "hn": "Torino",
+   "an": "Lazio",
+   "lg": "เซเรีย อา อิตาลี",
+   "sp": "soccer_italy_serie_a",
+   "res": null,
+   "k": "hp",
+   "side": "away",
+   "h": -0.25,
+   "team": "Lazio",
+   "giver": true,
+   "lt": "0/0.5",
+   "pct": 51
+  },
+  {
+   "id": "9d23f6ad21946dd258869ebc22236cf0",
+   "ts": 1795887000,
+   "d": "29/11",
+   "hn": "Ipswich Town",
+   "an": "Aston Villa",
+   "lg": "พรีเมียร์ลีก อังกฤษ",
+   "sp": "soccer_epl",
+   "res": null,
+   "k": "up",
+   "side": "home",
+   "h": 0.5,
+   "team": "Ipswich Town",
+   "giver": false,
+   "lt": "0.5",
+   "pct": 52
+  },
+  {
+   "id": "5d838190a8f5932d7fcfbcc26bacdd9c",
+   "ts": 1795887000,
+   "d": "29/11",
+   "hn": "VfB Stuttgart",
+   "an": "Eintracht Frankfurt",
+   "lg": "บุนเดสลีกา เยอรมัน",
+   "sp": "soccer_germany_bundesliga",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": -0.5,
+   "team": "VfB Stuttgart",
+   "giver": true,
+   "lt": "0.5",
+   "pct": 52
+  },
+  {
+   "id": "f128c19fa7af43e30dbe3c373e7bc27e",
+   "ts": 1795895100,
+   "d": "29/11",
+   "hn": "Inter Milan",
+   "an": "Genoa",
+   "lg": "เซเรีย อา อิตาลี",
+   "sp": "soccer_italy_serie_a",
+   "res": null,
+   "k": "ou",
+   "s": "over",
+   "x": 3.0,
+   "lt": "3",
+   "pct": 52
+  },
+  {
+   "id": "f128c19fa7af43e30dbe3c373e7bc27e",
+   "ts": 1795895100,
+   "d": "29/11",
+   "hn": "Inter Milan",
+   "an": "Genoa",
+   "lg": "เซเรีย อา อิตาลี",
+   "sp": "soccer_italy_serie_a",
+   "res": null,
+   "k": "hp",
+   "side": "home",
+   "h": -1.5,
+   "team": "Inter Milan",
+   "giver": true,
+   "lt": "1.5",
+   "pct": 74
   }
  ],
  "snap": {
-  "b11e430b1d8052d0c718bcee69145f7a": {
-   "ts": 1795707000,
-   "ou": 50,
-   "hp": 71
-  },
-  "31ebd41354699af625fa3372932206f0": {
-   "ts": 1795715100,
-   "ou": 53,
-   "hp": 61
-  },
-  "cdf4b848361b0374c2027326bd54d8eb": {
-   "ts": 1795715100,
-   "ou": 64,
-   "hp": 63
-  },
-  "38332e4cbb2b3991904b00a75dc3769d": {
-   "ts": 1795715100,
-   "ou": 66,
-   "hp": 65
-  },
-  "a18687d4f17a96a7732fb0c8673ea037": {
-   "ts": 1795715100,
-   "ou": 69,
-   "hp": 76
-  },
-  "7da3be4f6fe50a39ecdf3a8dc12966c8": {
-   "ts": 1795715100,
-   "ou": 50,
-   "hp": 69
-  },
-  "5902b4703e9ddc1f573091e14107834c": {
-   "ts": 1795715100,
-   "ou": 73,
-   "hp": 83
-  },
-  "3ee2bf8a6fa6add543f64ac3e9813976": {
-   "ts": 1795715100,
-   "ou": 66,
-   "hp": 70
-  },
-  "707c513bfa43b45b7813126e09ad08d8": {
-   "ts": 1795715100,
-   "ou": 51,
-   "hp": 63
-  },
-  "e1bfce2837ee873eec90dbefe31844ac": {
-   "ts": 1795715100,
-   "ou": 64,
-   "hp": 68
-  },
-  "c587e5656d1f38f068cba1b168462ba4": {
-   "ts": 1795715100,
-   "ou": 62,
-   "hp": 61
-  },
-  "8a0dc963ce319d55751d4d07c5152600": {
-   "ts": 1795715100,
-   "ou": 77,
-   "hp": 64
-  },
-  "bbab118a8c6ca33b6b0e7b5ed36fecd8": {
-   "ts": 1795715100,
-   "ou": 69,
-   "hp": 86
-  },
-  "cbe7d454dbea3c32de84901cced19bd4": {
-   "ts": 1795715100,
-   "ou": 53,
-   "hp": 66
-  },
-  "4f5b1a808bafc37b7c0041e947c2e536": {
-   "ts": 1795715100,
-   "ou": 54,
-   "hp": 69
-  },
-  "48a49061ae356d2a8b3b3976ec21508d": {
-   "ts": 1795715100,
-   "ou": 60,
-   "hp": 69
-  },
-  "679c499344805de09a59a2a2535cd0c8": {
-   "ts": 1795715100,
-   "ou": 51,
-   "hp": 70
-  },
-  "cb6689f811b7ce08379eef028e2254a4": {
-   "ts": 1795715100,
-   "ou": 58,
-   "hp": 60
-  },
-  "189401357a4b5e5920ca9ec1207a6566": {
-   "ts": 1795723200,
-   "ou": 52,
-   "hp": 68
-  },
-  "de10dd2e5917108a9478c07275ba8cdb": {
-   "ts": 1795723200,
-   "ou": 51,
-   "hp": 70
-  },
-  "e2036567ee9394a55f022358781dce15": {
-   "ts": 1795723200,
-   "ou": 60,
-   "hp": 66
-  },
-  "3fe17778f32b5fd0f218f9be6b0681cc": {
-   "ts": 1795723200,
-   "ou": 61,
-   "hp": 69
-  },
-  "0e5553b52ece07115fbdf8145df0c377": {
-   "ts": 1795723200,
-   "ou": 62,
-   "hp": 62
-  },
-  "413409b43875d1bdb627a9e7fb6bc3fd": {
-   "ts": 1795723200,
-   "ou": 60,
-   "hp": 76
-  },
-  "d6377d30379e5d3053c1076646d83f78": {
-   "ts": 1795723200,
-   "ou": 68,
-   "hp": 82
-  },
-  "a24c89b65c5a30fb9473735049589e64": {
-   "ts": 1795723200,
-   "ou": 69,
-   "hp": 79
-  },
-  "e836bc70afa19b0db28fb320a97662e4": {
-   "ts": 1795723200,
-   "ou": 62,
-   "hp": 70
-  },
-  "df4947bbe49057782feacca38c03e790": {
-   "ts": 1795723200,
-   "ou": 69,
-   "hp": 72
-  },
-  "1f0d932ff8b08ed2c3b775e60d92bb4e": {
-   "ts": 1795723200,
-   "ou": 63,
-   "hp": 67
-  },
-  "4f10f55b47b83f7f4f2a8cd745a9e67f": {
-   "ts": 1795723200,
-   "ou": 62,
-   "hp": 76
-  },
-  "92db66d09fdcf10ff8561cb7ec09732e": {
-   "ts": 1795723200,
-   "ou": 56,
-   "hp": 63
-  },
-  "dd5f6def5ea1aa9e0a0f45e3605ac64e": {
-   "ts": 1795723200,
-   "ou": 60,
-   "hp": 68
-  },
-  "3c6175802b9110c0abdb30f491965093": {
-   "ts": 1795723200,
-   "ou": 53,
-   "hp": 70
-  },
-  "9f2cd85ad777bea9550b987dc409b280": {
-   "ts": 1795723200,
-   "ou": 54,
-   "hp": 70
-  },
-  "1abbe02767589722b5de92e94e96429d": {
-   "ts": 1795723200,
-   "ou": 69,
-   "hp": 81
-  },
-  "491426b0dae5aecf2b92525815131cb2": {
-   "ts": 1795723200,
-   "ou": 61,
-   "hp": 70
-  },
-  "4da46315b5b1d5305eea1a58a8167213": {
-   "ts": 1795723200,
-   "ou": 61,
-   "hp": 67
-  },
-  "908ac2d3341c0dd5d86e300affa06f15": {
-   "ts": 1795734000,
-   "ou": 57,
-   "hp": 60
-  },
-  "69b4603433d0eed91383cbee4456157b": {
-   "ts": 1795703100,
-   "ou": 50
-  },
-  "1b5eb3275c0bdc0eb75a4446f869a309": {
-   "ts": 1795705500,
-   "ou": 52
-  },
-  "d5a117bed84a37bc36e3f68a7396ec4e": {
-   "ts": 1795714200,
-   "ou": 52
-  },
   "698f4a7967ead89e10205a68ceb4bda4": {
    "ts": 1795807800,
    "ou": 53
@@ -3187,6 +3339,55 @@
   "80c92a163a81b69fef76530221e2edd0": {
    "ts": 1795809600,
    "ou": 53
+  },
+  "af3432ca724da03d38f0ff4e62045e4c": {
+   "ts": 1795874400,
+   "ou": 52,
+   "hp": 64
+  },
+  "2c30e2ebaf6c30aaa4e3fb56cffa6a29": {
+   "ts": 1795876200,
+   "ou": 52
+  },
+  "3b025a029f51fbeb9580a178d0612f50": {
+   "ts": 1795876200,
+   "ou": 51,
+   "hp": 75
+  },
+  "f84a9da7eedd0ca11a28a1a7a8edddc7": {
+   "ts": 1795876200,
+   "ou": 53
+  },
+  "365e1a00908ab1cd5a51a53ede2b86b2": {
+   "ts": 1795876200,
+   "ou": 51,
+   "hp": 65
+  },
+  "ab87184803a63f7b679f1d12b01c3271": {
+   "ts": 1795878000,
+   "ou": 51
+  },
+  "0bc17a3c7d8153e72b94688960cc603a": {
+   "ts": 1795878000,
+   "ou": 52,
+   "hp": 64
+  },
+  "aec86b479e922f437ba228b9a9d74da1": {
+   "ts": 1795885200,
+   "ou": 51
+  },
+  "9d23f6ad21946dd258869ebc22236cf0": {
+   "ts": 1795887000,
+   "ou": 50
+  },
+  "5d838190a8f5932d7fcfbcc26bacdd9c": {
+   "ts": 1795887000,
+   "ou": 51
+  },
+  "f128c19fa7af43e30dbe3c373e7bc27e": {
+   "ts": 1795895100,
+   "ou": 52,
+   "hp": 74
   }
  },
  "tn": {
@@ -3294,7 +3495,9 @@
   "fk borac banja luka": "โบรค บันยาลูก้า",
   "league 1": "ลีกวัน",
   "remo": "เรโม",
-  "real racing club de santander": "ราซิง ซานตานเดร์"
+  "real racing club de santander": "ราซิง ซานตานเดร์",
+  "sc paderborn": "พาเดอร์บอร์น",
+  "coventry city": "โคเวนทรี ซิตี้"
  },
  "logos": {
   "Brentford": "https://r2.thesportsdb.com/images/media/team/badge/grv1aw1546453779.png/small",
@@ -3404,9 +3607,152 @@
   "Bologna": "https://r2.thesportsdb.com/images/media/team/badge/2qi1u31655592366.png/small",
   "Brest": "https://r2.thesportsdb.com/images/media/team/badge/z69be41598797026.png/small",
   "Paris FC": "https://r2.thesportsdb.com/images/media/team/badge/yuvtsy1447594254.png/small",
-  "Real Racing Club de Santander": "https://r2.thesportsdb.com/images/media/team/badge/97kkiq1536575158.png/small"
+  "Real Racing Club de Santander": "https://r2.thesportsdb.com/images/media/team/badge/97kkiq1536575158.png/small",
+  "Leeds United": "https://r2.thesportsdb.com/images/media/team/badge/jcgrml1756649030.png/small",
+  "Coventry City": "https://r2.thesportsdb.com/images/media/team/badge/uxyqys1424033798.png/small",
+  "Hamburger SV": "",
+  "Bayern Munich": "https://r2.thesportsdb.com/images/media/team/badge/01ogkh1716960412.png/small",
+  "FSV Mainz 05": "https://r2.thesportsdb.com/images/media/team/badge/fhm9v51552134916.png/small",
+  "Union Berlin": "https://r2.thesportsdb.com/images/media/team/badge/q0o5001599679795.png/small",
+  "Frosinone": "https://r2.thesportsdb.com/images/media/team/badge/a7xa151603170120.png/small",
+  "Parma": "https://r2.thesportsdb.com/images/media/team/badge/6yiaxs1627406063.png/small",
+  "Genoa": "https://r2.thesportsdb.com/images/media/team/badge/52s8dn1655553600.png/small",
+  "Manchester United": "https://r2.thesportsdb.com/images/media/team/badge/xzqdr11517660252.png/small"
  },
  "sent": {
+  "date": "28/11/69",
+  "steps": [
+   {
+    "n": 3,
+    "icon": "⚡",
+    "lines": [
+     {
+      "t": "21.00",
+      "x": "โฟรซิโนเน่ -1",
+      "id": "af3432ca724da03d38f0ff4e62045e4c",
+      "k": "hp"
+     },
+     {
+      "t": "21.30",
+      "x": "ไมนซ์ -1",
+      "id": "365e1a00908ab1cd5a51a53ede2b86b2",
+      "k": "hp"
+     },
+     {
+      "t": "21.30",
+      "x": "พาเดอร์บอร์น สูง 2.5",
+      "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+      "k": "ou"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "icon": "🔥",
+    "lines": [
+     {
+      "t": "21.00",
+      "x": "โฟรซิโนเน่ -1",
+      "id": "af3432ca724da03d38f0ff4e62045e4c",
+      "k": "hp"
+     },
+     {
+      "t": "21.30",
+      "x": "ไมนซ์ -1",
+      "id": "365e1a00908ab1cd5a51a53ede2b86b2",
+      "k": "hp"
+     },
+     {
+      "t": "21.30",
+      "x": "บาเยิร์น -1.5",
+      "id": "3b025a029f51fbeb9580a178d0612f50",
+      "k": "hp"
+     },
+     {
+      "t": "21.30",
+      "x": "พาเดอร์บอร์น สูง 2.5",
+      "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+      "k": "ou"
+     },
+     {
+      "t": "21.30",
+      "x": "โคโลญ ต่ำ 3",
+      "id": "2c30e2ebaf6c30aaa4e3fb56cffa6a29",
+      "k": "ou"
+     }
+    ]
+   },
+   {
+    "n": 7,
+    "icon": "💣",
+    "lines": [
+     {
+      "t": "21.00",
+      "x": "โฟรซิโนเน่ -1",
+      "id": "af3432ca724da03d38f0ff4e62045e4c",
+      "k": "hp"
+     },
+     {
+      "t": "21.30",
+      "x": "ไมนซ์ -1",
+      "id": "365e1a00908ab1cd5a51a53ede2b86b2",
+      "k": "hp"
+     },
+     {
+      "t": "21.30",
+      "x": "บาเยิร์น -1.5",
+      "id": "3b025a029f51fbeb9580a178d0612f50",
+      "k": "hp"
+     },
+     {
+      "t": "21.30",
+      "x": "พาเดอร์บอร์น สูง 2.5",
+      "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+      "k": "ou"
+     },
+     {
+      "t": "21.30",
+      "x": "โคโลญ ต่ำ 3",
+      "id": "2c30e2ebaf6c30aaa4e3fb56cffa6a29",
+      "k": "ou"
+     },
+     {
+      "t": "22.00",
+      "x": "ลีดส์ -1",
+      "id": "0bc17a3c7d8153e72b94688960cc603a",
+      "k": "hp"
+     },
+     {
+      "t": "00.30",
+      "x": "อิปสวิช +0.5",
+      "id": "9d23f6ad21946dd258869ebc22236cf0",
+      "k": "up"
+     }
+    ]
+   }
+  ],
+  "star": [
+   {
+    "medal": "🥇",
+    "x": "โฟรซิโนเน่ -1",
+    "id": "af3432ca724da03d38f0ff4e62045e4c",
+    "k": "hp"
+   },
+   {
+    "medal": "🥈",
+    "x": "ไมนซ์ -1",
+    "id": "365e1a00908ab1cd5a51a53ede2b86b2",
+    "k": "hp"
+   },
+   {
+    "medal": "🥉",
+    "x": "พาเดอร์บอร์น สูง 2.5",
+    "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+    "k": "ou"
+   }
+  ]
+ },
+ "prev": {
   "date": "27/11/69",
   "steps": [
    {
@@ -3452,139 +3798,6 @@
     "x": "โบโลญญ่า สูง 2/2.5",
     "id": "e9a663f13e7503c0ac20a54804338b60",
     "k": "ou"
-   }
-  ]
- },
- "prev": {
-  "date": "26/11/69",
-  "steps": [
-   {
-    "n": 3,
-    "icon": "⚡",
-    "lines": [
-     {
-      "t": "00.45",
-      "x": "ไดนาโม ซาเกร็บ +1",
-      "id": "cdf4b848361b0374c2027326bd54d8eb",
-      "k": "up"
-     },
-     {
-      "t": "03.00",
-      "x": "ยูเวนตุส -1.5",
-      "id": "d6377d30379e5d3053c1076646d83f78",
-      "k": "hp"
-     },
-     {
-      "t": "03.00",
-      "x": "ลียง -1.5",
-      "id": "a24c89b65c5a30fb9473735049589e64",
-      "k": "hp"
-     }
-    ]
-   },
-   {
-    "n": 5,
-    "icon": "🔥",
-    "lines": [
-     {
-      "t": "00.45",
-      "x": "ไบรท์ตัน -2",
-      "id": "bbab118a8c6ca33b6b0e7b5ed36fecd8",
-      "k": "hp"
-     },
-     {
-      "t": "00.45",
-      "x": "ไดนาโม ซาเกร็บ +1",
-      "id": "cdf4b848361b0374c2027326bd54d8eb",
-      "k": "up"
-     },
-     {
-      "t": "00.45",
-      "x": "ยูนิยง แซงต์ กิลลุส สูง 3",
-      "id": "3ee2bf8a6fa6add543f64ac3e9813976",
-      "k": "ou"
-     },
-     {
-      "t": "03.00",
-      "x": "ยูเวนตุส -1.5",
-      "id": "d6377d30379e5d3053c1076646d83f78",
-      "k": "hp"
-     },
-     {
-      "t": "03.00",
-      "x": "ลียง -1.5",
-      "id": "a24c89b65c5a30fb9473735049589e64",
-      "k": "hp"
-     }
-    ]
-   },
-   {
-    "n": 7,
-    "icon": "💣",
-    "lines": [
-     {
-      "t": "22.30",
-      "x": "ไครัต -0/0.5",
-      "id": "b11e430b1d8052d0c718bcee69145f7a",
-      "k": "hp"
-     },
-     {
-      "t": "00.45",
-      "x": "ไบรท์ตัน -2",
-      "id": "bbab118a8c6ca33b6b0e7b5ed36fecd8",
-      "k": "hp"
-     },
-     {
-      "t": "00.45",
-      "x": "ไดนาโม ซาเกร็บ +1",
-      "id": "cdf4b848361b0374c2027326bd54d8eb",
-      "k": "up"
-     },
-     {
-      "t": "00.45",
-      "x": "ยูนิยง แซงต์ กิลลุส สูง 3",
-      "id": "3ee2bf8a6fa6add543f64ac3e9813976",
-      "k": "ou"
-     },
-     {
-      "t": "00.45",
-      "x": "เกาโน ซัลกิริส +0.5",
-      "id": "679c499344805de09a59a2a2535cd0c8",
-      "k": "up"
-     },
-     {
-      "t": "03.00",
-      "x": "ยูเวนตุส -1.5",
-      "id": "d6377d30379e5d3053c1076646d83f78",
-      "k": "hp"
-     },
-     {
-      "t": "03.00",
-      "x": "ลียง -1.5",
-      "id": "a24c89b65c5a30fb9473735049589e64",
-      "k": "hp"
-     }
-    ]
-   }
-  ],
-  "star": [
-   {
-    "medal": "🥇",
-    "x": "ยูเวนตุส -1.5",
-    "id": "d6377d30379e5d3053c1076646d83f78",
-    "k": "hp"
-   },
-   {
-    "medal": "🥈",
-    "x": "ลียง -1.5",
-    "id": "a24c89b65c5a30fb9473735049589e64",
-    "k": "hp"
-   },
-   {
-    "medal": "🥉",
-    "x": "ไดนาโม ซาเกร็บ +1",
-    "id": "cdf4b848361b0374c2027326bd54d8eb",
-    "k": "up"
    }
   ]
  },
@@ -3770,13 +3983,151 @@
      "k": "ou"
     }
    ]
+  },
+  {
+   "date": "28/11/69",
+   "steps": [
+    {
+     "n": 3,
+     "icon": "⚡",
+     "lines": [
+      {
+       "t": "21.00",
+       "x": "โฟรซิโนเน่ -1",
+       "id": "af3432ca724da03d38f0ff4e62045e4c",
+       "k": "hp"
+      },
+      {
+       "t": "21.30",
+       "x": "ไมนซ์ -1",
+       "id": "365e1a00908ab1cd5a51a53ede2b86b2",
+       "k": "hp"
+      },
+      {
+       "t": "21.30",
+       "x": "พาเดอร์บอร์น สูง 2.5",
+       "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+       "k": "ou"
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "icon": "🔥",
+     "lines": [
+      {
+       "t": "21.00",
+       "x": "โฟรซิโนเน่ -1",
+       "id": "af3432ca724da03d38f0ff4e62045e4c",
+       "k": "hp"
+      },
+      {
+       "t": "21.30",
+       "x": "ไมนซ์ -1",
+       "id": "365e1a00908ab1cd5a51a53ede2b86b2",
+       "k": "hp"
+      },
+      {
+       "t": "21.30",
+       "x": "บาเยิร์น -1.5",
+       "id": "3b025a029f51fbeb9580a178d0612f50",
+       "k": "hp"
+      },
+      {
+       "t": "21.30",
+       "x": "พาเดอร์บอร์น สูง 2.5",
+       "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+       "k": "ou"
+      },
+      {
+       "t": "21.30",
+       "x": "โคโลญ ต่ำ 3",
+       "id": "2c30e2ebaf6c30aaa4e3fb56cffa6a29",
+       "k": "ou"
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "icon": "💣",
+     "lines": [
+      {
+       "t": "21.00",
+       "x": "โฟรซิโนเน่ -1",
+       "id": "af3432ca724da03d38f0ff4e62045e4c",
+       "k": "hp"
+      },
+      {
+       "t": "21.30",
+       "x": "ไมนซ์ -1",
+       "id": "365e1a00908ab1cd5a51a53ede2b86b2",
+       "k": "hp"
+      },
+      {
+       "t": "21.30",
+       "x": "บาเยิร์น -1.5",
+       "id": "3b025a029f51fbeb9580a178d0612f50",
+       "k": "hp"
+      },
+      {
+       "t": "21.30",
+       "x": "พาเดอร์บอร์น สูง 2.5",
+       "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+       "k": "ou"
+      },
+      {
+       "t": "21.30",
+       "x": "โคโลญ ต่ำ 3",
+       "id": "2c30e2ebaf6c30aaa4e3fb56cffa6a29",
+       "k": "ou"
+      },
+      {
+       "t": "22.00",
+       "x": "ลีดส์ -1",
+       "id": "0bc17a3c7d8153e72b94688960cc603a",
+       "k": "hp"
+      },
+      {
+       "t": "00.30",
+       "x": "อิปสวิช +0.5",
+       "id": "9d23f6ad21946dd258869ebc22236cf0",
+       "k": "up"
+      }
+     ]
+    }
+   ],
+   "star": [
+    {
+     "medal": "🥇",
+     "x": "โฟรซิโนเน่ -1",
+     "id": "af3432ca724da03d38f0ff4e62045e4c",
+     "k": "hp"
+    },
+    {
+     "medal": "🥈",
+     "x": "ไมนซ์ -1",
+     "id": "365e1a00908ab1cd5a51a53ede2b86b2",
+     "k": "hp"
+    },
+    {
+     "medal": "🥉",
+     "x": "พาเดอร์บอร์น สูง 2.5",
+     "id": "f84a9da7eedd0ca11a28a1a7a8edddc7",
+     "k": "ou"
+    }
+   ]
   }
  ],
  "sums": [
   {
+   "date": "28/11/69",
+   "text": "⚽️สรุปผลบอลวันที่ 28/11/69⚽️\n\n⚡ สเต็ป 3\n⏰21.00 โฟรซิโนเน่ -1⏳\n⏰21.30 ไมนซ์ -1⏳\n⏰21.30 พาเดอร์บอร์น สูง 2.5⏳\n————————————\n🔥 สเต็ป 5\n⏰21.00 โฟรซิโนเน่ -1⏳\n⏰21.30 ไมนซ์ -1⏳\n⏰21.30 บาเยิร์น -1.5⏳\n⏰21.30 พาเดอร์บอร์น สูง 2.5⏳\n⏰21.30 โคโลญ ต่ำ 3⏳\n————————————\n💣 สเต็ป 7\n⏰21.00 โฟรซิโนเน่ -1⏳\n⏰21.30 ไมนซ์ -1⏳\n⏰21.30 บาเยิร์น -1.5⏳\n⏰21.30 พาเดอร์บอร์น สูง 2.5⏳\n⏰21.30 โคโลญ ต่ำ 3⏳\n⏰22.00 ลีดส์ -1⏳\n⏰00.30 อิปสวิช +0.5⏳\n————————————\n⭐ ตัวเน้นสุด\n🥇 โฟรซิโนเน่ -1⏳\n🥈 ไมนซ์ -1⏳\n🥉 พาเดอร์บอร์น สูง 2.5⏳",
+   "pending": 18
+  },
+  {
    "date": "27/11/69",
-   "text": "⚽️สรุปผลบอลวันที่ 27/11/69⚽️\n\n⚡ สเต็ป 3\n⏰02.30 เบรเมน สูง 3⏳\n⏰02.45 โบโลญญ่า สูง 2/2.5⏳\n⏰03.00 ฟอเรสต์ 0⏳\n————————————\n⭐ ตัวเน้นสุด\n🥇 เบรเมน สูง 3⏳\n🥈 ฟอเรสต์ 0⏳\n🥉 โบโลญญ่า สูง 2/2.5⏳",
-   "pending": 6
+   "text": "⚽️สรุปผลบอลวันที่ 27/11/69⚽️\n\n⚡ สเต็ป 3\n⏰02.30 เบรเมน สูง 3✅\n⏰02.45 โบโลญญ่า สูง 2/2.5❌\n⏰03.00 ฟอเรสต์ 0✅\n————————————\n⭐ ตัวเน้นสุด\n🥇 เบรเมน สูง 3✅\n🥈 ฟอเรสต์ 0✅\n🥉 โบโลญญ่า สูง 2/2.5❌",
+   "pending": 0
   },
   {
    "date": "26/11/69",
@@ -3785,8 +4136,8 @@
   }
  ],
  "summary": {
-  "date": "26/11/69",
-  "text": "⚽️สรุปผลบอลวันที่ 26/11/69⚽️\n\n⚡ สเต็ป 3\n⏰00.45 ไดนาโม ซาเกร็บ +1❌\n⏰03.00 ยูเวนตุส -1.5✅\n⏰03.00 ลียง -1.5❌\n————————————\n🔥 สเต็ป 5\n⏰00.45 ไบรท์ตัน -2✅\n⏰00.45 ไดนาโม ซาเกร็บ +1❌\n⏰00.45 ยูนิยง แซงต์ กิลลุส สูง 3✅\n⏰03.00 ยูเวนตุส -1.5✅\n⏰03.00 ลียง -1.5❌\n————————————\n💣 สเต็ป 7\n⏰22.30 ไครัต -0/0.5✅\n⏰00.45 ไบรท์ตัน -2✅\n⏰00.45 ไดนาโม ซาเกร็บ +1❌\n⏰00.45 ยูนิยง แซงต์ กิลลุส สูง 3✅\n⏰00.45 เกาโน ซัลกิริส +0.5✅\n⏰03.00 ยูเวนตุส -1.5✅\n⏰03.00 ลียง -1.5❌\n————————————\n⭐ ตัวเน้นสุด\n🥇 ยูเวนตุส -1.5✅\n🥈 ลียง -1.5❌\n🥉 ไดนาโม ซาเกร็บ +1❌",
+  "date": "27/11/69",
+  "text": "⚽️สรุปผลบอลวันที่ 27/11/69⚽️\n\n⚡ สเต็ป 3\n⏰02.30 เบรเมน สูง 3✅\n⏰02.45 โบโลญญ่า สูง 2/2.5❌\n⏰03.00 ฟอเรสต์ 0✅\n————————————\n⭐ ตัวเน้นสุด\n🥇 เบรเมน สูง 3✅\n🥈 ฟอเรสต์ 0✅\n🥉 โบโลญญ่า สูง 2/2.5❌",
   "pending": 0
  },
  "summary_sent": null
